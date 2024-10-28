@@ -1,0 +1,18 @@
+<div class="youtube-parent-all"><div class="youtube-parent">
+  <div class="youtube-style" *ngFor="let vid of videoData">
+    <youtube-player
+    
+          [width]="213"
+          [height]="120"
+          [videoId]="vid.id.videoId"
+          [playerVars]="{ modestbranding: 1, controls: 1, disablekb: 1, rel: 0, showinfo: 0 }"
+          (ready)="playerReady($event,vid.id.videoId)"
+          (change)="onVideoChange($event,vid.id.videoId)">
+        </youtube-player>
+  </div>
+</div>
+</div>
+<app-loader *ngIf="loader"></app-loader>
+<div class="options has-more-results">
+<button gaEvent="click" gaCategory="load_more_button"  gaBind="click" (click)="morefeed()" class="options__load-more">Load more stories</button>
+</div>

@@ -1,0 +1,95 @@
+<div class="container mx-auto" style="    background: whitesmoke;
+padding: 20px;
+margin: 40px;">
+    <div class="">
+      <div style="flex-wrap: wrap;" class="flex-row-sb">
+        <div class="col-lg-8">
+          <ul class="page-list">
+            <li>
+              <a href="javascript:void(0)">Home</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">Lottery</a>
+            </li>
+            <li>
+              <span style="color: black">
+                Prizes
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-row-start"
+          style="gap: 10px;">
+          <a href="javascript:void(0)" routerLink="/raffledraws/play">
+            Raffle Home ||
+          </a>
+          <a href="javascript:void(0)" routerLink="/raffledraws/create">
+            Raffle Draws ||
+          </a>
+          <a href="javascript:void(0)" routerLink="/raffledraws/winners">
+            Winners ||
+          </a>
+          <a (click)="logout()" href="javascript:void(0)">Signout</a>
+        </div>
+      </div>
+    </div>
+
+    <section style="margin-top: 30px;">
+        <div style="margin-bottom: 20px;" class="flex-row-sb">
+            <h3>Prizes</h3>
+            <a (click)="openModal()"  style="white-space: nowrap;color: white!important" class="btn btn-primary" cButton
+                color="primary">New Prize
+            </a>
+        </div>
+
+        <div style="height: 80vh; overflow-y: auto;" class="promotions-content">
+            <ng-container *ngFor="let prize of prizes">
+                <div class="prize-item">
+                    <div style="padding: 20px; flex-wrap: wrap;" class="flex-row-sb">
+                        <img class="prize-image" src="{{serverUrl}}{{prize.image.replace('public', '')}}"/>   
+                        <div class="prize-description">{{prize.description}}</div>                     
+                        <div style="gap:10px" class="flex-row-sb">
+                            <button (click)="alertComingSoon()" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </section>
+</div>
+
+
+
+<!-- Modal Backdrop -->
+<div class="modal-backdrop" *ngIf="showModal"></div>
+
+<!-- Modal Structure -->
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Create Prize</h5>
+      <span class="close" (click)="closeModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div style="width:100%; margin-bottom: 20px;">
+            <label>Name:</label>
+            <input style="width:100%" type="text" [(ngModel)]="prize.name" name="name" required />
+          </div>
+        <textarea [(ngModel)]="prize.description" name="description" placeholder="Notes"></textarea>
+        <input
+          style="margin-top: 10px;"
+          (change)="onFileChange($event)"
+          name="attachments"
+          type="file"
+        />
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" (click)="closeModal()">Close</button>
+      <button class="btn-primary" (click)="createPrize()">Submit</button>
+    </div>
+  </div>
+</div>
+
+

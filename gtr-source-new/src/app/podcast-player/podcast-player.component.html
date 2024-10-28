@@ -1,0 +1,136 @@
+<div class="container">
+	<div class="audio-player">
+		<div id="audio-player"
+			class="audio-player-wrapper">
+			<div class="audio-player-image"
+				data-appear="fade-right">
+				<div class="audio-image-box"
+					style="background-image: url('https://data.whicdn.com/images/16602597/large.png');"></div>
+			</div>
+			<div class="audio-player-controls">
+				<div class="audio-top">
+					<div *ngIf="data" class="audio-date"
+						data-appear="fade-left">
+						<span class="audio-day">{{convertDateToArray(data?.data.start_date)[0]}}</span>
+						<span class="audio-month">{{convertDateToArray(data?.data.start_date)[1]}}</span>
+					</div>
+
+					<div class="audio-title"
+						data-appear="fade-left"
+						data-appear-delay="75">
+						<h3>
+							<span style="color: #777;">{{data?.details?.name}}</span>
+							<span style="color: #777;" class="audio-title">{{ellipsize(data?.data?.title)}}</span>
+						</h3>
+					</div>
+				</div>
+				<div class="audio-player-progress audio-player-progress"
+					data-appear="fade-right">
+					<div class="audio-player-progress-bar audio-player-progress-bar"></div>
+				</div>
+				<div class="audio-bottom">
+					<div class="audio-time audio-time"
+						data-appear="fade-left"
+						data-appear-delay="75">
+						00:00
+					</div>
+					<div class="audio-player-button-wrappers"
+						data-appear="fade-left"
+						data-appear-delay="150">
+						<a role="button"
+							id="playback"
+							class="audio-player-button">
+							<svg class="icon-play"
+								version="1.1"
+								id="Layer_1"
+								xmlns="http://www.w3.org/2000/svg"
+								:xmlns:xlink="http://www.w3.org/1999/xlink"
+								x="0px"
+								y="0px"
+								viewBox="0 0 20 20"
+								style="enable-background:new 0 0 20 20;"
+								:xml:space="preserve">
+								<polygon points="4.8,18.5 4.8,2 16.4,10.3 "></polygon>
+							</svg>
+							<svg class="icon-pause"
+								version="1.1"
+								id="Layer_1"
+								xmlns="http://www.w3.org/2000/svg"
+								:xmlns:xlink="http://www.w3.org/1999/xlink"
+								x="0px"
+								y="0px"
+								viewBox="0 0 20 20"
+								style="enable-background:new 0 0 20 20;"
+								:xml:space="preserve">
+								<g>
+									<rect x="6.2"
+										y="2.4"
+										width="2.4"
+										height="15.1"></rect>
+									<rect x="11.4"
+										y="2.4"
+										width="2.4"
+										height="15.1"></rect>
+								</g>
+							</svg>
+						</a>
+					</div>
+					<div class="audio-download"
+						data-appear="fade-left"
+						data-appear-delay="225">
+						<a href="{{data?.data?.url}}"
+							title="Download"
+                            download
+							target="_blank">
+							<svg version="1.1"
+								id="Layer_1"
+								xmlns="http://www.w3.org/2000/svg"
+								:xmlns:xlink="http://www.w3.org/1999/xlink"
+								x="0px"
+								y="0px"
+								viewBox="0 0 20 20"
+								style="enable-background:new 0 0 20 20;"
+								:xml:space="preserve">
+								<g>
+									<polygon points="16.4,8.5 15.1,7.3 11,11.4 11,2.4 9.2,2.4 9.2,11.3 5.2,7.3 3.9,8.5 9.5,14.1 9.5,14.1 9.5,14.1 10.8,14.1 10.8,14.1"></polygon>
+									<rect x="9.4"
+										y="10.4"
+										transform="matrix(7.140339e-11 -1 1 7.140339e-11 -6.4204 26.9234)"
+										width="1.8"
+										height="12.6"></rect>
+								</g>
+							</svg>
+						</a>
+					</div>
+					<div class="audio-volume-wrapper"
+						data-appear="fade-left"
+						data-appear-delay="300">
+						<div class="audio-volume-icon">
+							<svg version="1.1"
+								id="Layer_1"
+								xmlns="http://www.w3.org/2000/svg"
+								:xmlns:xlink="http://www.w3.org/1999/xlink"
+								x="0px"
+								y="0px"
+								viewBox="0 0 20 20"
+								style="enable-background:new 0 0 20 20;"
+								:xml:space="preserve">
+								<polygon points="15.8,1.1 8.6,6.2 2.9,6.2 2.9,13.8 8.6,13.8 15.8,18.9"></polygon>
+							</svg>
+						</div>
+						<div class="audio-volume audio-volume">
+							<div class="audio-volume-bar audio-volume-bar"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="credit"
+		data-appear="fade-up">
+		<p>
+			GTR-PLAYER
+		</p>
+	</div>
+</div>

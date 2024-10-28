@@ -1,0 +1,12 @@
+
+<div class="snack-bar" *ngIf="visible">
+    <span>{{ message }}</span>
+    <button class="close-btn" (click)="hide()">✖</button>
+  </div>
+
+  
+<div class="err-snack-bar" *ngIf="errVisible">
+  <span>{{ message }}</span>
+  <button class="close-btn" (click)="hide()">✖</button>
+</div>
+  

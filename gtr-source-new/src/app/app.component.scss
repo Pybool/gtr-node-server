@@ -1,0 +1,116 @@
+#chat-dock-btn {
+    position: fixed;
+    top: 85%;
+    right: 1%;
+    width: 20px;
+    height: 20px;
+    // background-color: #ff5101;
+    
+    background-color: black;
+    box-shadow: 5px 0 5px #00000080;
+    padding: 20px;
+    transition: right .3s ease;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 50%;
+}
+
+.btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.css-eiheq7 {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #E3E3E3;
+}
+
+.css-10c83fy {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: transparent;
+    display: inline-block;
+    margin: 0;
+    color: inherit;
+    cursor: pointer;
+    -webkit-justify-content: center !important;
+    justify-content: center !important;
+    -webkit-align-items: center !important;
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    border: 0;
+    border-radius: 6px;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #E3E3E3;
+    padding: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.css-d6eyf {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    -webkit-transition: opacity .15s cubic-bezier(.33,0,.67,1) 50ms;
+    transition: opacity .15s cubic-bezier(.33,0,.67,1) 50ms;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    opacity: 0;
+    --primary-color: #2000F0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #E3E3E3;
+}

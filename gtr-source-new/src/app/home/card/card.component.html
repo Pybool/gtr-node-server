@@ -1,0 +1,55 @@
+<div class="post type-post">
+    <div class="post_wrapper">
+        <div class="post_content_wrapper">
+            <div class="post_header search">
+                <div class="post_img static one_third">
+                    <a [routerLink]="['/', news?.post_name]">
+                        <img width="700"
+                            height="466"
+                            src="{{news.image}}"
+                            alt="{{news.post_title}}"
+                            class
+                            loading="lazy">
+                        <noscript>
+                            <img width="700"
+                                height="466"
+                                src="{{news.image}}"
+                                alt="{{news.post_title}}"
+                                class>
+                        </noscript>
+                    </a>
+                </div>
+                <div class="post_header_title two_third last">
+                    <div class="slug-wrap" *ngIf="news?.categoryarray?.length>0">
+                        <h2 class="slug" *ngIf="getNewsCategory(news?.categoryarray)" style="margin:0px;">
+                            <a gaEvent="click" gaCategory="navigation"  gaBind="click" [routerLink]="['/category', getNewsCategoryName(news?.categoryarray).slug]" data-metrics="{&quot;action&quot;:&quot;Click Slug&quot;}">
+                                {{getNewsCategoryName(news?.categoryarray).name}}
+                            </a>
+                        </h2>
+                    </div>
+                    <h5>
+                        <a [routerLink]="['/', news?.post_name]" data-metrics="{&quot;action&quot;:&quot;Click Slug&quot;}"
+                            title="">
+                            {{news.post_title}}
+                        </a>
+                    </h5>
+                    <p [innerHTML]="getContent(news.post_content)">
+                    </p>
+                    <div class="post_detail post_date">
+                        <span class="post_info_author">
+                            <a href="javascript:void(0)">
+                                Ghana Talks Radio
+                            </a>
+                        </span>
+                        <span class="post_info_date">
+                            <a href="javascript:void(0)">
+                                Posted
+                                        On {{news?.post_modified | date}}
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

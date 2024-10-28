@@ -1,0 +1,31 @@
+
+    <!-- sidebar -->
+    <div class="sidebar" *ngIf="scrWidth>=mobileTarget"  #fr >
+
+        <div class="widget social-widget" >
+            <div class="title-section">
+                <h1><span>GhanaTalksRadio</span></h1>
+            </div>
+            <diV class="body-section">
+                <!-- <div  class="media-container"> -->
+                    <div #spacer></div>
+                    <div *ngIf="showBar" stickyThing (stickyPosition)="consoleLog($event)" (stickyStatus)="consoleLog($event)" [spacer]="spacer" [boundary]="fr" [enable]="getEnableStatus">
+                        <div class="body-content">
+                            sfrrrrrr
+                          <app-ads></app-ads>
+                        </div>
+                    </div>
+                <!-- </div> -->
+                
+            </diV>
+            
+
+
+        </div>
+
+     
+
+    </div>
+    <!-- End sidebar -->
+
+

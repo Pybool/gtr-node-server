@@ -1,0 +1,97 @@
+.options.has-more-results {
+    display: flex;
+    margin: 10px;
+}
+
+.options__load-more {
+    margin: auto;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    text-align: left;
+    text-indent: -999em;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    min-height: 30px;
+    padding: 0 10px;
+    border-radius: 2px;
+    font-family: "Knockout 31 4r", HelveticaNeue-CondensedBold, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.08px;
+    font-size: 12px;
+    line-height: 1.2;
+    font-size: 16px;
+    font-size: 1.6rem;
+    padding: 10px;
+    text-indent: 0;
+    background: black;
+    color: #fff;
+}
+
+.ppb_wrapper{
+    width: 100%!important;
+}
+
+
+.dangle {
+    position: fixed; 
+    top: -53.7px; 
+    width: 344.602px;
+}
+
+.flex-row-gap-20{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#page_content_wrapper .sidebar .content .sidebar_widget li, .page_content_wrapper .sidebar .content .sidebar_widget li {
+    width: -webkit-fill-available!important;
+    margin-right: 20px!important;
+}
+
+.btn {
+    float: none;
+    display: inline-block;
+    height: 46px;
+    background-color: black;
+    color: #ffffff;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 20px 8px 20px;
+    color: #fff;
+    border: 0px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 900;
+    font-family: "Roboto", "Georgia", Arial, Verdana, sans-serif;
+    text-shadow: none;
+    -webkit-appearance: none;
+    letter-spacing: 1px;
+    box-shadow: 0 0 0 0 !important;
+    line-height: 1.5 !important;
+    letter-spacing: 2px;
+    border-radius: 0;
+    -webkit-transition: color 0.2s linear, background 0.1s linear, opacity 0.2s linear;
+    -moz-transition: color 0.2s linear, background 0.1s linear, opacity 0.2s linear;
+    -ms-transition: color 0.2s linear, background 0.1s linear, opacity 0.2s linear;
+    -o-transition: color 0.2s linear, background 0.1s linear, opacity 0.2s linear;
+    transition: color 0.2s linear, background 0.1s linear, opacity 0.2s linear;
+}
+

@@ -1,0 +1,247 @@
+<section id="main-section">
+	<div id="search-container">
+		<div id="page_caption"
+			class=" withtopbar ">
+			<div class="page_title_wrapper">
+				<div class="page_title_inner">
+
+					<div class="flex-row-start">
+						<h1 style="text-align: left">Search</h1>
+						<div class="post_info_cat">
+							<div class="breadcrumb">
+								<a href="/">Home</a>
+								»
+							Search Results for {{searchText}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Begin content -->
+		<div id="page_content_wrapper"
+			class>
+			<div class="inner">
+
+				<!-- Begin main content -->
+				<div class="inner_wrapper">
+
+					<div class="sidebar_content">
+						<div class="search_form_wrapper">
+							<div *ngIf="searchText?.trim() !=='' && !loader1">
+								Search results for
+								<strong>{{searchText}}</strong>
+								. If you didn't find what you were
+								looking for, try a new search.
+								<br>
+								<br>
+							</div>
+							<app-loader *ngIf="loader1"></app-loader>
+
+							<div class="searchform flex-row-start"
+								role="search">
+								<input [(ngModel)]="searchText"
+									(keyup.enter)="searchItem()"
+									type="text"
+									class="field searchform-s"
+									placeholder="Type here.."
+									autocomplete="off"
+									autocorrect="off"
+									autocapitalize="off"
+									spellcheck="false"
+									required
+									maxlength="512"
+									title="Type to search and hit enter...">
+								<button style="padding:13px; background-color: black; color:white; border: none;"
+									class="btn btn-primary">
+									<i style="color:white"
+										class="fa fa-search"></i>
+								</button>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<!-- End main content -->
+			</div>
+		</div>
+		<hr>
+		<div class="search-stats">
+			<div class="ais-Stats"></div>
+
+		</div>
+
+		<div *ngIf="data?.length>0"
+			class="storylist">
+			<div class="ais-InfiniteHits">
+				<ul class="ais-InfiniteHits-list">
+					<li *ngFor="let news of data"
+						class="ais-InfiniteHits-item little-space">
+						<app-card [news]="news"></app-card>
+					</li>
+				</ul>
+				<app-loader *ngIf="loader2"></app-loader>
+				<button (click)="loadMore()"
+					gaEvent="click"
+					gaCategory="load_more_button"
+					gaBind="click"
+					class="ais-InfiniteHits-loadMore">
+					Load more
+				</button>
+			</div>
+		</div>
+		<div *ngIf="data?.length<=0">
+			<div class="search-footer">
+				<div class>
+					<h6 class="search-footer-header">NEWS</h6>
+
+					<ul>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','world']">World</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','national']">National</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','politics']">Politics</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','sports']"
+								gaEvent="click"
+								gaCategory="navigation"
+								gaBind="click">
+								Sports
+							</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','tech']">Tech</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','cryptocurrency']">Cryptocurrency</a>
+						</li>
+
+					</ul>
+				</div>
+
+				<div class>
+					<h6 class="search-footer-header">PODCAST</h6>
+
+					<ul>
+						<li class="search-footer-item">
+							<a [routerLink]="['/podcast','naija-rendezvous']">Naija Rendezvous</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/podcast','d-mu-ns-m-relationship-show']">
+								Ɔdɔ mu nsɛm - Relationship
+								Show
+							</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/podcast','the-cubicle']">The Cubicle</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/podcast','up-and-coming-artistes-roundtable']">
+								Up & Coming Artistes
+								Roundtable
+							</a>
+						</li>
+
+					</ul>
+				</div>
+
+				<div class>
+					<h6 class="search-footer-header">ENTERTAINMENT</h6>
+
+					<ul>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','music']">Music</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','music-video-mix']">Music Video Mix</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','wall-of-fame']">Wall of Fame</a>
+						</li>
+
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','things-to-do-this-weekend']">
+								Things to do this weekend
+							</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','gtr-games-and-party-bash']">
+								GTR Games and Party Bash
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class>
+					<h6 class="search-footer-header">LIFESTYLE</h6>
+
+					<ul>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','recipes']">Recipe</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','travel']">Travel</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','health']">Health</a>
+						</li>
+						<li class="search-footer-item">
+							<a [routerLink]="['/category','inspirational-quotes']">
+								Inspirational Quotes
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div id="overlay_background_search">
+	<button (click)="toggleShowSearchInput()"
+		style="float:right; width:90px; background: black;border: none;right: 0;font-size: 35px;"
+		id="search_close_button"
+		class="btn"
+		title="Close">
+		<i class="fa fa-close"></i>
+		&times;
+	</button>
+	<div class="search_wrapper">
+		<div class="search_content">
+			<div role="search"
+				name="searchform"
+				id="searchform">
+				<div>
+					<input [(ngModel)]="searchText"
+						(keyup.enter)="searchItem()"
+						type="text"
+						placeholder="Type here.."
+						autocomplete="off"
+						autocorrect="off"
+						autocapitalize="off"
+						spellcheck="false"
+						required
+						maxlength="512"
+						value
+						name="s"
+						id="s">
+					<div class="search_tagline">
+						Press enter/return to begin your search
+					</div>
+					<button (click)="searchItem()">
+						<i class="fa fa-search"></i>
+					</button>
+					<app-loader *ngIf="loader1"></app-loader>
+				</div>
+				<div id="autocomplete"></div>
+			</div>
+		</div>
+	</div>
+</div>

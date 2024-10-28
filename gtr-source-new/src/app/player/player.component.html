@@ -1,0 +1,114 @@
+<!-- <ang-music-player [audioList] = audioList></ang-music-player>-->
+<div class="mhn-player" >
+	<div *ngIf="minimizeRadio">
+		<div class="album-art" [ngClass]="{'blur': showPlayList}">
+			<!-- <img src="{{currentMusicInfor.cover}}"/> -->
+			<img src="./assets/ghanatalksradio/images/banner3.jpg" />
+		</div>
+		<div class="play-list" *ngIf="showPlayList">
+			<div class="select" tabindex="1" *ngIf="gtrPlayingMode==='playlist'">
+				<ng-container *ngFor="let lis of radioPlaylist; let i=index">
+					<input class="selectopt" name="test" type="radio" [checked]="i==0" id="opt{{i}}" [value]="lis.data"
+						(change)="changeRadio($event,lis.data)">
+					<label for="opt{{i}}" class="option">{{lis.name}}</label>
+				</ng-container>
+			</div>
+			<div class="select" tabindex="1" *ngIf="gtrPlayingMode==='catchup'">
+				<ng-container *ngFor="let lis2 of radioCatchup; let i=index">
+
+					<input class="selectopt" name="test2" type="radio" [checked]="i==0" id="optc{{i}}"
+						[value]="lis2.data" (change)="changeRadioCatchup($event,lis2.data)">
+					<label for="optc{{i}}" class="option">{{lis2.info.name}}</label>
+				</ng-container>
+			</div>
+			<ng-container *ngIf="gtrPlayingMode==='catchup'">
+				<a gaEvent="click" gaCategory="player" gaBind="click"
+					*ngFor="let availableDatum of availableData; let i=index"
+					(click)="selectedCatchupList(availableDatum)" href="javascript:void(0)" class="play active"
+					(click)="changeCatchup(availableDatum)">
+					<div class="album-thumb pull-left"><img src="{{baseUrl}}images/{{availableDatum.shows_data.image}}">
+					</div>
+					<div class="songs-info pull-left">
+						<div class="song-title">{{availableDatum.shows_data.name}}</div>
+						<div class="songs-detail"><span class="song-artist">Date:</span> {{availableDatum.start_date}}
+						</div>
+					</div>
+				</a>
+			</ng-container>
+
+			<ng-container *ngIf="gtrPlayingMode==='playlist'">
+				<a gaEvent="click" gaCategory="player" gaBind="click"
+					*ngFor="let availableDatum of availableData; let i=index"
+					(click)="selectedPlaylistList(availableDatum)" href="javascript:void(0)" class="play "
+					(click)="changePlaylist(availableDatum)">
+					<div class="album-thumb pull-left">
+						<img src="{{baseUrl}}images/{{availableDatum.image}}">
+					</div>
+					<div class="songs-info pull-left">
+						<div class="song-title">{{availableDatum.name}}</div>
+						<div class="songs-detail"><span class="song-artist">{{availableDatum.author}}</span> </div>
+					</div>
+				</a>
+			</ng-container>
+
+		</div>
+		<div class="audio"></div>
+		<div class="current-info">
+			<!--<div class="song-artist"><i class="fa fa-user"></i> Kelly Clarkson</div>-->
+			<div class="song-album"><i class="fa fa-music"></i> {{currentMusicInfor.title}}</div>
+			<div class="song-title"><i class="fa fa-headphones"></i> {{currentMusicInfor.author}}</div>
+		</div>
+	</div>
+	<div class="controls">
+		<a gaEvent="click" gaCategory="player" gaBind="click" href="javascript:void(0)" (click)="showList()"
+			*ngIf="(gtrPlayingMode==='catchup' || gtrPlayingMode==='playlist') &&minimizeRadio"
+			class="toggle-play-list"><i class="fa fa-list-ul"></i></a>
+		<div class="duration clearfix" *ngIf="minimizeRadio">
+
+			<span class="pull-left play-position"></span>
+			<span class="pull-right"><span class="play-current-time">{{getCurrentTime}}</span> / <span
+					class="play-total-time">{{getTotalTime}}</span></span>
+		</div>
+		<div class="progress">
+			<div class="bar"></div>
+		</div>
+		<div class="action-button text-center" style="text-align: center;">
+			<a gaEvent="click" gaCategory="player" gaBind="click" href="javascript:void(0)" class="prev"><i
+					class="fa fa-step-backward"></i></a>
+			<a gaEvent="click" gaCategory="player" gaBind="click" href="javascript:void(0)"
+				*ngIf="!state?.playing" (click)="playAudio()"
+				class="play-pause"><i class="fa fa-pp"></i></a>
+			<a gaEvent="click" gaCategory="player" gaBind="click" href="javascript:void(0)"
+				*ngIf="state?.playing" (click)="pause()" class="play-pause"><i class="fa fa-pause"></i></a>
+			<a gaEvent="click" gaCategory="player" gaBind="click" href="javascript:void(0)" (click)="stop()"
+				class="stop"><i class="fa fa-stop"></i></a>
+			<a gaEvent="click" gaCategory="player" gaBind="click" href="javascript:void(0)" class="next"><i
+					class="fa fa-step-forward"></i></a>
+			<input *ngIf="gtrPlayingMode==='playlist' || gtrPlayingMode==='catchup'" type="range"
+				(change)="slideSeeker($event)" class="volume" min="0" max="1" step="0.05" value="{{seeker}}"
+				data-css="0.5">
+		</div>
+
+	</div>
+	<ul class="player-extras navigation" role="navigation" aria-label="audio player navigation">
+		<li>
+			<button gaEvent="click" gaCategory="player" gaBind="click" (click)="selectMode('radio')"
+				class="btn-playlist" [ngClass]="{'active':gtrPlayingMode==='radio'}" data-metrics="{}"><b>Listen
+					Live</b></button>
+		</li>
+		<li><button gaEvent="click" gaCategory="player" gaBind="click" (click)="selectMode('catchup')"
+				class="btn-playlist" [ngClass]="{'active':gtrPlayingMode==='catchup'}"
+				data-metrics="{}"><b>Catchup</b></button></li>
+		<li class=""><button gaEvent="click" gaCategory="player" gaBind="click" (click)="selectMode('playlist')"
+				class="btn-playlist " [ngClass]="{'active':gtrPlayingMode==='playlist'}"
+				data-metrics="{}"><b>Playlist</b></button></li>
+		<li class=""><button gaEvent="click" gaCategory="player" gaBind="click" (click)="minimizeplay()"
+				class="btn-playlist " data-metrics="{}"><b><i style="font-size: 18px;"
+						class="{{minimizeStatus}}"></i></b></button></li>
+	</ul>
+	<div class="side-sticky">
+		<app-ads [width]="300" [height]="250"></app-ads>
+	</div>
+</div>
+
+	

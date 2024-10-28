@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html data-capo>
+	<!-- Mirrored from rifanuxt.softivuslab.com/contest-details-one/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2024 11:10:53 GMT -->
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1">
+		<title>
+			Ghanatalksradio - Online Lotto &amp;
+		</title>
+
+		<link href="../npm/bootstrap-icons%401.11.3/font/bootstrap-icons.min.css">
+		<meta name="description"
+			content="Ghanatalksradio - Online Lotto">
+	</head>
+
+	<body>
+		<div id="__nuxt">
+
+			<!-- <app-login *ngIf="showLogin" (closeModal)="toggleLoginModal()" style="z-index: 99999;"></app-login> -->
+
+			<div class="inner-hero-section">
+				<div class="bg-shape">
+					<img src="/assets/images/elements/inner-hero-shape.png"
+						alt="inner_hero_shape">
+				</div>
+				<div class="container">
+					<div style="flex-wrap: wrap;" class="flex-row-sb">
+						<div class="col-lg-8">
+							<ul class="page-list">
+
+								<li>
+									<a href="javascript:void(0)"
+										class>
+										Home
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)"
+										class>
+										Lottery
+									</a>
+								</li>
+								<li *ngIf="raffleDraw">
+									<span>
+										Contest No: {{raffleDraw?.contestCode}}
+									</span>
+								</li>
+
+							</ul>
+						</div>
+						<div style="gap: 10px;" class="flex-row-start">
+							<a *ngIf="user?.role ==='ADMIN'" routerLink="/raffledraws/create">Raffles ||</a>
+							<a *ngIf="user?.role ==='ADMIN'" routerLink="/raffledraws/prizes">Prizes ||</a>
+							<a routerLink="/raffledraws/winners">Winners ||</a>
+							<a *ngIf="user" href="javascript:void(0)" (click)="logout()">Signout</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="pb-120 mt-minus-300">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<div class="clock-wrapper">
+								<p *ngIf="raffleDraw" class="mb-2">
+									This raffle draw ends in:
+								</p>
+								<p *ngIf="!raffleDraw" class="mb-2">
+									No raffle draw event at the moment
+								</p>
+								<div class="clock">
+									<div>
+										<span>{{days || '00'}}</span>
+										<p>days</p>
+									</div>
+									<div>
+										<span>{{hours || '00'}}</span>
+										<p>hours</p>
+									</div>
+									<div>
+										<span>{{minutes || '00'}}</span>
+										<p>minutes</p>
+									</div>
+									<div>
+										<span>{{seconds || '00'}}</span>
+										<p>seconds</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div *ngIf="raffleDraw" class="col-lg-12">
+							<div class="contest-cart">
+								<div class="contest-cart__left">
+									<div class="contest-cart__slider-area">
+										<div [ngStyle]="{'background-image': 'url(' + getBannerImage(raffleDraw.bannerUrl) + ')'}" class="swiper contest-cart__thumb-slider swiper"></div>
+										<ul style="margin:20px" class="social-links align-items-center">
+											<li>Share :</li>
+											<li>
+												<a aria-current="page"
+													href="index.html#"
+													class="router-link-active router-link-exact-active">
+													<svg class="svg-inline--fa fa-facebook-f"
+														style
+														aria-hidden="true"
+														focusable="false"
+														data-prefix="fab"
+														data-icon="facebook-f"
+														role="img"
+														xmlns="http://www.w3.org/2000/svg"
+														viewBox="0 0 320 512">
+														<path class
+															style
+															fill="currentColor"
+															d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z">
+														</path>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a aria-current="page"
+													href="index.html#"
+													class="router-link-active router-link-exact-active">
+													<svg class="svg-inline--fa fa-twitter"
+														style
+														aria-hidden="true"
+														focusable="false"
+														data-prefix="fab"
+														data-icon="twitter"
+														role="img"
+														xmlns="http://www.w3.org/2000/svg"
+														viewBox="0 0 512 512">
+														<path class
+															style
+															fill="currentColor"
+															d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+														</path>
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a aria-current="page"
+													href="index.html#"
+													class="router-link-active router-link-exact-active">
+													<svg class="svg-inline--fa fa-instagram"
+														style
+														aria-hidden="true"
+														focusable="false"
+														data-prefix="fab"
+														data-icon="instagram"
+														role="img"
+														xmlns="http://www.w3.org/2000/svg"
+														viewBox="0 0 448 512">
+														<path class
+															style
+															fill="currentColor"
+															d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+														</path>
+													</svg>
+												</a>
+											</li>
+	
+										</ul>
+									</div>
+								</div>
+								<div class="contest-cart__right">
+									<h4 class="subtitle">
+										Enter now for a chance to win
+									</h4>
+									<h3 class="contest-name">
+										{{raffleDraw.raffleName}}
+									</h3>
+									<p>
+										This competition has a maximum of {{raffleDraw.maxEntries}} entries.
+									</p>
+									<div class="contest-num">
+										Contest no:
+										<span>
+											{{raffleDraw.contestCode}}
+										</span>
+									</div>
+									<h4>Tickets Sold</h4>
+									<div class="ticket-amount">
+										<span class="left">
+											{{raffleDraw.ticketSold}}
+										</span>
+										<span class="right">
+											{{raffleDraw.maxEntries}}
+										</span>
+										<div [attr.data-perc]="calculatePercent()"
+											class="progressbar">
+											<div [ngStyle]="{ width: calculatePercent() + '%' }"
+												class="bar"></div>
+										</div>
+										<p>
+											Only {{raffleDraw.maxEntries - raffleDraw.ticketSold}} remaining!
+										</p>
+									</div>
+									<div class="ticket-price">
+										<span class="amount">
+											${{raffleDraw.ticketPrice}}
+										</span>
+										<small>Per ticket</small>
+										<div *ngIf="!user"
+											style="gap: 10px; padding-top: 20px; align-items: center;"
+											class="flex-row-start">
+											<div class="number-field">
+												<div class="field-paymentrequest-username">
+													<app-gcountry-select (countrySelected)="handleCountrySelected($event)"
+														class="col-12">
+													</app-gcountry-select>
+													<input [(ngModel)]="rafflePayload.phone"
+														type="text"
+														(keyup)="isValidPhone($event)"
+														id="paymentrequest-username"
+														style="color: white!important"
+														class="form-control"
+														name="phone"
+														placeholder="e.g. 8012345678"
+														required>
+
+														<small *ngIf="phoneErrorMessage" style="color: orangered">{{phoneErrorMessage}}</small>
+												</div>
+											</div>
+											<span style="font-size: 16px;line-height: 8px;">
+												Already registered?
+												<a routerLink="/raffledraws/login"
+													class
+													href="javascript:void(0)">
+													Login
+												</a>
+											</span>
+										</div>
+									</div>
+									<div class="d-flex flex-wrap align-items-center mb-30">
+										<div class="select-quantity">
+											<span class="caption">Quantity</span>
+											<div class="quantity">
+												<input [(ngModel)]="rafflePayload.qty"
+													[min]="1"
+													[max]="raffleDraw.maxTicket"
+													(keyup)="updateQty()"
+													name="qty"
+													style="z-index: 999;position: relative;"
+													type="number">
+												<div class="quantity-nav">
+													<div (click)="updateQty(-1)"
+														class="quantity-button false">
+														<i class="fas fa-minus"></i>
+													</div>
+													<div (click)="updateQty(1)"
+														class="quantity-button quantity-up false">
+														<i class="fas fa-plus"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="mt-sm-0 mt-3">
+											<button *ngIf="user"
+												(click)="togglePaymentOptionsModal()"
+												data-toggle="modal"
+												data-target="#paymentModal"
+												style="color: white!important;justify-content: center;"
+												class="cmn-btn style--three flex-row-sb">
+												<app-gwhite-loader *ngIf="buySpinner"></app-gwhite-loader>
+												<span>buy tickets</span>
+											</button>
+											<ng-container *ngIf="!user">
+												<button [disabled]="rafflePayload?.phone?.toString()?.trim()?.length == 0 || phoneErrorMessage"
+													[ngStyle]="{'opacity': rafflePayload?.phone?.toString().trim()?.length == 0 || phoneErrorMessage ? 0.5 : 1}"
+													(click)="togglePaymentOptionsModal()"
+													data-toggle="modal"
+													data-target="#paymentModal"
+													style="color: white!important;justify-content: center;"
+													class="cmn-btn style--three flex-row-sb">
+													<app-gwhite-loader *ngIf="buySpinner"></app-gwhite-loader>
+													<span>buy tickets</span>
+												</button>
+											</ng-container>
+										</div>
+									</div>
+									
+
+								</div>
+								<div style="width: 100%" class="swiper swiper contest-cart__nav-slider">
+									<h2 style="margin-left: 30px;" class="title gradient-text">Prizes to be won!!</h2>
+									<div class="line"></div>
+									<app-prize-carousel [prizes]="raffleDraw.prizes"></app-prize-carousel>
+								</div>
+							</div>
+						</div>
+						<div *ngIf="raffleDraw" class="col-lg-10">
+							<div class="contest-description">
+								<ul class="nav nav-tabs justify-content-center mb-30 pb-4 border-0"
+									id="myTab"
+									role="tablist">
+									<li class="nav-item"
+										role="presentation">
+										<button class="cmn-btn active"
+											id="description-tab"
+											data-bs-toggle="tab"
+											data-bs-target="#description"
+											role="tab"
+											aria-controls="description"
+											aria-selected="true">
+											<span class="mr-3"></span>
+											description
+										</button>
+									</li>
+									<li class="nav-item"
+										role="presentation">
+										<a class="cmn-btn"
+											id="details-tab"
+											style="color: white!important;"
+											routerLink="/raffledraws/winners"
+											role="tab"
+											aria-controls="details"
+											aria-selected="false">
+											<span class="mr-3"></span>
+											Winners
+										</a>
+									</li>
+								</ul>
+								<div class="tab-content"
+									id="myTabContent">
+									<div class="tab-pane fade show active"
+										id="description"
+										role="tabpanel"
+										aria-labelledby="description-tab">
+
+										<div id="raffle-description"
+											class="content-block">
+											<h3 class="title">Raffle Description</h3>
+											<p>
+												{{raffleDraw.description}}
+											</p>
+										</div>
+										<div id="how-to-play"
+											class="content-block">
+											<h3 class="title">How to Play</h3>
+											<div class="row mb-none-30">
+												<ng-container *ngFor="let step of raffleDraw.competitionDetails; let i = index;">
+													<div class="col-lg-4 col-sm-6 mb-30">
+														<div class="icon-item">
+															<div class="icon-item__thumb">
+																<div class="step-number">
+																	<span>{{i + 1}}</span>
+																</div>
+															</div>
+															<div class="icon-item__content">
+																<p>{{step.message}}</p>
+															</div>
+														</div>
+													</div>
+												</ng-container>
+											</div>
+										</div>
+
+									</div>
+									<div class="tab-pane"
+										id="details"
+										role="tabpanel"
+										aria-labelledby="details-tab">
+										<div class="content-block">
+											<h3 class="title">Competition Details</h3>
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ex eget mi
+											sollicitudin consequat. Sed rhoncus ligula vel justo dignissim aliquam.
+											Maecenas non est vitae ipsum luctus feugiat. Fusce purus nunc, sodales at
+											condimentum sed, ullamcorper a nulla. Nam justo est, venenatis quis tellus
+											in, volutpat eleifend nunc. Vestibulum congue laoreet mi non interdum. Ut ut
+											dapibus tellus.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+		<div id="teleports"></div>
+		<app-payment-modal *ngIf="showPaymentOptionsModal"
+			[user]="user"
+			[qty]="rafflePayload.qty"
+			[phone]="rafflePayload.phone"
+			[amount]="ticketAmount"
+			(closeModal)="togglePaymentOptionsModal()">
+		</app-payment-modal>
+
+	</body>
+
+</html>

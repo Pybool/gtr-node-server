@@ -1,0 +1,51 @@
+<div *ngIf="errorPage">
+  <app-error></app-error>
+
+</div>
+<div class="show-single" *ngIf="singleData && !errorPage">
+  <header class="contentheader contentheader--one"></header>
+  <section id="main-section">
+    <div class="container">
+      <div class="podcast">
+        <h3 class="podcast__episode_title">{{singleData.details.name}}</h3>
+        <h5 class="podcast__title">
+          {{singleData.data.start_date| date: 'fullDate'}}
+        </h5>
+
+        <div style="background-image: url('https://api.ghanatalksradio.com/assets/images/{{getImage(singleData)}}?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300')" class="podcast__meta">
+          <app-podcast-player [data]="singleData"></app-podcast-player>
+          <!-- <audio controls style="width:90%">
+            <source src="{{singleData.data.url}}">
+            Your browser does not support the audio tag.
+          </audio>
+          <a href="#" class="artwork">
+
+            <img class="imgview"
+              src="https://api.ghanatalksradio.com/assets/images/{{getImage(singleData)}}?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300"
+              alt="">
+          </a> -->
+        </div>
+      </div>
+      <div>
+        <h1>
+          {{singleData.data.title}}
+        </h1>
+        <p>
+          {{singleData.data.description}}
+        </p>
+      </div>
+
+    </div>
+    <div style="margin:10px 20px 50px 10px;display:flex;flex-direction:column;gap:30px" *ngIf="external(singleData.details.external).length>0">
+      <div style="font-size: medium;" >PodCast are also available on:</div>
+      <div style="display:flex;gap:30px">
+        <ng-container *ngFor="let channel of external(singleData.details.external)" >
+          <a *ngIf="channel[channels(channel)]" target="_blank" href="{{channel[channels(channel)]}}">
+            <img style="width:100px;height:auto"  class="available-img" src="assets/ghanatalksradio/images/{{channels(channel)}}.png" />
+            </a>
+        </ng-container>
+      
+    </div>
+    </div>
+  </section>
+</div>

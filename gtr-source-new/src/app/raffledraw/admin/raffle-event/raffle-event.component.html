@@ -1,0 +1,268 @@
+<div class="container mx-auto"
+	style="background: whitesmoke;padding: 20px;margin: 40px;">
+	<div class="">
+		<div style="flex-wrap: wrap;" class="flex-row-sb">
+			<div class="col-lg-8">
+				<ul class="page-list">
+					<li>
+						<a href="javascript:void(0)">Home</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">Lottery</a>
+					</li>
+					<li>
+						<span>
+							Raffle Draws
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="flex-row-start"
+				style="gap: 10px;">
+				<a href="javascript:void(0)" routerLink="/raffledraws/play">
+					Raffle Home ||
+				</a>
+				<a href="javascript:void(0)" routerLink="/raffledraws/prizes">
+					Prizes ||
+				</a>
+				<a href="javascript:void(0)" routerLink="/raffledraws/winners">
+					Winners ||
+				</a>
+				<a (click)="logout()" href="javascript:void(0)">Signout</a>
+			</div>
+		</div>
+	</div>
+	<section style="margin-top: 30px;">
+		<div style="padding-bottom: 10px;" class="flex-row-sb">
+			<h3>Raffle Draws</h3>
+			<a (click)="openModal()"
+				style="white-space: nowrap;color: white!important"
+				class="btn btn-primary"
+				cButton
+				color="primary">
+				New RaffleDraw
+			</a>
+		</div>
+		<div style="height: 90vh;overflow-y: auto;">
+			<ng-container *ngFor="let raffleDraw of raffleDraws">
+				<div style="margin-bottom:20px;" class="winner-card mb-30">
+					<input class="upload-receipt" (change)="onFileChange($event)" type="file" hidden accept=".jpg,.png,.jpeg,.PNG" id="fileID-{{raffleDraw.contestCode}}"
+                        style="display:none;">
+					<div class="winner-card__thumb image-container">
+						<img style="width: 100%;max-height: 250px; object-fit: contain; cursor: pointer; color: white"
+						[src]="raffleDraw.bannerUrl" 	
+							alt="Banner {{raffleDraw?.raffleName}}">
+						<button class="upload-btn" (click)="selectFile(raffleDraw)">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 640 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path style="fill: white!important" d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128l-368 0zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39L296 392c0 13.3 10.7 24 24 24s24-10.7 24-24l0-134.1 39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"/></svg>
+						</button>
+					</div>
+					<div class="winner-card__content">
+						<div class="content-top">
+							<div class="left">
+								<h5>
+									{{raffleDraw?.raffleName}}
+								</h5>
+								<a *ngIf="raffleDraw.isActive" (click)="alertComingSoon()" style="color: greenyellow!important"
+									href="javascript:void(0)">
+									Edit
+								</a>
+							</div>
+							<div class="right">
+								<span *ngIf="!raffleDraw.isActive">Draw took place on</span>
+								<span *ngIf="raffleDraw.isActive">
+									Draw started & is on-going!
+								</span>
+								<p *ngIf="!raffleDraw.isActive">
+									{{formatDate(raffleDraw?.raffleEndDate)}}
+								</p>
+								<p *ngIf="raffleDraw.isActive">
+									Ends {{formatDate(raffleDraw?.raffleEndDate)}}
+								</p>
+
+							</div>
+
+						</div>
+						<div class="content-bottom">
+							<div *ngIf="!raffleDraw.isActive"
+								class="number-list-wrapper">
+								<p>Winning Numbers:</p>
+								<ul class="number-list mt-2">
+									<li *ngFor="let winner of raffleDraw?.winningTickets">{{winner}}</li>
+								</ul>
+							</div>
+							<div *ngIf="raffleDraw.isActive"
+								class="number-list-wrapper">
+								<button style="margin-right: 30px;" (click)="confirmRaffleDrawWinnersGenerate(raffleDraw)"
+									class="cmn-btn">
+									Choose Lucky Winners
+								</button>
+								<button 
+									class="cmn-btn">
+									Suspend Raffle draw
+								</button>
+							</div>
+							<div class="right">
+								<p style="white-space: nowrap;">Contest No:</p>
+								<span class="contest-num">
+									{{raffleDraw?.contestCode}}
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ng-container>
+		</div>
+	</section>
+</div>
+
+<!-- Modal Backdrop -->
+<div *ngIf="showModal"
+	class="modal-backdrop"></div>
+
+<!-- Modal Structure -->
+<div *ngIf="showModal"
+	class="modal">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h5 style="color: black;"
+				class="modal-title">
+				Create Raffle
+			</h5>
+			<span (click)="closeModal()"
+				class="close">
+				&times;
+			</span>
+		</div>
+		<div class="modal-body">
+			<div style="
+      overflow-y: auto;
+      padding: 10px;
+      height: 60vh;
+  ">
+				<div>
+					<label>Raffle Name:</label>
+					<input [(ngModel)]="raffleDraw.raffleName"
+						type="text"
+						name="raffleName"
+						required>
+				</div>
+
+				<div>
+					<label>Raffle End Date:</label>
+					<input [(ngModel)]="raffleDraw.raffleEndDate"
+						type="date"
+						name="raffleEndDate"
+						required>
+				</div>
+
+				<div>
+					<label>Max Entries:</label>
+					<input [(ngModel)]="raffleDraw.maxEntries"
+						type="number"
+						name="maxEntries"
+						required>
+				</div>
+
+				<!-- <div>
+					<label>Contest Code:</label>
+					<input [(ngModel)]="raffleDraw.contestCode"
+						type="text"
+						name="contestCode"
+						required>
+				</div> -->
+
+				<!-- <div>
+					<label>Tickets Sold:</label>
+					<input [(ngModel)]="raffleDraw.ticketSold"
+						type="number"
+						name="ticketSold"
+						required>
+				</div> -->
+
+				<div>
+					<label>Ticket Price:</label>
+					<input [(ngModel)]="raffleDraw.ticketPrice"
+						type="number"
+						name="ticketPrice"
+						required>
+				</div>
+
+				<div>
+					<label>Max Tickets:</label>
+					<input [(ngModel)]="raffleDraw.maxTicket"
+						type="number"
+						name="maxTicket"
+						required>
+				</div>
+
+				<div>
+					<label>Max Winners:</label>
+					<input [(ngModel)]="raffleDraw.maxWinners"
+						type="number"
+						name="maxWinners"
+						required>
+				</div>
+
+				<div>
+					<label>Description:</label>
+					<textarea [(ngModel)]="raffleDraw.description"
+						name="description"
+						required></textarea>
+				</div>
+
+				<div>
+					<label>Prizes:</label>
+					<app-custom-dropdown [resetOnSelect]="true"
+						[items]="flatPrizes"
+						(selectionChanged)="onSelectionChange($event)"></app-custom-dropdown>
+					<div style="justify-content: flex-start; margin:10px; gap: 20px"
+						class="flex-row-sb">
+						<ng-container *ngFor="let selectedPrize of selectedPrizes; let i = index;">
+							<div class="selected-prizes">
+								<div class="pill">
+									{{selectedPrize.value}}
+								</div>
+								<button (click)="removePrize(i)"
+									class="deselect-btn">
+									&times;
+								</button>
+							</div>
+						</ng-container>
+					</div>
+				</div>
+
+				<div>
+					<label>
+						Competition Details:
+					</label>
+					<div id="competitionDetailsContainer"></div>
+					<button (click)="addCompetitionDetail()"
+						type="button"
+						class="btn-primary"
+						style="margin-top: 10px;">
+						Add New Detail
+					</button>
+				</div>
+				<div style="align-items:center; margin-top: 30px;" class="flex-row-start">
+					<label style="width: fit-content!important">
+						Use as default rules:
+					</label>
+					<input [(ngModel)]="raffleDraw.useCompetitionDetailsAsDefault"  style="width: 100px; margin: 0px; padding: 0px" type="checkbox" class="form-check"/>
+				</div>
+
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button (click)="closeModal()"
+				class="btn-secondary">
+				Close
+			</button>
+			<button (click)="createRaffle()"
+				class="cmn-btn flex-row-sb">
+				<app-gwhite-loader *ngIf="showSpinner"
+					class="spinner"></app-gwhite-loader>
+				<span>Submit</span>
+			</button>
+		</div>
+	</div>
+</div>

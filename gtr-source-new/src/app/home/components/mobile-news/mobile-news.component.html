@@ -1,0 +1,72 @@
+<!-- article box -->
+
+    <div    *ngFor="let newsArray of news; let i=index">
+    <div class="article-box"  *ngIf="i===3">
+
+    <div class="title-section">
+        <h1><a [routerLink]="['/category', 'ghana-newspaper']" style="color:rgb(34, 34, 34)"><span>News in Video</span></a></h1>
+    </div>
+     <div class="image-slider snd-size">
+        <div class="bx-wrapper" style="max-width: 100%;">
+        <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 350px;">
+        <ul class="bxsliderheader" *ngFor="let newsArray of video" style="width: auto; position: relative;">
+            <li *ngFor="let newsSingle of newsArray" style="float: none; list-style: outside none none; position: absolute; width: 575px; z-index: 0;">
+                <div class="news-post video-post">
+                    <img  height="100%" width="100%" style=" height:350px;width:100%;object-fit:cover" alt="" src="{{newsSingle.image}}">
+                    <a href="{{getVideoLink(newsSingle.post_content)}}" class="video-link"><i class="fa fa-play-circle-o"></i></a>
+                    <div class="hover-box" style="width:100%">
+                        <div class="inner-hover">
+                        <h2><a [routerLink]="['/', newsSingle.post_name]">{{
+                            (newsSingle.post_title.length>80)? (newsSingle.post_title
+                            | slice:0:80)+'..':(newsSingle.post_title) }}</a></h2>
+                            <ul class="post-tags">
+                                <li><i class="fa fa-clock-o"></i>{{newsSingle.post_date| date: 'fullDate'}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>                                               
+        </ul>
+        </div>
+        </div>
+    </div>
+    </div>
+
+<div class="article-box">
+
+    <div class="title-section">
+        <h1><a [routerLink]="['/category', getUrl(newsArray.url)]"  style="color:rgb(34, 34, 34)"><span>{{getName(newsArray.name)}}</span></a></h1>
+    </div>
+
+    <div class="news-post article-post">
+        <div class="parent">
+            <div class="imagelar">
+                <div class="post-gallery" style="width:220px;">
+                    <img height="162px" width="220px"  style=" height:162px;width:220px;object-fit:cover" alt="{{newsArray.data[0].post_title}}" src="{{newsArray.data[0].image}}">
+                </div>
+            </div>
+            <div class="articlar">
+                <div class="post-content">
+                    <h2><a [routerLink]="['/', newsArray.data[0].post_name]">{{
+                        (newsArray.data[0].post_title.length>150)? (newsArray.data[0].post_title
+                        | slice:0:150)+'..':(newsArray.data[0].post_title) }}</a></h2>
+                    
+                </div>  
+            </div>
+            
+        </div>
+         <div style="margin-right:10px;margin-left:10px">
+                <ul class="post-tags">
+                        <li><i class="fa fa-clock-o"></i>{{newsArray.data[0].post_date|
+                            date: 'fullDate'}}</li>
+                    </ul>
+                    <p>{{getContent(newsArray.data[0].post_content) }}</p>
+                    <a [routerLink]="['/', newsArray.data[0].post_name]" class="read-more-button"><i class="fa fa-arrow-circle-right"></i>Read More</a></div>
+    </div>
+
+    
+</div>
+</div>
+
+
+

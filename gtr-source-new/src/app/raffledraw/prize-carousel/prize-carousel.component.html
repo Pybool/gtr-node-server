@@ -1,0 +1,22 @@
+
+  <div class="carousel-gallery">
+      <div class="swiper-container">
+          <div style="justify-content: flex-start;" class="swiper-wrapper flex-row-sb">
+              <ng-container *ngFor="let prize of prizes">
+                <div  class="swiper-slide">
+                    <a  href="{{getPrizeImage(prize)}}" data-fancybox="gallery">
+                        <div  class="image" [ngStyle]="{ 'background-image': 'url(' + getPrizeImage(prize) + ')' }">
+                            <div class="overlay">
+                                <em class="mdi mdi-magnify-plus"></em>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="description">{{prize?.description}}</div>
+                </div>
+              </ng-container>
+          </div>
+          <div class="swiper-pagination"></div>
+      </div>
+  </div>
+
+  

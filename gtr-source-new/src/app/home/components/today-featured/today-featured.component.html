@@ -1,0 +1,90 @@
+<!-- grid box -->
+
+<div style="position: relative">
+  <!-- the position of the parent container must be set to relative -->
+  <!-- It is really important to set loaderId for non-master loader -->
+  <ngx-ui-loader [loaderId]="'app-today-featured-01'"></ngx-ui-loader>
+</div>
+<div class="grid-box">
+
+    <div class="title-section">
+     <h1><a [routerLink]="['/page',1]" style="color:rgb(34, 34, 34)"><span>Today's Featured</span></a></h1>
+    </div>
+    
+        <div class="row" *ngFor="let newsArray of news">
+            <ng-container *ngIf="newsArray.length>=4">
+        <div class="col-md-6">
+            <div class="news-post image-post2">
+                <div class="post-gallery">
+                    <img height="300px"  width="368px" style=" height:300px;width:368px;object-fit:cover" src="{{newsArray[0].image}}" alt="">
+                    <div class="hover-box">
+                        <div class="inner-hover">
+                            <a class="category-post tech" [routerLink]="['/category', newsArray[0].categoryname | lowercase,1]">{{newsArray[0].categoryname}}</a>
+                            <h2><a [routerLink]="['/', newsArray[0].post_name]">{{
+                                (newsArray[0].post_title.length>80)? (newsArray[0].post_title
+                                | slice:0:80)+'..':(newsArray[0].post_title) }} </a></h2>
+                            <ul class="post-tags">
+                                <li><i class="fa fa-clock-o"></i>{{newsArray[0].post_date|
+                                    date: 'fullDate'}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <ul class="list-posts">
+                <li>
+                    <img src="{{newsArray[1].image}}" alt="">
+                    <div class="post-content">
+                        <a [routerLink]="['/category', newsArray[1].categoryname | lowercase,1]">{{newsArray[1].categoryname}}</a>
+                        <h2><a [routerLink]="['/', newsArray[1].post_name]">{{
+                            (newsArray[1].post_title.length>80)? (newsArray[1].post_title
+                            | slice:0:80)+'..':(newsArray[1].post_title) }} </a></h2>
+                        <ul class="post-tags">
+                            <li><i class="fa fa-clock-o"></i>{{newsArray[1].post_date|
+                                date: 'fullDate'}}</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <img src="{{newsArray[2].image}}" alt="">
+                    <div class="post-content">
+                        <a [routerLink]="['/category', newsArray[2].categoryname | lowercase,1]">{{newsArray[2].categoryname}}</a>
+                        <h2><a [routerLink]="['/', newsArray[2].post_name]">{{
+                            (newsArray[2].post_title.length>80)? (newsArray[2].post_title
+                            | slice:0:80)+'..':(newsArray[2].post_title) }}</a></h2>
+                        <ul class="post-tags">
+                            <li><i class="fa fa-clock-o"></i>{{newsArray[2].post_date|
+                                date: 'fullDate'}}</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <img src="{{newsArray[3].image}}" alt="">
+                    <div class="post-content">
+                        <a [routerLink]="['/category', newsArray[3].categoryname | lowercase,1]">{{newsArray[3].categoryname}}</a>
+                        <h2><a [routerLink]="['/', newsArray[3].post_name]">{{
+                            (newsArray[3].post_title.length>80)? (newsArray[3].post_title
+                            | slice:0:80)+'..':(newsArray[3].post_title) }}</a></h2>
+                        <ul class="post-tags">
+                            <li><i class="fa fa-clock-o"></i>{{newsArray[3].post_date|
+                                date: 'fullDate'}}</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    </div>
+
+    
+    <div class="center-button">
+        <a (click)="moreFeed()" href="javascript:void(0)"><i class="fa fa-refresh"></i> More from featured</a>
+    </div>
+
+</div>
+<!-- End grid box -->

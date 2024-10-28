@@ -1,0 +1,25 @@
+::ng-deep{
+    .nt-title{
+        background-color: rgb(244, 67, 54)!important;
+        span{
+            border-left-color:rgb(244, 67, 54)!important;
+        }
+    }
+    .newsticker{
+        background-color: #262626!important;
+        border-color: #424242!important;
+    }
+    .nt-navi{
+        span{
+            i{
+                border-color: rgb(244, 67, 54)!important;
+            }
+        }
+        
+    }
+    .nt-content{
+        label{
+            color:white!important;
+        }
+    }
+}

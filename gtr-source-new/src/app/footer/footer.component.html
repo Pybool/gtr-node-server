@@ -1,0 +1,132 @@
+<!-- <link rel="stylesheet" type="text/css" href="/assets/ghanatalksradio/css/bootstrap.min.css" media="screen"> -->
+<div class="footer-cover">
+<footer>
+    <div class="container">
+        <div class="footer-widgets-part">
+            <div style="gap:20px" class="flex-row-start" *ngIf="newsData?.length>0">
+                <div class="responsive-col">
+                    <div class="widget text-widget">
+                        <h1>About</h1>
+                        <p>Ghana like most West African countries hardly has a platform where the voice of the youth is heard. This cuts across politics, sports, education et al. The aim of Ghana Talks radio is to give the youth a platform where their voice would be heard via the radio, social media and website.</p>
+                    </div>
+                    <div class="widget social-widget">
+                        <h1>Stay Connected</h1>
+                        <ul class="social-icons">
+                           <li><a target="_blank" href="https://www.facebook.com/GhanaTalksRadio/" class="facebook"><i class="fab fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="https://www.twitter.com/ghanatalksradio/" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/GhanaTalksRadio" class="youtube"><i class="fab fa-youtube"></i></a></li>
+                            <li><a target="_blank" href="https://www.instagram.com/ghanatalksradio/" class="instagram"><i class="fab fa-instagram"></i></a></li>
+                            <li><a target="_blank" href="https://vimeo.com/user108014254" class="vimeo"><i class="fab fa-vimeo-square"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="responsive-col">
+                    <div class="widget posts-widget">
+                        <h1>Available for Download</h1>
+                        <ul class="list-posts">
+                            <li>
+                                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ghanatalksradio.tv">
+                                    <img src="assets/ghanatalksradio/images/play.png" alt="play">
+                                </a>
+                                
+                               
+                            </li>
+
+                            <li>
+                                <a target="_blank" href="https://apps.apple.com/us/app/ghanatalksradio/id1511977360">
+                                    <img src="assets/ghanatalksradio/images/ios.png" alt="ios">
+                                </a>
+                              
+                                
+                            </li>
+
+                            <li>
+                                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ghanatalksradio.tv">
+                                    <img src="assets/ghanatalksradio/images/apple-tv.svg" alt="apple-tv">
+                                </a>
+                               
+                               
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.amazon.com/gp/product/B0BT1ZLLDV">
+                                    <img src="assets/ghanatalksradio/images/fire.png" alt="fire-stick">
+                                </a>
+                                
+                               
+                            </li>
+                            <li>
+                                <a target="_blank" href="">
+                                    <img src="assets/ghanatalksradio/images/roku-logo.jpeg" alt="roku">
+                                </a>
+                               
+                               
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.amazon.co.uk/GhanaTalksRadio/dp/B0BRYP2LDN">
+                                    <img src="assets/ghanatalksradio/images/amazon-store.png" alt="amazon">
+                                </a>
+                               
+                               
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://appgallery.huawei.com/app/C107577607">
+                                    <img src="assets/ghanatalksradio/images/huawei-store.png" alt="huawei">
+                                </a>
+                               
+                               
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="responsive-col">
+                    <div class="widget categories-widget">
+                        <h1>Categories</h1>
+                        <ul class="category-list">
+                            <li *ngFor="let foot of footerData">
+                                <a [routerLink]="['/category', foot.url]">{{foot.name}} <span>{{foot.count}}</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="responsive-col">
+                    <div class="widget flickr-widget">
+                        <h1>News</h1>
+                        <ul class="flickr-list">
+                            <li><a [routerLink]="['/',newsData[3].data[0].post_name]"><img src="{{newsData[3].data[0].image}}" alt="{{newsData[3].data[0].post_title}}"></a></li>
+                            <li><a [routerLink]="['/',newsData[4].data[0].post_name]"><img src="{{newsData[4].data[0].image}}" alt="{{newsData[4].data[0].post_title}}"></a></li>
+                            <li><a [routerLink]="['/',newsData[5].data[0].post_name]"><img src="{{newsData[5].data[0].image}}" alt="{{newsData[5].data[0].post_title}}"></a></li>
+                            <li><a [routerLink]="['/',newsData[6].data[0].post_name]"><img src="{{newsData[6].data[0].image}}" alt="{{newsData[6].data[0].post_title}}"></a></li>
+                            <li><a [routerLink]="['/',newsData[7].data[0].post_name]"><img src="{{newsData[7].data[0].image}}" alt="{{newsData[7].data[0].post_title}}"></a></li>
+                            <li><a [routerLink]="['/',newsData[8].data[0].post_name]"><img src="{{newsData[8].data[0].image}}" alt="{{newsData[8].data[0].post_title}}"></a></li>
+                        </ul>
+                        <a [routerLink]="['/page', '1']">View more News...</a>
+                    </div>
+                    <div style="width: 100%;display:flex">
+                        <a class="ios" href="https://apps.apple.com/gb/developer/ghana-talks-radio-ltd/id1511977359" target="_blank" style="width: 49%;"><img style="width: 100%;" src="assets/ghanatalksradio/images/ios.png" /></a>
+                        <a class="play" href="https://play.google.com/store/apps/details?id=com.ghanatalksradio" target="_blank" style="width: 49%;"><img style="width: 100%;" src="assets/ghanatalksradio/images/play.png" /></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer-last-line">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; COPYRIGHT 2023 Ghanatalksradio.com</p>
+                </div>
+                <div class="col-md-6">
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a [routerLink]="['/about-us']">About Us</a></li>
+                            <li><a [routerLink]="['/contact-us']">Contact Us</a></li>
+                            <li><a href="https://www.ghanatalksradio.com/sitemap.xml" target="_blank">Sitemap</a></li>
+                            <li><a [routerLink]="['/privacy-policy']"> Privacy Policy</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<!-- End footer -->

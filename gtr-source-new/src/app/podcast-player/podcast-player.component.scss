@@ -1,0 +1,467 @@
+$white: #fff;
+$text-color: #777;
+$light-gray: #dddfe1;
+$medium-gray: #cacaca;
+$blue: #4a9cf1;
+$audio-gray: lighten($light-gray, 3%);
+$lato: 'Lato', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  transition: all 0.3s ease-in-out;
+}
+
+.container {
+  padding-top: 120px;
+  color: $text-color;
+}
+
+.credit {
+  max-width: 630px;
+  margin: auto;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: right;
+  text-transform: uppercase;
+  
+  @media screen and (max-width: 640px) {
+    padding: 0 10px;
+  }
+  
+  a {
+    border-bottom: 1px solid transparent;
+    color: $blue;
+    text-decoration: none;
+    
+    &:hover {
+      border-bottom: 1px solid darken($light-gray, 5%);
+    }
+  }
+}
+
+.audio-player {
+  background-color: $audio-gray;
+  color: $text-color;
+  font-family: $lato;
+  text-align: initial;
+//   max-width: 630px;
+  margin: auto;
+
+  .audio-player-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    height: fit-content;
+
+    .audio-player-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 110px;
+      height: 110px;
+
+      .audio-image-box {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      @media screen and (max-width: 640px) {
+        display: none;
+      }
+    }
+
+    .audio-player-controls {
+      margin-left: 110px;
+
+      @media screen and (max-width: 640px) {
+        margin-left: 0;
+      }
+
+      .audio-top {
+        height: fit-content;
+
+        .audio-title {
+          float: left;
+          width: 83%;
+          height: 100%;
+
+          h3 {
+            margin: 5px;
+            padding: 13px 0 0 13px;
+            text-transform: uppercase;
+            
+            span:first-child {
+              font-size: 14px;
+              font-weight: 300;
+              display: block;
+              letter-spacing: 1px;
+            }
+
+            span.audio-title {
+              display: block;
+              font-weight: 500;
+              font-size: 18px;
+              letter-spacing: 0.5px;
+
+              @media screen and (max-width: 500px) {
+                font-size: 9px;
+                line-height: 1.1;
+              }
+            }
+
+            @media screen and (max-width: 768px) {
+              padding-top: 18px;
+
+              span:first-child {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+
+        .audio-date {
+          height: 100%;
+          width: 17%;
+          border-right: 3px solid $white;
+          float: left;
+          text-align: center;
+          line-height: 1.2;
+          padding: 13px 0 0;
+
+          .audio-day {
+            font-weight: 700;
+            font-size: 24px;
+            display: block;
+            letter-spacing: 1px;
+          }
+          .audio-month {
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+          }
+
+          @media screen and (max-width: 600px) {
+            padding: 15px 0 0;
+
+            .audio-day {
+              font-size: 22px;
+            }
+            .audio-month {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      .audio-time {
+        width: 17%;
+        border-right: 3px solid $white;
+        font-size: 12px;
+        padding: 11px;
+        text-align: center;
+        float: left;
+      }
+
+      .audio-player-button {
+        display: block;
+        position: relative;
+        float: none;
+        cursor: pointer;
+
+        svg {
+          display: block;
+          text-align: center;
+          transition: all 0.3s ease-in-out;
+          fill: $text-color;
+          width: 18px;
+          height: 18px;
+          margin: auto;
+        }
+
+        .icon-play {
+          display: block;
+        }
+        .icon-pause {
+          display: none;
+        }
+
+        &.playing {
+          .icon-pause {
+            display: block;
+          }
+          .icon-play {
+            display: none;
+          }
+        }
+      }
+
+      .audio-player-button:hover {
+        background-color: $light-gray;
+
+        svg {
+          fill: $blue;
+        }
+      }
+
+      .audio-player-button::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -12px;
+        right: 0;
+        width: 0px;
+        height: 0px;
+        margin: auto;
+        line-height: 0;
+      }
+
+      .audio-player-button-wrappers {
+        overflow: hidden;
+        *zoom: 1;
+        display: block;
+        width: 17%;
+        float: left;
+        border-right: 3px solid $white;
+
+        a {
+          display: block;
+          padding: 9px;
+        }
+      }
+
+      .audio-download {
+        width: 17%;
+        float: left;
+        display: block;
+        border-right: 3px solid $white;
+        color: $text-color;
+        text-transform: uppercase;
+        text-align: center;
+
+        a {
+          padding: 6px 0 2px;
+          display: block;
+          transition: all 0.3s ease-in-out;
+
+          svg {
+            fill: $text-color;
+            height: 24px;
+            width: 24px;
+          }
+
+          &:hover {
+            background-color: $light-gray;
+
+            svg {
+              fill: $blue;
+            }
+          }
+        }
+      }
+
+      /* Audio Player Animations */
+      @-moz-keyframes loadingStripes {
+        0% {
+          background-position: -20px; }
+
+        100% {
+          background-position: 0px; } }
+
+      @-webkit-keyframes loadingStripes {
+        0% {
+          background-position: -20px; }
+
+        100% {
+          background-position: 0px; } }
+
+      @-o-keyframes loadingStripes {
+        0% {
+          background-position: -20px; }
+
+        100% {
+          background-position: 0px; } }
+
+      @-ms-keyframes loadingStripes {
+        0% {
+          background-position: -20px; }
+
+        100% {
+          background-position: 0px; } }
+
+      @keyframes loadingStripes {
+        0% {
+          background-position: -20px; }
+
+        100% {
+          background-position: 0px; } }
+
+      .audio-player-progress {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: $white;
+        overflow: hidden;
+      }
+
+      .audio-player-progress.loading {
+        background-image: -webkit-linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+        background-image: -moz-linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+        background-image: -o-linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+        background-image: linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+        background-size: 20px 20px;
+        animation: loadingStripes 700ms linear infinite; }
+
+      .audio-player-progress-bar {
+        transition: width 550ms linear;
+        display: block;
+        height: 100%;
+        width: 0px;
+        max-width: 100%;
+        background-color: $blue;
+      }
+
+      .audio-volume-wrapper {
+        display: block;
+        float: left;
+        width: 49%;
+
+        .audio-volume-icon {
+          float: left;
+          padding: 7px 8px 0 16px;
+
+          svg {
+            fill: $text-color;
+            height: 15px;
+            width: 15px;
+          }
+        }
+
+        .audio-volume {
+          display: block;
+          float: left;
+          margin-top: 14px;
+          width: inherit;
+          height: 8px;
+          background-color: darken($medium-gray, 5%);
+          overflow: hidden;
+        }
+        .audio-volume-bar {
+          -webkit-transition: width 200ms linear;
+          -moz-transition: width 200ms linear;
+          -o-transition: width 200ms linear;
+          transition: width 200ms linear;
+          display: block;
+          height: 100%;
+          width: 0px;
+          max-width: 100%;
+          background-color: $text-color;
+        }
+      }
+    }
+  }
+
+  .audio-player-inner {
+    background-color: $audio-gray;
+  }
+}
+
+/************* jQuery Appear *************/
+/** https://github.com/chrishammered/jQuery-Appear **/
+
+/**** ANIMATIONS ****/
+
+/***************/
+/**** FADE ****/
+/***************/
+
+/*** Fade In ***/
+[data-appear="fade-in"] {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  &.has-appeared {
+    opacity: 1
+  }
+}
+
+/* Fade Right */
+[data-appear="fade-right"] {
+  transform: translateX(-32px);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out,
+              opacity 0.5s ease-in-out;
+
+  &.has-appeared {
+    transform: translateX(0);
+    opacity: 1
+  }
+}
+
+/* Fade Left */
+[data-appear="fade-left"] {
+  transform: translateX(32px);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out,
+              opacity 0.5s ease-in-out;
+
+  &.has-appeared {
+    transform: translateX(0);
+    opacity: 1
+  }
+}
+
+/*** Fade Up ***/
+[data-appear="fade-up"] {
+  transform: translateY(32px);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out,
+              opacity 0.5s ease-in-out;
+
+  &.has-appeared {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+
+/*** Fade Down ***/
+[data-appear="fade-down"] {
+  transform: translateY(-32px);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out,
+              opacity 0.5s ease-in-out;
+
+  &.has-appeared {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+
+
+/***************/
+/**** SCALE ****/
+/***************/
+
+/*** Scale Up ***/
+[data-appear="scale-up"] {
+  transform: scale(0.75);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out,
+              opacity 0.5s ease-in-out;
+
+  &.has-appeared {
+    transform: scale(1);
+    opacity: 1
+  }
+}

@@ -1,0 +1,106 @@
+<section class="heading-news2" *ngIf="loaded">
+
+    <div class="container">
+
+    
+<ngx-newsticker [showCounter]="false" [interval]="5000" title="Latest news"  [events]="latestNews"></ngx-newsticker>
+        <div class="iso-call heading-news-box" style="opacity: 1; position: relative; height: 484px;">
+            <div class="image-slider snd-size" style="position: absolute; left: 0px; top: 0px;">
+                <span class="top-stories">TOP STORIES</span>
+                <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 482px;">
+                <ul class="bxsliderheader" style="width: auto; position: relative;">
+                            <li *ngFor="let featuredDate of headerData.data" style="float: none; list-style: outside none none; position: absolute; width: 575px; z-index: 0;">
+                            <div class="news-post image-post">
+                                <img src="{{featuredDate.image}}" alt="{{featuredDate.post_title}}" width="565px" height="472px">
+                                <div class="hover-box">
+                                    <div class="inner-hover">
+                                    <a class="category-post tech" [routerLink]="['/category', featuredDate.categoryname | lowercase,1]">{{featuredDate.categoryname}}</a>
+                                        <h2><a [routerLink]="['/', featuredDate.post_name]">{{featuredDate.post_title}}</a></h2>
+                                        <ul class="post-tags">
+                                            <li><i class="fa fa-clock-o"></i>{{featuredDate.post_date|
+                            date: 'fullDate'}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                            
+                                               
+                </ul>
+                </div>
+                </div>
+            </div>
+            
+                <div class="news-post image-post default-size" style="position: absolute; left: 575px; top: 0px;">
+                <img src="{{headerData.data[6].image}}" alt="" width="277px" height="232px">
+                <div class="hover-box">
+                    <div class="inner-hover">
+                         <a class="category-post {{headerData.data[6].categoryname | lowercase}}" [routerLink]="['/category', headerData.data[6].categoryname | lowercase,1]">{{headerData.data[6].categoryname}}</a>
+                        <h2><a [routerLink]="['/', headerData.data[6].post_name]">{{headerData.data[6].post_title}}</a></h2>
+                        <ul class="post-tags">
+                            <li><i class="fa fa-clock-o"></i><span>{{headerData.data[6].post_date|
+                            date: 'fullDate'}}</span></li>
+                        </ul>
+                        <p>
+
+</p>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="news-post image-post default-size" style="position: absolute; left: 862px; top: 0px;">
+                <img src="{{headerData.data[7].image}}" alt="" width="277px" height="232px">
+                <div class="hover-box">
+                    <div class="inner-hover">
+                         <a class="category-post {{headerData.data[7].categoryname | lowercase}}" [routerLink]="['/category', headerData.data[7].categoryname | lowercase,1]">{{headerData.data[7].categoryname}}</a>
+                        <h2><a [routerLink]="['/', headerData.data[7].post_name]">{{headerData.data[7].post_title}}</a></h2>
+                        <ul class="post-tags">
+                            <li><i class="fa fa-clock-o"></i><span>{{headerData.data[7].post_date|
+                            date: 'fullDate'}}</span></li>
+                        </ul>
+                        <p>
+
+</p>
+                    </div>
+                </div>
+            </div>
+                
+                <div class="news-post image-post default-size" style="position: absolute; left: 575px; top: 242px;">
+                 <img src="{{headerData.data[8].image}}" alt="" width="277px" height="232px">
+                <div class="hover-box">
+                    <div class="inner-hover">
+                         <a class="category-post {{headerData.data[8].categoryname | lowercase}}" [routerLink]="['/category', headerData.data[8].categoryname | lowercase,1]">{{headerData.data[8].categoryname}}</a>
+                        <h2><a [routerLink]="['/', headerData.data[8].post_name]">{{headerData.data[8].post_title}}</a></h2>
+                        <ul class="post-tags">
+                            <li><i class="fa fa-clock-o"></i><span>{{headerData.data[8].post_date|
+                            date: 'fullDate'}}</span></li>
+                        </ul>
+                        <p>
+
+</p>
+                    </div>
+                </div>
+            </div>
+                
+                <div class="news-post image-post default-size" style="position: absolute; left: 862px; top: 242px;">
+                 <img src="{{headerData.data[5].image}}" alt="" width="277px" height="232px">
+                <div class="hover-box">
+                    <div class="inner-hover">
+                         <a class="category-post {{headerData.data[5].categoryname | lowercase}}" [routerLink]="['/category', headerData.data[5].categoryname | lowercase,1]">{{headerData.data[5].categoryname}}</a>
+                        <h2><a [routerLink]="['/', headerData.data[5].post_name]">{{headerData.data[5].post_title}}</a></h2>
+                        <ul class="post-tags">
+                            <li><i class="fa fa-clock-o"></i><span>{{headerData.data[5].post_date|
+                            date: 'fullDate'}}</span></li>
+                        </ul>
+                        <p>
+
+</p>
+                    </div>
+                </div>
+            </div>
+                            
+
+        </div>
+    </div>
+
+</section>

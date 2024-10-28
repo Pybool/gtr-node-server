@@ -1,0 +1,39 @@
+<div class="modal"
+	id="paymentModal"
+	tabindex="-1"
+	role="dialog"
+	aria-labelledby="paymentModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered"
+		role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"
+					id="paymentModalLabel">
+					Choose Payment Method
+				</h5>
+				<button type="button"
+					class="close"
+                    (click)="onCloseModal()"
+					data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="d-flex justify-content-between">
+					<button (click)="selectPaymentMethod('mobile_money');checkOut()"
+						class="btn btn-warning">
+						<img width="30px" height="30px" src="data:image/png;base64,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"/>
+						Mobile Money
+					</button>
+					<button (click)="selectPaymentMethod('card');checkOut()"
+						class="btn btn-primary">
+						<img style="border-radius: 15px;" width="50px" height="30px" src="/assets/images/card.png"/>
+						Debit Card
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

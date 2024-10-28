@@ -1,0 +1,193 @@
+<div class="top col-md-12">
+    <div class="title-nav ">
+        <div *ngIf="selectedAirport?.airport && (blockFilter=='arrival' || blockFilter=='departure')"
+            style="font-family: Roboto Condensed" class="top-panel col-md-4">
+            <h2 style="color:#a4a1a1;">{{selectedAirport?.airport?.iata_code}}/{{selectedAirport?.airport?.icao_code}}
+            </h2>
+            <h1 class="airport-name" style="color:white">{{selectedAirport?.airport?.airport_name}}</h1>
+            <h2 style="color:#a4a1a1;">{{selectedAirport?.airport?.country_name}}</h2>
+        </div>
+        <form class="form container">
+            <div action="#" class="find-flight">
+                <input [(ngModel)]="searchBarText" (keyup.enter)="searchBarFilter()" name="searchBarText"
+                    class="search-input" type="text" #search placeholder="Find a flight number..." autocorrect="off"
+                    autocapitalize="off" spellcheck="off" (keydown.enter)="$event.preventDefault()">
+
+                <div class="submit-section">
+                    <div style="margin-top: 0px;" class="f-flex-row submit-section">
+                        <input class="find" [style.background]="searchBarText.trim().length === 0 ? 'gray' : '#009ad8'"
+                            (click)="searchBarFilter()" type="submit" value="{{dropdownText}}"
+                            [style.pointer-events]="searchBarText.trim().length === 0 ? 'none' : 'auto'">
+                        <div class="custom-dropdown" >
+                            <svg (click)="toggleDropdown($event)" id="carret" style="width: 20px; height: 20px;margin-top:9px"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path style="fill:white; z-index:1"
+                                    d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" />
+                            </svg>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0)" (click)="chooseAction('Flight No (ARR)')">Flight No
+                                        (ARR)</a></li>
+                                <li><a href="javascript:void(0)" (click)="chooseAction('Flight No (DEP)')">Flight No
+                                        (DEP)</a></li>
+                                <li><a style="pointer-events: none;opacity:0.3" href="javascript:void(0)"
+                                        (click)="chooseAction('Find By Airline')">Airline</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <!-- <input [(ngModel)]="flightsForDate" (change)="onDateChange()" name="flightsForDate" class="form-control" type="date"/> -->
+    <app-pagination *ngIf="!isSearching" [data]="flightSegments" [pageSize]="100" (pageChange)="onPageChange($event)"></app-pagination>
+</div>
+<div class="flight-info">
+    <div *ngIf="isSearching && !showSpinner" style="margin-bottom:5px; color:orange;cursor: pointer;">
+        <!-- <div class="f-flex-row"> -->
+            <span>Found {{flightsData?.length}} results for {{searchBarText}}...</span>
+            <a style="color:white; text-decoration: underline; margin-left: 20px;" (click)="reset()">Reset</a>
+        <!-- </div> -->
+    </div>
+    <div class="flight-table">
+        <table *ngIf="(blockFilter=='arrival' || blockFilter=='departure')">
+            <thead>
+                <tr>
+                    <th class="not-mobile">S/N</th>
+                    <th class="not-mobile">FlightNo</th>
+                    <th>Airline</th>
+                    <th *ngIf="blockFilter=='arrival'">From</th>
+                    <th *ngIf="blockFilter=='departure'">To</th>
+                    <th class="not-mobile">Terminal</th>
+                    <th>{{blockFilter}} Time(ETA)</th>
+                    <th class="not-mobile">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let flight of flightsData; let i= index;">
+                    <tr class="data-row">
+                        <td class="not-mobile">{{i+1}}</td>
+                        <td class="not-mobile">{{flight.flight.number}}</td>
+                        <td>
+                            <div class="airline-name">
+                                <div>{{flight.airline.name}}</div>
+                            </div>
+                            <!-- <div>
+                                <div>Timezone: {{flight[blockFilter].timezone}}</div>
+                            </div> -->
+                            <div>
+                                <div>Date: {{flight.flight_date}}</div>
+                            </div>
+
+                        </td>
+                        <td *ngIf="blockFilter=='arrival'">{{flight.departure.airport}}</td>
+                        <td *ngIf="blockFilter=='departure'">{{flight.arrival.airport}}</td>
+                        <td style="text-align: center;" class="not-mobile">{{flight[blockFilter].terminal}}</td>
+                        <td>{{formatTime(flight[blockFilter].scheduled)}}</td>
+                        <td style="text-transform: capitalize;" class="{{flight.flight_status}} not-mobile">
+                            {{flight.flight_status}}</td>
+
+                    </tr>
+
+                </ng-container>
+
+            </tbody>
+        </table>
+        <table *ngIf="flightStatuses.includes(activeTab)">
+            <thead>
+                <tr>
+                    <th class="not-mobile">S/N</th>
+                    <th class="not-mobile">FlightNo</th>
+                    <th>Airline</th>
+                    <th *ngIf="flightStatusBlockFilter=='arrival'">From</th>
+                    <th *ngIf="flightStatusBlockFilter=='departure'">To</th>
+                    <th class="not-mobile">Terminal</th>
+                    <th>{{blockFilter}} Time(ETA)</th>
+                    <th class="not-mobile">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let flight of flightsData; let i= index;">
+                    <tr (click)="showFlightMoreDetails(i)" class="data-row">
+                        <td class="not-mobile">{{i+1}}</td>
+                        <td class="not-mobile">{{flight.flight.number}}</td>
+                        <td>
+                            <div>
+                                <div>{{flight.airline.name}}</div>
+                            </div>
+                            <!-- <div>
+                                <div>Timezone: {{flight[flightStatusBlockFilter].timezone}}</div>
+                            </div> -->
+                            <div>
+                                <div>Flight Date: {{flight.flight_date}}</div>
+                            </div>
+
+                        </td>
+                        <td *ngIf="flightStatusBlockFilter=='arrival'">{{flight.departure.airport}}</td>
+                        <td *ngIf="flightStatusBlockFilter=='departure'">{{flight.arrival.airport}}</td>
+                        <td class="not-mobile">{{flight[flightStatusBlockFilter].terminal}}</td>
+                        <td>{{formatTime(flight[blockFilter].scheduled)}}td>
+                        <td style="text-transform: capitalize;" class="{{flight.flight_status}} not-mobile">
+                            {{flight.flight_status}}</td>
+
+                    </tr>
+                </ng-container>
+
+            </tbody>
+        </table>
+        <ng-container *ngIf="(blockFilter=='arrival' || blockFilter=='departure')">
+            <div class="mobile-present">
+                <div class="container">
+                    <div class="sp-btwn-flex-row">
+                        <span class="fbh-text">Airline</span>
+                        <span class="fbh-text">Time</span>
+                        <span class="fbh-text" *ngIf="blockFilter=='departure'">Departure</span>
+                        <span class="fbh-text" *ngIf="blockFilter=='arrival'">Arrival</span>
+                        <span class="fbh-text">More</span>
+                    </div>
+
+                </div>
+            </div>
+            <ng-container *ngFor="let flight of flightsData; let i= index;">
+                <div class="mobile-present">
+                    <div class="container">
+                        <div class="sp-btwn-flex-row">
+                            <span class="f-text">{{flight.airline.name}}</span>
+                            <span class="f-text">{{formatTime(flight[blockFilter].scheduled)}}</span>
+                            <span class="f-text" *ngIf="blockFilter=='departure'">{{flight.arrival.airport}}</span>
+                            <span class="f-text" *ngIf="blockFilter=='arrival'">{{flight.departure.airport}}</span>
+                            <svg id="plus-mob-{{i}}" (click)="showFlightMoreDetails(i)"
+                                style="width:20px;height:20px;transform: rotate(0deg)"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path style="fill: white"
+                                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                            </svg>
+                        </div>
+                        <div class="more-details-mb" *ngIf="flight.moreDetails">
+                            <div class="sp-btwn-flex-row">
+                                <label class="fbh-text">Flight Number: </label>
+                                <span class="fmr-text">{{flight.flight.number}}</span>
+                            </div>
+                            <div class="sp-btwn-flex-row">
+                                <label class="fbh-text">Status: </label>
+                                <span class="fmr-text">{{flight.flight_status}}</span>
+                            </div>
+                            <div class="sp-btwn-flex-row">
+                                <label class="fbh-text">Terminal: </label>
+                                <span class="fmr-text">{{flight[blockFilter].terminal}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+        <span *ngIf="flightsData.length==0" class="no-result">No flight results found for this hour..</span>
+        <div *ngIf="showSpinner" class="f-flex-row">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+
+
+</div>

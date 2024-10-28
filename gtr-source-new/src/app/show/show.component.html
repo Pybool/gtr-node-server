@@ -1,0 +1,301 @@
+<div *ngIf="errorPage">
+	<app-error></app-error>
+
+</div>
+<div *ngIf="singleData && !errorPage"
+	id="page_content_wrapper"
+	class>
+	<div class="inner">
+
+		<!-- Begin main content -->
+		<div class="inner_wrapper">
+
+			<div class="sidebar_content">
+
+				<!-- Begin each blog post -->
+				<div id="post-3790"
+					class="post-3790 post type-post status-publish format-standard has-post-thumbnail hentry category-boxing category-topnews tag-model tag-portrait">
+
+					<div class="post_wrapper">
+
+						<div class="post_content_wrapper">
+
+							<div class="post_header">
+								<div class="post_header_title">
+									<div class="post_info_cat">
+										<div class="breadcrumb">
+											<a href="https://themes.themegoods.com/grandnews/demo5">Home</a>
+											»
+											<a href="https://themes.themegoods.com/grandnews/demo5/category/boxing/">
+												{{singleData.data.post[0].categoryname}}
+											</a>
+											<!-- <a href="https://themes.themegoods.com/grandnews/demo5/category/topnews/">Top News</a> -->
+										</div>
+									</div>
+									<h1>
+										{{singleData.data.post[0].post_title}}
+									</h1>
+									<div class="post_detail post_date">
+										<span class="post_info_author">
+											<a href="https://themes.themegoods.com/grandnews/demo5/author/admin/">
+												<span class="gravatar">
+													<img alt
+														src="https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=60&amp;d=mm&amp;r=g"
+														data-lazy-srcset="https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=120&amp;d=mm&amp;r=g 2x"
+														class="avatar avatar-60 photo entered lazyloaded"
+														height="60"
+														width="60"
+														data-lazy-src="https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=60&amp;d=mm&amp;r=g"
+														data-ll-status="loaded"
+														srcset="https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=120&amp;d=mm&amp;r=g 2x">
+													<noscript>
+														<img alt
+															src='https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=60&#038;d=mm&#038;r=g'
+															srcset='https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=120&#038;d=mm&#038;r=g 2x'
+															class='avatar avatar-60 photo'
+															height='60'
+															width='60'>
+													</noscript>
+												</span>
+												Ghana Talks Radio
+											</a>
+										</span>
+										<span class="post_info_date">
+											Posted On {{singleData.data.post[0].post_date | date: 'fullDate'}}
+										</span>
+									</div>
+									
+								</div>
+							</div>
+
+							<hr class="post_divider">
+							<br class="clear">
+
+							<!-- <div class="social_share_counter">
+								<div class="social_share_counter_number">1.2K</div>
+								<div class="social_share_counter_label">Shares</div>
+							</div> -->
+							<div class="social_share_button_wrapper">
+								<ul>
+									<li>
+										<a (click)="goToLink('FACEBOOK')"
+										style="display: flex!important;"
+											class="tooltip facebook_share flex-row"
+											title="Share On Facebook"
+											href="javascript:void(0)">
+											<svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path style="fill:white;" d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+											<span>Share On Facebook</span>
+										</a>
+									</li>
+									<li>
+										<a (click)="goToLink('TWITTER')"
+										    style="background: black!important;display: flex!important;"
+											class="tooltip twitter_share flex-row"
+											title="Share On Twitter"
+											href="javascript:void(0)">
+											<svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path style="fill:white;" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+											<span>Tweet It</span>
+										</a>
+									</li>
+									
+								</ul>
+							</div>
+							<br class="clear">
+
+							<!-- <div class="post_img static">
+								<img width="960"
+									height="640"
+									src="{{singleData.data.img[0]}}"
+									alt
+									class="entered lazyloaded"
+									style="width:960px;height:640px;"
+									data-ll-status="loaded">
+								<noscript>
+									<img width="960"
+										height="640"
+										src="{{singleData.data.img[0]}}"
+										alt
+										class
+										style="width:960px;height:640px;">
+								</noscript>
+							</div> -->
+							<div #patientDDL
+								[innerHTML]="processString(singleData.data.post[0].post_content)"
+								id="patientDDL"
+								class="post-content">
+							</div>
+							
+							<hr>
+
+							<br class="clear">
+							<br>
+							<div class="share-tools share-tools--secondary">				
+								<p style="font-style: italic;">
+									Click on the links to join our Whatsapp & Telegram Ghanatalksradio Newsroom channels for curated, meaningful stories tailored just for you:
+									<br>
+									<br>
+									Whatsapp:
+									<a (click)="openExternal('https://whatsapp.com/channel/0029VaG3JNKId7nFeOZUsF3K')"
+										style="cursor: pointer;"
+										rel="noopener noreferrer">
+										&nbsp;https://whatsapp.com/channel/0029VaG3JNKId7nFeOZUsF3K
+									</a>
+									<br>
+									Telegram:
+									<a (click)="openExternal('https://t.me/GhanaTalksRadio')"
+										style="cursor: pointer;"
+										rel="noopener noreferrer">
+										&nbsp;https://t.me/GhanaTalksRadio
+									</a>
+								</p>
+							</div>
+
+							<h5 class="single_subtitle">You may also Like</h5>
+
+							<div class="post_related">
+								<div style="align-items: flex-start;" class="flex-row">
+									<!-- Begin each blog post -->
+									<ng-container *ngFor="let newsinfo of landingData;">
+										<div id="post-3661"
+											class="post-3661 post type-post status-publish format-standard has-post-thumbnail hentry category-topnews tag-cooking tag-food tag-portrait tag-sport">
+
+											<div class="post_wrapper grid_layout">
+
+												<div class="post_img small static">
+													<a [routerLink]="['/', newsinfo.post_name]">
+														<img src="{{newsinfo.image}}"
+															alt
+															class="entered lazyloaded"
+															style="height:91px!important;">
+														<noscript>
+															<img src="{{newsinfo.image}}"
+																alt
+																class
+																style="height:91px!important;">
+														</noscript>
+													</a>
+												</div>
+
+												<div class="blog_grid_content">
+													<div class="post_header grid">
+														<a [routerLink]="['/', newsinfo.post_name]"
+															title="{{newsinfo.post_title}}">
+															{{newsinfo.post_title}}
+														</a>
+														<div class="post_attribute info_date">
+															{{newsinfo.post_date | date}}
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+										<!-- End each blog post -->
+									</ng-container>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="sidebar_wrapper"
+				style>
+
+				<div class="sidebar_top"></div>
+
+				<div class="sidebar">
+
+					<div class="content">
+
+						<ul class="sidebar_widget">
+							<li id="grand_news_custom_ads-2"
+								class="widget Grand_News_Custom_Ads">
+								<div class="ads_label">- Advertisement -</div>
+								<img width="600"
+									height="500"
+									src="https://themes-themegoods.b-cdn.net/grandnews/demo5/wp-content/uploads/2016/06/300x250ads.png"
+									alt
+									data-lazy-src="https://themes-themegoods.b-cdn.net/grandnews/demo5/wp-content/uploads/2016/06/300x250ads.png"
+									data-ll-status="loaded"
+									class="entered lazyloaded">
+								<noscript>
+									<img width="600"
+										height="500"
+										src="https://themes-themegoods.b-cdn.net/grandnews/demo5/wp-content/uploads/2016/06/300x250ads.png"
+										alt>
+								</noscript>
+							</li>
+							<li id="grand_news_popular_posts-2"
+								class="widget Grand_News_Popular_Posts">
+								<h2 class="widgettitle">
+									<span>More News</span>
+								</h2>
+								<ul class="posts blog withthumb ">
+									<ng-container *ngFor="let news of headerNews; let i=index;">
+										<li>
+											<div style="padding-right: 20px" class="post_circle_thumb">
+												<a [routerLink]="['/', news.data?.post_name]">
+													<img width="300"
+														height="200"
+														src="{{news?.data?.image}}"
+														class="tg-lazy entered lazyloaded"
+														alt="{{news?.data?.post_title}}">
+													<noscript>
+														<img width="300"
+															height="200"
+															src="{{news?.data?.image}}"
+															class="tg-lazy"
+															alt="{{news?.data?.post_title}}">
+													</noscript>
+												</a>
+											</div>
+											<a [routerLink]="['/', news.data?.post_name]">
+												{{news?.data?.post_title}}
+											</a>
+										</li>
+									</ng-container>
+								</ul>
+								<app-loader *ngIf="popularLoader"></app-loader>
+							</li>
+							<li id="grand_news_category-2"
+								class="widget Grand_News_Category">
+								<h2 class="widgettitle">
+									<span>Categories</span>
+								</h2>
+								<ul class="category">
+
+									<li *ngFor="let foot of asideCountData">
+										<a [routerLink]="['/category', foot.url]"
+											class="category_title">
+											{{foot.name}}
+										</a>
+										<div style="padding: 5px"
+											class="category_count">
+											{{foot.count}}
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+					</div>
+
+				</div>
+				<br class="clear">
+
+				<div class="sidebar_bottom"></div>
+			</div>
+
+		</div>
+		<!-- End main content -->
+
+	</div>
+
+</div>

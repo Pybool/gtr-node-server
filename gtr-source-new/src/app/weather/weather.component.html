@@ -1,0 +1,156 @@
+<div class="body-element">
+		
+    <div class="site-content">
+      
+        <div class="hero" data-bg-image="assets/ghanatalksradio/images/images/banner.png" style="background-image: url('assets/ghanatalksradio/images/images/banner.png');">
+            <div class="container">
+                <form action="#" class="find-location">
+                    <input type="text" #search placeholder="Find your location..."  autocorrect="off" autocapitalize="off" spellcheck="off" (keydown.enter)="$event.preventDefault()">
+                    <input type="submit" value="Find">
+                </form>
+
+            </div>
+        </div>
+        <div class="forecast-table">
+            <div class="container">
+                <div class="forecast-container">
+                    <ng-container *ngFor="let forcast of days; let i=index">
+                        <div  *ngIf="today === forcast.days"  class=" today forecast" (click)="selectDate(forcast.days,i)">
+                            <div class="forecast-header">
+                                <div  *ngIf="today === forcast.days" class="day">{{forcast.dow}}</div>
+                                <div  *ngIf="today !== forcast.days" class="day">{{forcast.dow | slice:0:3}} {{forcast.dayNumber}}</div>
+                                <div *ngIf="today === forcast.days" class="date">{{forcast.days}} {{forcast.month}}</div>
+                            </div> <!-- .forecast-header -->
+                            <div class="forecast-content">
+                                <div *ngIf="today === forcast.days" class="location"> <div class="num">{{convertWeather(getWeatherInfo(i).temp.min)}}<sup>o</sup>C</div></div>
+                                <div class="degree">
+                                    <div class="num">{{convertWeather(getWeatherInfo(i).temp.max)}}<sup>o</sup>C</div>
+                                    <div class="forecast-icon">
+                                        <img src="https://openweathermap.org/img/w/{{getWeatherInfo(i).weather[0].icon}}.png" alt="" width=90>
+                                    </div>	
+                                </div>
+                                <div>
+                                    <span><img src="assets/ghanatalksradio/images/images/icon-umberella.png" alt="">{{getWeatherInfo(i).humidity}}%</span>
+
+                                    <span><img src="assets/ghanatalksradio/images/images/icon-wind.png" alt="">{{getWeatherInfo(i).wind_speed}}mph</span>
+                                    <span><img src="assets/ghanatalksradio/images/images/icon-compass.png" alt="">{{windDegree(getWeatherInfo(i).wind_deg)}}</span>
+                                </div>
+                              
+                            </div>
+                        </div>
+                        <div  *ngIf="today !== forcast.days"  class=" forecast" (click)="selectDate(forcast.days,i)">
+                            <div class="forecast-header">
+                                <div  *ngIf="today !== forcast.days" class="day">{{forcast.dow | slice:0:3}} {{forcast.dayNumber}}</div>
+                                 </div> <!-- .forecast-header -->
+                            <div class="forecast-content" style="padding-left:5px;padding-right:5px;justify-content: center;">
+                                <div class="degree" style="display: flex;gap:10px">
+                                    <div class="forecast-icon">
+                                        <img src="https://openweathermap.org/img/w/{{getWeatherInfo(i).weather[0].icon}}.png" alt="" style="width: 40px;height: 40px;">
+                                    </div>	
+                                    <div style="display: flex;flex-direction: column;">
+                                        <div class="num" style="font-size: 14px;">{{convertWeather(getWeatherInfo(i).temp.max)}}<sup>o</sup>C</div>
+                                        <div class="num" style="font-size: 14px;">{{convertWeather(getWeatherInfo(i).temp.min)}}<sup>o</sup>C</div>
+                                    </div>
+                                    
+                                   
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </ng-container>
+                 
+                   <!--  <div class="forecast">
+                        <div class="forecast-header">
+                            <div class="day">Tuesday</div>
+                        </div> 
+                        <div class="forecast-content">
+                            <div class="forecast-icon">
+                                <img src="assets/ghanatalksradio/images/images/icons/icon-3.svg" alt="" width=48>
+                            </div>
+                            <div class="degree">23<sup>o</sup>C</div>
+                            <small>18<sup>o</sup></small>
+                        </div>
+                    </div>
+                    <div class="forecast">
+                        <div class="forecast-header">
+                            <div class="day">Wednesday</div>
+                        </div> 
+                        <div class="forecast-content">
+                            <div class="forecast-icon">
+                                <img src="assets/ghanatalksradio/images/images/icons/icon-5.svg" alt="" width=48>
+                            </div>
+                            <div class="degree">23<sup>o</sup>C</div>
+                            <small>18<sup>o</sup></small>
+                        </div>
+                    </div>
+                    <div class="forecast">
+                        <div class="forecast-header">
+                            <div class="day">Thursday</div>
+                        </div>
+                        <div class="forecast-content">
+                            <div class="forecast-icon">
+                                <img src="assets/ghanatalksradio/images/images/icons/icon-7.svg" alt="" width=48>
+                            </div>
+                            <div class="degree">23<sup>o</sup>C</div>
+                            <small>18<sup>o</sup></small>
+                        </div>
+                    </div>
+                    <div class="forecast">
+                        <div class="forecast-header">
+                            <div class="day">Friday</div>
+                        </div>
+                        <div class="forecast-content">
+                            <div class="forecast-icon">
+                                <img src="assets/ghanatalksradio/images/images/icons/icon-12.svg" alt="" width=48>
+                            </div>
+                            <div class="degree">23<sup>o</sup>C</div>
+                            <small>18<sup>o</sup></small>
+                        </div>
+                    </div>
+                    <div class="forecast">
+                        <div class="forecast-header">
+                            <div class="day">Saturday</div>
+                        </div> 
+                        <div class="forecast-content">
+                            <div class="forecast-icon">
+                                <img src="assets/ghanatalksradio/images/images/icons/icon-13.svg" alt="" width=48>
+                            </div>
+                            <div class="degree">23<sup>o</sup>C</div>
+                            <small>18<sup>o</sup></small>
+                        </div>
+                    </div>
+                    <div class="forecast">
+                        <div class="forecast-header">
+                            <div class="day">Sunday</div>
+                        </div> 
+                        <div class="forecast-content">
+                            <div class="forecast-icon">
+                                <img src="assets/ghanatalksradio/images/images/icons/icon-14.svg" alt="" width=48>
+                            </div>
+                            <div class="degree">23<sup>o</sup>C</div>
+                            <small>18<sup>o</sup></small>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div style="overflow: auto;background-color: #bfc1c8;;height: 250px;display: flex;">
+                <ng-container *ngFor="let hour of hours">
+                    <div class="hr-method"style="    display: flex;
+                    flex-direction: column;" *ngIf="checkVisible(hour.hour)">
+                        <div class="hr-method-header" style="margin-top:10px">{{hour.title}}</div>
+                        <div style="padding-top:30px;margin:20px auto;font-size:16px;font-weight: 700;">{{hour.weather}}<sup>o</sup>C</div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </ng-container>
+              
+
+            </div>
+        </div>
+       
+
+    </div>
+    
+ 
+    
+</div>

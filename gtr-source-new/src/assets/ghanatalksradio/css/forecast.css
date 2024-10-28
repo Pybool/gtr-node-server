@@ -1,0 +1,7068 @@
+.gel-wrap {
+    max-width: 1008px;
+    margin: 0 auto;
+    padding-right: 8px;
+    padding-left: 8px
+}
+
+@media(min-width: 25em) {
+    .gel-wrap {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+}
+
+@media(min-width: 80em) {
+    .gel-wrap {
+        max-width: 1280px
+    }
+}
+
+.gel-layout {
+    list-style: none;
+    direction: ltr;
+    text-align: left;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-flex-grow: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+    margin-right: 0;
+    margin-left: -8px;
+    padding-right: 0;
+    padding-left: 0
+}
+
+@media(min-width: 37.5em) {
+    .gel-layout {
+        margin-left: -16px
+    }
+}
+
+.gel-layout__item {
+    width: 100%;
+    display: inline-block;
+    padding-left: 8px;
+    text-align: left;
+    vertical-align: top
+}
+
+@media(min-width: 37.5em) {
+    .gel-layout__item {
+        padding-left: 16px
+    }
+}
+
+.gel-layout--flush {
+    margin-left: 0
+}
+
+.gel-layout--flush>.gel-layout__item {
+    padding-left: 0
+}
+
+.gel-layout--rev {
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse
+}
+
+.no-flexbox .gel-layout--rev {
+    direction: rtl;
+    text-align: left
+}
+
+.no-flexbox .gel-layout--rev>.gel-layout__item {
+    direction: ltr;
+    text-align: left
+}
+
+.gel-layout--middle {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center
+}
+
+.gel-layout--middle>.gel-layout__item {
+    vertical-align: middle
+}
+
+.gel-layout--bottom {
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    -ms-grid-row-align: flex-end;
+    align-items: flex-end
+}
+
+.gel-layout--bottom>.gel-layout__item {
+    vertical-align: bottom
+}
+
+.gel-layout--right {
+    text-align: right;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end
+}
+
+.gel-layout--right>.gel-layout__item {
+    text-align: left
+}
+
+.gel-layout--center {
+    text-align: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.gel-layout--center>.gel-layout__item {
+    text-align: left
+}
+
+.gel-layout--auto>.gel-layout__item {
+    width: auto
+}
+
+.gel-layout--no-flex {
+    min-width: 100%
+}
+
+.gel-layout--no-flex,
+.gel-layout--no-flex>.gel-layout__item {
+    display: block;
+    display: inline-block
+}
+
+.gel-layout--equal>.gel-layout__item {
+    display: -webkit-flex;
+    display: flex
+}
+
+.gel-layout--fit>.gel-layout__item {
+    width: auto;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}
+
+.gel-layout__item--top {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start
+}
+
+.gel-layout__item--center {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center
+}
+
+.gel-layout__item--bottom {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end
+}
+
+.gel-1\/1 {
+    width: 100% !important
+}
+
+.gel-1\/2 {
+    width: 50% !important
+}
+
+.gel-1\/3 {
+    width: 33.33333% !important
+}
+
+.gel-2\/3 {
+    width: 66.66667% !important
+}
+
+.gel-1\/4 {
+    width: 25% !important
+}
+
+.gel-3\/4 {
+    width: 75% !important
+}
+
+.gel-1\/5 {
+    width: 20% !important
+}
+
+.gel-2\/5 {
+    width: 40% !important
+}
+
+.gel-3\/5 {
+    width: 60% !important
+}
+
+.gel-4\/5 {
+    width: 80% !important
+}
+
+.gel-1\/8 {
+    width: 12.5% !important
+}
+
+.gel-3\/8 {
+    width: 37.5% !important
+}
+
+.gel-5\/8 {
+    width: 62.5% !important
+}
+
+.gel-7\/8 {
+    width: 87.5% !important
+}
+
+.gel-1\/10 {
+    width: 10% !important
+}
+
+.gel-3\/10 {
+    width: 30% !important
+}
+
+.gel-7\/10 {
+    width: 70% !important
+}
+
+.gel-9\/10 {
+    width: 90% !important
+}
+
+.gel-1\/12 {
+    width: 8.33333% !important
+}
+
+.gel-2\/12 {
+    width: 16.66667% !important
+}
+
+.gel-5\/12 {
+    width: 41.66667% !important
+}
+
+.gel-7\/12 {
+    width: 58.33333% !important
+}
+
+.gel-10\/12 {
+    width: 83.33333% !important
+}
+
+.gel-11\/12 {
+    width: 91.66667% !important
+}
+
+.gel-1\/24 {
+    width: 4.16667% !important
+}
+
+.gel-5\/24 {
+    width: 20.83333% !important
+}
+
+.gel-7\/24 {
+    width: 29.16667% !important
+}
+
+.gel-11\/24 {
+    width: 45.83333% !important
+}
+
+.gel-13\/24 {
+    width: 54.16667% !important
+}
+
+.gel-17\/24 {
+    width: 70.83333% !important
+}
+
+.gel-19\/24 {
+    width: 79.16667% !important
+}
+
+.gel-23\/24 {
+    width: 95.83333% !important
+}
+
+@media(min-width: 25em) {
+    .gel-1\/1\@s {
+        width: 100% !important
+    }
+
+    .gel-1\/2\@s {
+        width: 50% !important
+    }
+
+    .gel-1\/3\@s {
+        width: 33.33333% !important
+    }
+
+    .gel-2\/3\@s {
+        width: 66.66667% !important
+    }
+
+    .gel-1\/4\@s {
+        width: 25% !important
+    }
+
+    .gel-3\/4\@s {
+        width: 75% !important
+    }
+
+    .gel-1\/5\@s {
+        width: 20% !important
+    }
+
+    .gel-2\/5\@s {
+        width: 40% !important
+    }
+
+    .gel-3\/5\@s {
+        width: 60% !important
+    }
+
+    .gel-4\/5\@s {
+        width: 80% !important
+    }
+
+    .gel-1\/8\@s {
+        width: 12.5% !important
+    }
+
+    .gel-3\/8\@s {
+        width: 37.5% !important
+    }
+
+    .gel-5\/8\@s {
+        width: 62.5% !important
+    }
+
+    .gel-7\/8\@s {
+        width: 87.5% !important
+    }
+
+    .gel-1\/10\@s {
+        width: 10% !important
+    }
+
+    .gel-3\/10\@s {
+        width: 30% !important
+    }
+
+    .gel-7\/10\@s {
+        width: 70% !important
+    }
+
+    .gel-9\/10\@s {
+        width: 90% !important
+    }
+
+    .gel-1\/12\@s {
+        width: 8.33333% !important
+    }
+
+    .gel-2\/12\@s {
+        width: 16.66667% !important
+    }
+
+    .gel-5\/12\@s {
+        width: 41.66667% !important
+    }
+
+    .gel-7\/12\@s {
+        width: 58.33333% !important
+    }
+
+    .gel-10\/12\@s {
+        width: 83.33333% !important
+    }
+
+    .gel-11\/12\@s {
+        width: 91.66667% !important
+    }
+
+    .gel-1\/24\@s {
+        width: 4.16667% !important
+    }
+
+    .gel-5\/24\@s {
+        width: 20.83333% !important
+    }
+
+    .gel-7\/24\@s {
+        width: 29.16667% !important
+    }
+
+    .gel-11\/24\@s {
+        width: 45.83333% !important
+    }
+
+    .gel-13\/24\@s {
+        width: 54.16667% !important
+    }
+
+    .gel-17\/24\@s {
+        width: 70.83333% !important
+    }
+
+    .gel-19\/24\@s {
+        width: 79.16667% !important
+    }
+
+    .gel-23\/24\@s {
+        width: 95.83333% !important
+    }
+}
+
+@media(min-width: 37.5em) {
+    .gel-1\/1\@m {
+        width: 100% !important
+    }
+
+    .gel-1\/2\@m {
+        width: 50% !important
+    }
+
+    .gel-1\/3\@m {
+        width: 33.33333% !important
+    }
+
+    .gel-2\/3\@m {
+        width: 66.66667% !important
+    }
+
+    .gel-1\/4\@m {
+        width: 25% !important
+    }
+
+    .gel-3\/4\@m {
+        width: 75% !important
+    }
+
+    .gel-1\/5\@m {
+        width: 20% !important
+    }
+
+    .gel-2\/5\@m {
+        width: 40% !important
+    }
+
+    .gel-3\/5\@m {
+        width: 60% !important
+    }
+
+    .gel-4\/5\@m {
+        width: 80% !important
+    }
+
+    .gel-1\/8\@m {
+        width: 12.5% !important
+    }
+
+    .gel-3\/8\@m {
+        width: 37.5% !important
+    }
+
+    .gel-5\/8\@m {
+        width: 62.5% !important
+    }
+
+    .gel-7\/8\@m {
+        width: 87.5% !important
+    }
+
+    .gel-1\/10\@m {
+        width: 10% !important
+    }
+
+    .gel-3\/10\@m {
+        width: 30% !important
+    }
+
+    .gel-7\/10\@m {
+        width: 70% !important
+    }
+
+    .gel-9\/10\@m {
+        width: 90% !important
+    }
+
+    .gel-1\/12\@m {
+        width: 8.33333% !important
+    }
+
+    .gel-2\/12\@m {
+        width: 16.66667% !important
+    }
+
+    .gel-5\/12\@m {
+        width: 41.66667% !important
+    }
+
+    .gel-7\/12\@m {
+        width: 58.33333% !important
+    }
+
+    .gel-10\/12\@m {
+        width: 83.33333% !important
+    }
+
+    .gel-11\/12\@m {
+        width: 91.66667% !important
+    }
+
+    .gel-1\/24\@m {
+        width: 4.16667% !important
+    }
+
+    .gel-5\/24\@m {
+        width: 20.83333% !important
+    }
+
+    .gel-7\/24\@m {
+        width: 29.16667% !important
+    }
+
+    .gel-11\/24\@m {
+        width: 45.83333% !important
+    }
+
+    .gel-13\/24\@m {
+        width: 54.16667% !important
+    }
+
+    .gel-17\/24\@m {
+        width: 70.83333% !important
+    }
+
+    .gel-19\/24\@m {
+        width: 79.16667% !important
+    }
+
+    .gel-23\/24\@m {
+        width: 95.83333% !important
+    }
+}
+
+@media(min-width: 56.25em) {
+    .gel-1\/1\@l {
+        width: 100% !important
+    }
+
+    .gel-1\/2\@l {
+        width: 50% !important
+    }
+
+    .gel-1\/3\@l {
+        width: 33.33333% !important
+    }
+
+    .gel-2\/3\@l {
+        width: 66.66667% !important
+    }
+
+    .gel-1\/4\@l {
+        width: 25% !important
+    }
+
+    .gel-3\/4\@l {
+        width: 75% !important
+    }
+
+    .gel-1\/5\@l {
+        width: 20% !important
+    }
+
+    .gel-2\/5\@l {
+        width: 40% !important
+    }
+
+    .gel-3\/5\@l {
+        width: 60% !important
+    }
+
+    .gel-4\/5\@l {
+        width: 80% !important
+    }
+
+    .gel-1\/8\@l {
+        width: 12.5% !important
+    }
+
+    .gel-3\/8\@l {
+        width: 37.5% !important
+    }
+
+    .gel-5\/8\@l {
+        width: 62.5% !important
+    }
+
+    .gel-7\/8\@l {
+        width: 87.5% !important
+    }
+
+    .gel-1\/10\@l {
+        width: 10% !important
+    }
+
+    .gel-3\/10\@l {
+        width: 30% !important
+    }
+
+    .gel-7\/10\@l {
+        width: 70% !important
+    }
+
+    .gel-9\/10\@l {
+        width: 90% !important
+    }
+
+    .gel-1\/12\@l {
+        width: 8.33333% !important
+    }
+
+    .gel-2\/12\@l {
+        width: 16.66667% !important
+    }
+
+    .gel-5\/12\@l {
+        width: 41.66667% !important
+    }
+
+    .gel-7\/12\@l {
+        width: 58.33333% !important
+    }
+
+    .gel-10\/12\@l {
+        width: 83.33333% !important
+    }
+
+    .gel-11\/12\@l {
+        width: 91.66667% !important
+    }
+
+    .gel-1\/24\@l {
+        width: 4.16667% !important
+    }
+
+    .gel-5\/24\@l {
+        width: 20.83333% !important
+    }
+
+    .gel-7\/24\@l {
+        width: 29.16667% !important
+    }
+
+    .gel-11\/24\@l {
+        width: 45.83333% !important
+    }
+
+    .gel-13\/24\@l {
+        width: 54.16667% !important
+    }
+
+    .gel-17\/24\@l {
+        width: 70.83333% !important
+    }
+
+    .gel-19\/24\@l {
+        width: 79.16667% !important
+    }
+
+    .gel-23\/24\@l {
+        width: 95.83333% !important
+    }
+}
+
+@media(min-width: 63em) {
+    .gel-1\/1\@xl {
+        width: 100% !important
+    }
+
+    .gel-1\/2\@xl {
+        width: 50% !important
+    }
+
+    .gel-1\/3\@xl {
+        width: 33.33333% !important
+    }
+
+    .gel-2\/3\@xl {
+        width: 66.66667% !important
+    }
+
+    .gel-1\/4\@xl {
+        width: 25% !important
+    }
+
+    .gel-3\/4\@xl {
+        width: 75% !important
+    }
+
+    .gel-1\/5\@xl {
+        width: 20% !important
+    }
+
+    .gel-2\/5\@xl {
+        width: 40% !important
+    }
+
+    .gel-3\/5\@xl {
+        width: 60% !important
+    }
+
+    .gel-4\/5\@xl {
+        width: 80% !important
+    }
+
+    .gel-1\/8\@xl {
+        width: 12.5% !important
+    }
+
+    .gel-3\/8\@xl {
+        width: 37.5% !important
+    }
+
+    .gel-5\/8\@xl {
+        width: 62.5% !important
+    }
+
+    .gel-7\/8\@xl {
+        width: 87.5% !important
+    }
+
+    .gel-1\/10\@xl {
+        width: 10% !important
+    }
+
+    .gel-3\/10\@xl {
+        width: 30% !important
+    }
+
+    .gel-7\/10\@xl {
+        width: 70% !important
+    }
+
+    .gel-9\/10\@xl {
+        width: 90% !important
+    }
+
+    .gel-1\/12\@xl {
+        width: 8.33333% !important
+    }
+
+    .gel-2\/12\@xl {
+        width: 16.66667% !important
+    }
+
+    .gel-5\/12\@xl {
+        width: 41.66667% !important
+    }
+
+    .gel-7\/12\@xl {
+        width: 58.33333% !important
+    }
+
+    .gel-10\/12\@xl {
+        width: 83.33333% !important
+    }
+
+    .gel-11\/12\@xl {
+        width: 91.66667% !important
+    }
+
+    .gel-1\/24\@xl {
+        width: 4.16667% !important
+    }
+
+    .gel-5\/24\@xl {
+        width: 20.83333% !important
+    }
+
+    .gel-7\/24\@xl {
+        width: 29.16667% !important
+    }
+
+    .gel-11\/24\@xl {
+        width: 45.83333% !important
+    }
+
+    .gel-13\/24\@xl {
+        width: 54.16667% !important
+    }
+
+    .gel-17\/24\@xl {
+        width: 70.83333% !important
+    }
+
+    .gel-19\/24\@xl {
+        width: 79.16667% !important
+    }
+
+    .gel-23\/24\@xl {
+        width: 95.83333% !important
+    }
+}
+
+@media(min-width: 80em) {
+    .gel-1\/1\@xxl {
+        width: 100% !important
+    }
+
+    .gel-1\/2\@xxl {
+        width: 50% !important
+    }
+
+    .gel-1\/3\@xxl {
+        width: 33.33333% !important
+    }
+
+    .gel-2\/3\@xxl {
+        width: 66.66667% !important
+    }
+
+    .gel-1\/4\@xxl {
+        width: 25% !important
+    }
+
+    .gel-3\/4\@xxl {
+        width: 75% !important
+    }
+
+    .gel-1\/5\@xxl {
+        width: 20% !important
+    }
+
+    .gel-2\/5\@xxl {
+        width: 40% !important
+    }
+
+    .gel-3\/5\@xxl {
+        width: 60% !important
+    }
+
+    .gel-4\/5\@xxl {
+        width: 80% !important
+    }
+
+    .gel-1\/8\@xxl {
+        width: 12.5% !important
+    }
+
+    .gel-3\/8\@xxl {
+        width: 37.5% !important
+    }
+
+    .gel-5\/8\@xxl {
+        width: 62.5% !important
+    }
+
+    .gel-7\/8\@xxl {
+        width: 87.5% !important
+    }
+
+    .gel-1\/10\@xxl {
+        width: 10% !important
+    }
+
+    .gel-3\/10\@xxl {
+        width: 30% !important
+    }
+
+    .gel-7\/10\@xxl {
+        width: 70% !important
+    }
+
+    .gel-9\/10\@xxl {
+        width: 90% !important
+    }
+
+    .gel-1\/12\@xxl {
+        width: 8.33333% !important
+    }
+
+    .gel-2\/12\@xxl {
+        width: 16.66667% !important
+    }
+
+    .gel-5\/12\@xxl {
+        width: 41.66667% !important
+    }
+
+    .gel-7\/12\@xxl {
+        width: 58.33333% !important
+    }
+
+    .gel-10\/12\@xxl {
+        width: 83.33333% !important
+    }
+
+    .gel-11\/12\@xxl {
+        width: 91.66667% !important
+    }
+
+    .gel-1\/24\@xxl {
+        width: 4.16667% !important
+    }
+
+    .gel-5\/24\@xxl {
+        width: 20.83333% !important
+    }
+
+    .gel-7\/24\@xxl {
+        width: 29.16667% !important
+    }
+
+    .gel-11\/24\@xxl {
+        width: 45.83333% !important
+    }
+
+    .gel-13\/24\@xxl {
+        width: 54.16667% !important
+    }
+
+    .gel-17\/24\@xxl {
+        width: 70.83333% !important
+    }
+
+    .gel-19\/24\@xxl {
+        width: 79.16667% !important
+    }
+
+    .gel-23\/24\@xxl {
+        width: 95.83333% !important
+    }
+}
+
+.wr-icon-weather-type__svg-moon {
+    fill: #b4b4b4
+}
+
+.wr-icon-weather-type__svg-snowflake {
+    fill: #969696
+}
+
+.wr-icon-weather-type__svg-hailstone {
+    fill: #969696
+}
+
+.wr-icon-weather-type__svg-drizzle {
+    fill: #3789c6
+}
+
+.wr-icon-weather-type__svg-raindrop {
+    fill: #3789c6
+}
+
+.wr-icon-weather-type__svg-sun {
+    fill: #fdc400
+}
+
+.wr-icon-weather-type__svg-partial-sun {
+    fill: #fdc400
+}
+
+.wr-icon-weather-type__svg-lightning {
+    fill: #6db1de
+}
+
+.wr-icon-weather-type__svg-light-cloud {
+    fill: #969696
+}
+
+.wr-icon-weather-type__svg-thick-cloud {
+    fill: #000
+}
+
+.wr-icon-weather-type__svg-partial-moon {
+    fill: #b4b4b4
+}
+
+.wr-icon-weather-type__svg-tropical-storm {
+    fill: #000
+}
+
+.wr-icon-weather-type__svg-dash {
+    fill: #000
+}
+
+.wr-icon-weather-type__svg-text {
+    fill: #000
+}
+
+.wr-icon-wind-direction__svg-background {
+    fill: #fff
+}
+
+.wr-icon-wind-direction__svg-circle {
+    fill: inherit;
+    stroke: currentColor
+}
+
+.wr-icon-wind-direction__svg-arrow {
+    fill: currentColor
+}
+
+.wr-icon-gel__svg-background {
+    fill: inherit
+}
+
+.wr-icon-rain__svg-background {
+    fill: #fff
+}
+
+.wr-icon-rain__drops {
+    fill: inherit
+}
+
+.wr-forecast {
+    /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+}
+
+.wr-forecast html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+.wr-forecast body {
+    margin: 0
+}
+
+.wr-forecast article,
+.wr-forecast aside,
+.wr-forecast details,
+.wr-forecast figcaption,
+.wr-forecast figure,
+.wr-forecast footer,
+.wr-forecast header,
+.wr-forecast main,
+.wr-forecast menu,
+.wr-forecast nav,
+.wr-forecast section,
+.wr-forecast summary {
+    display: block
+}
+
+.wr-forecast audio,
+.wr-forecast canvas,
+.wr-forecast progress,
+.wr-forecast video {
+    display: inline-block;
+    vertical-align: baseline
+}
+
+.wr-forecast audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+.wr-forecast [hidden],
+.wr-forecast template {
+    display: none
+}
+
+.wr-forecast a {
+    background-color: rgba(0, 0, 0, 0)
+}
+
+.wr-forecast abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted
+}
+
+.wr-forecast b,
+.wr-forecast strong {
+    font-weight: inherit
+}
+
+.wr-forecast b,
+.wr-forecast strong {
+    font-weight: bolder
+}
+
+.wr-forecast dfn {
+    font-style: italic
+}
+
+.wr-forecast h1 {
+    margin: .67em 0
+}
+
+.wr-forecast mark {
+    background-color: #ff0;
+    color: #000
+}
+
+.wr-forecast small {
+    font-size: 80%
+}
+
+.wr-forecast sub,
+.wr-forecast sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+.wr-forecast sup {
+    top: -0.5em
+}
+
+.wr-forecast sub {
+    bottom: -0.25em
+}
+
+.wr-forecast img {
+    border: 0
+}
+
+.wr-forecast svg:not(:root) {
+    overflow: hidden
+}
+
+.wr-forecast figure {
+    margin: 1em 40px
+}
+
+.wr-forecast hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+.wr-forecast pre {
+    overflow: auto
+}
+
+.wr-forecast code,
+.wr-forecast kbd,
+.wr-forecast pre,
+.wr-forecast samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+.wr-forecast button,
+.wr-forecast input,
+.wr-forecast optgroup,
+.wr-forecast select,
+.wr-forecast textarea {
+    font: inherit;
+    margin: 0
+}
+
+.wr-forecast button {
+    overflow: visible
+}
+
+.wr-forecast button,
+.wr-forecast select {
+    text-transform: none
+}
+
+.wr-forecast button,
+.wr-forecast html input[type=button],
+.wr-forecast input[type=reset],
+.wr-forecast input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+.wr-forecast button[disabled],
+.wr-forecast html input[disabled] {
+    cursor: default
+}
+
+.wr-forecast button::-moz-focus-inner,
+.wr-forecast input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+.wr-forecast button:-moz-focusring,
+.wr-forecast input:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+.wr-forecast input {
+    line-height: normal
+}
+
+.wr-forecast input[type=checkbox],
+.wr-forecast input[type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+.wr-forecast input[type=number]::-webkit-inner-spin-button,
+.wr-forecast input[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+.wr-forecast input[type=search] {
+    -webkit-appearance: textfield
+}
+
+.wr-forecast input[type=search]::-webkit-search-cancel-button,
+.wr-forecast input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+.wr-forecast fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+
+.wr-forecast legend {
+    border: 0;
+    padding: 0
+}
+
+.wr-forecast textarea {
+    overflow: auto
+}
+
+.wr-forecast optgroup {
+    font-weight: bold
+}
+
+.wr-forecast *,
+.wr-forecast *:before,
+.wr-forecast *:after {
+    box-sizing: inherit
+}
+
+.wr-forecast body,
+.wr-forecast h1,
+.wr-forecast h2,
+.wr-forecast h3,
+.wr-forecast h4,
+.wr-forecast h5,
+.wr-forecast h6,
+.wr-forecast p,
+.wr-forecast blockquote,
+.wr-forecast pre,
+.wr-forecast dl,
+.wr-forecast dd,
+.wr-forecast ol,
+.wr-forecast ul,
+.wr-forecast form,
+.wr-forecast fieldset,
+.wr-forecast legend,
+.wr-forecast figure,
+.wr-forecast table,
+.wr-forecast th,
+.wr-forecast td,
+.wr-forecast caption,
+.wr-forecast hr {
+    margin: 0;
+    padding: 0
+}
+
+.wr-forecast h1,
+.wr-forecast h2,
+.wr-forecast h3,
+.wr-forecast h4,
+.wr-forecast h5,
+.wr-forecast h6 {
+    font-weight: normal
+}
+
+.wr-forecast abbr[title],
+.wr-forecast dfn[title] {
+    cursor: help
+}
+
+.wr-forecast u,
+.wr-forecast ins {
+    text-decoration: none
+}
+
+.wr-forecast ins {
+    border-bottom: 1px solid
+}
+
+.wr-forecast a {
+    text-decoration: none
+}
+
+.wr-forecast html,
+.wr-forecast body {
+    font-family: Helvetica, Arial, freesans, sans-serif;
+    min-width: 270px
+}
+
+.wr-forecast input[type=submit],
+.wr-forecast input[type=reset],
+.wr-forecast input[type=button],
+.wr-forecast button {
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none
+}
+
+.wr-forecast input[type=submit]::-moz-focus-inner,
+.wr-forecast input[type=reset]::-moz-focus-inner,
+.wr-forecast input[type=button]::-moz-focus-inner,
+.wr-forecast button::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+.wr-forecast .wr-unit__type-separator {
+    display: none
+}
+
+.wr-unit--temperature--c .wr-value--temperature--f,
+.wr-unit--temperature--f .wr-value--temperature--c {
+    display: none
+}
+
+.wr-unit--windspeed--kph .wr-value--windspeed--mph,
+.wr-unit--windspeed--mph .wr-value--windspeed--kph {
+    display: none
+}
+
+.wr-forecast .wr-c-environment-container--core {
+    display: block
+}
+
+.wr-forecast .wr-c-environment-container--core .wr-c-astro-data__sunrise {
+    font-weight: bold
+}
+
+.wr-forecast .wr-c-environment-container--core .wr-c-astro-data__label {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip-path: polygon(0 0, 1px 0, 1px 1px, 0 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.wr-forecast .wr-c-environment-container--enhanced {
+    display: none
+}
+
+.wr-enhanced .wr-forecast .wr-c-environment-container--core {
+    display: none
+}
+
+.wr-enhanced .wr-forecast .wr-c-environment-container--enhanced {
+    display: block
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-c-environment-container--core {
+        display: none
+    }
+
+    .wr-forecast .wr-c-environment-container--enhanced {
+        display: block
+    }
+}
+
+.wr-forecast .wr-c-environment-day-wrapper {
+    display: none;
+    padding: 16px 0
+}
+
+.wr-enhanced .wr-forecast .wr-c-environment-day-wrapper {
+    padding: 32px 0
+}
+
+.wr-forecast .wr-c-environment-day-wrapper--active {
+    display: block
+}
+
+.wr-forecast .wr-c-astro-data {
+    color: #141414
+}
+
+.wr-forecast .wr-c-astro-data__icon {
+    width: 32px;
+    height: 16px;
+    display: inline-block
+}
+
+.wr-forecast .wr-c-astro-data__svg {
+    width: 100%;
+    height: 100%;
+    fill: #fff
+}
+
+.wr-forecast .wr-c-astro-data--vertical-padding {
+    padding-bottom: 8px
+}
+
+@media(min-width: 37.5em)and (max-width: 56.24em) {
+    .wr-enhanced .wr-forecast .wr-c-astro-data--vertical-padding {
+        padding-bottom: 16px
+    }
+}
+
+@media(min-width: 56.25em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-c-astro-data--vertical-padding,
+    .b-pw-1280.wr-core .wr-forecast .wr-c-astro-data--vertical-padding {
+        padding-top: .125rem
+    }
+}
+
+@media(min-width: 56.25em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-c-astro-data,
+    .b-pw-1280.wr-core .wr-forecast .wr-c-astro-data {
+        float: right
+    }
+}
+
+.wr-forecast .wr-c-environmental-data__item {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.wr-forecast .wr-c-environmental-data__icon-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 2.125rem;
+    height: 2.125rem;
+    margin-bottom: 6px
+}
+
+.wr-forecast .wr-c-environmental-data__icon {
+    display: inline-block;
+    position: absolute;
+    fill: #fff;
+    width: inherit;
+    height: inherit;
+    border: solid .0625rem rgba(0, 0, 0, 0);
+    transform: rotate(45deg) scale(0.7071)
+}
+
+.wr-forecast .wr-c-environmental-data__icon--low {
+    background-color: #afd251
+}
+
+.wr-forecast .wr-c-environmental-data__icon--moderate {
+    background-color: #fae302
+}
+
+.wr-forecast .wr-c-environmental-data__icon--high {
+    background-color: #f37720
+}
+
+.wr-forecast .wr-c-environmental-data__icon--very-high {
+    background-color: #e22426
+}
+
+.wr-forecast .wr-c-environmental-data__icon--very-high+.wr-c-environmental-data__icon-text {
+    color: #fff
+}
+
+.wr-forecast .wr-c-environmental-data__icon--extreme {
+    background-color: #9012fe
+}
+
+.wr-forecast .wr-c-environmental-data__icon--extreme+.wr-c-environmental-data__icon-text {
+    color: #fff
+}
+
+.wr-forecast .wr-c-environmental-data__icon-text {
+    position: relative;
+    display: inline-block;
+    line-height: 2.125rem !important;
+    width: 2.125rem;
+    text-align: center;
+    color: #000
+}
+
+.wr-forecast .wr-c-environmental-data__label {
+    padding: 0 8px;
+    color: #141414
+}
+
+@media(min-width: 0em)and (max-width: 37.49em) {
+    .wr-enhanced .wr-forecast .wr-c-environmental-data__icon-wrapper {
+        display: block;
+        padding-right: 6.4375rem
+    }
+
+    .wr-enhanced .wr-forecast .wr-c-environmental-data__item--pollution .wr-c-environmental-data__icon-wrapper {
+        padding-right: 0
+    }
+
+    .wr-enhanced .wr-forecast .wr-c-environmental-data__label {
+        padding: 0
+    }
+}
+
+@media(min-width: 25em)and (max-width: 37.49em) {
+    .wr-enhanced .wr-forecast .wr-c-environmental-data__icon-wrapper {
+        padding-right: 7.75rem
+    }
+}
+
+@media(min-width: 37.5em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-c-environmental-data__item,
+    .b-pw-1280.wr-core .wr-forecast .wr-c-environmental-data__item {
+        padding-right: 2.625rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-c-environmental-data__icon-wrapper,
+    .b-pw-1280.wr-core .wr-forecast .wr-c-environmental-data__icon-wrapper {
+        display: inline-block;
+        margin-bottom: 0
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-c-environmental-data__label,
+    .b-pw-1280.wr-core .wr-forecast .wr-c-environmental-data__label {
+        padding-right: 0
+    }
+}
+
+@media(min-width: 56.25em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-c-environmental-data,
+    .b-pw-1280.wr-core .wr-forecast .wr-c-environmental-data {
+        height: 2.125rem
+    }
+}
+
+.wr-forecast .wr-day-container {
+    margin-bottom: 1rem;
+    background-size: cover
+}
+
+.wr-enhanced .wr-forecast .wr-day-container {
+    background-color: #5a5a5a
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--clear-sky-night {
+    background-color: #363356
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sunny-day {
+    background-color: #6397d5
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--partly-cloudy-night {
+    background-color: #2f5179
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sunny-intervals-day {
+    background-color: #6397d5
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sandstorm-day {
+    background-color: #a77e53
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--mist-day {
+    background-color: #969698
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--fog-day {
+    background-color: #717375
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--white-cloud-day {
+    background-color: #7b98b6
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thick-cloud-day {
+    background-color: #8d97a4
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-night {
+    background-color: #2f5179
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-day {
+    background-color: #969698
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--drizzle-day {
+    background-color: #8d97a4
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-rain-day {
+    background-color: #8d97a4
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-night {
+    background-color: #2f5179
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-day {
+    background-color: #717375
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-day {
+    background-color: #969698
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sleet-shower-night {
+    background-color: #223959
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sleet-shower-day {
+    background-color: #717375
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sleet-day {
+    background-color: #8d97a4
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hail-shower-night {
+    background-color: #717375
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hail-shower-day {
+    background-color: #57606c
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hail-day {
+    background-color: #57606c
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-night {
+    background-color: #223959
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-day {
+    background-color: #8d97a4
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-snow-day {
+    background-color: #8d97a4
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-night {
+    background-color: #223959
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-day {
+    background-color: #969698
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-day {
+    background-color: #969698
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-night {
+    background-color: #5a5992
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-day {
+    background-color: #57606c
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-day {
+    background-color: #57606c
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-day {
+    background-color: #57606c
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hazy-day {
+    background-color: #7b98b6
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sandstorm-night {
+    background-color: #764423
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--mist-night {
+    background-color: #2a2a2a
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--fog-night {
+    background-color: #717375
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--white-cloud-night {
+    background-color: #57606c
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thick-cloud-night {
+    background-color: #57606c
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--drizzle-night {
+    background-color: #717375
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-rain-night {
+    background-color: #57606c
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-night {
+    background-color: #717375
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sleet-night {
+    background-color: #535555
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hail-night {
+    background-color: #717375
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-snow-night {
+    background-color: #57606c
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-night {
+    background-color: #57606c
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-night {
+    background-color: #5a5992
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-night {
+    background-color: #5a5992
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hazy-night {
+    background-color: #7b6f73
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day-container {
+        background-color: #5a5a5a
+    }
+
+    .wr-forecast .wr-day-container--clear-sky-night {
+        background-color: #363356
+    }
+
+    .wr-forecast .wr-day-container--sunny-day {
+        background-color: #6397d5
+    }
+
+    .wr-forecast .wr-day-container--partly-cloudy-night {
+        background-color: #2f5179
+    }
+
+    .wr-forecast .wr-day-container--sunny-intervals-day {
+        background-color: #6397d5
+    }
+
+    .wr-forecast .wr-day-container--sandstorm-day {
+        background-color: #a77e53
+    }
+
+    .wr-forecast .wr-day-container--mist-day {
+        background-color: #969698
+    }
+
+    .wr-forecast .wr-day-container--fog-day {
+        background-color: #717375
+    }
+
+    .wr-forecast .wr-day-container--white-cloud-day {
+        background-color: #7b98b6
+    }
+
+    .wr-forecast .wr-day-container--thick-cloud-day {
+        background-color: #8d97a4
+    }
+
+    .wr-forecast .wr-day-container--light-rain-shower-night {
+        background-color: #2f5179
+    }
+
+    .wr-forecast .wr-day-container--light-rain-shower-day {
+        background-color: #969698
+    }
+
+    .wr-forecast .wr-day-container--drizzle-day {
+        background-color: #8d97a4
+    }
+
+    .wr-forecast .wr-day-container--light-rain-day {
+        background-color: #8d97a4
+    }
+
+    .wr-forecast .wr-day-container--heavy-rain-shower-night {
+        background-color: #2f5179
+    }
+
+    .wr-forecast .wr-day-container--heavy-rain-shower-day {
+        background-color: #717375
+    }
+
+    .wr-forecast .wr-day-container--heavy-rain-day {
+        background-color: #969698
+    }
+
+    .wr-forecast .wr-day-container--sleet-shower-night {
+        background-color: #223959
+    }
+
+    .wr-forecast .wr-day-container--sleet-shower-day {
+        background-color: #717375
+    }
+
+    .wr-forecast .wr-day-container--sleet-day {
+        background-color: #8d97a4
+    }
+
+    .wr-forecast .wr-day-container--hail-shower-night {
+        background-color: #717375
+    }
+
+    .wr-forecast .wr-day-container--hail-shower-day {
+        background-color: #57606c
+    }
+
+    .wr-forecast .wr-day-container--hail-day {
+        background-color: #57606c
+    }
+
+    .wr-forecast .wr-day-container--light-snow-shower-night {
+        background-color: #223959
+    }
+
+    .wr-forecast .wr-day-container--light-snow-shower-day {
+        background-color: #8d97a4
+    }
+
+    .wr-forecast .wr-day-container--light-snow-day {
+        background-color: #8d97a4
+    }
+
+    .wr-forecast .wr-day-container--heavy-snow-shower-night {
+        background-color: #223959
+    }
+
+    .wr-forecast .wr-day-container--heavy-snow-shower-day {
+        background-color: #969698
+    }
+
+    .wr-forecast .wr-day-container--heavy-snow-day {
+        background-color: #969698
+    }
+
+    .wr-forecast .wr-day-container--thunderstorm-shower-night {
+        background-color: #5a5992
+    }
+
+    .wr-forecast .wr-day-container--thunderstorm-shower-day {
+        background-color: #57606c
+    }
+
+    .wr-forecast .wr-day-container--thunderstorm-day {
+        background-color: #57606c
+    }
+
+    .wr-forecast .wr-day-container--tropicalstorm-day {
+        background-color: #57606c
+    }
+
+    .wr-forecast .wr-day-container--hazy-day {
+        background-color: #7b98b6
+    }
+
+    .wr-forecast .wr-day-container--sandstorm-night {
+        background-color: #764423
+    }
+
+    .wr-forecast .wr-day-container--mist-night {
+        background-color: #2a2a2a
+    }
+
+    .wr-forecast .wr-day-container--fog-night {
+        background-color: #717375
+    }
+
+    .wr-forecast .wr-day-container--white-cloud-night {
+        background-color: #57606c
+    }
+
+    .wr-forecast .wr-day-container--thick-cloud-night {
+        background-color: #57606c
+    }
+
+    .wr-forecast .wr-day-container--drizzle-night {
+        background-color: #717375
+    }
+
+    .wr-forecast .wr-day-container--light-rain-night {
+        background-color: #57606c
+    }
+
+    .wr-forecast .wr-day-container--heavy-rain-night {
+        background-color: #717375
+    }
+
+    .wr-forecast .wr-day-container--sleet-night {
+        background-color: #535555
+    }
+
+    .wr-forecast .wr-day-container--hail-night {
+        background-color: #717375
+    }
+
+    .wr-forecast .wr-day-container--light-snow-night {
+        background-color: #57606c
+    }
+
+    .wr-forecast .wr-day-container--heavy-snow-night {
+        background-color: #57606c
+    }
+
+    .wr-forecast .wr-day-container--thunderstorm-night {
+        background-color: #5a5992
+    }
+
+    .wr-forecast .wr-day-container--tropicalstorm-night {
+        background-color: #5a5992
+    }
+
+    .wr-forecast .wr-day-container--hazy-night {
+        background-color: #7b6f73
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-day-container {
+    background-position: left top
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--clear-sky-night {
+    background-image: url(../src/images/G1/@1x-G1_clear-sky-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sunny-day {
+    background-image: url(../src/images/G1/@1x-G1_sunny-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--partly-cloudy-night {
+    background-image: url(../src/images/G1/@1x-G1_partly-cloudy-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sunny-intervals-day {
+    background-image: url(../src/images/G1/@1x-G1_sunny-intervals-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sandstorm-day {
+    background-image: url(../src/images/G1/@1x-G1_sandstorm-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--mist-day {
+    background-image: url(../src/images/G1/@1x-G1_mist-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--fog-day {
+    background-image: url(../src/images/G1/@1x-G1_fog-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--white-cloud-day {
+    background-image: url(../src/images/G1/@1x-G1_white-cloud-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thick-cloud-day {
+    background-image: url(../src/images/G1/@1x-G1_thick-cloud-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-night {
+    background-image: url(../src/images/G1/@1x-G1_light-rain-shower-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-day {
+    background-image: url(../src/images/G1/@1x-G1_light-rain-shower-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--drizzle-day {
+    background-image: url(../src/images/G1/@1x-G1_drizzle-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-rain-day {
+    background-image: url(../src/images/G1/@1x-G1_light-rain-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-night {
+    background-image: url(../src/images/G1/@1x-G1_heavy-rain-shower-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-day {
+    background-image: url(../src/images/G1/@1x-G1_heavy-rain-shower-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-day {
+    background-image: url(../src/images/G1/@1x-G1_heavy-rain-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sleet-shower-night {
+    background-image: url(../src/images/G1/@1x-G1_sleet-shower-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sleet-shower-day {
+    background-image: url(../src/images/G1/@1x-G1_sleet-shower-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sleet-day {
+    background-image: url(../src/images/G1/@1x-G1_sleet-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hail-shower-night {
+    background-image: url(../src/images/G1/@1x-G1_hail-shower-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hail-shower-day {
+    background-image: url(../src/images/G1/@1x-G1_hail-shower-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hail-day {
+    background-image: url(../src/images/G1/@1x-G1_hail-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-night {
+    background-image: url(../src/images/G1/@1x-G1_light-snow-shower-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-day {
+    background-image: url(../src/images/G1/@1x-G1_light-snow-shower-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-snow-day {
+    background-image: url(../src/images/G1/@1x-G1_light-snow-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-night {
+    background-image: url(../src/images/G1/@1x-G1_heavy-snow-shower-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-day {
+    background-image: url(../src/images/G1/@1x-G1_heavy-snow-shower-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-day {
+    background-image: url(../src/images/G1/@1x-G1_heavy-snow-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-night {
+    background-image: url(../src/images/G1/@1x-G1_thunderstorm-shower-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-day {
+    background-image: url(../src/images/G1/@1x-G1_thunderstorm-shower-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-day {
+    background-image: url(../src/images/G1/@1x-G1_thunderstorm-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-day {
+    background-image: url(../src/images/G1/@1x-G1_tropicalstorm-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hazy-day {
+    background-image: url(../src/images/G1/@1x-G1_hazy-day.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sandstorm-night {
+    background-image: url(../src/images/G1/@1x-G1_sandstorm-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--mist-night {
+    background-image: url(../src/images/G1/@1x-G1_mist-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--fog-night {
+    background-image: url(../src/images/G1/@1x-G1_fog-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--white-cloud-night {
+    background-image: url(../src/images/G1/@1x-G1_white-cloud-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thick-cloud-night {
+    background-image: url(../src/images/G1/@1x-G1_thick-cloud-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--drizzle-night {
+    background-image: url(../src/images/G1/@1x-G1_drizzle-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-rain-night {
+    background-image: url(../src/images/G1/@1x-G1_light-rain-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-night {
+    background-image: url(../src/images/G1/@1x-G1_heavy-rain-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--sleet-night {
+    background-image: url(../src/images/G1/@1x-G1_sleet-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hail-night {
+    background-image: url(../src/images/G1/@1x-G1_hail-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--light-snow-night {
+    background-image: url(../src/images/G1/@1x-G1_light-snow-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-night {
+    background-image: url(../src/images/G1/@1x-G1_heavy-snow-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-night {
+    background-image: url(../src/images/G1/@1x-G1_thunderstorm-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-night {
+    background-image: url(../src/images/G1/@1x-G1_tropicalstorm-night.jpg)
+}
+
+.wr-enhanced .wr-forecast .wr-day-container--hazy-night {
+    background-image: url(../src/images/G1/@1x-G1_hazy-night.jpg)
+}
+
+@media(min-width: 25em) {
+    .wr-enhanced .wr-forecast .wr-day-container--clear-sky-night {
+        background-image: url(../src/images/G2/@1x-G2_clear-sky-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--sunny-day {
+        background-image: url(../src/images/G2/@1x-G2_sunny-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--partly-cloudy-night {
+        background-image: url(../src/images/G2/@1x-G2_partly-cloudy-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--sunny-intervals-day {
+        background-image: url(../src/images/G2/@1x-G2_sunny-intervals-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--sandstorm-day {
+        background-image: url(../src/images/G2/@1x-G2_sandstorm-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--mist-day {
+        background-image: url(../src/images/G2/@1x-G2_mist-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--fog-day {
+        background-image: url(../src/images/G2/@1x-G2_fog-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--white-cloud-day {
+        background-image: url(../src/images/G2/@1x-G2_white-cloud-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--thick-cloud-day {
+        background-image: url(../src/images/G2/@1x-G2_thick-cloud-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-night {
+        background-image: url(../src/images/G2/@1x-G2_light-rain-shower-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-day {
+        background-image: url(../src/images/G2/@1x-G2_light-rain-shower-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--drizzle-day {
+        background-image: url(../src/images/G2/@1x-G2_drizzle-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--light-rain-day {
+        background-image: url(../src/images/G2/@1x-G2_light-rain-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-night {
+        background-image: url(../src/images/G2/@1x-G2_heavy-rain-shower-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-day {
+        background-image: url(../src/images/G2/@1x-G2_heavy-rain-shower-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--heavy-rain-day {
+        background-image: url(../src/images/G2/@1x-G2_heavy-rain-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--sleet-shower-night {
+        background-image: url(../src/images/G2/@1x-G2_sleet-shower-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--sleet-shower-day {
+        background-image: url(../src/images/G2/@1x-G2_sleet-shower-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--sleet-day {
+        background-image: url(../src/images/G2/@1x-G2_sleet-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--hail-shower-night {
+        background-image: url(../src/images/G2/@1x-G2_hail-shower-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--hail-shower-day {
+        background-image: url(../src/images/G2/@1x-G2_hail-shower-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--hail-day {
+        background-image: url(../src/images/G2/@1x-G2_hail-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-night {
+        background-image: url(../src/images/G2/@1x-G2_light-snow-shower-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-day {
+        background-image: url(../src/images/G2/@1x-G2_light-snow-shower-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--light-snow-day {
+        background-image: url(../src/images/G2/@1x-G2_light-snow-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-night {
+        background-image: url(../src/images/G2/@1x-G2_heavy-snow-shower-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-day {
+        background-image: url(../src/images/G2/@1x-G2_heavy-snow-shower-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--heavy-snow-day {
+        background-image: url(../src/images/G2/@1x-G2_heavy-snow-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-night {
+        background-image: url(../src/images/G2/@1x-G2_thunderstorm-shower-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-day {
+        background-image: url(../src/images/G2/@1x-G2_thunderstorm-shower-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--thunderstorm-day {
+        background-image: url(../src/images/G2/@1x-G2_thunderstorm-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-day {
+        background-image: url(../src/images/G2/@1x-G2_tropicalstorm-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--hazy-day {
+        background-image: url(../src/images/G2/@1x-G2_hazy-day.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--sandstorm-night {
+        background-image: url(../src/images/G2/@1x-G2_sandstorm-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--mist-night {
+        background-image: url(../src/images/G2/@1x-G2_mist-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--fog-night {
+        background-image: url(../src/images/G2/@1x-G2_fog-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--white-cloud-night {
+        background-image: url(../src/images/G2/@1x-G2_white-cloud-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--thick-cloud-night {
+        background-image: url(../src/images/G2/@1x-G2_thick-cloud-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--drizzle-night {
+        background-image: url(../src/images/G2/@1x-G2_drizzle-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--light-rain-night {
+        background-image: url(../src/images/G2/@1x-G2_light-rain-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--heavy-rain-night {
+        background-image: url(../src/images/G2/@1x-G2_heavy-rain-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--sleet-night {
+        background-image: url(../src/images/G2/@1x-G2_sleet-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--hail-night {
+        background-image: url(../src/images/G2/@1x-G2_hail-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--light-snow-night {
+        background-image: url(../src/images/G2/@1x-G2_light-snow-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--heavy-snow-night {
+        background-image: url(../src/images/G2/@1x-G2_heavy-snow-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--thunderstorm-night {
+        background-image: url(../src/images/G2/@1x-G2_thunderstorm-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-night {
+        background-image: url(../src/images/G2/@1x-G2_tropicalstorm-night.jpg)
+    }
+
+    .wr-enhanced .wr-forecast .wr-day-container--hazy-night {
+        background-image: url(../src/images/G2/@1x-G2_hazy-night.jpg)
+    }
+}
+
+@media(min-width: 600px) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--clear-sky-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--clear-sky-night {
+        background-image: url(../src/images/G3/@1x-G3_clear-sky-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sunny-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sunny-day {
+        background-image: url(../src/images/G3/@1x-G3_sunny-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--partly-cloudy-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--partly-cloudy-night {
+        background-image: url(../src/images/G3/@1x-G3_partly-cloudy-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sunny-intervals-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sunny-intervals-day {
+        background-image: url(../src/images/G3/@1x-G3_sunny-intervals-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sandstorm-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sandstorm-day {
+        background-image: url(../src/images/G3/@1x-G3_sandstorm-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--mist-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--mist-day {
+        background-image: url(../src/images/G3/@1x-G3_mist-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--fog-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--fog-day {
+        background-image: url(../src/images/G3/@1x-G3_fog-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--white-cloud-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--white-cloud-day {
+        background-image: url(../src/images/G3/@1x-G3_white-cloud-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thick-cloud-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thick-cloud-day {
+        background-image: url(../src/images/G3/@1x-G3_thick-cloud-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-shower-night {
+        background-image: url(../src/images/G3/@1x-G3_light-rain-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-shower-day {
+        background-image: url(../src/images/G3/@1x-G3_light-rain-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--drizzle-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--drizzle-day {
+        background-image: url(../src/images/G3/@1x-G3_drizzle-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-day {
+        background-image: url(../src/images/G3/@1x-G3_light-rain-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-shower-night {
+        background-image: url(../src/images/G3/@1x-G3_heavy-rain-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-shower-day {
+        background-image: url(../src/images/G3/@1x-G3_heavy-rain-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-day {
+        background-image: url(../src/images/G3/@1x-G3_heavy-rain-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-shower-night {
+        background-image: url(../src/images/G3/@1x-G3_sleet-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-shower-day {
+        background-image: url(../src/images/G3/@1x-G3_sleet-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-day {
+        background-image: url(../src/images/G3/@1x-G3_sleet-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-shower-night {
+        background-image: url(../src/images/G3/@1x-G3_hail-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-shower-day {
+        background-image: url(../src/images/G3/@1x-G3_hail-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-day {
+        background-image: url(../src/images/G3/@1x-G3_hail-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-shower-night {
+        background-image: url(../src/images/G3/@1x-G3_light-snow-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-shower-day {
+        background-image: url(../src/images/G3/@1x-G3_light-snow-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-day {
+        background-image: url(../src/images/G3/@1x-G3_light-snow-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-shower-night {
+        background-image: url(../src/images/G3/@1x-G3_heavy-snow-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-shower-day {
+        background-image: url(../src/images/G3/@1x-G3_heavy-snow-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-day {
+        background-image: url(../src/images/G3/@1x-G3_heavy-snow-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-shower-night {
+        background-image: url(../src/images/G3/@1x-G3_thunderstorm-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-shower-day {
+        background-image: url(../src/images/G3/@1x-G3_thunderstorm-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-day {
+        background-image: url(../src/images/G3/@1x-G3_thunderstorm-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--tropicalstorm-day {
+        background-image: url(../src/images/G3/@1x-G3_tropicalstorm-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hazy-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hazy-day {
+        background-image: url(../src/images/G3/@1x-G3_hazy-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sandstorm-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sandstorm-night {
+        background-image: url(../src/images/G3/@1x-G3_sandstorm-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--mist-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--mist-night {
+        background-image: url(../src/images/G3/@1x-G3_mist-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--fog-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--fog-night {
+        background-image: url(../src/images/G3/@1x-G3_fog-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--white-cloud-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--white-cloud-night {
+        background-image: url(../src/images/G3/@1x-G3_white-cloud-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thick-cloud-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thick-cloud-night {
+        background-image: url(../src/images/G3/@1x-G3_thick-cloud-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--drizzle-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--drizzle-night {
+        background-image: url(../src/images/G3/@1x-G3_drizzle-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-night {
+        background-image: url(../src/images/G3/@1x-G3_light-rain-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-night {
+        background-image: url(../src/images/G3/@1x-G3_heavy-rain-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-night {
+        background-image: url(../src/images/G3/@1x-G3_sleet-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-night {
+        background-image: url(../src/images/G3/@1x-G3_hail-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-night {
+        background-image: url(../src/images/G3/@1x-G3_light-snow-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-night {
+        background-image: url(../src/images/G3/@1x-G3_heavy-snow-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-night {
+        background-image: url(../src/images/G3/@1x-G3_thunderstorm-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--tropicalstorm-night {
+        background-image: url(../src/images/G3/@1x-G3_tropicalstorm-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hazy-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hazy-night {
+        background-image: url(../src/images/G3/@1x-G3_hazy-night.jpg)
+    }
+}
+
+@media(min-width: 1008px) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container {
+        background-position: center top
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--clear-sky-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--clear-sky-night {
+        background-image: url(../src/images/G4/@1x-G4_clear-sky-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sunny-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sunny-day {
+        background-image: url(../src/images/G4/@1x-G4_sunny-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--partly-cloudy-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--partly-cloudy-night {
+        background-image: url(../src/images/G4/@1x-G4_partly-cloudy-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sunny-intervals-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sunny-intervals-day {
+        background-image: url(../src/images/G4/@1x-G4_sunny-intervals-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sandstorm-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sandstorm-day {
+        background-image: url(../src/images/G4/@1x-G4_sandstorm-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--mist-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--mist-day {
+        background-image: url(../src/images/G4/@1x-G4_mist-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--fog-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--fog-day {
+        background-image: url(../src/images/G4/@1x-G4_fog-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--white-cloud-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--white-cloud-day {
+        background-image: url(../src/images/G4/@1x-G4_white-cloud-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thick-cloud-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thick-cloud-day {
+        background-image: url(../src/images/G4/@1x-G4_thick-cloud-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-shower-night {
+        background-image: url(../src/images/G4/@1x-G4_light-rain-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-shower-day {
+        background-image: url(../src/images/G4/@1x-G4_light-rain-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--drizzle-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--drizzle-day {
+        background-image: url(../src/images/G4/@1x-G4_drizzle-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-day {
+        background-image: url(../src/images/G4/@1x-G4_light-rain-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-shower-night {
+        background-image: url(../src/images/G4/@1x-G4_heavy-rain-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-shower-day {
+        background-image: url(../src/images/G4/@1x-G4_heavy-rain-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-day {
+        background-image: url(../src/images/G4/@1x-G4_heavy-rain-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-shower-night {
+        background-image: url(../src/images/G4/@1x-G4_sleet-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-shower-day {
+        background-image: url(../src/images/G4/@1x-G4_sleet-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-day {
+        background-image: url(../src/images/G4/@1x-G4_sleet-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-shower-night {
+        background-image: url(../src/images/G4/@1x-G4_hail-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-shower-day {
+        background-image: url(../src/images/G4/@1x-G4_hail-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-day {
+        background-image: url(../src/images/G4/@1x-G4_hail-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-shower-night {
+        background-image: url(../src/images/G4/@1x-G4_light-snow-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-shower-day {
+        background-image: url(../src/images/G4/@1x-G4_light-snow-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-day {
+        background-image: url(../src/images/G4/@1x-G4_light-snow-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-shower-night {
+        background-image: url(../src/images/G4/@1x-G4_heavy-snow-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-shower-day {
+        background-image: url(../src/images/G4/@1x-G4_heavy-snow-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-day {
+        background-image: url(../src/images/G4/@1x-G4_heavy-snow-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-shower-night {
+        background-image: url(../src/images/G4/@1x-G4_thunderstorm-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-shower-day {
+        background-image: url(../src/images/G4/@1x-G4_thunderstorm-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-day {
+        background-image: url(../src/images/G4/@1x-G4_thunderstorm-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--tropicalstorm-day {
+        background-image: url(../src/images/G4/@1x-G4_tropicalstorm-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hazy-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hazy-day {
+        background-image: url(../src/images/G4/@1x-G4_hazy-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sandstorm-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sandstorm-night {
+        background-image: url(../src/images/G4/@1x-G4_sandstorm-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--mist-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--mist-night {
+        background-image: url(../src/images/G4/@1x-G4_mist-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--fog-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--fog-night {
+        background-image: url(../src/images/G4/@1x-G4_fog-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--white-cloud-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--white-cloud-night {
+        background-image: url(../src/images/G4/@1x-G4_white-cloud-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thick-cloud-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thick-cloud-night {
+        background-image: url(../src/images/G4/@1x-G4_thick-cloud-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--drizzle-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--drizzle-night {
+        background-image: url(../src/images/G4/@1x-G4_drizzle-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-night {
+        background-image: url(../src/images/G4/@1x-G4_light-rain-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-night {
+        background-image: url(../src/images/G4/@1x-G4_heavy-rain-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-night {
+        background-image: url(../src/images/G4/@1x-G4_sleet-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-night {
+        background-image: url(../src/images/G4/@1x-G4_hail-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-night {
+        background-image: url(../src/images/G4/@1x-G4_light-snow-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-night {
+        background-image: url(../src/images/G4/@1x-G4_heavy-snow-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-night {
+        background-image: url(../src/images/G4/@1x-G4_thunderstorm-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--tropicalstorm-night {
+        background-image: url(../src/images/G4/@1x-G4_tropicalstorm-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hazy-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hazy-night {
+        background-image: url(../src/images/G4/@1x-G4_hazy-night.jpg)
+    }
+}
+
+@media(min-width: 1280px) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container {
+        background-repeat: no-repeat
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--clear-sky-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--clear-sky-night {
+        background-image: url(../src/images/G5/@1x-G5_clear-sky-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sunny-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sunny-day {
+        background-image: url(../src/images/G5/@1x-G5_sunny-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--partly-cloudy-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--partly-cloudy-night {
+        background-image: url(../src/images/G5/@1x-G5_partly-cloudy-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sunny-intervals-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sunny-intervals-day {
+        background-image: url(../src/images/G5/@1x-G5_sunny-intervals-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sandstorm-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sandstorm-day {
+        background-image: url(../src/images/G5/@1x-G5_sandstorm-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--mist-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--mist-day {
+        background-image: url(../src/images/G5/@1x-G5_mist-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--fog-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--fog-day {
+        background-image: url(../src/images/G5/@1x-G5_fog-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--white-cloud-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--white-cloud-day {
+        background-image: url(../src/images/G5/@1x-G5_white-cloud-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thick-cloud-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thick-cloud-day {
+        background-image: url(../src/images/G5/@1x-G5_thick-cloud-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-shower-night {
+        background-image: url(../src/images/G5/@1x-G5_light-rain-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-shower-day {
+        background-image: url(../src/images/G5/@1x-G5_light-rain-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--drizzle-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--drizzle-day {
+        background-image: url(../src/images/G5/@1x-G5_drizzle-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-day {
+        background-image: url(../src/images/G5/@1x-G5_light-rain-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-shower-night {
+        background-image: url(../src/images/G5/@1x-G5_heavy-rain-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-shower-day {
+        background-image: url(../src/images/G5/@1x-G5_heavy-rain-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-day {
+        background-image: url(../src/images/G5/@1x-G5_heavy-rain-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-shower-night {
+        background-image: url(../src/images/G5/@1x-G5_sleet-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-shower-day {
+        background-image: url(../src/images/G5/@1x-G5_sleet-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-day {
+        background-image: url(../src/images/G5/@1x-G5_sleet-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-shower-night {
+        background-image: url(../src/images/G5/@1x-G5_hail-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-shower-day {
+        background-image: url(../src/images/G5/@1x-G5_hail-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-day {
+        background-image: url(../src/images/G5/@1x-G5_hail-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-shower-night {
+        background-image: url(../src/images/G5/@1x-G5_light-snow-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-shower-day {
+        background-image: url(../src/images/G5/@1x-G5_light-snow-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-day {
+        background-image: url(../src/images/G5/@1x-G5_light-snow-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-shower-night {
+        background-image: url(../src/images/G5/@1x-G5_heavy-snow-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-shower-day {
+        background-image: url(../src/images/G5/@1x-G5_heavy-snow-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-day {
+        background-image: url(../src/images/G5/@1x-G5_heavy-snow-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-shower-night {
+        background-image: url(../src/images/G5/@1x-G5_thunderstorm-shower-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-shower-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-shower-day {
+        background-image: url(../src/images/G5/@1x-G5_thunderstorm-shower-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-day {
+        background-image: url(../src/images/G5/@1x-G5_thunderstorm-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--tropicalstorm-day {
+        background-image: url(../src/images/G5/@1x-G5_tropicalstorm-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hazy-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hazy-day {
+        background-image: url(../src/images/G5/@1x-G5_hazy-day.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sandstorm-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sandstorm-night {
+        background-image: url(../src/images/G5/@1x-G5_sandstorm-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--mist-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--mist-night {
+        background-image: url(../src/images/G5/@1x-G5_mist-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--fog-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--fog-night {
+        background-image: url(../src/images/G5/@1x-G5_fog-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--white-cloud-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--white-cloud-night {
+        background-image: url(../src/images/G5/@1x-G5_white-cloud-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thick-cloud-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thick-cloud-night {
+        background-image: url(../src/images/G5/@1x-G5_thick-cloud-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--drizzle-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--drizzle-night {
+        background-image: url(../src/images/G5/@1x-G5_drizzle-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-rain-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-rain-night {
+        background-image: url(../src/images/G5/@1x-G5_light-rain-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-rain-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-rain-night {
+        background-image: url(../src/images/G5/@1x-G5_heavy-rain-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--sleet-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--sleet-night {
+        background-image: url(../src/images/G5/@1x-G5_sleet-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hail-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hail-night {
+        background-image: url(../src/images/G5/@1x-G5_hail-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--light-snow-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--light-snow-night {
+        background-image: url(../src/images/G5/@1x-G5_light-snow-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--heavy-snow-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--heavy-snow-night {
+        background-image: url(../src/images/G5/@1x-G5_heavy-snow-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--thunderstorm-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--thunderstorm-night {
+        background-image: url(../src/images/G5/@1x-G5_thunderstorm-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--tropicalstorm-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--tropicalstorm-night {
+        background-image: url(../src/images/G5/@1x-G5_tropicalstorm-night.jpg)
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-container--hazy-night,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-container--hazy-night {
+        background-image: url(../src/images/G5/@1x-G5_hazy-night.jpg)
+    }
+}
+
+.wr-forecast .wr-day-carousel {
+    display: none
+}
+
+.wr-forecast .wr-day-carousel__wrap {
+    max-width: 1008px;
+    margin: 0 auto;
+    padding-right: 8px;
+    padding-left: 8px
+}
+
+@media(min-width: 25em) {
+    .wr-forecast .wr-day-carousel__wrap {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+}
+
+@media(min-width: 80em) {
+    .wr-forecast .wr-day-carousel__wrap {
+        max-width: 1280px
+    }
+}
+
+.wr-forecast .wr-day-carousel__tabs {
+    position: relative
+}
+
+@media(min-width: 0em)and (max-width: 56.24em) {
+    .wr-has-touch.wr-enhanced .wr-forecast .wr-day-carousel__wrap {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-day-carousel {
+    display: block;
+    position: relative;
+    height: 7.625rem
+}
+
+.wr-enhanced .wr-forecast .wr-day-carousel__wrap {
+    position: relative;
+    height: 7.625rem
+}
+
+.wr-enhanced .wr-forecast .wr-day-carousel__tabs {
+    height: 7.625rem
+}
+
+.wr-enhanced .wr-forecast .wr-day-carousel__viewport {
+    overflow-y: hidden;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    -webkit-overflow-scrolling: touch
+}
+
+.wr-enhanced .wr-forecast .wr-day-carousel__scrollable {
+    position: relative
+}
+
+.wr-enhanced .wr-forecast .wr-day-carousel__list {
+    display: block;
+    position: relative;
+    padding: 0 .5rem;
+    width: 96.875rem
+}
+
+.wr-enhanced .wr-forecast .wr-day-carousel__last-updated.wr-feature-phone-only {
+    display: none !important
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day-carousel {
+        display: block;
+        position: relative;
+        height: 7.625rem
+    }
+
+    .wr-forecast .wr-day-carousel__wrap {
+        position: relative;
+        height: 7.625rem
+    }
+
+    .wr-forecast .wr-day-carousel__tabs {
+        height: 7.625rem
+    }
+
+    .wr-forecast .wr-day-carousel__viewport {
+        overflow-y: hidden;
+        z-index: 1;
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .wr-forecast .wr-day-carousel__scrollable {
+        position: relative
+    }
+
+    .wr-forecast .wr-day-carousel__list {
+        display: block;
+        position: relative;
+        padding: 0 .5rem;
+        width: 96.875rem
+    }
+
+    .wr-forecast .wr-day-carousel__last-updated.wr-feature-phone-only {
+        display: none !important
+    }
+}
+
+@media(min-width: 25em)and (max-width: 37.49em) {
+    .wr-enhanced .wr-forecast .wr-day-carousel__list {
+        padding: 0 1rem;
+        width: 97.875rem
+    }
+}
+
+.no-touch.wr-enhanced .wr-forecast .wr-day-carousel__list {
+    padding: 0;
+    width: 95.875rem
+}
+
+@media(min-width: 37.5em) {
+    .b-pw-1280.no-touch .wr-forecast .wr-day-carousel__list {
+        padding: 0;
+        width: 95.875rem
+    }
+}
+
+@media(min-width: 37.5em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-carousel__list,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-carousel__list {
+        padding: 0 1rem;
+        width: 99.625rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .b-pw-1280.no-touch .wr-forecast .wr-day-carousel__list {
+        padding: 0;
+        width: 97.625rem
+    }
+}
+
+.no-touch.wr-enhanced .wr-forecast .wr-day-carousel__viewport {
+    margin: 0 2rem
+}
+
+@media(min-width: 37.5em) {
+    .b-pw-1280.no-touch .wr-forecast .wr-day-carousel__viewport {
+        margin: 0 2rem
+    }
+}
+
+@media(min-width: 56.25em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-carousel,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-carousel {
+        height: 9.75rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-carousel__wrap,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-carousel__wrap {
+        height: 9.75rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-carousel__tabs,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-carousel__tabs {
+        height: 9.75rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-carousel__list,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-carousel__list {
+        padding: 0;
+        width: 113.125rem
+    }
+}
+
+@media(min-width: 63em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-carousel__viewport,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-carousel__viewport {
+        margin: 0 2rem
+    }
+}
+
+@media(min-width: 63em)and (max-width: 66.615em) {
+    .wr-has-touch.wr-enhanced .wr-forecast .wr-day-carousel__viewport {
+        margin: 0
+    }
+}
+
+@media(min-width: 66.625em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-carousel__viewport,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-carousel__viewport {
+        margin: 0
+    }
+}
+
+@media(min-width: 80em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-carousel__viewport,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-carousel__viewport {
+        margin: 0 2rem
+    }
+}
+
+@media(min-width: 80em)and (max-width: 83.615em) {
+    .wr-has-touch.wr-enhanced .wr-forecast .wr-day-carousel__viewport {
+        margin: 0
+    }
+}
+
+@media(min-width: 83.625em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day-carousel__viewport,
+    .b-pw-1280.wr-core .wr-forecast .wr-day-carousel__viewport {
+        margin: 0
+    }
+}
+
+.wr-forecast .wr-day-summary {
+    background-color: #fff;
+    padding-top: 1rem;
+    display: none;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 22px;
+    line-height: 1.375rem
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day-summary {
+        font-size: 21px;
+        font-size: 1.3125rem;
+        line-height: 24px;
+        line-height: 1.5rem
+    }
+
+    .no-touch .wr-forecast .wr-day-summary {
+        font-size: 20px;
+        font-size: 1.25rem
+    }
+}
+
+@media(min-width: 37.5em)and (max-width: 56.24em) {
+    .wr-forecast .wr-day-summary {
+        display: block
+    }
+}
+
+@media(min-width: 0em)and (max-width: 56.24em) {
+    .wr-enhanced .wr-forecast .wr-day-summary {
+        display: block
+    }
+}
+
+.wr-forecast .wr-carousel-arrow {
+    display: none;
+    position: absolute;
+    height: 5.875rem;
+    bottom: 0;
+    transition: background-color .1s ease-in-out, opacity .1s ease-in-out;
+    background-color: #828282;
+    width: 2rem;
+    background-position: 50%;
+    background-size: 2em;
+    cursor: default
+}
+
+.wr-forecast .wr-carousel-arrow--active {
+    background-color: #149edc;
+    cursor: pointer
+}
+
+.wr-forecast .wr-carousel-arrow--active:hover,
+.wr-forecast .wr-carousel-arrow--active:focus {
+    background-color: #067eb3
+}
+
+.wr-forecast .wr-carousel-arrow--active:active {
+    background-color: #045477
+}
+
+.wr-forecast .wr-carousel-arrow--days:disabled {
+    background-color: rgba(230, 232, 234, .3)
+}
+
+.wr-forecast .wr-carousel-arrow--days:disabled .wr-gel-icon-left-arrow,
+.wr-forecast .wr-carousel-arrow--days:disabled .wr-gel-icon-right-arrow {
+    color: rgba(58, 60, 62, .3)
+}
+
+.wr-forecast .wr-carousel-arrow--hours:disabled {
+    background-color: #e6e8ea
+}
+
+.wr-forecast .wr-carousel-arrow--hours:disabled .wr-gel-icon-left-arrow,
+.wr-forecast .wr-carousel-arrow--hours:disabled .wr-gel-icon-right-arrow {
+    color: #b0b2b4
+}
+
+.wr-forecast .wr-carousel-arrow--next {
+    right: 0
+}
+
+.wr-forecast .wr-carousel-arrow--prev {
+    left: 0
+}
+
+.wr-forecast .wr-carousel-arrow .wr-gel-icon-left-arrow,
+.wr-forecast .wr-carousel-arrow .wr-gel-icon-right-arrow {
+    fill: rgba(0, 0, 0, 0);
+    color: #fff
+}
+
+.wr-forecast .wr-carousel-arrow__icon {
+    width: 1rem;
+    height: 1rem
+}
+
+.no-touch.wr-enhanced .wr-forecast .wr-carousel-arrow {
+    display: inline-block
+}
+
+@media(min-width: 37.5em) {
+    .b-pw-1280.no-touch .wr-forecast .wr-carousel-arrow {
+        display: inline-block
+    }
+}
+
+@media(min-width: 63em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-carousel-arrow--next,
+    .b-pw-1280.wr-core .wr-forecast .wr-carousel-arrow--next {
+        right: 0
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-carousel-arrow--prev,
+    .b-pw-1280.wr-core .wr-forecast .wr-carousel-arrow--prev {
+        left: 0
+    }
+}
+
+@media(min-width: 66.625em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-carousel-arrow--next,
+    .b-pw-1280.wr-core .wr-forecast .wr-carousel-arrow--next {
+        right: -2rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-carousel-arrow--prev,
+    .b-pw-1280.wr-core .wr-forecast .wr-carousel-arrow--prev {
+        left: -2rem
+    }
+}
+
+@media(min-width: 80em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-carousel-arrow--next,
+    .b-pw-1280.wr-core .wr-forecast .wr-carousel-arrow--next {
+        right: 0
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-carousel-arrow--prev,
+    .b-pw-1280.wr-core .wr-forecast .wr-carousel-arrow--prev {
+        left: 0
+    }
+}
+
+@media(min-width: 83.625em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-carousel-arrow--next,
+    .b-pw-1280.wr-core .wr-forecast .wr-carousel-arrow--next {
+        right: -2rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-carousel-arrow--prev,
+    .b-pw-1280.wr-core .wr-forecast .wr-carousel-arrow--prev {
+        left: -2rem
+    }
+}
+
+.wr-forecast .ls-o-btn {
+    border: 0 none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .1s ease-out, background-color .1s ease-in
+}
+
+.wr-forecast .ls-o-btn:hover,
+.wr-forecast .ls-o-btn:focus,
+.wr-forecast .ls-o-btn:active {
+    background-color: #0078ff
+}
+
+.wr-forecast .ls-o-btn--right {
+    position: absolute;
+    top: 0;
+    right: 0
+}
+
+.wr-forecast .ls-o-btn--left {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.wr-forecast .ls-o-btn--icon-inline {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 2.75rem;
+    width: 2.75rem;
+    cursor: pointer;
+    border: solid .0625rem rgba(0, 0, 0, 0)
+}
+
+.wr-forecast .ls-o-btn--icon-inline svg {
+    height: 1.25rem;
+    width: 1.25rem
+}
+
+.wr-forecast .ls-o-btn--clear-all {
+    background-color: #fff;
+    color: #141414;
+    display: block;
+    padding: 0
+}
+
+.wr-forecast .ls-o-btn--clear-all:hover,
+.wr-forecast .ls-o-btn--clear-all:focus,
+.wr-forecast .ls-o-btn--clear-all:active {
+    color: #141414;
+    background-color: #fff;
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: .125em;
+    text-underline-offset: .25em
+}
+
+.wr-forecast .ls-o-icon--loading {
+    animation: spin 1s infinite linear
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.wr-forecast .ls-o-link {
+    color: #545658;
+    text-decoration: none
+}
+
+.wr-forecast .ls-o-link:hover,
+.wr-forecast .ls-o-link:focus,
+.wr-forecast .ls-o-link:active {
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: .125em;
+    text-underline-offset: .25em
+}
+
+.wr-forecast .ls-o-link--with-icon {
+    display: flex;
+    align-items: center
+}
+
+.wr-forecast .ls-o-link__icon {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 1rem;
+    width: 1rem;
+    color: #545658;
+    flex: 0 0 1em;
+    margin-right: .6rem
+}
+
+.wr-forecast .ls-o-link__icon svg {
+    height: 1rem;
+    width: 1rem
+}
+
+.wr-forecast .ls-o-id-signin {
+    color: #141414;
+    z-index: 1;
+    position: relative;
+    padding: 1rem
+}
+
+.wr-forecast .ls-o-id-signin h4 {
+    margin: 0 2.5rem 0 0
+}
+
+.wr-forecast .ls-o-id-signin .ls-c-popover__cta,
+.wr-forecast .ls-o-id-signin .ls-c-id-signin__cta {
+    position: relative;
+    margin: 1rem 0
+}
+
+.wr-forecast .ls-o-id-signin .ls-c-popover__description-and-prompt,
+.wr-forecast .ls-o-id-signin .ls-c-popover__description,
+.wr-forecast .ls-o-id-signin .ls-c-popover__prompt,
+.wr-forecast .ls-o-id-signin .ls-c-id-signin__description-and-prompt,
+.wr-forecast .ls-o-id-signin .ls-c-id-signin__description,
+.wr-forecast .ls-o-id-signin .ls-c-id-signin__prompt {
+    margin: 1rem 0
+}
+
+.wr-forecast .ls-o-id-signin .ls-c-popover__cta-register,
+.wr-forecast .ls-o-id-signin .ls-c-id-signin__cta-register {
+    color: #0064e6;
+    font-weight: 800;
+    text-decoration: none
+}
+
+.wr-forecast .ls-o-id-signin .ls-c-popover__cta-register:hover,
+.wr-forecast .ls-o-id-signin .ls-c-popover__cta-register:focus,
+.wr-forecast .ls-o-id-signin .ls-c-popover__cta-register:active,
+.wr-forecast .ls-o-id-signin .ls-c-id-signin__cta-register:hover,
+.wr-forecast .ls-o-id-signin .ls-c-id-signin__cta-register:focus,
+.wr-forecast .ls-o-id-signin .ls-c-id-signin__cta-register:active {
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: .125em;
+    text-underline-offset: .25em
+}
+
+.wr-forecast .ls-o-id-signin .ls-c-popover__link,
+.wr-forecast .ls-o-id-signin .ls-c-id-signin__link {
+    font-weight: bold
+}
+
+.wr-forecast .ls-o-id-signin .ls-c-popover__title,
+.wr-forecast .ls-o-id-signin .ls-c-id-signin__title {
+    margin: 0;
+    margin-right: 2.5rem
+}
+
+.wr-forecast .ls-c-favourite,
+.wr-forecast .ls-c-favourite--compact {
+    background-color: #0064e6;
+    border: solid .0625rem rgba(0, 0, 0, 0);
+    color: #fff;
+    cursor: pointer;
+    height: 2.875rem;
+    overflow: hidden;
+    position: relative;
+    padding: 0 .5rem 0 0;
+    transition: color .1s ease-out, background .1s ease-in;
+    width: 2.875rem
+}
+
+.wr-forecast .ls-c-favourite__label,
+.wr-forecast .ls-c-favourite--compact__label {
+    text-indent: -9999px;
+    float: left
+}
+
+.wr-forecast .ls-c-favourite__icon,
+.wr-forecast .ls-c-favourite--compact__icon {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 2.75rem;
+    width: 2.75rem;
+    cursor: pointer;
+    border: none;
+    background-color: #141414;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.wr-forecast .ls-c-favourite__icon svg,
+.wr-forecast .ls-c-favourite--compact__icon svg {
+    height: 1.25rem;
+    width: 1.25rem
+}
+
+.wr-forecast .ls-c-favourite__icon:hover,
+.wr-forecast .ls-c-favourite__icon:focus,
+.wr-forecast .ls-c-favourite__icon:active,
+.wr-forecast .ls-c-favourite--compact__icon:hover,
+.wr-forecast .ls-c-favourite--compact__icon:focus,
+.wr-forecast .ls-c-favourite--compact__icon:active {
+    background-color: #3a3c3e
+}
+
+.wr-forecast .ls-c-favourite__icon:hover,
+.wr-forecast .ls-c-favourite__icon:focus,
+.wr-forecast .ls-c-favourite__icon:active,
+.wr-forecast .ls-c-favourite--compact__icon:hover,
+.wr-forecast .ls-c-favourite--compact__icon:focus,
+.wr-forecast .ls-c-favourite--compact__icon:active {
+    background-color: rgba(0, 0, 0, 0)
+}
+
+.wr-forecast .ls-c-favourite__icon--add .ls-o-icon--add,
+.wr-forecast .ls-c-favourite__icon--close .ls-o-icon--close,
+.wr-forecast .ls-c-favourite__icon--confirm .ls-o-icon--confirm,
+.wr-forecast .ls-c-favourite__icon--loading .ls-o-icon--loading,
+.wr-forecast .ls-c-favourite--compact__icon--add .ls-o-icon--add,
+.wr-forecast .ls-c-favourite--compact__icon--close .ls-o-icon--close,
+.wr-forecast .ls-c-favourite--compact__icon--confirm .ls-o-icon--confirm,
+.wr-forecast .ls-c-favourite--compact__icon--loading .ls-o-icon--loading {
+    display: flex
+}
+
+.wr-forecast .ls-c-favourite:hover,
+.wr-forecast .ls-c-favourite:focus,
+.wr-forecast .ls-c-favourite:active,
+.wr-forecast .ls-c-favourite--compact:hover,
+.wr-forecast .ls-c-favourite--compact:focus,
+.wr-forecast .ls-c-favourite--compact:active {
+    background-color: #0078ff
+}
+
+.wr-forecast .ls-c-favourite__btn-action,
+.wr-forecast .ls-c-favourite--compact__btn-action {
+    padding-right: .4em
+}
+
+.wr-forecast .ls-c-favourite__btn-action-extra,
+.wr-forecast .ls-c-favourite--compact__btn-action-extra {
+    display: none
+}
+
+.wr-forecast .ls-c-favourite--compact {
+    padding: 0
+}
+
+.wr-forecast .ls-c-favourite--compact .ls-c-favourite__btn-action,
+.wr-forecast .ls-c-favourite--compact .ls-c-favourite__btn-action-extra {
+    display: none
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .ls-c-favourite {
+        width: 8.375rem;
+        text-indent: 0
+    }
+
+    .wr-forecast .ls-c-favourite__label {
+        float: left;
+        text-indent: 0;
+        margin-top: 0;
+        padding-left: 2.8125rem
+    }
+
+    .wr-forecast .ls-c-favourite--compact {
+        width: 2.875rem
+    }
+}
+
+@media(min-width: 63em) {
+    .wr-forecast .ls-c-favourite {
+        width: 13.875rem
+    }
+
+    .wr-forecast .ls-c-favourite__icon {
+        left: 0
+    }
+
+    .wr-forecast .ls-c-favourite__btn-action-extra {
+        display: inline-block
+    }
+
+    .wr-forecast .ls-c-favourite--compact {
+        width: 2.875rem
+    }
+}
+
+.wr-forecast .ls-c-popover {
+    background-color: #fff;
+    position: absolute;
+    box-sizing: border-box;
+    border: solid .0625rem #b0b2b4;
+    margin-top: .3125rem;
+    width: 20rem;
+    min-width: 15rem;
+    max-width: 20rem;
+    min-height: 5rem;
+    z-index: 1
+}
+
+@media(max-width: 37.5em) {
+    .wr-forecast .ls-c-popover {
+        width: 19.375rem;
+        left: 50%;
+        transform: translate(-50%, 0%)
+    }
+}
+
+.wr-forecast .ls-c-popover__title {
+    font-weight: normal
+}
+
+@media(max-width: 37.5em) {
+    .wr-forecast .ls-c-popover__arrow {
+        display: none
+    }
+}
+
+.wr-forecast .ls-c-popover__arrow::after {
+    content: " ";
+    background-color: #fff;
+    border-style: solid;
+    border-width: 0;
+    border-left-color: #b0b2b4;
+    border-left-width: .0625rem;
+    border-top-color: #b0b2b4;
+    border-top-width: .0625rem;
+    bottom: calc(100% + .0625rem);
+    display: block;
+    height: .875rem;
+    left: calc(6% - .4375rem);
+    pointer-events: none;
+    position: absolute;
+    transform: translateY(50%) rotate(45deg);
+    width: .875rem
+}
+
+.wr-forecast .ls-c-popover__link {
+    margin-top: .25rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem
+}
+
+.wr-forecast .ls-c-popover .ls-o-id-signin {
+    padding: 1rem .5rem
+}
+
+.wr-forecast .ls-c-popover__close-btn {
+    background: rgba(0, 0, 0, 0);
+    color: #3a3c3e;
+    z-index: 2
+}
+
+.wr-forecast .ls-c-popover__close-btn:hover,
+.wr-forecast .ls-c-popover__close-btn:focus,
+.wr-forecast .ls-c-popover__close-btn:active {
+    background-color: #3a3c3e;
+    color: #fff
+}
+
+.wr-forecast .ls-c-message {
+    z-index: 9999;
+    position: relative;
+    color: #141414;
+    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden
+}
+
+.wr-forecast .ls-c-message__content {
+    margin: 0
+}
+
+.wr-forecast .ls-c-message__content--active {
+    padding: .8125rem 1rem .75rem .8125rem;
+    border-bottom: .0625rem solid #f6f6f6
+}
+
+.wr-forecast .ls-c-message--closeable {
+    color: #fff;
+    background-color: #d43159
+}
+
+.wr-forecast .ls-c-message--closeable .ls-c-message__content {
+    padding: .8125rem 3.75rem .8125rem .8125rem;
+    border-bottom: 0
+}
+
+.wr-forecast .ls-c-message--sticky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%
+}
+
+.wr-forecast .ls-c-message--sticky .ls-c-message__container {
+    position: relative;
+    max-width: 61rem;
+    margin: 0 auto
+}
+
+.wr-forecast .ls-c-message .ls-c-message__close-btn {
+    background: rgba(0, 0, 0, 0);
+    color: #fff
+}
+
+.wr-forecast .ls-c-message .ls-c-message__close-btn:hover,
+.wr-forecast .ls-c-message .ls-c-message__close-btn:focus,
+.wr-forecast .ls-c-message .ls-c-message__close-btn:active {
+    background-color: #fff;
+    color: #3a3c3e
+}
+
+.wr-forecast .ls-u-hidden {
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(100%);
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap
+}
+
+.wr-forecast .ls-u-is-hidden {
+    display: none !important
+}
+
+.wr-forecast .wr-c-location {
+    max-width: 63rem;
+    max-width: 1008px;
+    margin: 0 auto;
+    padding-right: 8px;
+    padding-left: 8px;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    top: .25rem
+}
+
+@media(min-width: 25em) {
+    .wr-forecast .wr-c-location {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+}
+
+@media(min-width: 80em) {
+    .wr-forecast .wr-c-location {
+        max-width: 1280px
+    }
+}
+
+.wr-forecast .wr-c-location__name {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    margin-bottom: .5rem
+}
+
+.wr-forecast .wr-c-location__favourite {
+    display: none
+}
+
+.wr-forecast .wr-c-location__favourite .ls-c-favourite {
+    background-color: #202224;
+    height: 2rem;
+    width: 2rem
+}
+
+.wr-forecast .wr-c-location__favourite .ls-c-favourite:hover,
+.wr-forecast .wr-c-location__favourite .ls-c-favourite:focus,
+.wr-forecast .wr-c-location__favourite .ls-c-favourite:active {
+    background-color: #067eb3
+}
+
+.wr-forecast .wr-c-location__favourite .ls-c-favourite:focus {
+    box-shadow: #fff 0px 0px 0px 2px, #000 0px 0px 0px 4px;
+    outline: none
+}
+
+.wr-forecast .wr-c-location__favourite .ls-o-btn:hover,
+.wr-forecast .wr-c-location__favourite .ls-o-btn:focus,
+.wr-forecast .wr-c-location__favourite .ls-o-btn:active {
+    background-color: #067eb3
+}
+
+.wr-forecast .wr-c-location__favourite .ls-c-favourite__label {
+    padding-left: 2rem
+}
+
+.wr-forecast .wr-c-location__favourite .ls-c-favourite__icon {
+    height: 1.875rem;
+    width: 1.875rem
+}
+
+.wr-forecast .wr-c-location__favourite .ls-c-favourite__icon svg {
+    height: 1.125rem;
+    width: 1.125rem
+}
+
+.wr-forecast .wr-c-location__back-to-overview {
+    display: inline-block;
+    color: inherit;
+    border-bottom: .0625rem solid #141414
+}
+
+.wr-forecast .wr-c-location__back-to-overview-arrow {
+    color: #141414;
+    fill: #fff
+}
+
+.wr-enhanced .wr-forecast .wr-c-location__name {
+    display: inline;
+    vertical-align: top;
+    margin-right: .5rem;
+    color: #fff
+}
+
+.wr-enhanced .wr-forecast .wr-c-location__favourite {
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -0.125rem
+}
+
+.wr-enhanced .wr-forecast .wr-c-location__back-to-overview {
+    display: none
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-c-location__name {
+        display: inline;
+        vertical-align: top;
+        margin-right: .5rem;
+        color: #fff
+    }
+
+    .wr-forecast .wr-c-location__favourite {
+        color: #fff;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: -0.125rem
+    }
+
+    .wr-forecast .wr-c-location__back-to-overview {
+        display: none
+    }
+}
+
+@media(min-width: 37.5em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-c-location,
+    .b-pw-1280.wr-core .wr-forecast .wr-c-location {
+        padding-top: 1.5rem;
+        top: 0
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-c-location__name,
+    .b-pw-1280.wr-core .wr-forecast .wr-c-location__name {
+        margin-right: 1rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-c-location__favourite,
+    .b-pw-1280.wr-core .wr-forecast .wr-c-location__favourite {
+        margin-top: 0
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-c-location__favourite .ls-c-favourite,
+    .b-pw-1280.wr-core .wr-forecast .wr-c-location__favourite .ls-c-favourite {
+        font-weight: bold;
+        width: auto;
+        padding-right: 1rem;
+        min-width: 13rem
+    }
+}
+
+.wr-forecast .wr-day {
+    display: block;
+    position: relative;
+    float: none
+}
+
+.wr-forecast .wr-day:first-child .wr-day__content {
+    border-top: none
+}
+
+.wr-forecast .wr-day__content {
+    display: block;
+    background-color: #fff;
+    border-top: .125rem solid;
+    padding-top: 1rem;
+    padding-bottom: 1.125rem;
+    position: relative;
+    color: #141414
+}
+
+.wr-forecast .wr-day__content--temp41andhigher {
+    border-color: #9a1b1e
+}
+
+.wr-forecast .wr-day__content--temp36to40 {
+    border-color: #c12026
+}
+
+.wr-forecast .wr-day__content--temp30to35 {
+    border-color: #ee2d29
+}
+
+.wr-forecast .wr-day__content--temp25to29 {
+    border-color: #eb5038
+}
+
+.wr-forecast .wr-day__content--temp21to24 {
+    border-color: #f26a30
+}
+
+.wr-forecast .wr-day__content--temp19to20 {
+    border-color: #f68a1f
+}
+
+.wr-forecast .wr-day__content--temp17to18 {
+    border-color: #faa31a
+}
+
+.wr-forecast .wr-day__content--temp15to16 {
+    border-color: #fbb616
+}
+
+.wr-forecast .wr-day__content--temp13to14 {
+    border-color: #fcc90d
+}
+
+.wr-forecast .wr-day__content--temp11to12 {
+    border-color: #fedb00
+}
+
+.wr-forecast .wr-day__content--temp9to10 {
+    border-color: #d0d73e
+}
+
+.wr-forecast .wr-day__content--temp7to8 {
+    border-color: #afd251
+}
+
+.wr-forecast .wr-day__content--temp5to6 {
+    border-color: #9fcd80
+}
+
+.wr-forecast .wr-day__content--temp3to4 {
+    border-color: #aad6ae
+}
+
+.wr-forecast .wr-day__content--temp1to2 {
+    border-color: #aedcd8
+}
+
+.wr-forecast .wr-day__content--temp0to-2 {
+    border-color: #51bfed
+}
+
+.wr-forecast .wr-day__content--temp-3to-5 {
+    border-color: #43a3d9
+}
+
+.wr-forecast .wr-day__content--temp-6to-10 {
+    border-color: #3789c6
+}
+
+.wr-forecast .wr-day__content--temp-11to-15 {
+    border-color: #2374b6
+}
+
+.wr-forecast .wr-day__content--temp-16to-22 {
+    border-color: #0262a9
+}
+
+.wr-forecast .wr-day__content--temp-23andlower {
+    border-color: #1f4799
+}
+
+.wr-forecast .wr-day__content--temp-invalid {
+    border-color: #d5d0cd
+}
+
+.wr-forecast .wr-day__warning {
+    display: none;
+    position: absolute;
+    top: .3125rem;
+    right: .3125rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    fill: #fff;
+    color: #141414;
+    background-size: contain
+}
+
+.wr-forecast .wr-day__title {
+    display: block;
+    margin-bottom: .375rem;
+    font-size: 1.125rem;
+    position: relative
+}
+
+.wr-forecast .wr-day__body {
+    position: relative
+}
+
+.wr-forecast .wr-day__details__weather-type-description {
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+    font-weight: bold;
+    margin-left: 3.5rem;
+    padding: 8px 0
+}
+
+@media(min-width: 20em) {
+    .wr-forecast .wr-day__details__weather-type-description {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day__details__weather-type-description {
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 22px;
+        line-height: 1.375rem
+    }
+
+    .no-touch .wr-forecast .wr-day__details__weather-type-description {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+.wr-forecast .wr-day__weather-type-description-container {
+    display: none
+}
+
+.wr-forecast .wr-day__details-arrow {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 47%;
+    bottom: 0;
+    height: .75rem;
+    width: .75rem
+}
+
+.wr-forecast .wr-day__details-arrow .wr-gel-icon-right-arrow {
+    width: 100%;
+    height: 100%;
+    color: #141414
+}
+
+.wr-forecast .wr-day__details-arrow .wr-gel-icon-right-arrow__use {
+    fill: #fff
+}
+
+.wr-forecast .wr-day__temperature {
+    margin-left: 3.5rem
+}
+
+.wr-forecast .wr-day__temperature-bar {
+    background-color: #828282
+}
+
+.wr-forecast .wr-day__wind-speed {
+    margin-left: 3.5rem
+}
+
+.wr-enhanced .wr-forecast .wr-day {
+    display: inline-block;
+    vertical-align: bottom;
+    float: left;
+    margin-top: 1.25rem;
+    padding-top: .5rem
+}
+
+.wr-enhanced .wr-forecast .wr-day:first-child .wr-day__content {
+    border-left: none
+}
+
+.wr-enhanced .wr-forecast .wr-day:last-child .wr-day__content {
+    border-right: none
+}
+
+.wr-enhanced .wr-forecast .wr-day--active {
+    margin-top: 0
+}
+
+.wr-enhanced .wr-forecast .wr-day--active .wr-day__content {
+    border-right: none
+}
+
+.wr-enhanced .wr-forecast .wr-day--active+.wr-day .wr-day__content {
+    border-left: 1px solid #ced0d1
+}
+
+.wr-enhanced .wr-forecast .wr-day__details-arrow {
+    display: none
+}
+
+.wr-enhanced .wr-forecast .wr-day__temperature-bar {
+    display: block;
+    height: .375rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1
+}
+
+.wr-enhanced .wr-forecast .wr-day__weather-type-description {
+    border-left: 1px solid #8a8c8e;
+    padding-left: 1rem;
+    height: 100%
+}
+
+.wr-enhanced .wr-forecast .wr-day__weather-type-description.is-opaque {
+    opacity: 1
+}
+
+.wr-enhanced .wr-forecast .wr-day__title {
+    margin-bottom: .5rem;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+    position: relative;
+    line-height: 1
+}
+
+@media(min-width: 37.5em) {
+    .wr-enhanced .wr-forecast .wr-day__title {
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch .wr-enhanced .wr-forecast .wr-day__title {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-day__content {
+    border-top: none;
+    padding: .5rem .5rem .875rem;
+    border-right: 1px solid #ced0d1;
+    display: block;
+    background-color: #fff;
+    height: 5.875rem;
+    width: 6.75rem;
+    position: relative
+}
+
+.wr-enhanced .wr-forecast .wr-day__content:hover,
+.wr-enhanced .wr-forecast .wr-day__content:active,
+.wr-enhanced .wr-forecast .wr-day__content:focus {
+    z-index: 12
+}
+
+.wr-enhanced .wr-forecast .wr-day__content:hover .wr-day__temperature-bar,
+.wr-enhanced .wr-forecast .wr-day__content:active .wr-day__temperature-bar,
+.wr-enhanced .wr-forecast .wr-day__content:focus .wr-day__temperature-bar {
+    top: -6px;
+    bottom: initial
+}
+
+.wr-enhanced .wr-forecast .wr-day__content:hover .wr-date,
+.wr-enhanced .wr-forecast .wr-day__content:active .wr-date,
+.wr-enhanced .wr-forecast .wr-day__content:focus .wr-date {
+    text-decoration: underline
+}
+
+.wr-enhanced .wr-forecast .wr-day__content:focus {
+    outline-color: #067eb3;
+    outline-offset: -4px;
+    outline-width: 2px;
+    outline-style: solid
+}
+
+.wr-enhanced .wr-forecast .wr-day__details-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    height: 100%;
+    margin-right: 0
+}
+
+.wr-enhanced .wr-forecast .wr-day__details {
+    position: relative;
+    height: 100%;
+    margin-right: 0
+}
+
+.wr-enhanced .wr-forecast .wr-day__details__weather-type-description {
+    display: none
+}
+
+.wr-enhanced .wr-forecast .wr-day__temperature {
+    margin-left: 0
+}
+
+.wr-enhanced .wr-forecast .wr-day__wind-speed {
+    display: none
+}
+
+.wr-enhanced .wr-forecast .wr-day__weather-type-description-container {
+    display: none;
+    overflow: hidden;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 22px;
+    line-height: 1.375rem;
+    width: 0px;
+    height: 100%
+}
+
+@media(min-width: 37.5em) {
+    .wr-enhanced .wr-forecast .wr-day__weather-type-description-container {
+        font-size: 21px;
+        font-size: 1.3125rem;
+        line-height: 24px;
+        line-height: 1.5rem
+    }
+
+    .no-touch .wr-enhanced .wr-forecast .wr-day__weather-type-description-container {
+        font-size: 20px;
+        font-size: 1.25rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day {
+        display: inline-block;
+        vertical-align: bottom;
+        float: left;
+        margin-top: 1.25rem;
+        padding-top: .5rem
+    }
+
+    .wr-forecast .wr-day:first-child .wr-day__content {
+        border-left: none
+    }
+
+    .wr-forecast .wr-day:last-child .wr-day__content {
+        border-right: none
+    }
+
+    .wr-forecast .wr-day--active {
+        margin-top: 0
+    }
+
+    .wr-forecast .wr-day--active .wr-day__content {
+        border-right: none
+    }
+
+    .wr-forecast .wr-day--active+.wr-day .wr-day__content {
+        border-left: 1px solid #ced0d1
+    }
+
+    .wr-forecast .wr-day__details-arrow {
+        display: none
+    }
+
+    .wr-forecast .wr-day__temperature-bar {
+        display: block;
+        height: .375rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 1
+    }
+
+    .wr-forecast .wr-day__weather-type-description {
+        border-left: 1px solid #8a8c8e;
+        padding-left: 1rem;
+        height: 100%
+    }
+
+    .wr-forecast .wr-day__weather-type-description.is-opaque {
+        opacity: 1
+    }
+
+    .wr-forecast .wr-day__title {
+        margin-bottom: .5rem;
+        font-size: 15px;
+        font-size: .9375rem;
+        line-height: 18px;
+        line-height: 1.125rem;
+        position: relative;
+        line-height: 1
+    }
+}
+
+@media(min-width: 37.5em)and (min-width: 37.5em) {
+    .wr-forecast .wr-day__title {
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch .wr-forecast .wr-day__title {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day__content {
+        border-top: none;
+        padding: .5rem .5rem .875rem;
+        border-right: 1px solid #ced0d1;
+        display: block;
+        background-color: #fff;
+        height: 5.875rem;
+        width: 6.75rem;
+        position: relative
+    }
+
+    .wr-forecast .wr-day__content:hover,
+    .wr-forecast .wr-day__content:active,
+    .wr-forecast .wr-day__content:focus {
+        z-index: 12
+    }
+
+    .wr-forecast .wr-day__content:hover .wr-day__temperature-bar,
+    .wr-forecast .wr-day__content:active .wr-day__temperature-bar,
+    .wr-forecast .wr-day__content:focus .wr-day__temperature-bar {
+        top: -6px;
+        bottom: initial
+    }
+
+    .wr-forecast .wr-day__content:hover .wr-date,
+    .wr-forecast .wr-day__content:active .wr-date,
+    .wr-forecast .wr-day__content:focus .wr-date {
+        text-decoration: underline
+    }
+
+    .wr-forecast .wr-day__content:focus {
+        outline-color: #067eb3;
+        outline-offset: -4px;
+        outline-width: 2px;
+        outline-style: solid
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day__details-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        height: 100%;
+        margin-right: 0
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day__details {
+        position: relative;
+        height: 100%;
+        margin-right: 0
+    }
+
+    .wr-forecast .wr-day__details__weather-type-description {
+        display: none
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day__temperature {
+        margin-left: 0
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day__wind-speed {
+        display: none
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day__weather-type-description-container {
+        display: none;
+        overflow: hidden;
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 22px;
+        line-height: 1.375rem;
+        width: 0px;
+        height: 100%
+    }
+}
+
+@media(min-width: 37.5em)and (min-width: 37.5em) {
+    .wr-forecast .wr-day__weather-type-description-container {
+        font-size: 21px;
+        font-size: 1.3125rem;
+        line-height: 24px;
+        line-height: 1.5rem
+    }
+
+    .no-touch .wr-forecast .wr-day__weather-type-description-container {
+        font-size: 20px;
+        font-size: 1.25rem
+    }
+}
+
+@media(min-width: 56.25em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day,
+    .b-pw-1280.wr-core .wr-forecast .wr-day {
+        margin-top: 3.375rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day--active,
+    .b-pw-1280.wr-core .wr-forecast .wr-day--active {
+        margin-top: 0
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day__details_container,
+    .b-pw-1280.wr-core .wr-forecast .wr-day__details_container {
+        width: 5.625rem
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-day--active .wr-day__content {
+    width: 9.875rem;
+    height: 7.125rem
+}
+
+.wr-enhanced .wr-forecast .wr-day--active .wr-day__warning {
+    top: .5rem;
+    right: .5rem
+}
+
+.wr-enhanced .wr-forecast .wr-day--active .wr-day__title {
+    margin-bottom: .625rem;
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    line-height: 1
+}
+
+@media(min-width: 37.5em) {
+    .wr-enhanced .wr-forecast .wr-day--active .wr-day__title {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 30px;
+        line-height: 1.875rem
+    }
+
+    .no-touch .wr-enhanced .wr-forecast .wr-day--active .wr-day__title {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-day--active .wr-day__temperature-bar {
+    height: .5rem;
+    top: -6px;
+    bottom: initial
+}
+
+.wr-enhanced .wr-forecast .wr-day--active .wr-day__temperature {
+    right: .375rem
+}
+
+.wr-enhanced .wr-forecast .wr-day--active .wr-day-temperature__high-value {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 24px;
+    line-height: 1.5rem
+}
+
+@media(min-width: 37.5em) {
+    .wr-enhanced .wr-forecast .wr-day--active .wr-day-temperature__high-value {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 30px;
+        line-height: 1.875rem
+    }
+
+    .no-touch .wr-enhanced .wr-forecast .wr-day--active .wr-day-temperature__high-value {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-day--active .wr-day-temperature__low-value {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 24px;
+    line-height: 1.5rem
+}
+
+@media(min-width: 37.5em) {
+    .wr-enhanced .wr-forecast .wr-day--active .wr-day-temperature__low-value {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 30px;
+        line-height: 1.875rem
+    }
+
+    .no-touch .wr-enhanced .wr-forecast .wr-day--active .wr-day-temperature__low-value {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-day--active .wr-day-temperature--low-only .wr-day-temperature__low-value {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 24px;
+    line-height: 1.5rem
+}
+
+@media(min-width: 37.5em) {
+    .wr-enhanced .wr-forecast .wr-day--active .wr-day-temperature--low-only .wr-day-temperature__low-value {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 30px;
+        line-height: 1.875rem
+    }
+
+    .no-touch .wr-enhanced .wr-forecast .wr-day--active .wr-day-temperature--low-only .wr-day-temperature__low-value {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-day--active .wr-weather-type--day .wr-weather-type__icon {
+    height: 4.0625rem;
+    width: 4.0625rem
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-day__content {
+        width: 9.875rem;
+        height: 7.125rem
+    }
+
+    .wr-forecast .wr-day--active .wr-day__warning {
+        top: .5rem;
+        right: .5rem
+    }
+
+    .wr-forecast .wr-day--active .wr-day__title {
+        margin-bottom: .625rem;
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 24px;
+        line-height: 1.5rem;
+        line-height: 1
+    }
+}
+
+@media(min-width: 37.5em)and (min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-day__title {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 30px;
+        line-height: 1.875rem
+    }
+
+    .no-touch .wr-forecast .wr-day--active .wr-day__title {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-day__temperature-bar {
+        height: .5rem;
+        top: -6px;
+        bottom: initial
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-day__temperature {
+        right: .375rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-day-temperature__high-value {
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 24px;
+        line-height: 1.5rem
+    }
+}
+
+@media(min-width: 37.5em)and (min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-day-temperature__high-value {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 30px;
+        line-height: 1.875rem
+    }
+
+    .no-touch .wr-forecast .wr-day--active .wr-day-temperature__high-value {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-day-temperature__low-value {
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 24px;
+        line-height: 1.5rem
+    }
+}
+
+@media(min-width: 37.5em)and (min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-day-temperature__low-value {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 30px;
+        line-height: 1.875rem
+    }
+
+    .no-touch .wr-forecast .wr-day--active .wr-day-temperature__low-value {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-day-temperature--low-only .wr-day-temperature__low-value {
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 24px;
+        line-height: 1.5rem
+    }
+}
+
+@media(min-width: 37.5em)and (min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-day-temperature--low-only .wr-day-temperature__low-value {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 30px;
+        line-height: 1.875rem
+    }
+
+    .no-touch .wr-forecast .wr-day--active .wr-day-temperature--low-only .wr-day-temperature__low-value {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day--active .wr-weather-type--day .wr-weather-type__icon {
+        height: 4.0625rem;
+        width: 4.0625rem
+    }
+}
+
+@media(min-width: 0em)and (max-width: 37.49em) {
+    .wr-enhanced .wr-forecast .wr-day--active .wr-day__content {
+        width: 8.125rem
+    }
+}
+
+@media(min-width: 56.25em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day--active .wr-day__content,
+    .b-pw-1280.wr-core .wr-forecast .wr-day--active .wr-day__content {
+        padding: 1rem;
+        width: 25.375rem;
+        height: 9.25rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day--active .wr-day__warning,
+    .b-pw-1280.wr-core .wr-forecast .wr-day--active .wr-day__warning {
+        top: 1rem;
+        right: 1rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day--active .wr-day__details-container,
+    .b-pw-1280.wr-core .wr-forecast .wr-day--active .wr-day__details-container {
+        width: 9.5625rem;
+        float: left
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day--active .wr-day__details,
+    .b-pw-1280.wr-core .wr-forecast .wr-day--active .wr-day__details {
+        margin-right: 1rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day--active .wr-day__weather-type-description-container,
+    .b-pw-1280.wr-core .wr-forecast .wr-day--active .wr-day__weather-type-description-container {
+        display: inline-block;
+        float: left;
+        width: 13.8125rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day--active .wr-day__temperature,
+    .b-pw-1280.wr-core .wr-forecast .wr-day--active .wr-day__temperature {
+        right: 0;
+        top: .4375rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day--active .wr-weather-type__icon,
+    .b-pw-1280.wr-core .wr-forecast .wr-day--active .wr-weather-type__icon {
+        height: 5rem;
+        width: 5rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-day--active .wr-day__body,
+    .b-pw-1280.wr-core .wr-forecast .wr-day--active .wr-day__body {
+        height: 5.1875rem
+    }
+}
+
+.wr-forecast .wr-time-slot-container {
+    background-color: #fff
+}
+
+.wr-forecast .wr-time-slot-container .wr-carousel-arrow {
+    top: 7.875rem
+}
+
+.wr-forecast .wr-time-slot-container__wrap {
+    max-width: 1008px;
+    margin: 0 auto;
+    padding-right: 8px;
+    padding-left: 8px
+}
+
+@media(min-width: 25em) {
+    .wr-forecast .wr-time-slot-container__wrap {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+}
+
+@media(min-width: 80em) {
+    .wr-forecast .wr-time-slot-container__wrap {
+        max-width: 1280px
+    }
+}
+
+.wr-forecast .wr-time-slot-container__details-container {
+    padding: 0
+}
+
+.wr-forecast .wr-time-slot-container__slots {
+    position: relative;
+    vertical-align: top
+}
+
+.wr-forecast .wr-time-slot-container__advert {
+    vertical-align: top
+}
+
+.wr-forecast .wr-time-slot-container__error-container {
+    background-color: #5a5a5a;
+    color: #fff;
+    margin: 8rem 1rem;
+    max-width: 22.5rem;
+    overflow: hidden
+}
+
+.wr-forecast .wr-time-slot-container__error-container p {
+    border-left: 1px solid #fff;
+    margin-left: 48px
+}
+
+.wr-core .wr-forecast .wr-time-slot-container__error-container {
+    display: block !important
+}
+
+.wr-forecast .wr-time-slot-container__error-icon {
+    fill: rgba(0, 0, 0, 0);
+    color: #fff;
+    display: block;
+    float: left
+}
+
+.wr-forecast .wr-time-slot-container__spinner-container {
+    margin: 8rem 1rem;
+    overflow: hidden;
+    text-align: center
+}
+
+.wr-forecast .wr-time-slot-container__spinner-icon {
+    fill: rgba(0, 0, 0, 0);
+    color: #5a5a5a;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    animation: 1s infinite linear spinner
+}
+
+.wr-core .wr-forecast .wr-time-slot-container__spinner-icon {
+    display: none !important
+}
+
+.wr-forecast .wr-time-slot-container__last-updated {
+    margin-bottom: 8px
+}
+
+.wr-forecast .wr-time-slot-container__last-updated.wr-non-feature-phone {
+    display: none
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-container__last-updated.wr-non-feature-phone {
+    display: block
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-container__last-updated.wr-feature-phone-only {
+    display: none
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-container__last-updated.wr-non-feature-phone {
+        display: block
+    }
+
+    .wr-forecast .wr-time-slot-container__last-updated.wr-feature-phone-only {
+        display: none
+    }
+}
+
+.no-touch.wr-enhanced .wr-forecast .wr-time-slot-container__slots {
+    padding: 0 2rem
+}
+
+.no-touch.wr-enhanced .wr-forecast .wr-time-slot-container__wrap {
+    position: relative
+}
+
+@media(min-width: 37.5em) {
+    .b-pw-1280.no-touch .wr-forecast .wr-time-slot-container__slots {
+        padding: 0 2rem
+    }
+
+    .b-pw-1280.no-touch .wr-forecast .wr-time-slot-container__wrap {
+        position: relative
+    }
+}
+
+@media(min-width: 0em)and (max-width: 37.49em) {
+    .wr-enhanced .wr-forecast .wr-time-slot-container .wr-carousel-arrow {
+        top: 7rem
+    }
+}
+
+@media(min-width: 0em)and (max-width: 56.24em) {
+    .wr-has-touch.wr-enhanced .wr-forecast .wr-time-slot-container__wrap {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-container__last-updated {
+    max-width: 1008px;
+    margin: 0 auto;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 0
+}
+
+@media(min-width: 25em) {
+    .wr-enhanced .wr-forecast .wr-time-slot-container__last-updated {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+}
+
+@media(min-width: 80em) {
+    .wr-enhanced .wr-forecast .wr-time-slot-container__last-updated {
+        max-width: 1280px
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-container__last-updated {
+        max-width: 1008px;
+        margin: 0 auto;
+        padding-right: 8px;
+        padding-left: 8px;
+        margin-bottom: 0
+    }
+}
+
+@media(min-width: 37.5em)and (min-width: 25em) {
+    .wr-forecast .wr-time-slot-container__last-updated {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+}
+
+@media(min-width: 37.5em)and (min-width: 80em) {
+    .wr-forecast .wr-time-slot-container__last-updated {
+        max-width: 1280px
+    }
+}
+
+@media(min-width: 25em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-container__error-container,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-container__error-container {
+        margin-left: auto;
+        margin-right: auto
+    }
+}
+
+@media(min-width: 56.25em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-container__last-updated,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-container__last-updated {
+        text-align: right
+    }
+}
+
+@media(min-width: 66.625em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-container__slots,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-container__slots {
+        padding: 0
+    }
+}
+
+@media(min-width: 80em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-container__slots,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-container__slots {
+        padding: 0 2rem
+    }
+}
+
+@media(min-width: 83.625em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-container__slots,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-container__slots {
+        padding: 0
+    }
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.wr-forecast .wr-time-slot-list {
+    display: block
+}
+
+.wr-core .wr-forecast .wr-time-slot-list__item--see-more {
+    display: none
+}
+
+.wr-forecast .wr-time-slot-list__empty-state {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 0 8px 16px
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: -3px;
+    border-left: 1px solid #e6e8ea;
+    border-right: 1px solid #e6e8ea
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list--active {
+    display: inline-block
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list--empty .wr-time-slot-list__item--time-slots {
+    width: 100%
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list__time-slots {
+    height: 100%
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item {
+    width: calc(100% - 24px)
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item--see-more {
+    width: auto
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot {
+    width: 50%;
+    overflow: hidden
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-primary {
+    width: 100%;
+    min-width: 4rem
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__container {
+    text-align: center
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item--see-more.wr-time-slot-list__item {
+    width: auto
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot--not-active {
+    width: 12.5rem
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list__container {
+    height: 100%;
+    white-space: nowrap;
+    background-color: #f6f6f6;
+    margin-bottom: -3px
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list__item {
+    display: inline-block;
+    vertical-align: top
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list__item--time-slots {
+    background-color: #fff
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-list__item--see-more {
+    display: inline-block;
+    height: 20.8125rem
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-list {
+        position: relative;
+        z-index: 1;
+        background-color: #fff;
+        width: 100%;
+        overflow: hidden;
+        overflow-x: auto;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: -3px;
+        border-left: 1px solid #e6e8ea;
+        border-right: 1px solid #e6e8ea
+    }
+
+    .wr-forecast .wr-time-slot-list--active {
+        display: inline-block
+    }
+
+    .wr-forecast .wr-time-slot-list--empty .wr-time-slot-list__item--time-slots {
+        width: 100%
+    }
+
+    .wr-forecast .wr-time-slot-list__time-slots {
+        height: 100%
+    }
+
+    .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item {
+        width: calc(100% - 24px)
+    }
+
+    .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item--see-more {
+        width: auto
+    }
+
+    .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot {
+        width: 50%;
+        overflow: hidden
+    }
+
+    .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-primary {
+        width: 100%;
+        min-width: 4rem
+    }
+
+    .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__container {
+        text-align: center
+    }
+
+    .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item--see-more.wr-time-slot-list__item {
+        width: auto
+    }
+
+    .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot--not-active {
+        width: 12.5rem
+    }
+
+    .wr-forecast .wr-time-slot-list__container {
+        height: 100%;
+        white-space: nowrap;
+        background-color: #f6f6f6;
+        margin-bottom: -3px
+    }
+
+    .wr-forecast .wr-time-slot-list__item {
+        display: inline-block;
+        vertical-align: top
+    }
+
+    .wr-forecast .wr-time-slot-list__item--time-slots {
+        background-color: #fff
+    }
+
+    .wr-forecast .wr-time-slot-list__item--see-more {
+        display: inline-block;
+        height: 20.8125rem
+    }
+}
+
+@media(min-width: 37.5em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-list__empty-state,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-list__empty-state {
+        padding: 0
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-list__item--time-slots,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-list__item--time-slots {
+        height: 20.8125rem
+    }
+}
+
+@media(min-width: 56.25em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item {
+        width: auto
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot {
+        width: 21.4375rem
+    }
+}
+
+@media(min-width: 80em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item--see-more.wr-time-slot-list__item,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item--see-more.wr-time-slot-list__item {
+        width: 12.5rem
+    }
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item--see-more.wr-time-slot-list__item--active,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item--see-more.wr-time-slot-list__item--active {
+        width: auto
+    }
+}
+
+@media(min-width: 0em)and (max-width: 37.49em) {
+    .wr-enhanced .wr-forecast .wr-time-slot-list__empty-state {
+        padding-bottom: 0
+    }
+
+    .wr-enhanced .wr-forecast .wr-time-slot-list__item {
+        width: auto
+    }
+
+    .wr-enhanced .wr-forecast .wr-time-slot-list__item--see-more {
+        height: 18.75rem
+    }
+
+    .wr-enhanced .wr-forecast .wr-time-slot-list__item--time-slots {
+        height: 18.75rem
+    }
+}
+
+@media(min-width: 0em)and (max-width: 56.24em) {
+    .wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot-list__item {
+        width: auto
+    }
+
+    .wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot {
+        width: auto
+    }
+
+    .wr-enhanced .wr-forecast .wr-time-slot-list--twelve-hour .wr-time-slot--not-active {
+        width: 12.5rem
+    }
+}
+
+.wr-forecast .wr-time-slot-primary {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    text-align: left
+}
+
+.wr-forecast .wr-time-slot-primary use.wr-rain-grey {
+    fill: #969696
+}
+
+.wr-forecast .wr-time-slot-primary use.wr-rain-blue {
+    fill: #3789c6
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    height: .1875rem;
+    transition: opacity .05s, right .15s;
+    opacity: 0;
+    z-index: 10
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp41andhigher {
+    background-color: #9a1b1e
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp36to40 {
+    background-color: #c12026
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp30to35 {
+    background-color: #ee2d29
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp25to29 {
+    background-color: #eb5038
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp21to24 {
+    background-color: #f26a30
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp19to20 {
+    background-color: #f68a1f
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp17to18 {
+    background-color: #faa31a
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp15to16 {
+    background-color: #fbb616
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp13to14 {
+    background-color: #fcc90d
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp11to12 {
+    background-color: #fedb00
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp9to10 {
+    background-color: #d0d73e
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp7to8 {
+    background-color: #afd251
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp5to6 {
+    background-color: #9fcd80
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp3to4 {
+    background-color: #aad6ae
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp1to2 {
+    background-color: #aedcd8
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp0to-2 {
+    background-color: #51bfed
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp-3to-5 {
+    background-color: #43a3d9
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp-6to-10 {
+    background-color: #3789c6
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp-11to-15 {
+    background-color: #2374b6
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp-16to-22 {
+    background-color: #0262a9
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp-23andlower {
+    background-color: #1f4799
+}
+
+.wr-forecast .wr-time-slot-primary__temperature-bar--temp-invalid {
+    background-color: #d5d0cd
+}
+
+.wr-forecast .wr-time-slot-primary__content {
+    display: block;
+    border-top: .125rem solid;
+    padding-top: 1rem;
+    padding-bottom: 1.125rem;
+    position: relative;
+    color: #141414
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp41andhigher {
+    border-color: #9a1b1e
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp36to40 {
+    border-color: #c12026
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp30to35 {
+    border-color: #ee2d29
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp25to29 {
+    border-color: #eb5038
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp21to24 {
+    border-color: #f26a30
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp19to20 {
+    border-color: #f68a1f
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp17to18 {
+    border-color: #faa31a
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp15to16 {
+    border-color: #fbb616
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp13to14 {
+    border-color: #fcc90d
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp11to12 {
+    border-color: #fedb00
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp9to10 {
+    border-color: #d0d73e
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp7to8 {
+    border-color: #afd251
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp5to6 {
+    border-color: #9fcd80
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp3to4 {
+    border-color: #aad6ae
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp1to2 {
+    border-color: #aedcd8
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp0to-2 {
+    border-color: #51bfed
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp-3to-5 {
+    border-color: #43a3d9
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp-6to-10 {
+    border-color: #3789c6
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp-11to-15 {
+    border-color: #2374b6
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp-16to-22 {
+    border-color: #0262a9
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp-23andlower {
+    border-color: #1f4799
+}
+
+.wr-forecast .wr-time-slot-primary__content--temp-invalid {
+    border-color: #d5d0cd
+}
+
+.wr-forecast .wr-time-slot-primary__title {
+    display: block;
+    margin-bottom: .375rem;
+    font-size: 1.125rem;
+    position: relative
+}
+
+.wr-forecast .wr-time-slot-primary .wr-temperature--time-slot {
+    font-weight: bold;
+    color: #3a3c3e
+}
+
+.wr-forecast .wr-time-slot-primary__precipitation {
+    display: none;
+    text-align: center
+}
+
+.wr-forecast .wr-time-slot-primary__precipitation--grey {
+    color: #545658
+}
+
+.wr-forecast .wr-time-slot-primary__precipitation--blue {
+    color: #3789c6
+}
+
+.wr-forecast .wr-time-slot-primary__body {
+    position: relative
+}
+
+.wr-forecast .wr-time-slot-primary__weather-type-description {
+    margin-left: 3.5rem;
+    line-height: 2.125rem;
+    font-size: 1rem;
+    font-weight: bold
+}
+
+.wr-forecast .wr-time-slot-primary__temperature {
+    margin-left: 3.5rem;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 20px;
+    line-height: 1.25rem
+}
+
+@media(min-width: 20em) {
+    .wr-forecast .wr-time-slot-primary__temperature {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__temperature {
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 22px;
+        line-height: 1.375rem
+    }
+
+    .no-touch .wr-forecast .wr-time-slot-primary__temperature {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+.wr-forecast .wr-time-slot-primary__minutes {
+    color: #545658
+}
+
+.wr-forecast .wr-time-slot-primary__label {
+    display: none;
+    text-align: center;
+    height: 1rem;
+    font-size: .75rem
+}
+
+.wr-forecast .wr-time-slot-primary__wind-speed {
+    margin-left: 3.5rem
+}
+
+.wr-forecast .wr-time-slot-primary .wr-wind-speed__icon {
+    margin: 0 auto
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary {
+    height: 18.75rem
+}
+
+@media(min-width: 37.5em) {
+
+    .wr-core .wr-forecast .wr-time-slot-primary,
+    .wr-enhanced .wr-forecast .wr-time-slot-primary {
+        height: 20.8125rem
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary {
+    width: 4rem;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__label {
+    display: block
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__content {
+    height: 100%;
+    padding: .5rem 0 0;
+    border-top: none
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__time {
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 18px;
+    line-height: 1.125rem
+}
+
+@media(min-width: 37.5em) {
+    .wr-enhanced .wr-forecast .wr-time-slot-primary__time {
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch .wr-enhanced .wr-forecast .wr-time-slot-primary__time {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__time--day-night {
+    text-transform: capitalize;
+    font-weight: bold
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__weather-type-description {
+    display: none
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__temperature {
+    margin-left: 0;
+    display: block;
+    margin-top: -0.125rem
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__weather-curve {
+    height: 11.25rem;
+    position: relative
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__weather-curve-scale {
+    height: calc(100% - 4.375rem);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__temperature-label {
+    color: #5a5a5a;
+    text-transform: uppercase
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__weather-curve-item {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    height: 4.375rem
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__precipitation {
+    display: block;
+    margin-top: 8px
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__precipitation__icon {
+    width: 1rem;
+    height: 1rem
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary__wind-speed {
+    margin-top: 8px;
+    margin-left: 0
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-primary .wr-weather-type__icon {
+    margin: 0 auto
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary {
+        width: 4rem;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top
+    }
+
+    .wr-forecast .wr-time-slot-primary__label {
+        display: block
+    }
+
+    .wr-forecast .wr-time-slot-primary__content {
+        height: 100%;
+        padding: .5rem 0 0;
+        border-top: none
+    }
+
+    .wr-forecast .wr-time-slot-primary__time {
+        font-size: 15px;
+        font-size: .9375rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+@media(min-width: 37.5em)and (min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__time {
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch .wr-forecast .wr-time-slot-primary__time {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__time--day-night {
+        text-transform: capitalize;
+        font-weight: bold
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__weather-type-description {
+        display: none
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__temperature {
+        margin-left: 0;
+        display: block;
+        margin-top: -0.125rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__weather-curve {
+        height: 11.25rem;
+        position: relative
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__weather-curve-scale {
+        height: calc(100% - 4.375rem);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__temperature-label {
+        color: #5a5a5a;
+        text-transform: uppercase
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__weather-curve-item {
+        position: absolute;
+        bottom: 50%;
+        left: 0;
+        right: 0;
+        height: 4.375rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__precipitation {
+        display: block;
+        margin-top: 8px
+    }
+
+    .wr-forecast .wr-time-slot-primary__precipitation__icon {
+        width: 1rem;
+        height: 1rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary__wind-speed {
+        margin-top: 8px;
+        margin-left: 0
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-primary .wr-weather-type__icon {
+        margin: 0 auto
+    }
+}
+
+@media(min-width: 0em)and (max-width: 37.49em) {
+    .wr-enhanced .wr-forecast .wr-time-slot-primary__weather-curve {
+        height: 9.0625rem
+    }
+}
+
+.wr-forecast .wr-time-slot-secondary {
+    overflow: hidden;
+    display: none;
+    background-color: #f6f6f6;
+    height: 18.75rem;
+    vertical-align: bottom;
+    text-align: left;
+    color: #545658;
+    cursor: pointer
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-secondary {
+        height: 20.8125rem
+    }
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-secondary {
+    display: none;
+    width: 0
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-secondary {
+        display: none;
+        width: 0
+    }
+}
+
+.wr-forecast .wr-time-slot-secondary__inner {
+    display: block;
+    position: relative;
+    height: 100%;
+    padding: .375rem .5rem;
+    width: 15.0625rem
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-secondary__inner {
+        padding: .375rem 1.25rem
+    }
+}
+
+.wr-forecast .wr-time-slot-secondary__bottom-section-container {
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
+    padding: .5rem 0
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-secondary__bottom-section-container {
+        left: 1.25rem;
+        right: 1.25rem
+    }
+}
+
+.wr-forecast .wr-time-slot-secondary__bottom-section {
+    border-bottom: 1px solid #b0b2b4;
+    padding: .5rem 0;
+    white-space: normal
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-secondary__bottom-section {
+        padding: .8125rem 0
+    }
+}
+
+.wr-forecast .wr-time-slot-secondary__bottom-section:last-child {
+    border-bottom: none
+}
+
+.wr-forecast .wr-time-slot-secondary__list {
+    min-width: em(224px);
+    overflow: hidden
+}
+
+.wr-forecast .wr-time-slot-secondary__label {
+    clear: left;
+    float: left;
+    margin-right: .5rem;
+    display: block
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-secondary__label {
+        padding-bottom: .25rem
+    }
+}
+
+.wr-forecast .wr-time-slot-secondary__value {
+    font-weight: bold;
+    display: block;
+    color: #141414
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot-secondary__value {
+        padding-bottom: .25rem
+    }
+}
+
+.wr-forecast .wr-time-slot-secondary__weather-type-text {
+    color: #141414;
+    padding-top: .1875rem;
+    display: block;
+    white-space: normal
+}
+
+.wr-forecast .wr-time-slot-secondary__feels-like-temperature-value {
+    color: #141414
+}
+
+.wr-forecast .wr-time-slot {
+    display: block
+}
+
+.wr-forecast .wr-time-slot:first-child .wr-time-slot-primary__content {
+    border-top: none
+}
+
+@media(min-width: 37.5em) {
+
+    .wr-core .wr-forecast .wr-time-slot .wr-time-slot__inner:active .wr-time-slot-secondary,
+    .wr-core .wr-forecast .wr-time-slot .wr-time-slot__inner:focus .wr-time-slot-secondary {
+        display: inline-block;
+        width: auto
+    }
+}
+
+.wr-forecast .wr-time-slot__inner {
+    display: block;
+    width: 100%
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot__inner:focus {
+    outline-style: none
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot--action-keyboard .wr-time-slot__inner:focus {
+    outline-color: #067eb3;
+    outline-offset: -5px;
+    outline-width: 2px;
+    outline-style: solid
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot--action-click .wr-time-slot__inner:focus {
+    outline-style: none
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot {
+    background-color: #fff;
+    border-top: none;
+    border-right: 1px solid #e6e8ea;
+    margin: 0;
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden;
+    overflow-x: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot__inner:hover .wr-time-slot-primary__temperature-bar,
+.wr-enhanced .wr-forecast .wr-time-slot__inner:active .wr-time-slot-primary__temperature-bar,
+.wr-enhanced .wr-forecast .wr-time-slot__inner:focus .wr-time-slot-primary__temperature-bar {
+    right: 0;
+    opacity: 1
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot--active .wr-time-slot-secondary {
+    display: inline-block
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot--active .wr-time-slot-primary__temperature-bar {
+    right: 0;
+    opacity: 1
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-time-slot {
+        background-color: #fff;
+        border-top: none;
+        border-right: 1px solid #e6e8ea;
+        margin: 0;
+        height: 100%;
+        text-align: center;
+        display: inline-block;
+        overflow: hidden;
+        overflow-x: auto;
+        position: relative;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .wr-forecast .wr-time-slot__inner:hover .wr-time-slot-primary__temperature-bar,
+    .wr-forecast .wr-time-slot__inner:active .wr-time-slot-primary__temperature-bar,
+    .wr-forecast .wr-time-slot__inner:focus .wr-time-slot-primary__temperature-bar {
+        right: 0;
+        opacity: 1
+    }
+
+    .wr-forecast .wr-time-slot--active .wr-time-slot-secondary {
+        display: inline-block
+    }
+
+    .wr-forecast .wr-time-slot--active .wr-time-slot-primary__temperature-bar {
+        right: 0;
+        opacity: 1
+    }
+}
+
+.wr-forecast .wr-back-to-top {
+    margin-bottom: 1rem;
+    display: inline-block;
+    color: inherit
+}
+
+.wr-enhanced .wr-forecast .wr-back-to-top {
+    display: none
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-back-to-top {
+        display: none
+    }
+}
+
+.wr-forecast .wr-see-more {
+    display: block;
+    color: #141414
+}
+
+.wr-forecast .wr-see-more--next {
+    text-align: left
+}
+
+.wr-forecast .wr-see-more--prev {
+    text-align: right;
+    border-right: 1px solid #e6e8ea
+}
+
+.wr-forecast .wr-see-more:hover .wr-see-more__date,
+.wr-forecast .wr-see-more:focus .wr-see-more__date {
+    color: #067eb3
+}
+
+.wr-forecast .wr-see-more:hover .wr-see-more__date span,
+.wr-forecast .wr-see-more:focus .wr-see-more__date span {
+    border-bottom: 2px solid currentcolor
+}
+
+@supports(text-underline-offset: 0.25em) {
+
+    .wr-forecast .wr-see-more:hover .wr-see-more__date span,
+    .wr-forecast .wr-see-more:focus .wr-see-more__date span {
+        border-bottom: none;
+        text-decoration-line: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: .25em;
+        text-decoration-skip-ink: none
+    }
+}
+
+.wr-forecast .wr-see-more__arrow {
+    fill: none;
+    vertical-align: middle;
+    height: .6rem;
+    width: .6rem
+}
+
+.wr-enhanced .wr-forecast .wr-see-more {
+    width: 12.5rem;
+    height: 100%;
+    padding: 1rem;
+    background-color: #f6f6f6
+}
+
+.wr-enhanced .wr-forecast .wr-see-more:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%
+}
+
+.wr-enhanced .wr-forecast .wr-see-more__middle {
+    display: inline-block
+}
+
+.wr-enhanced .wr-forecast .wr-see-more__middle span {
+    display: block;
+    line-height: 16px
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-see-more {
+        width: 12.5rem;
+        height: 100%;
+        padding: 1rem;
+        background-color: #f6f6f6
+    }
+
+    .wr-forecast .wr-see-more:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%
+    }
+
+    .wr-forecast .wr-see-more__middle {
+        display: inline-block
+    }
+
+    .wr-forecast .wr-see-more__middle span {
+        display: block;
+        line-height: 16px
+    }
+}
+
+.wr-forecast .wr-o-last-updated {
+    fill: #545658;
+    color: #545658
+}
+
+.wr-forecast .wr-o-last-updated svg {
+    height: 16px;
+    width: 16px
+}
+
+.wr-forecast .wr-date {
+    line-height: 1
+}
+
+.wr-forecast .wr-date__long {
+    display: none
+}
+
+@media(min-width: 0em)and (max-width: 37.49em) {
+    .wr-core .wr-forecast .wr-date__long {
+        display: block
+    }
+}
+
+.wr-forecast .wr-date__longish {
+    display: block
+}
+
+@media(min-width: 0em)and (max-width: 37.49em) {
+    .wr-core .wr-forecast .wr-date__longish {
+        display: none
+    }
+}
+
+.wr-forecast .wr-date__short {
+    display: block
+}
+
+.wr-forecast .wr-date__light {
+    color: #545658
+}
+
+.wr-forecast .wr-day-temperature__high-value,
+.wr-forecast .wr-day-temperature__low-value {
+    display: block;
+    text-align: left
+}
+
+.wr-forecast .wr-day-temperature__high-value {
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+    font-weight: bold
+}
+
+@media(min-width: 20em) {
+    .wr-forecast .wr-day-temperature__high-value {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day-temperature__high-value {
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 22px;
+        line-height: 1.375rem
+    }
+
+    .no-touch .wr-forecast .wr-day-temperature__high-value {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+.wr-forecast .wr-day-temperature__low-value {
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 20px;
+    line-height: 1.25rem
+}
+
+@media(min-width: 20em) {
+    .wr-forecast .wr-day-temperature__low-value {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day-temperature__low-value {
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 22px;
+        line-height: 1.375rem
+    }
+
+    .no-touch .wr-forecast .wr-day-temperature__low-value {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+.wr-forecast .wr-day-temperature__low-label {
+    text-align: left;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 16px;
+    line-height: 1rem
+}
+
+@media(min-width: 20em) {
+    .wr-forecast .wr-day-temperature__low-label {
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .no-touch .wr-forecast .wr-day-temperature__low-label {
+        font-size: 13px;
+        font-size: .8125rem;
+        line-height: 16px;
+        line-height: 1rem
+    }
+}
+
+.wr-forecast .wr-day-temperature--low-only .wr-day-temperature__low-value {
+    text-align: left
+}
+
+.wr-forecast .wr-day-temperature--temp41andhigher {
+    background-color: #9a1b1e
+}
+
+.wr-forecast .wr-day-temperature--temp36to40 {
+    background-color: #c12026
+}
+
+.wr-forecast .wr-day-temperature--temp30to35 {
+    background-color: #ee2d29
+}
+
+.wr-forecast .wr-day-temperature--temp25to29 {
+    background-color: #eb5038
+}
+
+.wr-forecast .wr-day-temperature--temp21to24 {
+    background-color: #f26a30
+}
+
+.wr-forecast .wr-day-temperature--temp19to20 {
+    background-color: #f68a1f
+}
+
+.wr-forecast .wr-day-temperature--temp17to18 {
+    background-color: #faa31a
+}
+
+.wr-forecast .wr-day-temperature--temp15to16 {
+    background-color: #fbb616
+}
+
+.wr-forecast .wr-day-temperature--temp13to14 {
+    background-color: #fcc90d
+}
+
+.wr-forecast .wr-day-temperature--temp11to12 {
+    background-color: #fedb00
+}
+
+.wr-forecast .wr-day-temperature--temp9to10 {
+    background-color: #d0d73e
+}
+
+.wr-forecast .wr-day-temperature--temp7to8 {
+    background-color: #afd251
+}
+
+.wr-forecast .wr-day-temperature--temp5to6 {
+    background-color: #9fcd80
+}
+
+.wr-forecast .wr-day-temperature--temp3to4 {
+    background-color: #aad6ae
+}
+
+.wr-forecast .wr-day-temperature--temp1to2 {
+    background-color: #aedcd8
+}
+
+.wr-forecast .wr-day-temperature--temp0to-2 {
+    background-color: #51bfed
+}
+
+.wr-forecast .wr-day-temperature--temp-3to-5 {
+    background-color: #43a3d9
+}
+
+.wr-forecast .wr-day-temperature--temp-6to-10 {
+    background-color: #3789c6
+}
+
+.wr-forecast .wr-day-temperature--temp-11to-15 {
+    background-color: #2374b6
+}
+
+.wr-forecast .wr-day-temperature--temp-16to-22 {
+    background-color: #0262a9
+}
+
+.wr-forecast .wr-day-temperature--temp-23andlower {
+    background-color: #1f4799
+}
+
+.wr-forecast .wr-day-temperature--temp-invalid {
+    background-color: #d5d0cd
+}
+
+.wr-enhanced .wr-forecast .wr-day-temperature {
+    position: absolute;
+    top: 0;
+    right: 0
+}
+
+.wr-enhanced .wr-forecast .wr-day-temperature__high-value,
+.wr-enhanced .wr-forecast .wr-day-temperature__low-value {
+    text-align: right
+}
+
+.wr-enhanced .wr-forecast .wr-day-temperature__low-label {
+    bottom: -5px;
+    color: #5a5a5a;
+    position: relative
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-day-temperature {
+        position: absolute;
+        top: 0;
+        right: 0
+    }
+
+    .wr-forecast .wr-day-temperature__high-value,
+    .wr-forecast .wr-day-temperature__low-value {
+        text-align: right
+    }
+
+    .wr-forecast .wr-day-temperature__low-label {
+        bottom: -5px;
+        color: #5a5a5a;
+        position: relative
+    }
+}
+
+.wr-forecast .wr-weather-type {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0
+}
+
+.wr-forecast .wr-weather-type__text {
+    display: none
+}
+
+.wr-forecast.wr-no-svg .wr-weather-type {
+    display: inline
+}
+
+.wr-forecast .wr-weather-type__icon {
+    width: 3rem;
+    height: 3rem
+}
+
+.wr-forecast .wr-weather-type__icon svg {
+    height: 100%;
+    width: 100%
+}
+
+.wr-forecast .wr-weather-type--time-slot .wr-weather-type__icon {
+    height: 2.5rem;
+    width: 2.5rem
+}
+
+.wr-enhanced .wr-forecast .wr-weather-type {
+    position: relative
+}
+
+.wr-enhanced .wr-forecast .wr-weather-type--day .wr-weather-type__icon {
+    height: 3rem;
+    width: 3rem
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-weather-type {
+        position: relative
+    }
+
+    .wr-forecast .wr-weather-type--day .wr-weather-type__icon {
+        height: 3rem;
+        width: 3rem
+    }
+}
+
+@media(min-width: 0em)and (max-width: 37.49em) {
+    .wr-enhanced .wr-forecast .wr-weather-type--time-slot {
+        position: relative
+    }
+}
+
+.wr-forecast .wr-wind-speed {
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+    position: relative;
+    color: #141414
+}
+
+@media(min-width: 20em) {
+    .wr-forecast .wr-wind-speed {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-wind-speed {
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 22px;
+        line-height: 1.375rem
+    }
+
+    .no-touch .wr-forecast .wr-wind-speed {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+.wr-forecast .wr-wind-speed__icon {
+    display: none
+}
+
+.wr-forecast .wr-wind-speed use.wr-wind-type-wind {
+    fill: #fff
+}
+
+.wr-forecast .wr-wind-speed use.wr-wind-type-gust {
+    fill: #141414
+}
+
+.wr-enhanced .wr-forecast .wr-wind-speed {
+    text-align: center;
+    width: 100%
+}
+
+.wr-enhanced .wr-forecast .wr-wind-speed,
+.no-touch .wr-enhanced .wr-forecast .wr-wind-speed {
+    font-size: .75rem
+}
+
+.wr-enhanced .wr-forecast .wr-wind-speed__description {
+    display: none
+}
+
+.wr-enhanced .wr-forecast .wr-wind-speed__icon {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem
+}
+
+.wr-enhanced .wr-forecast .wr-wind-speed__icon__svg {
+    width: inherit;
+    height: inherit
+}
+
+.wr-enhanced .wr-forecast .wr-wind-speed__icon .wr-wind-speed__value {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    line-height: 2.5rem
+}
+
+.wr-enhanced .wr-forecast .wr-wind-speed__icon .wr-wind-speed__value--gust {
+    color: #fff
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-wind-speed {
+        text-align: center;
+        width: 100%
+    }
+
+    .wr-forecast .wr-wind-speed,
+    .no-touch .wr-forecast .wr-wind-speed {
+        font-size: .75rem
+    }
+
+    .wr-forecast .wr-wind-speed__description {
+        display: none
+    }
+
+    .wr-forecast .wr-wind-speed__icon {
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem
+    }
+
+    .wr-forecast .wr-wind-speed__icon__svg {
+        width: inherit;
+        height: inherit
+    }
+
+    .wr-forecast .wr-wind-speed__icon .wr-wind-speed__value {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        line-height: 2.5rem
+    }
+
+    .wr-forecast .wr-wind-speed__icon .wr-wind-speed__value--gust {
+        color: #fff
+    }
+}
+
+@media(min-width: 0em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .error-component,
+    .b-pw-1280.wr-core .wr-forecast .error-component {
+        position: relative;
+        background-color: #5a5a5a;
+        color: #fff;
+        max-width: 21.75rem;
+        width: 100%;
+        padding: .75rem;
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 16px;
+        line-height: 1rem
+    }
+}
+
+@media(min-width: 0em)and (min-width: 20em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .error-component,
+    .b-pw-1280.wr-core .wr-forecast .error-component {
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+@media(min-width: 0em)and (min-width: 37.5em) {
+
+    .no-touch .b-pw-1280.wr-enhanced .wr-forecast .error-component,
+    .no-touch .b-pw-1280.wr-core .wr-forecast .error-component {
+        font-size: 13px;
+        font-size: .8125rem;
+        line-height: 16px;
+        line-height: 1rem
+    }
+}
+
+@media(min-width: 0em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .error-component__icon-container,
+    .b-pw-1280.wr-core .wr-forecast .error-component__icon-container {
+        position: absolute;
+        left: .1875rem;
+        top: 0;
+        bottom: 0
+    }
+}
+
+@media(min-width: 0em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .error-component__icon,
+    .b-pw-1280.wr-core .wr-forecast .error-component__icon {
+        fill: #5a5a5a
+    }
+}
+
+@media(min-width: 0em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .error-component__text-container,
+    .b-pw-1280.wr-core .wr-forecast .error-component__text-container {
+        border-left: 1px solid #fff;
+        text-align: left;
+        margin-left: 3rem
+    }
+}
+
+@media(min-width: 0em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .error-component__text,
+    .b-pw-1280.wr-core .wr-forecast .error-component__text {
+        padding-left: 1.125rem;
+        white-space: normal;
+        display: block
+    }
+}
+
+.wr-forecast .wr-c-warnings-issued {
+    display: none;
+    background: #fff
+}
+
+.wr-forecast .wr-c-warnings-issued--below-days .wr-c-warnings-issued__container {
+    display: none;
+    padding-top: 0;
+    padding-bottom: 1rem
+}
+
+.wr-forecast .wr-c-warnings-issued__container {
+    max-width: 1008px;
+    margin: 0 auto;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    overflow: hidden;
+    transform: translateZ(0)
+}
+
+@media(min-width: 25em) {
+    .wr-forecast .wr-c-warnings-issued__container {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+}
+
+@media(min-width: 80em) {
+    .wr-forecast .wr-c-warnings-issued__container {
+        max-width: 1280px
+    }
+}
+
+.wr-forecast .wr-c-warnings-issued__container--with-warnings .wr-c-warnings {
+    display: block
+}
+
+.wr-forecast .wr-c-warnings-issued__banner {
+    border: solid .0625rem rgba(0, 0, 0, 0);
+    position: relative;
+    color: #fff;
+    background: #141414;
+    padding: 1rem;
+    padding-left: 3rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-weight: bold
+}
+
+.wr-forecast .wr-c-warnings-issued__banner:hover,
+.wr-forecast .wr-c-warnings-issued__banner:focus,
+.wr-forecast .wr-c-warnings-issued__banner:active {
+    background: #3a3c3e;
+    fill: #3a3c3e;
+    text-decoration: underline
+}
+
+.wr-forecast .wr-c-warnings-issued__banner:focus {
+    outline: max(2px, .08em) solid #fff;
+    outline-offset: min(-4px, -0.16em)
+}
+
+.wr-forecast .wr-c-warnings-issued__svg {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.wr-forecast .wr-c-warnings-issued__svg--warning {
+    left: 1rem;
+    height: 1.5rem;
+    width: 1.5rem
+}
+
+.wr-forecast .wr-c-warnings-issued__svg--up-arrow {
+    display: none;
+    right: 1rem;
+    height: 1.75rem;
+    width: 1.75rem
+}
+
+.wr-forecast .wr-c-warnings-issued__svg--down-arrow {
+    right: 1rem;
+    height: 1.75rem;
+    width: 1.75rem
+}
+
+.wr-forecast .wr-c-warnings-issued__container--open .wr-c-warnings-issued__svg--up-arrow {
+    display: block
+}
+
+.wr-forecast .wr-c-warnings-issued__container--open .wr-c-warnings-issued__svg--down-arrow {
+    display: none
+}
+
+.wr-enhanced .wr-forecast .wr-c-warnings-issued--below-days .wr-c-warnings-issued__container {
+    display: block
+}
+
+.wr-enhanced .wr-forecast .wr-c-warnings-issued__container {
+    display: none
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .wr-c-warnings-issued--below-days .wr-c-warnings-issued__container {
+        display: block
+    }
+
+    .wr-forecast .wr-c-warnings-issued__container {
+        display: none
+    }
+}
+
+.wr-forecast {
+    font-size: 1rem
+}
+
+.wr-forecast--no-day .wr-c-environment-container--core {
+    display: none
+}
+
+.wr-forecast--no-day .wr-day-carousel {
+    display: block
+}
+
+.wr-forecast--no-day .wr-time-slot-container {
+    display: none
+}
+
+.wr-forecast--no-day .wr-c-location__back-to-overview {
+    display: none
+}
+
+.wr-enhanced .wr-forecast {
+    background-color: #fff
+}
+
+.wr-enhanced .wr-forecast--no-day .wr-time-slot-container {
+    display: block
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-container__details-container {
+    display: block
+}
+
+.wr-enhanced .wr-forecast .wr-time-slot-container__advert {
+    display: block;
+    margin: 0 auto 15px
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast {
+        background-color: #fff
+    }
+
+    .wr-forecast--no-day .wr-time-slot-container {
+        display: block
+    }
+
+    .wr-forecast .wr-time-slot-container__details-container {
+        display: block
+    }
+
+    .wr-forecast .wr-time-slot-container__advert {
+        display: block;
+        margin: 0 auto 15px
+    }
+}
+
+@media(min-width: 56.25em) {
+
+    .b-pw-1280.wr-enhanced .wr-forecast .wr-time-slot-container__advert,
+    .b-pw-1280.wr-core .wr-forecast .wr-time-slot-container__advert {
+        margin: 7px auto 23px
+    }
+}
+
+@media(min-width: 63em) {
+
+    .b-pw-1280.wr-enhanced .bbccom_mpu .wr-forecast .wr-time-slot-container__details-container,
+    .b-pw-1280.wr-core .bbccom_mpu .wr-forecast .wr-time-slot-container__details-container {
+        display: inline-block;
+        width: calc(100% - 300px);
+        padding-right: 2.25rem
+    }
+
+    .b-pw-1280.wr-enhanced .bbccom_mpu .wr-forecast .wr-time-slot-container__advert,
+    .b-pw-1280.wr-core .bbccom_mpu .wr-forecast .wr-time-slot-container__advert {
+        display: inline-block
+    }
+
+    .b-pw-1280.wr-enhanced .bbccom_mpu .wr-forecast .wr-c-astro-data,
+    .b-pw-1280.wr-core .bbccom_mpu .wr-forecast .wr-c-astro-data {
+        float: none;
+        padding-bottom: 16px
+    }
+}
+
+.wr-forecast .page {
+    min-height: 25rem;
+    background-color: rgba(255, 0, 208, .15);
+    padding: 2.5rem 0
+}
+
+.wr-forecast .show-inline {
+    display: inline-block !important
+}
+
+.wr-forecast .hide-mobile {
+    display: none
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .hide-mobile {
+        display: block
+    }
+}
+
+@media(min-width: 37.5em) {
+    .wr-forecast .hide-tablet-desktop {
+        display: none
+    }
+}
+
+@media(min-width: 63em) {
+    .wr-forecast .hide-desktop {
+        display: none
+    }
+}
+
+.wr-forecast .wr-hide {
+    display: none !important
+}
+
+.wr-forecast .wr-hide-visually {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip-path: polygon(0 0, 1px 0, 1px 1px, 0 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.wr-forecast .clearfix::after {
+    clear: both;
+    content: "";
+    display: table
+}
+
+.wr-forecast .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.wr-forecast .wr-vertical-align:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%
+}
+
+.wr-forecast .wr-vertical-align__middle {
+    display: inline-block
+}

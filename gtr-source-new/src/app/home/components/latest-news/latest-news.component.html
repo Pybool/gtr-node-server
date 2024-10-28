@@ -1,0 +1,47 @@
+<!-- article box -->
+<div class="article-box">
+
+    <div class="title-section">
+    <h1><a [routerLink]="['/category', 'news',1]"  style="color:rgb(34, 34, 34)"><span>Latest Articles</span></a></h1>
+    </div>
+
+    <div class="news-post article-post"  *ngFor="let newsArray of news">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="post-gallery">
+                    <img height="200px" width="270px"  style=" height:200px;width:270px;object-fit:cover"alt="" src="{{newsArray.image}}">
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="post-content">
+                    <h2><a [routerLink]="['/', newsArray.post_name]">{{
+                        (newsArray.post_title.length>80)? (newsArray.post_title
+                        | slice:0:80)+'..':(newsArray.post_title) }}</a></h2>
+                    <ul class="post-tags">
+                        <li><i class="fa fa-clock-o"></i>{{newsArray.post_date|
+                            date: 'fullDate'}}</li>
+                    </ul>
+                    <p>{{getContent(newsArray.post_content) }}</p>
+                    <a [routerLink]="['/', newsArray.post_name]" class="read-more-button"><i class="fa fa-arrow-circle-right"></i>Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+<!-- End article box -->
+
+<!-- pagination box -->
+<div class="pagination-box">
+    <ul class="pagination-list">
+        <li><a class="active" >1</a></li>
+        <li><a [routerLink]="['/page', '2']">2</a></li>
+        <li><a [routerLink]="['/page', '3']">3</a></li>
+        <li><span>...</span></li>
+        <li><a [routerLink]="['/page', total]">{{total.toLocaleString()}}</a></li>
+        <li><a [routerLink]="['/page', '2']">Next</a></li>
+    </ul>
+    <p>Page 1 of {{total.toLocaleString()}}</p>
+</div>
+<!-- End Pagination box -->

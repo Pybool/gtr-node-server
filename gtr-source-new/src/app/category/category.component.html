@@ -1,0 +1,329 @@
+<div id="wrapper"
+	class="ready"
+	style="padding-top: 0px;">
+
+	<div id="page_caption"
+		class=" withtopbar ">
+		<div class="page_title_wrapper">
+			<div style="flex-direction: row-reverse;" class="page_title_inner">
+				<div class="post_info_cat">
+					<div class="breadcrumb">
+
+						<ng-container *ngFor="let tags of result?.data?.tags | slice:0:5; let i = index">
+							<span *ngIf="tags.url.toLowerCase() != search.toLowerCase()">
+								<a [routerLink]="['/category', tags.url | lowercase]"
+									gaEvent="click"
+									gaCategory="news_read"
+									gaBind="click">
+									{{tags.name}}
+								</a>
+							</span>
+							<span *ngIf="i !==0">&nbsp;|| &nbsp;</span>
+						</ng-container><span *ngIf="result?.data?.tags.length > 0" style="color: skyblue!important">{{search | replace : '-' : ' '}}</span>
+					</div>
+				</div>
+				<h1>
+						{{search | replace : '-' : ' '}}
+				</h1>
+				<h1 *ngIf="mainData.length<=0"
+					class="text-center">
+					<a [routerLink]="['/']"
+						gaEvent="click"
+						gaCategory="news_read"
+						gaBind="click">
+						No News found Return Home
+					</a>
+				</h1>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Begin content -->
+	<div id="page_content_wrapper"
+		class>
+		<div *ngIf="mainData.length>=4"
+			id="featured"
+			class="featured">
+			<div style="margin-top: 30px;" class="featured-3-up">
+				<article class="item has-image">
+					<div class="item-image">
+						<div  class="item-info-wrap">
+							<div class="item-info">
+								<div class="title">
+									<a style="font-size: 22px" [routerLink]="['/', mainData[0].post_name]"
+										gaEvent="click"
+										gaCategory="news_read"
+										gaBind="click">
+										{{mainData[0].post_title}}
+									</a>
+								</div>
+								<p class="teaser">
+									<a [routerLink]="['/', mainData[0].post_name]"
+										gaEvent="click"
+										gaCategory="news_read"
+										gaBind="click">
+										<time datetime="2021-11-15">
+											<span class="date post_info_date">
+												{{ mainData[0].post_date| date: 'fullDate'}}
+											</span>
+										</time>
+										<!-- <div [innerHTML]="getContent(mainData[0].post_content)"></div> -->
+									</a>
+								</p>
+							</div>
+						</div>
+						<div class="imagewrap has-source-dimensions"
+							style="--source-width: 8256; --source-height: 4644;">
+							<a [routerLink]="['/', mainData[0].post_name]"
+								gaEvent="click"
+								gaCategory="news_read"
+								gaBind="click">
+								<picture>
+									<img src="{{mainData[0].image}}"
+										class="main-featured"
+										alt="{{mainData[0].post_title}}"
+										loading="lazy">
+								</picture>
+							</a>
+						</div>
+						<div class="credit-caption">
+							<div class="caption-wrap">
+								<div class="caption"
+									aria-label="Image caption">
+									<p [innerHTML]="getContent(mainData[0].post_content)"></p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					
+				</article>
+
+				<div class="flex-col">
+					<article class="item has-image">
+						<div class="item-image">
+							<div class="imagewrap has-source-dimensions"
+								style="--source-width: 6128; --source-height: 3447;">
+								<a [routerLink]="['/', mainData[1].post_name]"
+									gaEvent="click"
+									gaCategory="news_read"
+									gaBind="click">
+									<picture>
+										<img src="{{mainData[1].image}}"
+											class="sub-featured"
+											alt="{{mainData[1].post_name}}"
+											loading="lazy">
+									</picture>
+								</a>
+							</div>
+							<div class="credit-caption">
+								<div class="caption-wrap">
+									<div class="caption"
+										aria-label="Image caption">
+										<!-- <p [innerHTML]="getContent(mainData[1].post_content)">
+											   
+										
+									</p> -->
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="item-info-wrap">
+							<div class="item-info">
+								<div class="title">
+									<a [routerLink]="['/', mainData[1].post_name]"
+										gaEvent="click"
+										gaCategory="news_read"
+										gaBind="click">
+										{{mainData[1].post_title}}
+									</a>
+								</div>
+								<p class="teaser">
+									<a [routerLink]="['/', mainData[1].post_name]"
+										gaEvent="click"
+										gaCategory="news_read"
+										gaBind="click">
+										<time datetime="2021-11-15">
+											<span class="date post_info_date">
+												{{ mainData[1].post_date| date: 'fullDate'}}
+											</span>
+										</time>
+										<!-- <div [innerHTML]="getContent(mainData[1].post_content)"></div> -->
+									</a>
+								</p>
+							</div>
+						</div>
+					</article>
+
+					<article class="item has-image">
+						<div class="item-image">
+							<div class="imagewrap has-source-dimensions"
+								style="--source-width: 6128; --source-height: 3447;">
+								<a [routerLink]="['/', mainData[2].post_name]"
+									gaEvent="click"
+									gaCategory="news_read"
+									gaBind="click">
+									<picture>
+										<img src="{{mainData[2].image}}"
+											class="sub-featured"
+											alt="{{mainData[2].post_name}}"
+											loading="lazy">
+									</picture>
+								</a>
+							</div>
+							<div class="credit-caption">
+								<div class="caption-wrap">
+									<div class="caption"
+										aria-label="Image caption">
+										<!-- <p [innerHTML]="getContent(mainData[2].post_content)">
+									   
+										
+									</p> -->
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="item-info-wrap">
+							<div class="item-info">
+								<div class="title">
+									<a [routerLink]="['/', mainData[2].post_name]"
+										gaEvent="click"
+										gaCategory="news_read"
+										gaBind="click">
+										{{mainData[2].post_title}}
+									</a>
+								</div>
+								<p class="teaser">
+									<a [routerLink]="['/', mainData[2].post_name]"
+										gaEvent="click"
+										gaCategory="news_read"
+										gaBind="click">
+										<time datetime="2021-11-15">
+											<span class="date post_info_date">
+												{{ mainData[2].post_date| date: 'fullDate'}}
+											</span>
+										</time>
+										<!-- <div [innerHTML]="getContent(mainData[2].post_content)"></div> -->
+									</a>
+								</p>
+							</div>
+						</div>
+					</article>
+				</div>
+
+			</div>
+		</div>
+		<div class="inner three_cols">
+
+			<!-- Begin main content -->
+			<div class="inner_wrapper">
+
+				<div class="sidebar_content full_width three_cols flex-row-start">
+
+					<ng-container *ngFor="let mydata of slicerStart;let i = index;">
+						<!-- Begin each blog post -->
+						<div id="post-79"
+							class="post-79 post type-post status-publish format-standard has-post-thumbnail hentry category-football category-teams tag-nature tag-photography tag-travel">
+
+							<div class="post_wrapper">
+
+								<div class="post_content_wrapper">
+
+									<div class="post_header">
+
+										<div class="post_img static small">
+											<a [routerLink]="['/', mydata.post_name]">
+												<img src="{{mydata.image}}" class="respArchListImg" alt="{{mydata.post_title}}"
+													style="width:408px;height:250px!important;">
+											</a>
+										</div>
+
+										<div class="post_header_title">
+											<h5>
+												<a gaEvent="click" gaCategory="news_read"  gaBind="click"[routerLink]="['/', mydata.post_name]">{{(mydata.post_title.length>80)? (mydata.post_title
+													| slice:0:80)+'..':(mydata.post_title) }}
+												</a>
+											</h5>
+											<p class="teaser">
+												<a [routerLink]="['/', mydata.post_name]"
+													gaEvent="click"
+													gaCategory="news_read"
+													gaBind="click">
+													<div style="color:#999" [innerHTML]="getContent(mydata.post_content)"></div>
+												</a>
+											</p>
+											<div class="post_detail post_date">
+												<span class="post_info_author">
+													<a href="https://themes.themegoods.com/grandnews/demo5/author/admin/">GHANA TALKS RADIO</a>
+												</span>
+												<span class="post_info_date">
+													{{mydata.post_date | date: 'fullDate'}}
+												</span>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+						<!-- End each blog post -->
+						<!-- <br *ngIf="i%2==0" class="clear">  -->
+					</ng-container>
+					<div style="gap: 20px" class="flex-row-start">
+					
+						<div *ngIf="loadMore"
+							class="options has-more-results">
+							<button (click)="morefeed()"
+								gaEvent="click"
+								gaCategory="load_more_button"
+								gaBind="click"
+								class="options__load-more">
+								Load More
+							</button>
+						</div>
+						<app-loader *ngIf="loader"></app-loader>
+					</div>
+
+				</div>
+				
+				
+
+			</div>
+			<!-- End main content -->
+		</div>
+	</div>
+	<div class="share-tools share-tools--secondary">
+		<hr>
+
+		<p style="font-style: italic;">
+			Click on the links to join our Whatsapp & Telegram Ghanatalksradio Newsroom channels for curated, meaningful stories tailored just for you:
+			<br>
+			<br>
+			Whatsapp:
+			<a (click)="openExternal('https://whatsapp.com/channel/0029VaG3JNKId7nFeOZUsF3K')"
+				style="cursor: pointer;"
+				rel="noopener noreferrer">
+				&nbsp;https://whatsapp.com/channel/0029VaG3JNKId7nFeOZUsF3K
+			</a>
+			<br>
+			Telegram:
+			<a (click)="openExternal('https://t.me/GhanaTalksRadio')"
+				style="cursor: pointer;"
+				rel="noopener noreferrer">
+				&nbsp;https://t.me/GhanaTalksRadio
+			</a>
+		</p>
+	</div>
+
+	<br class="clear">
+
+	
+
+</div>

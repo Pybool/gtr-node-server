@@ -1,0 +1,131 @@
+@import "../../assets/ghanatalksradio/css/new-v3.css";
+@import "../../assets/ghanatalksradio/css/style-v13.css";
+
+.featured-3-up {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.options__load-more {
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  text-align: left;
+  text-indent: -999em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 2px;
+  font-family: "Knockout 31 4r", HelveticaNeue-CondensedBold, Helvetica, Arial,
+    sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.08px;
+  line-height: 1.2;
+  font-size: 16px;
+  padding: 10px;
+  text-indent: 0;
+  background: black;
+  color: #fff;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-featured {
+  width: 30vw !important;
+  max-height: 30vh !important;
+  object-fit: cover;
+}
+
+.main-featured {
+  width: 70vw !important;
+  max-height: 60vh !important;
+  object-fit: contain;
+}
+
+.item-info > .title > a {
+  color: black !important;
+  font-size: 18px !important;
+  line-height: 0.8 !important;
+  font-weight: 700 !important;
+}
+
+.post_info_date {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 22px;
+  color: #999;
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.flex-row-start {
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  // gap: 10px;
+  flex-wrap: wrap;
+}
+
+#page_content_wrapper .inner .sidebar_content.three_cols .post.type-post {
+  float: left;
+  width: 31.29%;
+  margin-right: 2% !important;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.respArchListImg {
+  width: 408px !important;
+  height: 229px !important;
+}
+
+/* Extra Small Devices, Phones (0px to 599px) */
+@media only screen and (min-width: 300px) and (max-width: 599px) {
+  /* Styles for small phones */
+  #page_content_wrapper .inner .sidebar_content.three_cols .post.type-post {
+    width: 100%;
+  }
+  .flex-row-start {
+    flex-wrap: wrap;
+  }
+
+  .featured-3-up {
+    flex-wrap: wrap;
+  }
+  .sub-featured {
+    width: 100% !important;
+    max-height: auto !important;
+  }
+
+  .main-featured {
+    width: 100% !important;
+  }
+
+  .share-tools--secondary > p {
+    padding: 20px;
+  }
+  .share-tools--secondary {
+    padding: 0px;
+  }
+}
+
+/* Small Devices, Larger Phones (600px to 767px) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+}
+
+*:not(i){
+    font-family: "Roboto Condensed", Helvetica, Arial, sans-serif!important;
+}

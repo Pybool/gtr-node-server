@@ -1,0 +1,104 @@
+#main-section{
+    border-top: 1px solid #DFDFDF;
+    border-right: 1px solid #DFDFDF;
+    border-left: 1px solid #DFDFDF;
+    border-radius: 3px 3px 0 0;
+    min-width: 0;
+    padding:20px 50px;
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.vid-window{
+    display: flex;
+    gap: 20px;
+    .side-window{
+        width: 160px;
+        h2{
+            font-size: 17px;
+    color: #767676;
+    font-weight: 400;
+    font-family: "Source Sans Pro",HelveticaNeue-CondensedBold,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+        }
+        p{
+            font-size: 13px;
+    color: #5076b8;;
+    font-weight: 400;
+    font-family: "Source Sans Pro",HelveticaNeue-CondensedBold,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+        }
+        a{
+            font-size: 13px;
+    color: #5076b8;;
+    font-weight: 400;
+    font-family: "Source Sans Pro",HelveticaNeue-CondensedBold,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+        }
+        .change{
+            color: #767676!important;
+            text-transform: none!important;
+        }
+    }
+    .presenter{
+        flex:1;
+    }
+}
+.subscribe-btn{
+    min-height: 30px;
+    padding: 0 10px;
+    border-radius: 2px;
+    font-family: "Source Sans Pro",HelveticaNeue-CondensedBold,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.08px;
+    font-size: 14px;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+    font-weight: 400;
+    background-color: black;
+    border-radius: 4px;
+    width: fit-content;
+    gap: 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+.title{
+    font-family: "Source Sans Pro",HelveticaNeue-CondensedBold,Helvetica,Arial,sans-serif;
+    font-size: 21px;
+    color: rgb(118, 118, 118);
+}
+.slug{
+    font-size: 14px;
+    color: #767676;
+    font-family: "Source Sans Pro",HelveticaNeue-CondensedBold,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1.08px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    a{
+        color: #767676;
+    }
+}
+.descriptyion{
+    color: #111;
+    font-family: "Lato",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px 0px;
+}
+@media only screen and (max-width: 764px) {
+    .vid-window {
+      flex-direction: column;
+    }
+    #main-section{
+        padding:20px 15px;
+        width: fit-content;
+    }
+  }

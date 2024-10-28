@@ -1,0 +1,270 @@
+<div id="wrapper"
+	class="ready"
+	style="padding-top: 0px;">
+
+	<div id="page_caption"
+		class=" withtopbar ">
+		
+
+	</div>
+
+	<!-- Begin content -->
+	<div id="page_content_wrapper"
+		class>
+		<div class="inner three_cols">
+
+			<!-- Begin main content -->
+			<div class="inner_wrapper">
+
+				<div class="sidebar_content full_width three_cols flex-row-start">
+
+					<ng-container *ngFor="let mydata of mainData;let i = index;">
+						<!-- Begin each blog post -->
+						<div id="post-79"
+							class="post-79 post type-post status-publish format-standard has-post-thumbnail hentry category-football category-teams tag-nature tag-photography tag-travel">
+
+							<div class="post_wrapper">
+
+								<div class="post_content_wrapper">
+
+									<div class="post_header">
+
+										<div class="post_img static small">
+											<a [routerLink]="['/', mydata.post_name]">
+												<img src="{{mydata.image}}"
+													class="respArchListImg"
+													alt="{{mydata.post_title}}"
+													style="width:408px;height:250px!important;">
+											</a>
+										</div>
+
+										<div class="post_header_title">
+											<h5>
+												<a [routerLink]="['/', mydata.post_name]"
+													gaEvent="click"
+													gaCategory="news_read"
+													gaBind="click">
+													{{(mydata.post_title.length>80)? (mydata.post_title
+													| slice:0:80)+'..':(mydata.post_title) }}
+												</a>
+											</h5>
+											<p class="teaser">
+												<a [routerLink]="['/', mydata.post_name]"
+													gaEvent="click"
+													gaCategory="news_read"
+													gaBind="click">
+													<p style="color: black" [innerHTML]="(mydata.post_content.length>250)? (mydata.post_content
+														| slice:0:250)+'..':(mydata.post_content)"></p>
+													<a style="color: darkgray" [routerLink]="['/', mydata.post_name]"
+														class="read-more-button">
+														<i class="fa fa-arrow-circle-right"></i>
+														Read More
+													</a>
+												</a>
+											</p>
+											<div class="post_detail post_date">
+												<span class="post_info_author">
+													<a style="color: black" href="javascript:void(0)">GHANA TALKS RADIO</a>
+												</span>
+												<span class="post_info_date">
+													{{mydata.post_date | date: 'fullDate'}}
+												</span>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+						<!-- End each blog post -->
+						<!-- <br *ngIf="i%2==0" class="clear"> -->
+					</ng-container>
+					<div class="pagination-box">
+						<ng-container [ngSwitch]="true">
+
+							<ul *ngSwitchCase="intId===1"
+								class="pagination-list">
+								<li>
+									<a class="active">1</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',2]">2</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',3]">3</a>
+								</li>
+								<li>
+									<span>...</span>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals]">{{totals}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',intId+1]">Next</a>
+								</li>
+							</ul>
+							<ul *ngSwitchCase="intId===2"
+								class="pagination-list">
+								<li>
+									<a [routerLink]="['/page',intId-1]">Prev</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',1]">1</a>
+								</li>
+								<li>
+									<a class="active">2</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',3]">3</a>
+								</li>
+								<li>
+									<span>...</span>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals]">{{totals}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',intId+1]">Next</a>
+								</li>
+							</ul>
+							<ul *ngSwitchCase="intId===3"
+								class="pagination-list">
+								<li>
+									<a [routerLink]="['/page',intId-1]">Prev</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',1]">1</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',2]">2</a>
+								</li>
+								<li>
+									<a class="active">3</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',4]">4</a>
+								</li>
+								<li>
+									<span>...</span>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals]">{{totals}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',intId+1]">Next</a>
+								</li>
+							</ul>
+							<ul *ngSwitchCase="intId>=totals"
+								class="pagination-list">
+								<li>
+									<a [routerLink]="['/page',intId-1]">Prev</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',1]">1</a>
+								</li>
+								<li>
+									<span>...</span>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals-2]">{{totals-2}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals-1]">{{totals-1}}</a>
+								</li>
+								<li>
+									<a class="active">{{totals}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',intId+1]">Next</a>
+								</li>
+							</ul>
+							<ul *ngSwitchCase="intId==totals-1"
+								class="pagination-list">
+								<li>
+									<a [routerLink]="['/page',1]">1</a>
+								</li>
+								<li>
+									<span>...</span>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals-2]">{{totals-2}}</a>
+								</li>
+								<li>
+									<a class="active">{{totals-1}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals]">{{totals}}</a>
+								</li>
+							</ul>
+							<ul *ngSwitchCase="intId==totals-2"
+								class="pagination-list">
+								<li>
+									<a [routerLink]="['/page',1]">1</a>
+								</li>
+								<li>
+									<span>...</span>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals-3]">{{totals-3}}</a>
+								</li>
+								<li>
+									<a class="active">{{totals-2}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals-1]">{{totals-1}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals]">{{totals}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',intId+1]">Next</a>
+								</li>
+							</ul>
+							<ul *ngSwitchDefault
+								class="pagination-list">
+								<li>
+									<a [routerLink]="['/page',intId-1]">Prev</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',1]">1</a>
+								</li>
+								<li>
+									<span>...</span>
+								</li>
+								<li>
+									<a [routerLink]="['/page',intId-1]">{{intId-1}}</a>
+								</li>
+								<li>
+									<a class="active">{{intId}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',intId+1]">{{intId+1}}</a>
+								</li>
+								<li>
+									<span>...</span>
+								</li>
+								<li>
+									<a [routerLink]="['/page',totals]">{{totals}}</a>
+								</li>
+								<li>
+									<a [routerLink]="['/page',intId+1]">Next</a>
+								</li>
+							</ul>
+						</ng-container>
+						<p>
+							Page {{id}} of {{totals.toLocaleString()}}
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- End main content -->
+		</div>
+	</div>
+
+	<br class="clear">
+
+</div>

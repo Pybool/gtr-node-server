@@ -1,0 +1,490 @@
+<!-- 
+<div class="media-container" *ngIf="scrWidth>=mobileTarget">
+                <div #spacer></div>
+                    <div  *ngIf="showBar" stickyThing [spacer]="spacer" >
+                        
+                            <app-player></app-player>
+                            <div class="side-sticky">
+                            
+                        </div>
+                        
+                    </div>
+                </div> -->
+<nav class="navigation">
+    <div *ngIf="scrWidth<mobileTarget" class="navigation__top-level-wrap">
+        <ul class="navigation__top-level">
+            <li class="navigation__toggle-wrap">
+                <button id="navigation__toggle--open" class="toggle" (click)="toggleMenuMain();">
+                </button>
+            </li>
+
+
+
+            <li class="navigation__home">
+                <a gaEvent="click" gaCategory="navigation" gaBind="click" class="navbar-brand" [routerLink]="['/']">
+                    <img *ngIf="scrWidth<mobileTarget" style="margin-top: 0px;height:50px;width:50px"
+                        src="assets/ghanatalksradio/images/gtr-logo.png" alt="Ghanatalksradio logo"></a>
+
+            </li>
+
+
+        </ul>
+
+    </div>
+    <section *ngIf="scrWidth<mobileTarget" id="main-menu-upper" class="menu-upper menu--main">
+        <div class="menu__inner">
+            <ul class="menu__list" style="margin: 0 auto;">
+
+                <li (click)="toggleMenuMain()" class="menu__item menu__item--news menu__item--has-submenu">
+                    <div class="menu__item-inner">
+                        <a class="top-link" [routerLink]="['/category','news']"><svg xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="20px"
+                                height="20px" fill-rule="nonzero">
+                                <g fill="#e64cd7" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <g transform="scale(8.53333,8.53333)">
+                                        <path
+                                            d="M4,2c-0.552,0 -1,0.448 -1,1v21c0,2.209 1.791,4 4,4h15h1h1c2.209,0 4,-1.791 4,-4v-14c0,-0.552 -0.448,-1 -1,-1h-2v15c0,0.553 -0.448,1 -1,1c-0.552,0 -1,-0.447 -1,-1v-21c0,-0.552 -0.448,-1 -1,-1zM6,6h14v3h-14zM6,13h6v2h-6zM14,13h6v2h-6zM6,17h6v2h-6zM14,17h6v2h-6zM6,21h6v2h-6zM14,21h6v2h-6z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>News</a>
+                    </div>
+                </li>
+                <li (click)="toggleMenuMain()" class="menu__item menu__item--news menu__item--has-submenu">
+                    <div class="menu__item-inner">
+                        <a class="top-link" [routerLink]="['/category','sports']"><svg width="20px" height="20px"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                                <defs>
+
+                                    <style>
+                                        .cls-1,
+                                        .cls-2 {
+                                            fill: none;
+                                            stroke: #0053fa;
+                                            stroke-linecap: round;
+                                            stroke-linejoin: round;
+                                            stroke-width: 1.5px;
+                                        }
+
+                                        .cls-2 {
+                                            fill-rule: evenodd;
+                                        }
+                                    </style>
+
+                                </defs>
+
+                                <g id="ic-sport-football">
+
+                                    <circle class="cls-1" cx="12" cy="12" r="10" />
+
+                                    <path class="cls-2" d="M4.93,4.93a10,10,0,0,1,0,14.14" />
+
+                                    <path class="cls-2" d="M19.07,19.07a10,10,0,0,1,0-14.14" />
+
+                                </g>
+
+                            </svg>Sport</a>
+                    </div>
+                </li>
+                <li (click)="toggleMenuMain()" class="menu__item menu__item--news menu__item--has-submenu">
+                    <div class="menu__item-inner"> <a class="top-link" [routerLink]="['/weather']"><svg width="20px"
+                                height="20px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m 7.5 0.5 c -0.277344 0 -0.5 0.222656 -0.5 0.5 v 1.53125 l -1.253906 -0.714844 c -0.238282 -0.136718 -0.542969 -0.054687 -0.679688 0.183594 c -0.136718 0.242188 -0.054687 0.546875 0.183594 0.683594 l 1.75 1 v 3.449218 l -2.988281 -1.726562 l 0.007812 -2.011719 c 0 -0.273437 -0.222656 -0.5 -0.496093 -0.5 c -0.277344 0 -0.5 0.222657 -0.5 0.496094 l -0.007813 1.441406 l -1.328125 -0.765625 c -0.113281 -0.066406 -0.25 -0.085937 -0.378906 -0.050781 s -0.238282 0.121094 -0.304688 0.234375 s -0.085937 0.25 -0.050781 0.378906 s 0.121094 0.238282 0.234375 0.304688 l 1.328125 0.765625 l -1.246094 0.726562 c -0.238281 0.136719 -0.320312 0.445313 -0.179687 0.683594 c 0.136718 0.238281 0.441406 0.320313 0.683594 0.179687 l 1.738281 -1.015624 l 2.988281 1.726562 l -2.988281 1.726562 l -1.738281 -1.015624 c -0.242188 -0.140626 -0.546876 -0.058594 -0.683594 0.183593 c -0.140625 0.238281 -0.058594 0.542969 0.179687 0.679688 l 1.246094 0.726562 l -1.328125 0.765625 c -0.113281 0.066406 -0.199219 0.175782 -0.234375 0.304688 s -0.015625 0.265625 0.050781 0.378906 h 0.003906 c 0.136719 0.238281 0.441407 0.320312 0.679688 0.183594 l 1.328125 -0.765625 l 0.007813 1.441406 c 0 0.273437 0.222656 0.5 0.5 0.496094 c 0.273437 0 0.496093 -0.222657 0.496093 -0.5 l -0.007812 -2.011719 l 2.988281 -1.726562 v 3.5 l -1.746094 0.988281 c -0.117187 0.0625 -0.199218 0.171875 -0.234375 0.300781 c -0.039062 0.125 -0.019531 0.261719 0.046875 0.378906 c 0.0625 0.117188 0.171875 0.199219 0.300782 0.234375 c 0.125 0.039063 0.261718 0.019531 0.378906 -0.042969 l 1.253906 -0.710937 v 1.484375 c 0 0.277344 0.222656 0.5 0.5 0.5 s 0.5 -0.222656 0.5 -0.5 v -1.484375 l 1.253906 0.710937 c 0.117188 0.0625 0.253906 0.082032 0.378906 0.042969 c 0.128907 -0.035156 0.238282 -0.117187 0.304688 -0.234375 c 0.0625 -0.117187 0.082031 -0.253906 0.042969 -0.378906 c -0.035157 -0.128906 -0.117188 -0.238281 -0.234375 -0.300781 l -1.746094 -0.988281 v -3.5 l 3.03125 1.75 l -0.015625 2.007812 c -0.003906 0.273438 0.21875 0.5 0.492187 0.5 c 0.132813 0.003906 0.261719 -0.046875 0.355469 -0.140625 s 0.148438 -0.21875 0.152344 -0.351563 l 0.011719 -1.441406 l 1.285156 0.742188 c 0.238281 0.136718 0.542969 0.054687 0.683594 -0.183594 c 0.136718 -0.238281 0.054687 -0.546875 -0.183594 -0.683594 l -1.285156 -0.742187 l 1.242187 -0.730469 c 0.113281 -0.066406 0.195313 -0.175781 0.226563 -0.304688 c 0.035156 -0.128906 0.015625 -0.265624 -0.050782 -0.382812 c -0.140624 -0.234375 -0.449218 -0.3125 -0.683593 -0.175781 l -1.730469 1.019531 l -3.03125 -1.75 l 3.03125 -1.75 l 1.730469 1.019531 c 0.234375 0.140625 0.542969 0.058594 0.683593 -0.175781 c 0.066407 -0.117188 0.085938 -0.253906 0.050782 -0.382812 c -0.03125 -0.128907 -0.113282 -0.238282 -0.226563 -0.304688 l -1.242187 -0.730469 l 1.285156 -0.742187 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.140625 -0.238281 -0.445313 -0.320312 -0.683594 -0.183594 l -1.285156 0.742188 l -0.011719 -1.441406 c -0.003906 -0.132813 -0.058594 -0.257813 -0.152344 -0.351563 s -0.222656 -0.144531 -0.355469 -0.140625 c -0.277343 0 -0.496093 0.226562 -0.492187 0.503906 l 0.015625 2.003906 l -3.03125 1.75 v -3.449218 l 1.75 -1 c 0.238281 -0.136719 0.320312 -0.441406 0.183594 -0.683594 c -0.136719 -0.238281 -0.441406 -0.320312 -0.679688 -0.183594 l -1.253906 0.714844 v -1.53125 c 0 -0.277344 -0.222656 -0.5 -0.5 -0.5 z m 0 0"
+                                    fill="#00f3f7" />
+
+                            </svg>Weather</a></div>
+                </li>
+                <li (click)="toggleMenuMain()" class="menu__item menu__item--news menu__item--has-submenu">
+                    <div class="menu__item-inner"> <a class="top-link" [routerLink]="['/flights-tracker']"><svg width="20px"
+                                height="20px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m 7.5 0.5 c -0.277344 0 -0.5 0.222656 -0.5 0.5 v 1.53125 l -1.253906 -0.714844 c -0.238282 -0.136718 -0.542969 -0.054687 -0.679688 0.183594 c -0.136718 0.242188 -0.054687 0.546875 0.183594 0.683594 l 1.75 1 v 3.449218 l -2.988281 -1.726562 l 0.007812 -2.011719 c 0 -0.273437 -0.222656 -0.5 -0.496093 -0.5 c -0.277344 0 -0.5 0.222657 -0.5 0.496094 l -0.007813 1.441406 l -1.328125 -0.765625 c -0.113281 -0.066406 -0.25 -0.085937 -0.378906 -0.050781 s -0.238282 0.121094 -0.304688 0.234375 s -0.085937 0.25 -0.050781 0.378906 s 0.121094 0.238282 0.234375 0.304688 l 1.328125 0.765625 l -1.246094 0.726562 c -0.238281 0.136719 -0.320312 0.445313 -0.179687 0.683594 c 0.136718 0.238281 0.441406 0.320313 0.683594 0.179687 l 1.738281 -1.015624 l 2.988281 1.726562 l -2.988281 1.726562 l -1.738281 -1.015624 c -0.242188 -0.140626 -0.546876 -0.058594 -0.683594 0.183593 c -0.140625 0.238281 -0.058594 0.542969 0.179687 0.679688 l 1.246094 0.726562 l -1.328125 0.765625 c -0.113281 0.066406 -0.199219 0.175782 -0.234375 0.304688 s -0.015625 0.265625 0.050781 0.378906 h 0.003906 c 0.136719 0.238281 0.441407 0.320312 0.679688 0.183594 l 1.328125 -0.765625 l 0.007813 1.441406 c 0 0.273437 0.222656 0.5 0.5 0.496094 c 0.273437 0 0.496093 -0.222657 0.496093 -0.5 l -0.007812 -2.011719 l 2.988281 -1.726562 v 3.5 l -1.746094 0.988281 c -0.117187 0.0625 -0.199218 0.171875 -0.234375 0.300781 c -0.039062 0.125 -0.019531 0.261719 0.046875 0.378906 c 0.0625 0.117188 0.171875 0.199219 0.300782 0.234375 c 0.125 0.039063 0.261718 0.019531 0.378906 -0.042969 l 1.253906 -0.710937 v 1.484375 c 0 0.277344 0.222656 0.5 0.5 0.5 s 0.5 -0.222656 0.5 -0.5 v -1.484375 l 1.253906 0.710937 c 0.117188 0.0625 0.253906 0.082032 0.378906 0.042969 c 0.128907 -0.035156 0.238282 -0.117187 0.304688 -0.234375 c 0.0625 -0.117187 0.082031 -0.253906 0.042969 -0.378906 c -0.035157 -0.128906 -0.117188 -0.238281 -0.234375 -0.300781 l -1.746094 -0.988281 v -3.5 l 3.03125 1.75 l -0.015625 2.007812 c -0.003906 0.273438 0.21875 0.5 0.492187 0.5 c 0.132813 0.003906 0.261719 -0.046875 0.355469 -0.140625 s 0.148438 -0.21875 0.152344 -0.351563 l 0.011719 -1.441406 l 1.285156 0.742188 c 0.238281 0.136718 0.542969 0.054687 0.683594 -0.183594 c 0.136718 -0.238281 0.054687 -0.546875 -0.183594 -0.683594 l -1.285156 -0.742187 l 1.242187 -0.730469 c 0.113281 -0.066406 0.195313 -0.175781 0.226563 -0.304688 c 0.035156 -0.128906 0.015625 -0.265624 -0.050782 -0.382812 c -0.140624 -0.234375 -0.449218 -0.3125 -0.683593 -0.175781 l -1.730469 1.019531 l -3.03125 -1.75 l 3.03125 -1.75 l 1.730469 1.019531 c 0.234375 0.140625 0.542969 0.058594 0.683593 -0.175781 c 0.066407 -0.117188 0.085938 -0.253906 0.050782 -0.382812 c -0.03125 -0.128907 -0.113282 -0.238282 -0.226563 -0.304688 l -1.242187 -0.730469 l 1.285156 -0.742187 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.140625 -0.238281 -0.445313 -0.320312 -0.683594 -0.183594 l -1.285156 0.742188 l -0.011719 -1.441406 c -0.003906 -0.132813 -0.058594 -0.257813 -0.152344 -0.351563 s -0.222656 -0.144531 -0.355469 -0.140625 c -0.277343 0 -0.496093 0.226562 -0.492187 0.503906 l 0.015625 2.003906 l -3.03125 1.75 v -3.449218 l 1.75 -1 c 0.238281 -0.136719 0.320312 -0.441406 0.183594 -0.683594 c -0.136719 -0.238281 -0.441406 -0.320312 -0.679688 -0.183594 l -1.253906 0.714844 v -1.53125 c 0 -0.277344 -0.222656 -0.5 -0.5 -0.5 z m 0 0"
+                                    fill="#00f3f7" />
+
+                            </svg>Flights Tracker</a></div>
+                </li>
+                <li (click)="toggleMenuMain()" class="menu__item menu__item--news menu__item--has-submenu">
+                    <div class="menu__item-inner"> <a class="top-link" [routerLink]="['/podcast']">
+                            <svg version="1.1" id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                                xmlns:cc="http://creativecommons.org/ns#"
+                                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                                xmlns:svg="http://www.w3.org/2000/svg"
+                                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                                sodipodi:docname="New document 1" inkscape:version="0.48.4 r9939"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="20px" height="20px" viewBox="0 0 1200 1200" enable-background="new 0 0 1200 1200"
+                                xml:space="preserve">
+                                <g id="layer1" transform="translate(0,147.63782)" inkscape:label="Layer 1"
+                                    inkscape:groupmode="layer">
+                                    <path id="path3002" inkscape:connector-curvature="0"
+                                        d="M600-129.985c-331.358,0-600,268.642-600,600
+                           c0,254.238,158.227,471.312,381.507,558.643V975.8c-195.6-84.58-332.482-279.088-332.482-505.783
+                           C49.025,165.669,295.654-81.162,600-81.162c304.346,0,550.975,246.831,550.975,551.176c0,226.697-136.882,421.205-332.48,505.785
+                           v52.857C1041.866,941.372,1200,724.319,1200,470.015C1200,138.657,931.358-129.985,600-129.985z M599.798-10.953
+                           c-226.008,0-409.146,183.34-409.146,409.348c0,152.788,83.745,285.819,207.801,356.086v-43.779
+                           c-102.395-66.168-170.275-181.277-170.275-312.307c0-205.298,166.323-371.823,371.62-371.823
+                           c205.298,0,371.823,166.525,371.823,371.823c0,131.03-68.023,246.139-170.479,312.307v43.779
+                           c124.115-70.268,208.002-203.299,208.002-356.086C1009.146,172.386,825.806-10.953,599.798-10.953z M600,121.595
+                           c-135.062,0-244.52,109.456-244.52,244.52c0,68.818,28.502,130.89,74.244,175.318v-57.498
+                           c-23.163-33.464-36.719-74.054-36.719-117.82c0-114.354,92.639-206.994,206.994-206.994c114.354,0,207.195,92.639,207.195,206.994
+                           c0,43.767-13.52,84.355-36.719,117.82v57.297c45.622-44.416,74.042-106.4,74.042-175.117
+                           C844.52,231.051,735.062,121.595,600,121.595z M600,249.101c-64.605,0-117.014,52.408-117.014,117.015
+                           c0,64.605,52.408,116.811,117.014,116.811s117.014-52.207,117.014-116.813C717.014,301.508,664.605,249.101,600,249.101z
+                            M600,513.19c-140.271,0-142.031,51.646-142.031,51.646s-0.54,150.783,12.105,229.59c12.645,78.809,65.366,240.283,65.366,240.283
+                           H664.56c0,0,52.741-162.076,65.366-240.889s12.105-228.984,12.105-228.984S740.271,513.19,600,513.19L600,513.19z" fill="#f70000" />
+                                </g>
+
+                            </svg>Podcast</a></div>
+                </li>
+                <li (click)="toggleMenuMain()" class="menu__item menu__item--news menu__item--has-submenu">
+                    <div class="menu__item-inner"> <a class="top-link" [routerLink]="['/watch-live']"><svg width="20px"
+                                height="20px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+
+                                <g fill="none" fill-rule="evenodd">
+
+                                    <path d="m0 0h32v32h-32z" />
+
+                                    <path
+                                        d="m25.6183316 3.93969262c.1888925.5189779-.0786946 1.09282026-.5976725 1.28171276l-4.8876591 1.77801219 4.867.00058243c3.7854517 0 6.8690987 3.0047834 6.995941 6.7593502l.004059.2406498v8c0 3.8659932-3.1340068 7-7 7h-18c-3.86599325 0-7-3.1340068-7-7v-8c0-3.8659932 3.13400675-7 7-7l4.826-.00058243-4.88630738-1.77801219c-.5189779-.1888925-.78656499-.76273486-.59767248-1.28171276.18905982-.51883077.76277185-.78642956 1.28178372-.59786749l8.35819614 3.04059244 8.3546188-3.04039743c.5189779-.18889251 1.0928203.07869458 1.2817128.59767248zm-.6183316 5.06030738h-18c-2.76142375 0-5 2.2385763-5 5v8c0 2.7614237 2.23857625 5 5 5h18c2.7614237 0 5-2.2385763 5-5v-8c0-2.7614237-2.2385763-5-5-5zm-9 4c2.7614237 0 5 2.2385763 5 5s-2.2385763 5-5 5-5-2.2385763-5-5 2.2385763-5 5-5zm0 2c-1.6568542 0-3 1.3431458-3 3s1.3431458 3 3 3 3-1.3431458 3-3-1.3431458-3-3-3z"
+                                        fill="#f7b100" fill-rule="nonzero" />
+
+                                </g>
+
+                            </svg>GTR-TV</a></div>
+                </li>
+                <li (click)="toggleMenuMain()" class="menu__item menu__item--news menu__item--has-submenu">
+                    <div class="menu__item-inner"> <a class="top-link"
+                            [routerLink]="['/category','ghana-newspaper']"><svg fill="#71fa5f" width="20px"
+                                height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+                                <title>newspaper</title>
+                                <path
+                                    d="M0 26.016q0 2.496 1.76 4.224t4.256 1.76h20q2.464 0 4.224-1.76t1.76-4.224v-22.016h-4v-1.984h-4v-2.016h-24v26.016zM4 26.016v-22.016h16v24h-13.984q-0.832 0-1.44-0.576t-0.576-1.408zM6.016 26.016h5.984v-2.016h-5.984v2.016zM6.016 22.016h8v-2.016h-8v2.016zM6.016 18.016h5.984v-2.016h-5.984v2.016zM6.016 14.016h12v-8h-12v8zM14.016 18.016h4v-2.016h-4v2.016zM16 22.016h2.016v-2.016h-2.016v2.016zM24 25.024v-21.024h2.016v21.024q0 0.384 0.288 0.704t0.704 0.288 0.704-0.288 0.288-0.704v-19.008h2.016v19.008q0 1.248-0.896 2.112t-2.112 0.864-2.144-0.864-0.864-2.112z">
+                                </path>
+                            </svg>Ghana Newspaper</a></div>
+                </li>
+                
+            </ul>
+        </div>
+    </section>
+
+    <div *ngIf="scrWidth<mobileTarget" style="margin-bottom: 20px;" class="navigation__top-level-wrap">
+        <ul class="navigation__top-level">
+            <li class="navigation__toggle-wrap" style="margin-left: auto;">
+                <button id="navigation__toggle--open" class="toggle-upper" (click)="toggleMenu();">
+                    Menu
+                    <i class="fa fa-bars"></i>
+                </button>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div *ngIf="scrWidth>=mobileTarget" style="display: flex;margin-bottom: 10px;border-bottom: 1px #e7dddd solid;">
+        <div class="top-menu-container">
+            <a [routerLink]="['/']">
+                <div class="logo-top">
+                    <img height="60px" src="assets/ghanatalksradio/images/new-gtr-logo.jpg" />
+                </div>
+            </a>
+            <div>
+                <ul class="top-list">
+                    <li class="black-hover top-li"><a [routerLink]="['/']" class="top-link">Home</a></li>
+                    <li class="pink-hover top-li">
+                        <a class="top-link" [routerLink]="['/category','news']"><svg xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="20px"
+                                height="20px" fill-rule="nonzero">
+                                <g fill="#e64cd7" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <g transform="scale(8.53333,8.53333)">
+                                        <path
+                                            d="M4,2c-0.552,0 -1,0.448 -1,1v21c0,2.209 1.791,4 4,4h15h1h1c2.209,0 4,-1.791 4,-4v-14c0,-0.552 -0.448,-1 -1,-1h-2v15c0,0.553 -0.448,1 -1,1c-0.552,0 -1,-0.447 -1,-1v-21c0,-0.552 -0.448,-1 -1,-1zM6,6h14v3h-14zM6,13h6v2h-6zM14,13h6v2h-6zM6,17h6v2h-6zM14,17h6v2h-6zM6,21h6v2h-6zM14,21h6v2h-6z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>News</a>
+                    </li>
+                    <li class="blue-hover top-li">
+                        <a class="top-link" [routerLink]="['/category','sports']"><svg width="20px" height="20px"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                                <defs>
+
+                                    <style>
+                                        .cls-1,
+                                        .cls-2 {
+                                            fill: none;
+                                            stroke: #0053fa;
+                                            stroke-linecap: round;
+                                            stroke-linejoin: round;
+                                            stroke-width: 1.5px;
+                                        }
+
+                                        .cls-2 {
+                                            fill-rule: evenodd;
+                                        }
+                                    </style>
+
+                                </defs>
+
+                                <g id="ic-sport-football">
+
+                                    <circle class="cls-1" cx="12" cy="12" r="10" />
+
+                                    <path class="cls-2" d="M4.93,4.93a10,10,0,0,1,0,14.14" />
+
+                                    <path class="cls-2" d="M19.07,19.07a10,10,0,0,1,0-14.14" />
+
+                                </g>
+
+                            </svg>Sport</a>
+                    </li>
+                    <li class="light-blue-hover top-li"> <a class="top-link" [routerLink]="['/weather']"><svg
+                                width="20px" height="20px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m 7.5 0.5 c -0.277344 0 -0.5 0.222656 -0.5 0.5 v 1.53125 l -1.253906 -0.714844 c -0.238282 -0.136718 -0.542969 -0.054687 -0.679688 0.183594 c -0.136718 0.242188 -0.054687 0.546875 0.183594 0.683594 l 1.75 1 v 3.449218 l -2.988281 -1.726562 l 0.007812 -2.011719 c 0 -0.273437 -0.222656 -0.5 -0.496093 -0.5 c -0.277344 0 -0.5 0.222657 -0.5 0.496094 l -0.007813 1.441406 l -1.328125 -0.765625 c -0.113281 -0.066406 -0.25 -0.085937 -0.378906 -0.050781 s -0.238282 0.121094 -0.304688 0.234375 s -0.085937 0.25 -0.050781 0.378906 s 0.121094 0.238282 0.234375 0.304688 l 1.328125 0.765625 l -1.246094 0.726562 c -0.238281 0.136719 -0.320312 0.445313 -0.179687 0.683594 c 0.136718 0.238281 0.441406 0.320313 0.683594 0.179687 l 1.738281 -1.015624 l 2.988281 1.726562 l -2.988281 1.726562 l -1.738281 -1.015624 c -0.242188 -0.140626 -0.546876 -0.058594 -0.683594 0.183593 c -0.140625 0.238281 -0.058594 0.542969 0.179687 0.679688 l 1.246094 0.726562 l -1.328125 0.765625 c -0.113281 0.066406 -0.199219 0.175782 -0.234375 0.304688 s -0.015625 0.265625 0.050781 0.378906 h 0.003906 c 0.136719 0.238281 0.441407 0.320312 0.679688 0.183594 l 1.328125 -0.765625 l 0.007813 1.441406 c 0 0.273437 0.222656 0.5 0.5 0.496094 c 0.273437 0 0.496093 -0.222657 0.496093 -0.5 l -0.007812 -2.011719 l 2.988281 -1.726562 v 3.5 l -1.746094 0.988281 c -0.117187 0.0625 -0.199218 0.171875 -0.234375 0.300781 c -0.039062 0.125 -0.019531 0.261719 0.046875 0.378906 c 0.0625 0.117188 0.171875 0.199219 0.300782 0.234375 c 0.125 0.039063 0.261718 0.019531 0.378906 -0.042969 l 1.253906 -0.710937 v 1.484375 c 0 0.277344 0.222656 0.5 0.5 0.5 s 0.5 -0.222656 0.5 -0.5 v -1.484375 l 1.253906 0.710937 c 0.117188 0.0625 0.253906 0.082032 0.378906 0.042969 c 0.128907 -0.035156 0.238282 -0.117187 0.304688 -0.234375 c 0.0625 -0.117187 0.082031 -0.253906 0.042969 -0.378906 c -0.035157 -0.128906 -0.117188 -0.238281 -0.234375 -0.300781 l -1.746094 -0.988281 v -3.5 l 3.03125 1.75 l -0.015625 2.007812 c -0.003906 0.273438 0.21875 0.5 0.492187 0.5 c 0.132813 0.003906 0.261719 -0.046875 0.355469 -0.140625 s 0.148438 -0.21875 0.152344 -0.351563 l 0.011719 -1.441406 l 1.285156 0.742188 c 0.238281 0.136718 0.542969 0.054687 0.683594 -0.183594 c 0.136718 -0.238281 0.054687 -0.546875 -0.183594 -0.683594 l -1.285156 -0.742187 l 1.242187 -0.730469 c 0.113281 -0.066406 0.195313 -0.175781 0.226563 -0.304688 c 0.035156 -0.128906 0.015625 -0.265624 -0.050782 -0.382812 c -0.140624 -0.234375 -0.449218 -0.3125 -0.683593 -0.175781 l -1.730469 1.019531 l -3.03125 -1.75 l 3.03125 -1.75 l 1.730469 1.019531 c 0.234375 0.140625 0.542969 0.058594 0.683593 -0.175781 c 0.066407 -0.117188 0.085938 -0.253906 0.050782 -0.382812 c -0.03125 -0.128907 -0.113282 -0.238282 -0.226563 -0.304688 l -1.242187 -0.730469 l 1.285156 -0.742187 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.140625 -0.238281 -0.445313 -0.320312 -0.683594 -0.183594 l -1.285156 0.742188 l -0.011719 -1.441406 c -0.003906 -0.132813 -0.058594 -0.257813 -0.152344 -0.351563 s -0.222656 -0.144531 -0.355469 -0.140625 c -0.277343 0 -0.496093 0.226562 -0.492187 0.503906 l 0.015625 2.003906 l -3.03125 1.75 v -3.449218 l 1.75 -1 c 0.238281 -0.136719 0.320312 -0.441406 0.183594 -0.683594 c -0.136719 -0.238281 -0.441406 -0.320312 -0.679688 -0.183594 l -1.253906 0.714844 v -1.53125 c 0 -0.277344 -0.222656 -0.5 -0.5 -0.5 z m 0 0"
+                                    fill="#00f3f7" />
+
+                            </svg>Weather</a></li>
+                    <li class="light-blue-hover top-li">
+                            <a class="top-link" [routerLink]="['/flights-tracker']">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000">
+                                    <path d="M10.18 9L19 6v2l-8.82 3zM5 17c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V9L5 17zM12 5c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill-rule="evenodd"/>
+                                  </svg>
+                                  
+                                  
+                                  
+                                Flights Tracker
+                            </a>
+                    </li>
+                    <li class="red-hover top-li"> <a class="top-link" [routerLink]="['/podcast']"><svg version="1.1"
+                                id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                                xmlns:cc="http://creativecommons.org/ns#"
+                                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                                xmlns:svg="http://www.w3.org/2000/svg"
+                                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                                sodipodi:docname="New document 1" inkscape:version="0.48.4 r9939"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="20px" height="20px" viewBox="0 0 1200 1200" enable-background="new 0 0 1200 1200"
+                                xml:space="preserve">
+                                <g id="layer1" transform="translate(0,147.63782)" inkscape:label="Layer 1"
+                                    inkscape:groupmode="layer">
+                                    <path id="path3002" inkscape:connector-curvature="0"
+                                        d="M600-129.985c-331.358,0-600,268.642-600,600
+                           c0,254.238,158.227,471.312,381.507,558.643V975.8c-195.6-84.58-332.482-279.088-332.482-505.783
+                           C49.025,165.669,295.654-81.162,600-81.162c304.346,0,550.975,246.831,550.975,551.176c0,226.697-136.882,421.205-332.48,505.785
+                           v52.857C1041.866,941.372,1200,724.319,1200,470.015C1200,138.657,931.358-129.985,600-129.985z M599.798-10.953
+                           c-226.008,0-409.146,183.34-409.146,409.348c0,152.788,83.745,285.819,207.801,356.086v-43.779
+                           c-102.395-66.168-170.275-181.277-170.275-312.307c0-205.298,166.323-371.823,371.62-371.823
+                           c205.298,0,371.823,166.525,371.823,371.823c0,131.03-68.023,246.139-170.479,312.307v43.779
+                           c124.115-70.268,208.002-203.299,208.002-356.086C1009.146,172.386,825.806-10.953,599.798-10.953z M600,121.595
+                           c-135.062,0-244.52,109.456-244.52,244.52c0,68.818,28.502,130.89,74.244,175.318v-57.498
+                           c-23.163-33.464-36.719-74.054-36.719-117.82c0-114.354,92.639-206.994,206.994-206.994c114.354,0,207.195,92.639,207.195,206.994
+                           c0,43.767-13.52,84.355-36.719,117.82v57.297c45.622-44.416,74.042-106.4,74.042-175.117
+                           C844.52,231.051,735.062,121.595,600,121.595z M600,249.101c-64.605,0-117.014,52.408-117.014,117.015
+                           c0,64.605,52.408,116.811,117.014,116.811s117.014-52.207,117.014-116.813C717.014,301.508,664.605,249.101,600,249.101z
+                            M600,513.19c-140.271,0-142.031,51.646-142.031,51.646s-0.54,150.783,12.105,229.59c12.645,78.809,65.366,240.283,65.366,240.283
+                           H664.56c0,0,52.741-162.076,65.366-240.889s12.105-228.984,12.105-228.984S740.271,513.19,600,513.19L600,513.19z" fill="#f70000" />
+                                </g>
+
+                            </svg>Podcast</a></li>
+                    <li class="orange-hover top-li"> <a class="top-link" [routerLink]="['/watch-live']"><svg
+                                width="20px" height="20px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+
+                                <g fill="none" fill-rule="evenodd">
+
+                                    <path d="m0 0h32v32h-32z" />
+
+                                    <path
+                                        d="m25.6183316 3.93969262c.1888925.5189779-.0786946 1.09282026-.5976725 1.28171276l-4.8876591 1.77801219 4.867.00058243c3.7854517 0 6.8690987 3.0047834 6.995941 6.7593502l.004059.2406498v8c0 3.8659932-3.1340068 7-7 7h-18c-3.86599325 0-7-3.1340068-7-7v-8c0-3.8659932 3.13400675-7 7-7l4.826-.00058243-4.88630738-1.77801219c-.5189779-.1888925-.78656499-.76273486-.59767248-1.28171276.18905982-.51883077.76277185-.78642956 1.28178372-.59786749l8.35819614 3.04059244 8.3546188-3.04039743c.5189779-.18889251 1.0928203.07869458 1.2817128.59767248zm-.6183316 5.06030738h-18c-2.76142375 0-5 2.2385763-5 5v8c0 2.7614237 2.23857625 5 5 5h18c2.7614237 0 5-2.2385763 5-5v-8c0-2.7614237-2.2385763-5-5-5zm-9 4c2.7614237 0 5 2.2385763 5 5s-2.2385763 5-5 5-5-2.2385763-5-5 2.2385763-5 5-5zm0 2c-1.6568542 0-3 1.3431458-3 3s1.3431458 3 3 3 3-1.3431458 3-3-1.3431458-3-3-3z"
+                                        fill="#f7b100" fill-rule="nonzero" />
+
+                                </g>
+
+                            </svg>GTR-TV</a></li>
+                    <li class="green-hover top-li"> <a class="top-link"
+                            [routerLink]="['/category','ghana-newspaper']"><svg fill="#71fa5f" width="20px"
+                                height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+                                <title>newspaper</title>
+                                <path
+                                    d="M0 26.016q0 2.496 1.76 4.224t4.256 1.76h20q2.464 0 4.224-1.76t1.76-4.224v-22.016h-4v-1.984h-4v-2.016h-24v26.016zM4 26.016v-22.016h16v24h-13.984q-0.832 0-1.44-0.576t-0.576-1.408zM6.016 26.016h5.984v-2.016h-5.984v2.016zM6.016 22.016h8v-2.016h-8v2.016zM6.016 18.016h5.984v-2.016h-5.984v2.016zM6.016 14.016h12v-8h-12v8zM14.016 18.016h4v-2.016h-4v2.016zM16 22.016h2.016v-2.016h-2.016v2.016zM24 25.024v-21.024h2.016v21.024q0 0.384 0.288 0.704t0.704 0.288 0.704-0.288 0.288-0.704v-19.008h2.016v19.008q0 1.248-0.896 2.112t-2.112 0.864-2.144-0.864-0.864-2.112z">
+                                </path>
+                            </svg>Ghana Newspaper</a></li>
+                </ul>
+            </div>
+            <a [routerLink]="['/search']" style="color:black">
+                <div class="search"><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="Interface / Search_Magnifying_Glass">
+                            <path id="Vector"
+                                d="M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z"
+                                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                    </svg>
+                    Search GTR</div>
+            </a>
+        </div>
+    </div>
+    <section id="main-menu" class="menu menu--main">
+        <div class="menu__inner">
+            <ul class="menu__list" style="margin: 0 auto;">
+                <li class="menu__item menu__item--news menu__item--has-submenu">
+                    <div class="menu__item-inner">
+                        <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                            [routerLink]="['/category','news']"><i class="fas fa-newspaper"></i> &nbsp;News</a>
+                        <button class="menu__toggle-submenu toggleSubMenuNews"
+                            (click)="toggleSubMenu('.submenu--news');"></button>
+                    </div>
+
+                    <ul class="submenu submenu--news">
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','world']">World</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','national']">National</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','politics']">Politics</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click"
+                                [routerLink]="['/category','sports']">Sports</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','tech']">Tech</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','education']">Education</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','crime']">Crime</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','cryptocurrency']">Cryptocurrency</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="menu__item menu__item--home">
+                    <div class="menu__item-inner"><a gaEvent="click" gaCategory="navigation" gaBind="click"
+                            (click)="fireme()" [routerLink]="['/category','ghana-newspaper']"><i
+                                class="fas fa-virus"></i> &nbsp;Ghana Newspaper</a></div>
+                </li>
+                <!--  <li class="menu__item menu__item--home">
+                    <div class="menu__item-inner"><a gaEvent="click" gaCategory="navigation"  gaBind="click" (click)="fireme()" [routerLink]="['/category','fifa-world-cup-qatar-2022-update']"><i class="fas fa-futbol"></i> &nbsp;World Cup Qatar 2022</a></div>
+                </li> -->
+
+                <li class="menu__item menu__item--arts-life menu__item--has-submenu">
+                    <div class="menu__item-inner">
+                        <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                            [routerLink]="['/podcast']"><i class="fas fa-podcast"></i> &nbsp;Podcast</a>
+                        <button class="menu__toggle-submenu toggleSubMenuPodcast"
+                            (click)="toggleSubMenu('.submenu--arts-life');"></button>
+                    </div>
+
+                    <ul class="submenu submenu--arts-life">
+                        <li *ngFor="let catchup of catchupData" class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/podcast',catchup.info.slug]">{{catchup.info.name}}</a>
+                        </li>
+
+                        <!-- <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation"  gaBind="click" (click)="fireme()" [routerLink]="['/podcast','the-rush']">GTR Rush</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation"  gaBind="click" (click)="fireme()" [routerLink]="['/podcast','the-discussion-isle']">Discussion Isle</a>
+                        </li> -->
+                    </ul>
+                </li>
+                <li class="menu__item menu__item--arts-life menu__item--has-submenu">
+                    <div class="menu__item-inner">
+                        <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                            [routerLink]="['/category','entertainment']"><i class="fas fa-film"></i>
+                            &nbsp;Entertainment</a>
+                        <button class="menu__toggle-submenu toggleSubMenuPodcast"
+                            (click)="toggleSubMenu('.submenu--music');"></button>
+                    </div>
+
+                    <ul class="submenu submenu--music">
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','music']">Music</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','music-video-mix']">Music Video Mix</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','wall-of-fame']">Wall of Fame</a>
+                        </li>
+
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','things-to-do-this-weekend']">Things to do this weekend</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','gtr-games-and-party-bash']">GTR Games and Party Bash</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <!-- <li class="menu__item menu__item--home">
+                    <div class="menu__item-inner"><a [routerLink]="['/category','entertainment']"><i class="fas fa-film"></i> &nbsp;Entertainment</a></div>
+                </li>-->
+
+                <li class="menu__item menu__item--music menu__item--has-submenu">
+                    <div class="menu__item-inner">
+                        <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                            [routerLink]="['/category','lifestyle']"><i class="fas fa-icons"></i> &nbsp;Lifestyle</a>
+                        <button class="menu__toggle-submenu toggleSubMenuLifestyle"
+                            (click)="toggleSubMenu('.submenu--lifestyle');"></button>
+                    </div>
+                    <ul class="submenu submenu--lifestyle">
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','recipes']">Recipe</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','travel']">Travel</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','health']">Health</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+                                [routerLink]="['/category','inspirational-quotes']">Inspirational Quotes</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li *ngIf="scrWidth<mobileTarget" class="menu__item menu__item--home">
+                    <div class="menu__item-inner"><a [routerLink]="['/','search']"><i class="fas fa-search"></i>
+                            &nbsp;Search</a></div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</nav>

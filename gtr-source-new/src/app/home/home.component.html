@@ -1,0 +1,225 @@
+<!-- Begin template wrapper -->
+
+
+
+<div class="ppb_wrapper">
+	<div class="ppb_blog_fullwidth_slider one nopadding">
+		<div id="16608186141377942828"
+			class="slider_wrapper">
+			<div class="flexslider"
+				data-height="550">
+				<ul class="slides">
+					<ng-container *ngFor="let newsinfo of bannerNews">
+						<li>
+							<a [routerLink]="['/', newsinfo.data.post_name]">
+								<div 
+									class="slider_image rocket-lazyload entered lazyloaded"
+									style="background-image: url(&quot;{{newsinfo.data.image}}&quot;);">
+									<div class="slider_post_title">
+										<div class="standard_wrapper">
+											<div *ngIf="(newsinfo.data?.categoryarray?.length>0) && getNewsCategory(newsinfo.data?.categoryarray)" class="post_category_tag">
+												<span>{{getNewsCategoryName(newsinfo.data?.categoryarray).name}}</span>
+											</div>
+											<div class="post_detail post_date">
+												<span class="post_info_author">
+													<span class="gravatar">
+														<img alt
+															src="https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=120&#038;d=mm&#038;r=g 2x"
+															data-lazy-srcset='https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=120&#038;d=mm&#038;r=g 2x'
+															class='avatar avatar-60 photo'
+															height='60'
+															width='60'
+															data-lazy-src="https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=60&#038;d=mm&#038;r=g">
+														<noscript>
+															<img alt
+																src='https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=60&#038;d=mm&#038;r=g'
+																srcset='https://secure.gravatar.com/avatar/db6f032dce962144efc9b625779461a1?s=120&#038;d=mm&#038;r=g 2x'
+																class='avatar avatar-60 photo'
+																height='60'
+																width='60'>
+														</noscript>
+													</span>
+													GhanaTalks Radio
+												</span>
+												<span class="post_info_date">{{newsinfo?.data.post_date | date}}</span>
+											</div>
+											<h2>
+												{{newsinfo.data.post_title}}
+											</h2>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ng-container>
+					
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+	<app-trending [news]="trending"></app-trending>
+	<div class="one withsmallpadding ppb_ads"
+		style="padding:30px 0 30px 0;">
+		<div class="ads_label">- Advertisement -</div>
+		<p>
+			<a href="https://themes.themegoods.com/#">
+				<img width="728"
+					height="90"
+					src="https://themes-themegoods.b-cdn.net/grandnews/demo5/wp-content/uploads/2016/06/468x60.png"
+					alt
+					data-lazy-src="https://themes-themegoods.b-cdn.net/grandnews/demo5/wp-content/uploads/2016/06/468x60.png">
+				<noscript>
+					<img width="728"
+						height="90"
+						src="https://themes-themegoods.b-cdn.net/grandnews/demo5/wp-content/uploads/2016/06/468x60.png"
+						alt>
+				</noscript>
+			</a>
+			<app-ads [width]="728" [height]="90"></app-ads>
+		</p>
+	</div>
+	
+	<div class="one withsmallpadding">
+		<div class="page_content_wrapper">
+			<div class="inner">
+				<div class="inner_wrapper  main-content content-wrapper">
+					<div class="sidebar_content article-content">
+						<div class="ppb_subtitle_left">
+							<h5 class="single_subtitle">All The Latest News</h5>
+						</div>
+						<!-- <ul id="1660818614869225226_filter"
+							class="post_filter">
+							<li>
+								<a href="https://themes.themegoods.com/javascript:;"
+									class="selected"
+									data-filter="latest"
+									data-items="10">
+									Latest
+								</a>
+							</li>
+							<li>
+								<a href="https://themes.themegoods.com/javascript:;"
+									class
+									data-filter="popular"
+									data-items="10">
+									Popular
+								</a>
+							</li>
+						</ul> -->
+						<div class="post_filter_wrapper flex-col">
+							<div id="1660818614869225226_wrapper">
+								<ng-container *ngIf="dataLoaded">
+									<ng-container *ngFor="let news of landingData.all;let i = index;" >
+										<app-card [news]="news"></app-card>
+										<app-ads *ngIf="i%3==0" [horizontal]="true"></app-ads>
+									</ng-container>
+								</ng-container>
+								
+								<ng-container *ngFor="let news of mainData;let i = index;" >
+									<app-card [news]="news"></app-card>
+									<app-ads *ngIf="i%3==0" [horizontal]="true"></app-ads>
+								</ng-container>
+								
+							</div>
+							<div class="flex-row-gap-20">
+								<button gaEvent="click" gaCategory="load_more_button"  gaBind="click" (click)="morefeed()" class="btn btn-primary">Load More</button>
+								<app-loader *ngIf="loader"></app-loader>
+							</div>
+							<div id="1660818614869225226_loading"
+								class="post_filter_loading">
+								<div class="loading_wrapper">
+									<div class="sk-cube-grid">
+										<div class="sk-cube sk-cube1"></div>
+										<div class="sk-cube sk-cube2"></div>
+										<div class="sk-cube sk-cube3"></div>
+										<div class="sk-cube sk-cube4"></div>
+										<div class="sk-cube sk-cube5"></div>
+										<div class="sk-cube sk-cube6"></div>
+										<div class="sk-cube sk-cube7"></div>
+										<div class="sk-cube sk-cube8"></div>
+										<div class="sk-cube sk-cube9"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sidebar_wrapper is_stuck ">
+						<div class="sidebar">
+							<div class="content">
+								<ul class="sidebar_widget">
+									<li id="grand_news_custom_ads-4"
+										class="widget Grand_News_Custom_Ads">
+										<div class="ads_label">- Advertisement -</div>
+										<img width="600"
+											height="500"
+											src="https://themes-themegoods.b-cdn.net/grandnews/demo5/wp-content/uploads/2016/06/300x250ads.png"
+											alt
+											data-lazy-src="https://themes-themegoods.b-cdn.net/grandnews/demo5/wp-content/uploads/2016/06/300x250ads.png">
+										<noscript>
+											<img width="600"
+												height="500"
+												src="https://themes-themegoods.b-cdn.net/grandnews/demo5/wp-content/uploads/2016/06/300x250ads.png"
+												alt>
+										</noscript>
+										<app-ads [width]="600" [height]="500"></app-ads>
+									</li>
+									<li id="grand_news_popular_posts-4"
+										class="widget Grand_News_Popular_Posts">
+										<h2 class="widgettitle">
+											<span>More News</span>
+										</h2>
+										<ul class="posts blog withthumb ">
+											<ng-container *ngFor="let news of headerNews; let i=index;">
+												<li *ngIf="news?.data">
+													<div style="padding-right: 20px" class="post_circle_thumb">
+														<a [routerLink]="['/', news.data?.post_name]">
+															<img width="300"
+																height="200"
+																src="{{news?.data?.image}}"
+																class="tg-lazy entered lazyloaded"
+																alt="{{news?.data?.post_title}}">
+															<noscript>
+																<img width="300"
+																	height="200"
+																	src="{{news?.data?.image}}"
+																	class="tg-lazy"
+																	alt="{{news?.data?.post_title}}">
+															</noscript>
+														</a>
+													</div>
+													<a [routerLink]="['/', news.data?.post_name]">
+														{{news?.data?.post_title}}
+													</a>
+												</li>
+											</ng-container>
+										</ul>
+										<app-loader *ngIf="popularLoader"></app-loader>
+									</li>
+									<li id="grand_news_category-4"
+										class="widget Grand_News_Category">
+										<h2 class="widgettitle">
+											<span>Categories</span>
+										</h2>
+										<ul class="category">
+											
+											<li *ngFor="let foot of asideCountData">
+												<a  class="category_title" [routerLink]="['/category', foot.url]">
+													{{foot.name}}
+												</a>
+												<div style="display: flex; justify-content: center; align-items: center;padding:5px;" class="category_count"><span>{{foot.count}}</span></div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br class="clear">
+	<br>
+	
+</div>

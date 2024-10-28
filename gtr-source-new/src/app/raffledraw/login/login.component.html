@@ -1,0 +1,195 @@
+<div *ngIf="isDefaultActive"
+	style
+	class="show auth"
+	id="signupModal">
+	<div class="account-form-area">
+		<button (click)="onCloseModal()"
+			type="button"
+			class="close-btn"
+			data-bs-dismiss="modal"
+			aria-label="Close">
+			<i class="fas fa-times"></i>
+		</button>
+		<h3 class="title">
+			Hey, Let's Know You!
+		</h3>
+		<div class="account-form-wrapper">
+			<form>
+				<div class="form-group">
+
+					<label>
+						Phone
+						<sup>*</sup>
+					</label>
+					<div class="flex-wrap">
+						<app-country-select (countrySelected)="handleCountrySelected($event)"
+							class="col-12">
+						</app-country-select>
+						<input style="margin-top: 20px;" type="telephone"
+						[(ngModel)]="phone"
+						(keyup)="isValidPhone($event)" name="phone"
+							id="signup_name"
+							placeholder="Enter your Phone"
+							required>
+						<small *ngIf="phoneErrorMessage" style="color: orangered">{{phoneErrorMessage}}</small>
+					</div>
+				</div>
+				<div *ngIf="showSubmit" class="form-group">
+					<label>
+						One Time Password
+						<sup>*</sup>
+					</label>
+					<div>
+						<app-otp-input #input="ngModel"
+						[ngModelOptions]="{standalone: true}"
+							(ngModelChange)="onDataChange($event)"
+							[(ngModel)]="data">
+						</app-otp-input>
+					</div>
+				</div>
+				
+
+				<div class="d-flex flex-wrap mt-2">
+					<div class="custom-checkbox">
+						<input type="checkbox"
+							name="id-2"
+							id="id-2"
+							defaultChecked>
+						<label htmlFor="id-2">I agree to the</label>
+						<span class="checkbox"></span>
+					</div>
+					<a href="#0"
+						class="link ml-1">
+						Terms, Privacy Policy and Fees
+					</a>
+				</div>
+				<div class="form-group text-center mt-5">
+					<button *ngIf="!showOtp && !showSubmit"
+							[disabled]="disable" 
+							(click)="phoneNumberSendOtp()" 
+							class="cmn-btn"
+							[ngStyle]="{'opacity': disable ? 0.5 : 1}">
+							<app-white-loader *ngIf="showSpinner" class="spinner"></app-white-loader>
+							<span>SEND CODE</span>
+					</button>
+					<button *ngIf="showSubmit"
+							[disabled]="disable" 
+							(click)="phoneNumberLogin()" 
+							class="cmn-btn"
+							type="submit"
+							[ngStyle]="{'opacity': disable ? 0.5 : 1}">
+							<app-white-loader *ngIf="showSpinner" class="spinner"></app-white-loader>
+							<span>SIGN IN</span>
+					</button>
+				</div>
+				<div style="align-items: flex-end;" class="">
+					<div *ngIf="showResendSpinner" class="gray-spinner"></div>
+					<a style="margin-top: 0px;" class="recover-btn otp-link-text" *ngIf="hasRequestedOtpEarlier" style="font-size: 15px; text-align: center;" (click)="resendCode('phone')" href="javascript:void(0)" title="" itemprop="url">{{otpText}}</a>
+				</div>
+			</form>
+			<p class="text-center mt-4">
+				Want to use email instead?
+				<a (click)="toggleDefault()"
+					href="javascript:void(0)"
+					data-bs-toggle="modal">
+					use Email
+				</a>
+			</p>
+			<div class="divider">
+				<span>or</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div *ngIf="!isDefaultActive"
+	class="modal"
+	id="loginModal"
+	>
+	<div class="account-form-area">
+		<button (click)="onCloseModal()"
+			type="button"
+			class="close-btn"
+			data-bs-dismiss="modal"
+			aria-label="Close">
+			<i class="fas fa-times"></i>
+		</button>
+		<h3 class="title">
+			Hey, Let's Know You!
+		</h3>
+		<div class="account-form-wrapper">
+			<form>
+				<div class="form-group">
+					<label>
+						Email
+						<sup>*</sup>
+					</label>
+					<input [(ngModel)]="credentials.email" (keyup)="checkValidmail()" name="email" id="login_name"
+					required class="brd-rd3" type="email" placeholder="Email Address">
+					<small *ngIf="emailErrorMessage" style="color: orangered">{{emailErrorMessage}}</small>
+					
+				</div>
+				<div *ngIf="showSubmit" class="form-group">
+					<label>
+						One Time Password
+						<sup>*</sup>
+					</label>
+					<div >
+						<app-otp-input 
+						 #input="ngModel"
+						(ngModelChange)="onDataChange($event)"
+						[(ngModel)]="data">
+						</app-otp-input>
+					</div>
+				</div>
+				<div class="d-flex flex-wrap mt-2">
+					<div class="custom-checkbox">
+						<input type="checkbox"
+							name="id-2"
+							id="id-2"
+							defaultChecked>
+						<label htmlFor="id-2">I agree to the</label>
+						<span class="checkbox"></span>
+					</div>
+					<a href="#0"
+						class="link ml-1">
+						Terms, Privacy Policy and Fees
+					</a>
+				</div>
+				<div class="form-group text-center mt-5">
+					<button >log in</button>
+					<button *ngIf="showSubmit"
+							[disabled]="disable" 
+							class="cmn-btn"
+							(click)="emailLogin()" [ngStyle]="{'opacity': disable ? 0.5 : 1}" class="cmn-btn">
+							<div *ngIf="showSpinner" class="spinner"></div>
+							<span>SUBMIT</span>
+					</button>
+					<button *ngIf="!showOtp && !showSubmit"
+							[disabled]="activeSendOtp" 
+							(click)="emailSendOtp()" 
+							class="cmn-btn"
+							[ngStyle]="{'opacity': activeSendOtp ? 0.5 : 1}">
+							<div *ngIf="showSpinner" class="spinner"></div>
+							<span>SEND CODE</span>
+					</button>
+				</div>
+				<div style="align-items: flex-end;" class="">
+					<div *ngIf="showResendSpinner" class="gray-spinner"></div>
+					<a style="margin-top: 0px;" class="recover-btn otp-link-text" *ngIf="hasRequestedOtpEarlier" style="font-size: 15px; text-align: center;" (click)="resendCode('phone')" href="javascript:void(0)" title="" itemprop="url">{{otpText}}</a>
+				</div>
+			</form>
+			<p class="text-center mt-4">
+				Want to use phone instead?
+				<a (click)="toggleDefault()"
+					href="javascript:void(0)"
+					data-bs-toggle="modal">
+					use Phone
+				</a>
+			</p>
+			<div class="divider">
+				<span>or</span>
+			</div>
+		</div>
+	</div>
+</div>

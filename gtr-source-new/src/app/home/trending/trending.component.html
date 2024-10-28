@@ -1,0 +1,70 @@
+<div class="ppb_blog_carousel one nopadding"
+	style="padding:30px 0 30px 0;">
+	<div id="1660818614373157357"
+		class="standard_wrapper slider_wrapper">
+		<div class="ppb_subtitle_left">
+			<h5 class="single_subtitle">Trending Now</h5>
+		</div>
+		<div class="carousel_nav">
+			<a href="javascript:void(0)"
+				id="carousel_prev1660818614373157357"
+				class="carousel_prev">
+				Prev
+			</a>
+			<a href="javascript:void(0)"
+				id="carousel_next1660818614373157357"
+				class="carousel_next">
+				Next
+			</a>
+		</div>
+		<div class="flexslider"
+			data-height="550">
+			<ul class="slides">
+				<ng-container *ngFor="let newsinfo of news">
+					<li>
+						<div class="one">
+							<div class="post_img static small">
+								<a [routerLink]="['/', newsinfo.data.post_name]"
+									data-metrics="{&quot;action&quot;:&quot;Click Story 2&quot;}"
+									title="{{newsinfo.data.post_name}}">
+									<img width="249"
+										height="166"
+										src="{{newsinfo.data.image}}"
+										alt="{{newsinfo.data.post_name}}"
+										loading="lazy">
+									<noscript>
+										<img width="249"
+											height="166"
+											src="{{newsinfo.data.image}}"
+											alt="{{newsinfo.data.post_name}}">
+									</noscript>
+								</a>
+							</div>
+							<br class="clear">
+							<div class="post_header">
+								<div class="slug-wrap">
+									<h6 class="slug"
+										style="margin:0px;">
+										<a [routerLink]="['/category', newsinfo.data.categoryname | lowercase]"
+											data-metrics="{&quot;action&quot;:&quot;Click Slug&quot;}">
+											{{newsinfo.name}}
+										</a>
+									</h6>
+								</div>
+								<h5>
+									<a [routerLink]="['/', newsinfo.data.post_name]"
+										data-metrics="{&quot;action&quot; : &quot;Click Story 2&quot;}">
+										{{newsinfo.data.post_title}}
+									</a>
+								</h5>
+							</div>
+						</div>
+					</li>
+				</ng-container>
+
+			</ul>
+		</div>
+
+	</div>
+
+</div>

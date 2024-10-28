@@ -1,0 +1,50 @@
+@import "../../assets/ghanatalksradio/css/new-v3.css";
+@import "../../assets/ghanatalksradio/css/style-v13.css";
+    .container {
+        min-height: 300px;
+    }
+    footer{
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+   
+    .footer-cover{
+        position: relative;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .responsive-col{width:25%}
+
+
+
+  
+    .container {
+        padding-right: 35px;
+        padding-left: 35px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+    
+/* Extra Small Devices, Phones (0px to 599px) */
+@media only screen and (min-width: 300px) and (max-width: 599px) {
+    /* Styles for small phones */
+   
+    .flex-row-start {
+      flex-wrap: wrap;
+      gap:5px!important
+    }
+
+    .responsive-col{width:100%}
+
+  }
+  
+  /* Small Devices, Larger Phones (600px to 767px) */
+  @media only screen and (min-width: 600px) and (max-width: 767px) {
+  }
+  
+
+    

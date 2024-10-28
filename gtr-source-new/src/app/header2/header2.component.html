@@ -1,0 +1,741 @@
+<!-- Begin mobile menu -->
+<a (click)="toggleMobileMenu()"
+	id="close_mobile_menu"
+	href="javascript:void();">
+</a>
+<div class="mobile_menu_wrapper">
+	<a (click)="toggleMobileMenu()"
+		id="close_mobile_menu_button"
+		style="
+        font-size: 20px;
+        font-weight: 900;
+    "
+		href="javascript:void()">
+		&times;
+	</a>
+
+
+	<div class="menu-main-menu-container">
+		<img src="assets/ghanatalksradio/images/gtr-logo-op1@2x.png" alt="Ghanatalksradio logo" style="margin-top: 0px; height: 50px; width: 50px; border-radius: 8px;">
+		<ul id="mobile_main_menu"
+			class="mobile_main_nav">
+			<li id="menu-item-731"
+				class="catmenu2 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731">
+				<a [routerLink]="['/']"
+				(click)="toggleMobileMenu()"
+					data-cat="12">
+					Home
+				</a>
+			</li>
+			<li id="menu-item-731"
+				class="catmenu2 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731">
+				<a [routerLink]="['/category','news']"
+				(click)="toggleMobileMenu()"
+					data-cat="12">
+					News
+				</a>
+			</li>
+			<li id="menu-item-712"
+				class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-712">
+				<a href="javascript:void(0)">Podcasts</a>
+				<ul class="sub-menu">
+					<li *ngFor="let catchup of catchupData" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/podcast',catchup.info.slug]"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							{{catchup.info.name}}
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li id="menu-item-712"
+				class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-712">
+				<a href="javascript:void(0)">Entertainment</a>
+				<ul class="sub-menu">
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','entertainment']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							Entertainment
+						</a>
+					</li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','music']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							Music
+						</a>
+					</li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','music-video-mix']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							Music Video Mix
+						</a>
+					</li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','wall-of-fame']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							Wall of Fame
+						</a>
+					</li>
+
+
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','things-to-do-this-weekend']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							Things to do this weekend
+						</a>
+					</li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','gtr-games-and-party-bash']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							GTR Games and Party Bash
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li id="menu-item-717"
+				class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-717">
+				<a href="javascript:void(0)"
+					data-cat="6">
+					Lifestyle
+				</a>
+				<ul class="sub-menu">
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','lifestyle']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							Lifestyle
+						</a>
+					</li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','recipes']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							Recipe
+						</a>
+					</li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','travel']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							Travel
+						</a>
+					</li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','health']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							Health
+						</a>
+					</li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+						<a [routerLink]="['/category','inspirational-quotes']"
+							(click)="fireme()"
+							gaEvent="click"
+							gaCategory="navigation"
+							gaBind="click">
+							Inspirational Quotes
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li id="menu-item-711"
+				class="menu-item menu-item-type-custom menu-item-object-custom menu-item-711">
+				<a [routerLink]="['/category','sports']"
+					(click)="fireme()"
+					gaEvent="click"
+					gaCategory="navigation"
+					gaBind="click">
+					Sports
+				</a>
+			</li>
+			<li id="menu-item-3596"
+				class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3596">
+				<a [routerLink]="['/','weather']"
+					(click)="fireme()"
+					gaEvent="click"
+					gaCategory="navigation"
+					gaBind="click">
+					Weather
+				</a>
+			</li>
+			<li id="menu-item-713"
+				class="catmenu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-713">
+
+
+				<a [routerLink]="['/','watch-live']"
+					(click)="fireme()"
+					gaEvent="click"
+					gaCategory="navigation"
+					gaBind="click">
+					GTR TV
+				</a>
+			</li>
+			<li id="menu-item-713"
+				class="catmenu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-713">
+				<a (click)="fireme()" [routerLink]="['/','flights-tracker']">Flights</a>
+			</li>
+
+			<li id="menu-item-713"
+			class="catmenu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-713">
+				<a (click)="fireme()" routerLink="/raffledraws/play">Raffle</a>
+			</li>
+		</ul>
+	</div>
+	<!-- Begin side menu sidebar -->
+	<div class="page_content_wrapper">
+		<div class="sidebar_wrapper">
+			<div class="sidebar">
+				<div class="content">
+					<ul class="sidebar_widget"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End side menu sidebar -->
+</div>
+<!-- End mobile menu -->
+<div class="header_style_wrapper">
+
+
+
+
+
+
+
+
+
+
+	<!-- Begin top bar -->
+	<!-- <div class="above_top_bar">
+		<div class="page_content_wrapper">
+
+
+
+
+
+			<div class="today_time">August 18, 2022</div>
+
+
+
+
+			<div class="menu-top-menu-container">
+				<ul id="top_menu"
+					class="top_nav">
+					<li id="menu-item-6"
+						class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6">
+						<a href="https://themes.themegoods.com/grandnews/demo5/"
+							aria-current="page">
+							Home
+						</a>
+					</li>
+					<li id="menu-item-709"
+						class="menu-item menu-item-type-custom menu-item-object-custom menu-item-709">
+						<a href="javascript:void(0)">Advertisement</a>
+					</li>
+					<li id="menu-item-3791"
+						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3791">
+						<a href="https://themes.themegoods.com/grandnews/demo5/cart/">Cart</a>
+					</li>
+					<li id="menu-item-3792"
+						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3792">
+						<a href="https://themes.themegoods.com/grandnews/demo5/contact/">Contact</a>
+					</li>
+					<li id="menu-item-710"
+						class="menu-item menu-item-type-custom menu-item-object-custom menu-item-710">
+						<a target="_blank"
+							rel="noopener"
+							href="https://1.envato.market/vq4aA">
+							Purchase
+                            Theme
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="social_wrapper">
+				<ul>
+					<li class="facebook">
+						<a target="_blank"
+							href="javascript:void(0)">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+					<li class="twitter">
+						<a target="_blank"
+							href="https://twitter.com/#">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+					<li class="youtube">
+						<a target="_blank"
+							title="Youtube"
+							href="javascript:void(0)">
+							<i class="fa fa-youtube"></i>
+						</a>
+					</li>
+					<li class="pinterest">
+						<a target="_blank"
+							title="Pinterest"
+							href="https://pinterest.com/#">
+							<i class="fa fa-pinterest"></i>
+						</a>
+					</li>
+					<li class="instagram">
+						<a target="_blank"
+							title="Instagram"
+							href="https://instagram.com/thesportbible">
+							<i class="fa fa-instagram"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div> -->
+
+
+
+
+
+
+
+
+	<div class="top_bar">
+
+
+
+
+
+
+
+
+		<div class="standard_wrapper">
+
+
+
+
+
+
+
+
+			<!-- Begin logo -->
+			<div id="logo_wrapper">
+
+
+
+
+
+
+
+
+				<div id="logo_normal"
+					class="logo_container">
+					<div class="logo_align">
+						<a id="custom_logo"
+							class="logo_wrapper default"
+							href="javascript:void(0)">
+							<div style="flex-direction: row; padding: 0px; padding-top: 20px; padding-bottom: 20px; justify-content: space-between;" class="logo-text-container flex-row-start">
+								<a (click)="toggleMobileMenu()"
+									id="mobile_nav_icon">
+								</a>
+								<img src="assets/ghanatalksradio/images/gtr-logo-op1@2x.png" alt="Ghanatalksradio logo" style="margin-top: 0px; height: 50px; width: 50px; border-radius: 8px;">
+								<h2 class="logo-text">
+									<span class="ghana-colors">
+										<span>GHA</span>
+										<span>NA</span>
+										<span>TALKS</span>
+									</span>
+									<span class="subtext">radio</span>
+								</h2>
+								<a [routerLink]="['/search']"
+									id="search_icon">
+									<i class="fa fa-search"></i>
+								</a>
+
+
+							</div>
+							<noscript>
+								<div class="logo-text-container">
+									<h2 class="logo-text">
+										<span class="ghana-colors">
+											<span>GHA</span>
+											<span>NA</span>
+											<span>TALKS</span>
+										</span>
+										<span class="subtext">radio</span>
+									</h2>
+								</div>
+							</noscript>
+						</a>
+					</div>
+				</div>
+				<!-- End logo -->
+
+
+
+
+
+
+
+
+
+				<div id="menu_wrapper">
+
+
+					<div id="nav_wrapper">
+						<div class="nav_wrapper_inner">
+							<div id="menu_border_wrapper">
+								<div class="menu-main-menu-container">
+									<ul id="main_menu"
+										class="nav">
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3596">
+											<a [routerLink]="['/']">Home</a>
+										</li>
+										<li class="catmenu2 menu-item menu-item-type-taxonomy menu-item-object-category  arrow menu-item-731">
+											<a [routerLink]="['/category','news']"
+												class="dropdown-news-carousel"
+												data-cat="12">
+												News
+											</a>
+											<div *ngIf="headerNews?.length > 0"
+												style="background-color: white!important;"
+												class="catmenu_wrapper">
+												<div class="one_third">
+													<h2 class="widgettitle">
+														<span>More News</span>
+													</h2>
+													<div class="post_img">
+														<span>
+															{{headerNews[0]?.category}}
+														</span>
+														<a [routerLink]="['/', headerNews[0]?.data?.post_name]"
+															title="{{headerNews[0]?.data?.post_title}}">
+															<div class="post_icon_circle">
+																<i class="fa fa-play"></i>
+															</div>
+															<img src="{{headerNews[0]?.data?.image}}"
+																alt="{{headerNews[0]?.data?.post_title}}">
+														</a>
+													</div>
+													<a [routerLink]="['/', headerNews[0]?.data?.post_name]"
+														title="{{headerNews[0]?.data?.post_title}}">
+														<h6>
+															{{headerNews[0]?.data?.post_title}}
+														</h6>
+													</a>
+												</div>
+												<div class="two_third last">
+													<h2 class="widgettitle">
+														<span>Recent Posts</span>
+													</h2>
+													<div class="flex-row-start">
+														<ng-container *ngFor="let news of headerNews; let i=index;">
+															<ng-container *ngIf="i > 0">
+																<div [ngClass]="{ 'last': (i % 2) === 0 }"
+																	class="one_half">
+																	<div class="post_circle_thumb">
+																		<a [routerLink]="['/', news?.data?.post_name]"
+																			title="{{news?.data?.post_title}}">
+																			<img src="{{news?.data?.image}}"
+																				alt="{{news?.data?.post_title}}">
+																		</a>
+																	</div>
+																	<div class="flex-col">
+																		<div class="category">{{news.category}}</div>
+																		<a [routerLink]="['/', news?.data?.post_name]"
+																			class="post_title"
+																			title="{{news?.data?.post_title}}">
+																			{{news?.data?.post_title}}
+																		</a>
+																	</div>
+																</div>
+															</ng-container>
+														</ng-container>
+													</div>
+
+
+
+
+
+
+
+												</div>
+											</div>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children arrow menu-item-712">
+											<a [routerLink]="['/','podcast']"
+												class="dropdown-news-carousel"
+												data-cat="7">
+												Podcasts
+											</a>
+											<ul style="width: fit-content!important;" class="submenu submenu--music">
+												<li *ngFor="let catchup of catchupData" style="width: 300px!important;"  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a style="width: 300px!important;" gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
+														[routerLink]="['/podcast',catchup.info.slug]">{{catchup.info.name}}</a>
+												</li>
+											</ul>
+											<!-- <div  class="catmenu_wrapper"
+												style="display: block; max-height:100vh; overflow-y: auto; opacity: 1;">
+												
+												<ng-container *ngFor="let news of podcasts;let i=index">
+													<div style="display:flex;flex-direction: column;align-items: center; margin: 20px;"
+														class="one_fifth ">
+														<div class="post_img"
+															style="position: relative;">
+															<a [routerLink]="['/podcast', slugify(news?.details?.name), news?.data?.slug]"
+																title="{{news?.data?.title}}">
+
+
+																<img src="https://api.ghanatalksradio.com/assets/images/{{getImage(news)}}"
+																	alt="{{news?.data?.title}}">
+															</a>
+
+
+															<div class="list"
+																style="min-height:60px; display: flex; align-items: center; gap: 20px; position: absolute; bottom: 0; left: 0; right: 0; background-color: whitesmoke; padding: 10px;">
+
+
+																<a [routerLink]="['/podcast', slugify(news?.details?.name), news?.data?.slug]" 
+																[queryParams]="{ autoplay: 1 }"
+																
+																	class="post_icon_circle">
+																	<i [ngClass]="{ 'fa-play': !news?.status , 'fa-pause': news.status }"
+																		class="fa"></i>
+																</a>
+
+
+
+
+
+																<div *ngIf="news.details" style="display: flex; align-items: center; gap: 10px;">
+																	<ng-container *ngFor="let channel of external(news.details.external)">
+																		<a *ngIf="channel[channels(channel)]"
+																			target="_blank"
+																			href="{{channel[channels(channel)]}}">
+																			<img class="available-img"
+																				src="assets/ghanatalksradio/images/{{channels(channel)}}.png">
+																		</a>
+																	</ng-container>
+																</div>
+															</div>
+														</div>
+
+
+
+
+
+														<a *ngIf="news.details" [routerLink]="['/podcast', slugify(news?.details?.name),news.data?.slug]"
+															title="{{news.data.title}}">
+															<h6>{{news.data.title}}</h6>
+															<span>
+																{{news.data.start_date| date: 'fullDate'}}
+															</span>
+														</a>
+
+
+
+
+
+													</div>
+
+
+
+
+
+												</ng-container>
+
+												
+												
+
+												<br class="clear">
+											</div> -->
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children arrow menu-item-712">
+											<a [routerLink]="['/category','entertainment']"
+												
+												gaEvent="click"
+												gaCategory="navigation"
+												gaBind="click">
+												Entertainment
+											</a>
+
+
+
+
+											<ul class="submenu submenu--music">
+												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a [routerLink]="['/category','music']"
+														
+														gaEvent="click"
+														gaCategory="navigation"
+														gaBind="click">
+														Music
+													</a>
+												</li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a [routerLink]="['/category','music-video-mix']"
+														
+														gaEvent="click"
+														gaCategory="navigation"
+														gaBind="click">
+														Music Video Mix
+													</a>
+												</li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a [routerLink]="['/category','wall-of-fame']"
+														
+														gaEvent="click"
+														gaCategory="navigation"
+														gaBind="click">
+														Wall of Fame
+													</a>
+												</li>
+
+
+
+
+												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a [routerLink]="['/category','things-to-do-this-weekend']"
+														
+														gaEvent="click"
+														gaCategory="navigation"
+														gaBind="click">
+														Things to do this weekend
+													</a>
+												</li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a [routerLink]="['/category','gtr-games-and-party-bash']"
+														
+														gaEvent="click"
+														gaCategory="navigation"
+														gaBind="click">
+														GTR Games and Party Bash
+													</a>
+												</li>
+
+
+
+
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children arrow menu-item-717">
+											<a [routerLink]="['/category','lifestyle']"
+												
+												gaEvent="click"
+												gaCategory="navigation"
+												gaBind="click"
+												data-cat="6">
+												Lifestyle
+											</a>
+											<ul class="submenu submenu--lifestyle">
+												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a [routerLink]="['/category','recipes']"
+														
+														gaEvent="click"
+														gaCategory="navigation"
+														gaBind="click">
+														Recipe
+													</a>
+												</li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a [routerLink]="['/category','travel']"
+														
+														gaEvent="click"
+														gaCategory="navigation"
+														gaBind="click">
+														Travel
+													</a>
+												</li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a [routerLink]="['/category','health']"
+														
+														gaEvent="click"
+														gaCategory="navigation"
+														gaBind="click">
+														Health
+													</a>
+												</li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a [routerLink]="['/category','inspirational-quotes']"
+														
+														gaEvent="click"
+														gaCategory="navigation"
+														gaBind="click">
+														Inspirational Quotes
+													</a>
+												</li>
+
+
+
+
+											</ul>
+										</li>
+										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-711">
+											<a [routerLink]="['/category','sports']"
+												
+												gaEvent="click"
+												gaCategory="navigation"
+												gaBind="click">
+												Sports
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3596">
+											<a [routerLink]="['/','weather']"
+												
+												gaEvent="click"
+												gaCategory="navigation"
+												gaBind="click">
+												Weather
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3596">
+											<a [routerLink]="['/','watch-live']"
+												
+												gaEvent="click"
+												gaCategory="navigation"
+												gaBind="click">
+												GTR TV
+											</a>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3596">
+											<a [routerLink]="['/','flights-tracker']">Flight Tracker</a>
+										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3596">
+											<a routerLink="/raffledraws/play">Raffle</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

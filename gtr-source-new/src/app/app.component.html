@@ -1,0 +1,68 @@
+<div [blur]="blurstatus"
+	ngxUiLoaderBlurred>
+	<!-- <div id="container" class="active">
+
+    
+  <app-header></app-header>  <app-header [headerData]="headerData"></app-header>
+    <app-featured></app-featured> 
+    <app-featured *ngIf="secondHeader && scrWidth>=mobileTarget"></app-featured>
+    <section class="block-wrapper">
+        <div class="container">
+            <div class="row aligned-row">
+                <div class="col-sm-8">
+
+                    <router-outlet (activate)="onActivate($event)"></router-outlet>
+                </div>
+                <div class="col-sm-4">
+                    <app-sidebar></app-sidebar>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-footer></app-footer>
+</div>
+</div>
+<app-mobil-player *ngIf="scrWidth<mobileTarget"></app-mobil-player> -->
+	<div #vcrcontainer></div>
+	<main>
+		<div>
+			<!-- <app-header-new></app-header-new> -->
+			<app-header2></app-header2>
+			<!-- <app-header3></app-header3> -->
+			<div  class="container"
+				style="display: flex; padding:0px!important">
+				<div *ngIf="scrWidth>=mobileTarget"
+					class="main-parent">
+
+					<router-outlet (activate)="onActivate($event)"></router-outlet>
+
+				</div>
+				<div *ngIf="scrWidth>=mobileTarget"
+					class="app-player">
+					<!-- <app-player></app-player> -->
+				</div>
+				<div *ngIf="scrWidth<mobileTarget" style="width:100%;"
+					class="mobile-container">
+
+					<router-outlet (activate)="onActivate($event)"></router-outlet>
+
+				</div>
+			</div>
+		</div>
+		<div _ngcontent-ng-c3644521534
+			id="chat-dock-btn"
+			class="btn css-10c83fy">
+			<div (click)="togglePlayState()" _ngcontent-ng-c3644521534
+				aria-hidden="true"
+				class="css-eiheq7 e1dmt1bi3">
+				<i  _ngcontent-serverapp-c131="" style="color: white; display: none;" class="fa fa-play _play" ng-reflect-ng-class="[object Object]"></i>
+				<i  _ngcontent-serverapp-c131="" style="color: white; display: none;" class="fa fa-pause _pause" ng-reflect-ng-class="[object Object]"></i>
+				<div _ngcontent-ng-c3644521534
+					class="css-d6eyf e1dmt1bi2"></div>
+			</div>
+		</div>
+		<app-footer></app-footer>
+	</main>
+	<app-mobil-player *ngIf="scrWidth<mobileTarget"></app-mobil-player>
+</div>

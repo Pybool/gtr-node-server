@@ -1,0 +1,16 @@
+.parent {
+    display: flex;
+  }
+  .imagelar {
+    width: 220px;
+    margin-right: 15px;
+  }
+  .articlar {
+    flex: 1;
+    margin-right: 5px;
+  }
+  .sus{
+    margin-right: 15px!important;
+    margin-left: -15px!important;
+    padding-right: 15px!important;
+}

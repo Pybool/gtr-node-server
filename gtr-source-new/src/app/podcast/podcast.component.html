@@ -1,0 +1,126 @@
+<div class="contentheader contentheader--one">
+	<div class="branding branding--custom">
+		<div class="branding__outer">
+			<div class="branding__inner flex-row-start">
+				<h1 class="branding__title branding__title--custom-image"
+					style="font-size: 25px; margin-bottom: 20px;margin-left: 20px;">
+					Podcasts
+				</h1>
+				<div class="subtopics">
+					<ng-container *ngFor="let catchup of catchupData; let i = index">
+							<a [routerLink]="['/podcast', catchup.info.slug ]"
+								gaEvent="click"
+								gaCategory="news_read"
+								gaBind="click">
+								{{catchup.info.name}}
+							</a>
+						<span *ngIf="i !==0">&nbsp;|| &nbsp;</span>
+					</ng-container>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<section id="main-section">
+	<div id="search-container">
+		<div>
+
+			<div>
+				<div class="search-stats">
+					<div class="ais-Stats">
+						<span *ngIf="data?.length<=0"
+							class="ais-Stats-text">
+							No Podcast Available
+						</span>
+
+					</div>
+
+				</div>
+
+				<div *ngIf="data?.length>0"
+					class="storylist">
+					<div class="ais-InfiniteHits">
+						<ul class="ais-InfiniteHits-list">
+							<li *ngFor="let news of data;let i=index"
+								class="ais-InfiniteHits-item little-space">
+
+								<div *ngIf="news.details" id="post-73"
+									class="post-73 post type-post status-publish format-standard has-post-thumbnail hentry category-football category-scores category-teams tag-model tag-photography tag-portrait tag-travel">
+
+									<div class="post_wrapper">
+
+										<div class="post_content_wrapper">
+
+											<div class="post_header flex-row-center search ">
+
+												<div class="post_img static">
+													<a [routerLink]="['/podcast', slugify(news.details.name),news.data.slug]">
+														<img src="https://api.ghanatalksradio.com/assets/images/{{getImage(news)}}"
+														class="img"
+														alt="{{news.details.name}}">
+													</a>
+												</div>
+
+												<div class="post_header_title two_third last">
+													<h5>
+														<a [routerLink]="['/podcast', slugify(news.details.name),news.data.slug]"
+															title="{{news.data.title}}">
+															{{news.data.title}}
+														</a>
+													</h5>
+													<p></p>
+													<p>
+														{{news.data.description}} […]
+													</p>
+													<div style="display:flex;align-items: center;gap:20px">
+														<button (click)="playPodcast(news,i)"
+															class="listen-now-btn">
+															<i [ngClass]="{ 'fa-play': !news?.status , 'fa-pause': news.status }"
+																class="fa"></i>
+															Listen Now
+														</button>
+														<div style="display:flex;gap:10px">
+															<ng-container *ngFor="let channel of external(news.details.external)">
+																<a *ngIf="channel[channels(channel)]"
+																	target="_blank"
+																	href="{{channel[channels(channel)]}}">
+																	<img class="available-img"
+																		src="assets/ghanatalksradio/images/{{channels(channel)}}.png">
+																</a>
+															</ng-container>
+				
+														</div>
+													</div>
+													<div class="post_detail post_date">
+														<span class="post_info_author">
+															<a href="javascript:void(0)">GHANA TALKS RADIO</a>
+														</span>
+														<span class="post_info_date">
+															<a href="javascript:void(0)">
+																{{news.data.start_date|date: 'fullDate'}}
+															</a>
+														</span>
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</li>
+						</ul>
+						<app-loader *ngIf="loader"></app-loader>
+						<button (click)="loadMore()"
+							class="ais-InfiniteHits-loadMore">
+							Load more
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

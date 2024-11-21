@@ -1,5 +1,12 @@
 @import "../main/main.component.scss";
 
-.left > img, .right > img{
-    border-radius: 15px;
+.left > img,
+.right > img {
+  border-radius: 15px;
 }
+
+.aside {
+  position: sticky;
+  top: 0;
+}
+

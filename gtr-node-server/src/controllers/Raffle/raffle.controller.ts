@@ -67,7 +67,7 @@ const raffleDrawController:any = {
   getActiveRaffleDraw:async (req: Xrequest, res: Response, next: NextFunction) => {
     try {
       let status = 400;
-      const result = await RaffleDrawService.getActiveRaffleDraw();
+      const result = await RaffleDrawService.getActiveRaffleDraw(req);
       if (result) status = result.code;
       return res.status(status).json(result);
     } catch (error: any) {
@@ -104,7 +104,7 @@ const raffleDrawController:any = {
   closeRaffleDraw:async (req: Xrequest, res: Response, next: NextFunction) => {
     try {
       let status = 400;
-      const result = await RaffleDrawService.closeRaffleDraw();
+      const result = await RaffleDrawService.closeRaffleDraw(req);
       if (result) status = result.code;
       return res.status(status).json(result);
     } catch (error: any) {

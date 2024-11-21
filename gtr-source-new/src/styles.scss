@@ -65,8 +65,12 @@ app-login{
   align-items: center;
 }
 
-a {
-  color: lightslategray!important;
+// a , .post > li>a{
+//   color: black!important;
+// }
+
+li>a {
+  // color: lightslategray!important;
 }
 
 .breadcrumb {

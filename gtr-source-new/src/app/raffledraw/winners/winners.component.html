@@ -39,9 +39,10 @@
 						<div class="flex-row-start"
 							style="gap: 10px;">
 							<a routerLink="/raffledraws/play">
-								Raffle Home ||
+								Raffle Home <span>||</span>
 							</a>
-							<a href="javascript:void(0)">Signout</a>
+							<a (click)="scrollToId('rules')" href="javascript:void(0)">Rules <span *ngIf="user">||</span></a>
+							<a *ngIf="user" (click)="logout()" href="javascript:void(0)">Signout</a>
 						</div>
 					</div>
 				</div>
@@ -136,8 +137,8 @@
 									id="dream"
 									role="tabpanel"
 									aria-labelledby="dream-tab">
-									<div class="row mb-none-30">
-										<div class="col-lg-4 mb-30">
+									<div class="row mb-none-30 _container">
+										<div class="col-lg-4 mb-30 aside">
 											<div class="number-check-wrapper">
 												<h3 class="title">Check My Numbers</h3>
 												<p>
@@ -188,10 +189,13 @@
 															</select>
 														</div> -->
 														<div class="text-center mt-100">
+															
 															<button (click)="searchTicketsWins()"
 																type="submit"
+																style="display:flex; gap: 7px; justify-content: center; align-items: center;"
 																class="cmn-btn">
-																check my numbers
+																<span>Check my numbers</span>
+																<app-gwhite-loader *ngIf="showSpinner"></app-gwhite-loader>
 															</button>
 														</div>
 													</div>
@@ -263,6 +267,59 @@
 									</div>
 								</div>
 							</div>
+							<div class="tab-content"
+									id="myTabContent">
+									<div class="tab-pane fade show active"
+										id="description"
+										role="tabpanel"
+										aria-labelledby="description-tab">
+
+										<div id="raffle-description"
+											class="content-block">
+											<h3 id="rules" class="title">Raffle Description</h3>
+											<p>
+												{{raffleDraw.description}}
+											</p>
+										</div>
+										<div id="how-to-play"
+											class="content-block">
+											<h3 class="title">How to Play</h3>
+											<div class="row mb-none-30">
+												<ng-container *ngFor="let step of raffleDraw.competitionDetails; let i = index;">
+													<div class="col-lg-4 col-sm-6 mb-30">
+														<div class="icon-item">
+															<div class="icon-item__thumb">
+																<div class="step-number">
+																	<span>{{i + 1}}</span>
+																</div>
+															</div>
+															<div class="icon-item__content">
+																<p>{{step.message}}</p>
+															</div>
+														</div>
+													</div>
+												</ng-container>
+											</div>
+										</div>
+
+									</div>
+									<div class="tab-pane"
+										id="details"
+										role="tabpanel"
+										aria-labelledby="details-tab">
+										<div class="content-block">
+											<h3 class="title">Competition Details</h3>
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ex eget mi
+											sollicitudin consequat. Sed rhoncus ligula vel justo dignissim aliquam.
+											Maecenas non est vitae ipsum luctus feugiat. Fusce purus nunc, sodales at
+											condimentum sed, ullamcorper a nulla. Nam justo est, venenatis quis tellus
+											in, volutpat eleifend nunc. Vestibulum congue laoreet mi non interdum. Ut ut
+											dapibus tellus.
+											</p>
+										</div>
+									</div>
+								</div>
 						</div>
 					</div>
 				</div>

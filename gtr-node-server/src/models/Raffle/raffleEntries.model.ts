@@ -23,6 +23,7 @@ interface RaffleEntryModel extends Model<IRaffleEntry> {
   getLastTicketNumber(raffleDrawId: string): Promise<number>;
   selectRandomTickets(raffleDrawId: string, count: number): Promise<number[]>;
   findWinningTickets(
+    userIdentity: string,
     contestCode: string,
     ticketNumbersToFind: number[]
   ): Promise<any>;
@@ -122,6 +123,7 @@ raffleEntrySchema.statics.selectRandomTickets = async function (
 
 // Update the RaffleEntry schema with the new static method
 raffleEntrySchema.statics.findWinningTickets = async function (
+  userIdentity: string,
   contestCode: string,
   ticketNumbersToFind: number[]
 ) {
@@ -135,10 +137,22 @@ raffleEntrySchema.statics.findWinningTickets = async function (
     throw new Error("No raffle draw found with the given contest code.");
   }
 
-  const matchingEntries = await this.find({
-    raffleDraw: raffleDraw._id,
-    ticketNumbers: { $in: ticketNumbersToFind },
-  }).populate("raffleDraw");
+  let matchingEntries: any[] = [];
+  try {
+    matchingEntries = await this.find({
+      raffleDraw: raffleDraw._id,
+      userId: userIdentity,
+      ticketNumbers: { $in: ticketNumbersToFind },
+    }).populate("raffleDraw");
+  } catch {
+    if (matchingEntries.length === 0) {
+      matchingEntries = await this.find({
+        raffleDraw: raffleDraw._id,
+        phone: userIdentity,
+        ticketNumbers: { $in: ticketNumbersToFind },
+      }).populate("raffleDraw");
+    }
+  }
 
   return matchingEntries;
 };

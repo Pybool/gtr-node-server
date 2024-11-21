@@ -21,20 +21,21 @@ raffleDrawRouter.post(
 
 raffleDrawRouter.get(
   "/raffle/fetch-prizes",
-  decode,
-  ensureAdmin,
+  decodeExt,
+  // ensureAdmin,
   raffleDrawController.getPrizes
 );
 
 raffleDrawRouter.get(
   "/raffle/get-active-raffledraw",
+  decodeExt,
   raffleDrawController.getActiveRaffleDraw
 );
 
 raffleDrawRouter.get(
   "/raffle/fetch-raffle-draws",
-  decode,
-  ensureAdmin,
+  decodeExt,
+  // ensureAdmin,
   raffleDrawController.fetchRaffleDraws
 );
 

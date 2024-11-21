@@ -85,6 +85,6 @@ export class TokenService {
     this.cookieService.delete('gtr-refreshToken');
     window.localStorage.removeItem('gtr-accessToken');
     window.localStorage.removeItem('gtr-refreshToken');
-    return (document.location.href = '/raffledraw/login');
+    return (document.location.href = '/raffledraws/login');
   }
 }

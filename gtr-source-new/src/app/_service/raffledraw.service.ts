@@ -32,9 +32,9 @@ export class RaffleDrawService {
     );
   }
 
-  public getActiveRaffleDraw() {
+  public getActiveRaffleDraw(phone:string = "") {
     return this.http.get(
-      `${environment.nodeApi}/api/v1/admin/raffle/get-active-raffledraw`
+      `${environment.nodeApi}/api/v1/admin/raffle/get-active-raffledraw?phone=${phone}`
     );
   }
 

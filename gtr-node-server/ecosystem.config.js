@@ -5,7 +5,7 @@ module.exports = {
   apps: [
     {
       name: "ghanatalksradio-node-server",
-      script: "./dist/server.js",
+      script: "./dist/bootstrap/server.js",
       env_production: {
         NODE_ENV: "prod",
         ...process.env

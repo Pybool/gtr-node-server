@@ -6,8 +6,9 @@
   "scripts": {
     "test": "jest  --runInBand --forceExit",
     "dev": "nodemon src/bootstrap/server.ts",
-    "start": "node dist/server.js",
-    "build": "tsc -p ."
+    "start": "node dist/bootstrap/server.js",
+    "prebuild": "tsc -p .",
+    "build": "copyfiles -u 1 ./src/templates/* dist/"
   },
   "keywords": [],
   "author": "",

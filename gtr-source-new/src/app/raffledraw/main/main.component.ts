@@ -5,6 +5,8 @@ import { RaffleDrawService } from 'src/app/_service/raffledraw.service';
 import { SnackBarService } from 'src/app/_service/snackbar.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
+import { countryDialCodes, normalizePhoneNumber } from './helper';
+import { TokenService } from 'src/app/_service/token.service';
 
 @Component({
   selector: 'app-main',
@@ -33,6 +35,7 @@ export class MainComponent implements OnInit {
   public ticketAmount: number = 0.0;
   phoneErrorMessage:string | null = null;
   emailErrorMessage:string | null = null;
+  public userActiveRaffleTickets:any[] = []
   selectedCountry: { name: string; dial_code: string; code: string } = {
     name: 'Ghana',
     dial_code: '+233',
@@ -40,21 +43,60 @@ export class MainComponent implements OnInit {
   };
   serverUrl: string = environment.nodeApi;
 
+  countryCodeMap = {
+    "+233":{
+      name: 'Ghana',
+      dial_code: '+233',
+      code: 'GH',
+    },
+    "+234":{
+      name: 'Nigeria',
+      dial_code: '+234',
+      code: 'NG',
+    },
+    "+1":{
+      name: 'United States',
+      dial_code: '+1',
+      code: 'US',
+    },
+    "+44":{
+      name: 'United Kingdom',
+      dial_code: '+44',
+      code: 'UK',
+    }
+
+  }
+
   constructor(
     private authService: AuthService,
     private raffleDrawService: RaffleDrawService,
-    private snackBarService: SnackBarService
+    private snackBarService: SnackBarService,
+    private tokenService: TokenService
   ) {}
 
   ngOnInit(): void {
     this.user = this.authService.retrieveUser() || null;
+    console.log(this.user)
+    this.selectedCountry.dial_code = window.localStorage.getItem('rf-dialcode')
+    try{
+      console.log(this.selectedCountry.dial_code)
+      if(this.countryCodeMap[this.selectedCountry.dial_code]){
+        this.selectedCountry = this.countryCodeMap[this.selectedCountry.dial_code]
+      }
+    }catch{}
+    
+    this.rafflePayload.phone = window.localStorage.getItem('rf-tel')
     this.raffleDrawService
-      .getActiveRaffleDraw()
+      .getActiveRaffleDraw(this.rafflePayload.phone)
       .pipe(take(1))
       .subscribe(
         (response: any) => {
           if (response.status) {
             this.raffleDraw = response.data;
+            response.userActiveRaffleTickets.forEach((entry:any)=>{
+              this.userActiveRaffleTickets.push(...entry.ticketNumbers)
+            })
+
             this.endDate = new Date(this.raffleDraw?.raffleEndDate);
             if(this.raffleDraw){
               this.startCountdown();
@@ -95,6 +137,17 @@ export class MainComponent implements OnInit {
       this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
     }
+
+  }
+
+  // userActiveRaffleTickets
+
+  getRemainingTime(){
+    const total =  this.days + this.hours + this.minutes + this.seconds
+    if(total==0){
+      this.raffleDraw = null
+    }
+    return total
   }
 
   calculatePercent() {
@@ -110,6 +163,13 @@ export class MainComponent implements OnInit {
 
   toggleLoginModal() {
     this.showLogin = !this.showLogin;
+  }
+
+  scrollToId(id:string){
+    const rules = document.getElementById(id) as any
+    if(rules){
+      rules.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   updateQty(inc: number | null = null) {
@@ -162,6 +222,9 @@ export class MainComponent implements OnInit {
       return;
     }
     this.buySpinner = true;
+    this.rafflePayload.phone = normalizePhoneNumber(this.selectedCountry.code, this.rafflePayload.phone || this.user?.phone);
+    window.localStorage.setItem('rf-dialcode', this.selectedCountry.dial_code)
+    window.localStorage.setItem('rf-tel', this.rafflePayload.phone)
     this.raffleDrawService
       .checkTicketsAvailability({ qty: this.rafflePayload.qty })
       .pipe(take(1))
@@ -185,7 +248,10 @@ export class MainComponent implements OnInit {
   }
 
   logout() {
+    this.tokenService.logout()
     this.authService.logout(false);
-    document.location.href='/raffledraws/login'
+    window.localStorage.removeItem('rf-dialcode')
+    window.localStorage.removeItem('rf-tel')
+    // document.location.href='/raffledraws/login'
   }
 }

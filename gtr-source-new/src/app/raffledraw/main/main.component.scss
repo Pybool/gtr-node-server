@@ -740,11 +740,11 @@ progress {
   max-width: 100%;
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   padding-right: calc(var(--bs-gutter-x) * 0.5);
-//   width: 100%;
+  //   width: 100%;
 }
 
-.modal{
-    margin-top: 120px;
+.modal {
+  margin-top: 120px;
 }
 .col {
   flex: 1 0 0%;
@@ -13720,14 +13720,14 @@ span.is-active:after {
   }
 }
 
-.router-link-active > svg{
-    width: 16px;
-    height: 16px;
+.router-link-active > svg {
+  width: 16px;
+  height: 16px;
 }
 
-.tab-content{
-padding: 40px
-};
+.tab-content {
+  padding: 40px;
+}
 
 .inner-hero-section {
   background-image: linear-gradient(1turn, #e82a7a, #360354);
@@ -14873,15 +14873,15 @@ padding: 40px
 }
 
 .line {
-    background-color: #fff;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    height: 3px;
-    margin: 0px 40px;
-    width: 18vw;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  height: 3px;
+  margin: 0px 40px;
+  width: 18vw;
 }
 
 .number-check-wrapper {
@@ -14903,7 +14903,7 @@ padding: 40px
   flex-wrap: wrap;
   // justify-content: space-between;
   padding-right: 30px;
-  gap: 20px
+  gap: 20px;
 }
 @media (max-width: 991px) {
   .check-number-form .number-list-wrapper .number-list {
@@ -15994,7 +15994,6 @@ padding: 40px
     height: 285px;
   }
 }
-
 
 .contest-cart__thumb-slider .single-slide {
   text-align: center;
@@ -26400,55 +26399,58 @@ button.swiper-pagination-bullet {
   display: none;
 }
 
-
-
-.step-number{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    background: white;
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
 }
 
-.step-number > span{
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    color: #ec1379;
+.step-number > span {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #ec1379;
 }
 
-.quantity-button{
-z-index: 999!important;
+.quantity-button {
+  z-index: 999 !important;
 }
-
 
 /* Extra Small Devices, Phones (0px to 599px) */
 @media only screen and (min-width: 300px) and (max-width: 599px) {
   /* Styles for small phones */
-  .mt-sm-0.mt-3{
-    width: 100%!important;
+  .mt-sm-0.mt-3 {
+    width: 100% !important;
   }
-  
-  .mt-sm-0.mt-3 > button{
-    width: 100%!important;
+
+  .mt-sm-0.mt-3 > button {
+    width: 100% !important;
   }
-  
+
+  .headers {
+    background: black;
+  }
 }
 
 /* Small Devices, Larger Phones (600px to 767px) */
 @media only screen and (min-width: 600px) and (max-width: 767px) {
   /* Styles for larger phones */
- 
-.mt-sm-0.mt-3{
-  width: 100%!important;
-}
 
-.mt-sm-0.mt-3 > button{
-  width: 100%!important;
-}
+  .mt-sm-0.mt-3 {
+    width: 100% !important;
+  }
 
+  .mt-sm-0.mt-3 > button {
+    width: 100% !important;
+  }
+
+  .headers {
+    background: black;
+  }
 }
 
 /* Medium Devices, Tablets (768px to 991px) */
@@ -26474,6 +26476,54 @@ z-index: 999!important;
   /* Styles for large desktops */
 }
 
+.number-list li {
+  background-image: linear-gradient(1turn, #ec038b, #fb6468 44%, #fbb936);
+  background-image: -ms-linear-gradient(
+    86deg,
+    #ec038b 0,
+    #fb6468 44%,
+    #fbb936 100%
+  );
+  border: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 0 17px 40px 0 rgba(243, 42, 126, 0.35);
+  color: #fff;
+  font-size: 20px;
+  height: 36px;
+  margin-top: 10px;
+  min-height: 36px;
+  padding: 2px;
+  text-align: center;
+  width: 36px;
+}
 
-
-
+@media (max-width: 1199px) {
+  .number-list {
+    padding-right: 0;
+  }
+}
+.number-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-right: 30px;
+}
+.number-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 30px;
+  gap: 20px;
+}
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

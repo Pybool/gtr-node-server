@@ -1,18 +1,50 @@
-<div class="youtube-parent-all"><div class="youtube-parent">
-  <div class="youtube-style" *ngFor="let vid of videoData">
-    <youtube-player
-    
-          [width]="213"
-          [height]="120"
-          [videoId]="vid.id.videoId"
-          [playerVars]="{ modestbranding: 1, controls: 1, disablekb: 1, rel: 0, showinfo: 0 }"
-          (ready)="playerReady($event,vid.id.videoId)"
-          (change)="onVideoChange($event,vid.id.videoId)">
-        </youtube-player>
-  </div>
-</div>
+<h2>News Playlist</h2>
+<div class="youtube-parent-all">
+	<div style="justify-content: center"
+		class="youtube-parent">
+		<ng-container *ngFor="let vid of videoData">
+			<div (click)="youtubeModal.openModal(vid.id.videoId)" style="width: 230px; cursor:pointer">
+				<div
+					style="background-image: url(https://i.ytimg.com/vi/{{vid.id.videoId}}/maxresdefault.jpg);"
+					class="youtube-thumbnail">
+
+					<div
+						class="btn play-icon"
+						style="display: flex;">
+						<div aria-hidden="true"
+							class="">
+							<i class="fa fa-play _play"
+								style="color: white; display: block;"></i>
+							<i class="fa fa-pause _pause"
+								style="color: white; display: none;"></i>
+							<div class="css-d6eyf e1dmt1bi2"></div>
+						</div>
+					</div>
+
+				</div>
+				<p *ngIf="vid.snippet.description !== ''"
+					style="padding:10px;">
+					{{vid.snippet.description}}
+				</p>
+				<p *ngIf="vid.snippet.description === ''"
+					style="padding:10px;">
+					{{vid.snippet.title}}
+				</p>
+
+			</div>
+		</ng-container>
+		<app-youtube-player #youtubeModal></app-youtube-player>
+
+	</div>
 </div>
 <app-loader *ngIf="loader"></app-loader>
 <div class="options has-more-results">
-<button gaEvent="click" gaCategory="load_more_button"  gaBind="click" (click)="morefeed()" class="options__load-more">Load more stories</button>
+	<button (click)="morefeed()"
+		gaEvent="click"
+		gaCategory="load_more_button"
+		style="color:white; font-size: 16px;"
+		gaBind="click"
+		class="btn options__load-more">
+		Load more
+	</button>
 </div>

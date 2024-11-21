@@ -96,10 +96,13 @@ import { TransactionService } from './_service/transaction.service';
 import { GenericCountrySelectComponent } from './raffledraw/main/country-select/country-select.component';
 import { SnackBarService } from './_service/snackbar.service';
 import { SnackBarComponent } from './raffledraw/snackbar/snackbar.component';
+import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
+import { SafeUrlPipe } from './youtube-player/safe-url.pipe';
 
 @NgModule({
   declarations: [
     ReplacePipe,
+    SafeUrlPipe,
     PlayerComponent,
     AppComponent,
     HeaderComponent,
@@ -149,7 +152,8 @@ import { SnackBarComponent } from './raffledraw/snackbar/snackbar.component';
     CustomDropdownComponent,
     GenericWhiteLoaderComponent,
     GenericCountrySelectComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    YoutubePlayerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

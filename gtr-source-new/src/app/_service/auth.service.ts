@@ -190,11 +190,12 @@ export class AuthService {
   logout(redirect:boolean) {
     
     this.removeUser();
+    this.removeToken();
     this.setLoggedIn(false);
     this.cookieService.delete('gtr-accessToken');
     this.cookieService.delete('gtr-refreshToken');
     if(redirect){
-      return (document.location.href = '/raffledraw/login');
+      return (document.location.href = '/raffledraws/login');
     }
     return null;
   }

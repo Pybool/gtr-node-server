@@ -4,11 +4,31 @@
   z-index: 999999999!important;
 }
 
+
+
 .modal-content {
+  position: relative;
   color: white; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: black;
+  border: 1px solid lightslategray;
+  border-radius: .3rem;
+  outline: 0;
 }
 
 .btn{
   width: 49%!important;
   height: 50px
+}
+
+.modal-title{
+  color: white!important;
+}
+
+.close{
+  color: white!important;
+  text-shadow: none!important;
 }

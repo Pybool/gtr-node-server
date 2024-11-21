@@ -41,17 +41,55 @@ export class WinnersComponent implements OnInit {
   public contestCodeToSearch: string = '';
   public searchResult: string = '';
   public user: any = {};
+  endDate: Date;
 
   constructor(
     private authService: AuthService,
     private raffleDrawService: RaffleDrawService,
     private snackBarService: SnackBarService
-  ) {}
+  ) {
+    this.raffleDrawService
+      .getActiveRaffleDraw()
+      .pipe(take(1))
+      .subscribe(
+        (response: any) => {
+          if (response.status) {
+            this.raffleDraw = response.data;
+            this.endDate = new Date(this.raffleDraw?.raffleEndDate);
+          }
+        },
+        (error: any) => {
+          this.snackBarService.show("Something went wrong...", true);
+        }
+      );
+  }
 
   getPrizeImage(prize: any): string {
     return prize?.image
       ? this.serverUrl + prize.image.replace('public', '')
       : '';
+  }
+
+  ngAfterViewInit(){
+    const aside = document.querySelector(".aside");
+    const container = document.querySelector("._container");
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          aside.classList.add("stopped");
+        } else {
+          aside.classList.remove("stopped");
+        }
+      },
+      {
+        root: null, // Observe in the viewport
+        threshold: 1.0,
+      }
+    );
+    
+    observer.observe(container);
+    
   }
 
   ngOnInit(): void {
@@ -108,9 +146,11 @@ export class WinnersComponent implements OnInit {
   }
 
   searchTicketsWins() {
+    this.showSpinner = true
     const payload = {
       contestCode: this.contestCodeToSearch,
       tickets: [],
+      phone: window.localStorage.getItem('rf-tel')
     };
     const ticketNos = document.querySelectorAll('.ticketNo') as any;
     for (let ticket of ticketNos) {
@@ -120,12 +160,31 @@ export class WinnersComponent implements OnInit {
       .searchTicketsWins(payload)
       .pipe(take(1))
       .subscribe((response: any) => {
+        console.log(response)
+        this.showSpinner = false
         this.searchResult = response.message;
         this.snackBarService.show(response.message);
+      },(error)=>{
+        this.showSpinner = false
+        this.snackBarService.show("Sorry an error occured , please try again later!", true);
       });
+  }
+
+  scrollToId(id:string){
+    const rules = document.getElementById(id) as any
+    if(rules){
+      rules.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   getBannerImage(banner: string): string {
     return banner ? this.serverUrl + banner.replace('public', '') : '';
   }
+
+  
+  logout() {
+    this.authService.logout(false);
+    document.location.href='/raffledraws/login'
+  }
+
 }

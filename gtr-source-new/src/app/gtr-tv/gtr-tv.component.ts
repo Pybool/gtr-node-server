@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { YoutubeService } from '../_service/youtube-service.service';
+import { YoutubePlayerComponent } from '../youtube-player/youtube-player.component';
 
 @Component({
   selector: 'app-gtr-tv',
@@ -13,6 +14,7 @@ export class GtrTvComponent implements OnInit {
   public videoData:any[]=[]
   public loader:boolean=true;
   public tvPlayers:any={}
+  @ViewChild('youtubeModal') youtubeModal!: YoutubePlayerComponent;
   constructor(private youTubeService: YoutubeService) { }
 
   ngOnInit(): void {
@@ -22,7 +24,9 @@ export class GtrTvComponent implements OnInit {
     this.youTubeService.getVideosForChanel(this.nextPage).pipe(take(1)).subscribe(v=>{
       if(v.nextPageToken){
         this.nextPage=v.nextPageToken;
+        
       }
+      console.log('NextPage ', v)
       console.log(v.items)
       this.videoData.push(...v.items)
       this.loader=false;

@@ -117,7 +117,7 @@ const routes: Routes = [
     component: ListenLiveComponent
   },
   {
-    path: 'gtr-tv',
+    path: 'news-playlist',
     component: GtrTvComponent
   },
   {

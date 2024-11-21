@@ -214,7 +214,7 @@ export class LoginComponent implements OnInit {
             this.showSubmit = true;
             if (response?.testotp) {
               alert(
-                `Welocme to GTR Raffle your otp is ${response.testotp}. \nPlease do not share this code with anyone.`
+                `Welcome to GTR Raffle your otp is ${response.testotp}. \nPlease do not share this code with anyone.`
               );
             }
             this.countDownOtp();

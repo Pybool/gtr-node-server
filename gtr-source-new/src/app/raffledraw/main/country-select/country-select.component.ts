@@ -13,7 +13,7 @@ export class GenericCountrySelectComponent {
   @Output() countrySelected = new EventEmitter<{ name: string; dial_code: string; code: string }>();
 
   filteredCountryCodes = [...this.countryCodes]; // To hold filtered country codes
-  @Input() selectedCountry: { name: string; dial_code: string } = this.countryCodes[0]; // Default to the first country (Ghana)
+  @Input() selectedCountry // Default to the first country (Ghana)
   isDropdownOpen: boolean = false; // Tracks if the dropdown is open
   searchTerm: string = ''; // The search term
 

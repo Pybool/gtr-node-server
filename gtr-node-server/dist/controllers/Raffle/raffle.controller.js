@@ -71,7 +71,7 @@ const raffleDrawController = {
     getActiveRaffleDraw: async (req, res, next) => {
         try {
             let status = 400;
-            const result = await raffle_service_1.RaffleDrawService.getActiveRaffleDraw();
+            const result = await raffle_service_1.RaffleDrawService.getActiveRaffleDraw(req);
             if (result)
                 status = result.code;
             return res.status(status).json(result);
@@ -111,7 +111,7 @@ const raffleDrawController = {
     closeRaffleDraw: async (req, res, next) => {
         try {
             let status = 400;
-            const result = await raffle_service_1.RaffleDrawService.closeRaffleDraw();
+            const result = await raffle_service_1.RaffleDrawService.closeRaffleDraw(req);
             if (result)
                 status = result.code;
             return res.status(status).json(result);

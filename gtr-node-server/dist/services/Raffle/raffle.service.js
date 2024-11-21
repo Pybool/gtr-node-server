@@ -53,7 +53,6 @@ class RaffleDrawService {
             const attachments = req.attachments;
             const requestBody = req.body;
             const raffleDrawId = requestBody.raffleDrawId;
-            console.log("raffleDrawId ", raffleDrawId, req.accountId, req.attachments, attachments);
             let raffleDraw = await raffle_model_1.default.findOne({
                 _id: raffleDrawId,
             });
@@ -132,7 +131,8 @@ class RaffleDrawService {
             code: 422,
         };
     }
-    static async getActiveRaffleDraw() {
+    static async getActiveRaffleDraw(req) {
+        let userActiveRaffleTickets = [];
         const activeRaffleDraw = await raffle_model_1.default.findOne({
             isActive: true,
         }).populate("prizes");
@@ -141,11 +141,21 @@ class RaffleDrawService {
                 activeRaffleDraw.competitionDetails =
                     await RaffleDrawService.getDefaultCompetitionDetails();
             }
+            const accountId = req.accountId;
+            if (accountId) {
+                console.log("Active User tickets ==> ", { userId: req.accountId, raffleDraw: activeRaffleDraw._id });
+                userActiveRaffleTickets = await raffleEntries_model_1.default.find({ userId: accountId, raffleDraw: activeRaffleDraw._id });
+            }
+            else {
+                const phone = req.query.phone;
+                userActiveRaffleTickets = await raffleEntries_model_1.default.find({ phone: phone, raffleDraw: activeRaffleDraw._id });
+            }
         }
         return {
             status: true,
             message: "Raffle Draw has been fetched succesfully.",
             data: activeRaffleDraw,
+            userActiveRaffleTickets,
             code: 200,
         };
     }
@@ -182,8 +192,8 @@ class RaffleDrawService {
             code: 200,
         };
     }
-    static async closeRaffleDraw() {
-        const activeRaffleResult = await RaffleDrawService.getActiveRaffleDraw();
+    static async closeRaffleDraw(req) {
+        const activeRaffleResult = await RaffleDrawService.getActiveRaffleDraw(req);
         if (activeRaffleResult.status) {
             const activeRaffleDraw = activeRaffleResult.data;
             if (activeRaffleDraw?.isTerminated) {
@@ -217,24 +227,28 @@ class RaffleDrawService {
         };
     }
     static async searchWinningEntriesTickets(req) {
+        const userIdentity = req.accountId || req.body.phone;
         const contestCode = req.body.contestCode;
         const tickets = req.body.tickets;
-        const winners = (await raffleEntries_model_1.default.findWinningTickets(contestCode, tickets)) || [];
+        const winners = (await raffleEntries_model_1.default.findWinningTickets(userIdentity, contestCode, tickets)) || [];
         const found = [];
-        const winningTickets = winners[0].raffleDraw.winningTickets;
-        for (let _test_ticket of tickets) {
-            if (winningTickets.includes(_test_ticket)) {
-                found.push(_test_ticket);
+        if (winners.length > 0) {
+            const winningTickets = winners[0].raffleDraw.winningTickets;
+            for (let _test_ticket of tickets) {
+                if (winningTickets.includes(_test_ticket)) {
+                    found.push(_test_ticket);
+                }
             }
         }
         let msg = "No wining tickets were found for the tickets you provided";
-        if (winners.length > 0) {
+        if (found.length > 0) {
             msg = `These are winning ticket(s) on this raffle draw: ${found.toString()?.trim().replaceAll(",", " , ")}`;
         }
         return {
             status: true,
             message: msg,
             data: winners,
+            found,
             code: 200,
         };
     }

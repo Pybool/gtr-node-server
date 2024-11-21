@@ -92,7 +92,7 @@ raffleEntrySchema.statics.selectRandomTickets = async function (raffleDrawId, co
     return Array.from(uniqueTickets);
 };
 // Update the RaffleEntry schema with the new static method
-raffleEntrySchema.statics.findWinningTickets = async function (contestCode, ticketNumbersToFind) {
+raffleEntrySchema.statics.findWinningTickets = async function (userIdentity, contestCode, ticketNumbersToFind) {
     // Step 1: Find the raffle draw by the contest code
     const raffleDraw = await mongoose_1.default
         .model("RaffleDraw")
@@ -101,10 +101,23 @@ raffleEntrySchema.statics.findWinningTickets = async function (contestCode, tick
     if (!raffleDraw) {
         throw new Error("No raffle draw found with the given contest code.");
     }
-    const matchingEntries = await this.find({
-        raffleDraw: raffleDraw._id,
-        ticketNumbers: { $in: ticketNumbersToFind },
-    }).populate("raffleDraw");
+    let matchingEntries = [];
+    try {
+        matchingEntries = await this.find({
+            raffleDraw: raffleDraw._id,
+            userId: userIdentity,
+            ticketNumbers: { $in: ticketNumbersToFind },
+        }).populate("raffleDraw");
+    }
+    catch {
+        if (matchingEntries.length === 0) {
+            matchingEntries = await this.find({
+                raffleDraw: raffleDraw._id,
+                phone: userIdentity,
+                ticketNumbers: { $in: ticketNumbersToFind },
+            }).populate("raffleDraw");
+        }
+    }
     return matchingEntries;
 };
 // Export the RaffleEntry model with the static method

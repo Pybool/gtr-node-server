@@ -90,12 +90,12 @@
 										<li *ngFor="let winner of raffleDraws[0]?.winningTickets">{{winner}}</li>
 									</ul>
 									<div class="btn-grp">
-										<a (click)="alertComingSoon()"
+										<!-- <a (click)="alertComingSoon()"
 											href="javascript:void(0)"
 											class="btn-border">
 											Alerts
-										</a>
-										<a (click)="alertComingSoon()"
+										</a> -->
+										<a (click)="howToClaim()"
 											href="javascript:void(0)"
 											class="btn-border">
 											How to Claim
@@ -328,3 +328,5 @@
 		<div id="teleports"></div>
 	</body>
 </html>
+
+<app-raffle-claim-modal #raffleModal></app-raffle-claim-modal>

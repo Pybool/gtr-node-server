@@ -1,9 +1,10 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { AuthService } from 'src/app/_service/auth.service';
 import { RaffleDrawService } from 'src/app/_service/raffledraw.service';
 import { SnackBarService } from 'src/app/_service/snackbar.service';
 import { environment } from 'src/environments/environment';
+import { RaffleClaimModalComponent } from '../raffle-claim-modal/raffle-claim-modal.component';
 
 @Component({
   selector: 'app-winners',
@@ -42,6 +43,7 @@ export class WinnersComponent implements OnInit {
   public searchResult: string = '';
   public user: any = {};
   endDate: Date;
+  @ViewChild('raffleModal') raffleModal!: RaffleClaimModalComponent;
 
   constructor(
     private authService: AuthService,
@@ -124,6 +126,10 @@ export class WinnersComponent implements OnInit {
 
   alertComingSoon() {
     this.snackBarService.show('This feature is not yet implemented...');
+  }
+
+  howToClaim(){
+    this.raffleModal.openModal();
   }
 
   getRaffleDraws() {

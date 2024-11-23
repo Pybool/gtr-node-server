@@ -6,23 +6,23 @@
 <div class="mobile_menu_wrapper">
 	<a (click)="toggleMobileMenu()"
 		id="close_mobile_menu_button"
-		style="
-        font-size: 20px;
-        font-weight: 900;
-    "
+		style="font-size: 20px;font-weight: 900;"
 		href="javascript:void()">
 		&times;
 	</a>
 
 
+
 	<div class="menu-main-menu-container">
-		<img src="assets/ghanatalksradio/images/gtr-logo-op1@2x.png" alt="Ghanatalksradio logo" style="margin-top: 0px; height: 50px; width: 50px; border-radius: 8px;">
+		<img src="assets/ghanatalksradio/images/gtr-logo-op1@2x.png"
+			alt="Ghanatalksradio logo"
+			style="margin-top: 0px; height: 50px; width: 50px; border-radius: 8px;">
 		<ul id="mobile_main_menu"
 			class="mobile_main_nav">
 			<li id="menu-item-731"
 				class="catmenu2 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731">
 				<a [routerLink]="['/']"
-				(click)="toggleMobileMenu()"
+					(click)="toggleMobileMenu()"
 					data-cat="12">
 					Home
 				</a>
@@ -30,7 +30,7 @@
 			<li id="menu-item-731"
 				class="catmenu2 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731">
 				<a [routerLink]="['/category','news']"
-				(click)="toggleMobileMenu()"
+					(click)="toggleMobileMenu()"
 					data-cat="12">
 					News
 				</a>
@@ -39,7 +39,8 @@
 				class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-712">
 				<a href="javascript:void(0)">Podcasts</a>
 				<ul class="sub-menu">
-					<li *ngFor="let catchup of catchupData" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+					<li *ngFor="let catchup of catchupData"
+						class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
 						<a [routerLink]="['/podcast',catchup.info.slug]"
 							(click)="fireme()"
 							gaEvent="click"
@@ -190,6 +191,7 @@
 				class="catmenu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-713">
 
 
+
 				<a [routerLink]="['/','news-playlist']"
 					(click)="fireme()"
 					gaEvent="click"
@@ -200,12 +202,19 @@
 			</li>
 			<li id="menu-item-713"
 				class="catmenu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-713">
-				<a (click)="fireme()" [routerLink]="['/','flights-tracker']">Flights</a>
+				<a [routerLink]="['/','flights-tracker']"
+					(click)="fireme()">
+					Flights
+				</a>
 			</li>
 
+
 			<li id="menu-item-713"
-			class="catmenu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-713">
-				<a (click)="fireme()" routerLink="/raffledraws/play">Raffle</a>
+				class="catmenu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-713">
+				<a (click)="fireme()"
+					routerLink="/raffledraws/play">
+					Raffle
+				</a>
 			</li>
 		</ul>
 	</div>
@@ -223,6 +232,7 @@
 </div>
 <!-- End mobile menu -->
 <div class="header_style_wrapper">
+
 
 
 
@@ -326,6 +336,7 @@
 
 
 
+
 	<div class="top_bar">
 
 
@@ -335,7 +346,9 @@
 
 
 
-		<div class="standard_wrapper">
+
+		<div >
+
 
 
 
@@ -354,29 +367,46 @@
 
 
 
+
 				<div id="logo_normal"
 					class="logo_container">
 					<div class="logo_align">
 						<a id="custom_logo"
 							class="logo_wrapper default"
 							href="javascript:void(0)">
-							<div style="flex-direction: row; padding: 0px; padding-top: 20px; padding-bottom: 20px; justify-content: space-between;" class="logo-text-container flex-row-start">
-								<a (click)="toggleMobileMenu()"
+							<div style="flex-direction: row; padding: 0px; padding-top: 20px; padding-bottom: 20px; justify-content: space-between;"
+								class="logo-text-container flex-row-start">
+								<!-- <a 
 									id="mobile_nav_icon">
-								</a>
-								<img src="assets/ghanatalksradio/images/gtr-logo-op1@2x.png" alt="Ghanatalksradio logo" style="margin-top: 0px; height: 50px; width: 50px; border-radius: 8px;">
-								<h2 class="logo-text">
-									<span class="ghana-colors">
-										<span>GHA</span>
-										<span>NA</span>
-										<span>TALKS</span>
-									</span>
-									<span class="subtext">radio</span>
-								</h2>
-								<a [routerLink]="['/search']"
-									id="search_icon">
-									<i class="fa fa-search"></i>
-								</a>
+								</a> -->
+								<div (click)="toggleMobileMenu()"
+									class="mobile_nav_icon">
+									<svg style="width: 1.5em"
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 448 512">
+										<!-- !Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+										<path style="fill:white"
+											d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"></path>
+									</svg>
+								</div>
+								<div class="logo-gtr-text">
+									<img src="assets/ghanatalksradio/images/gtr-logo-op1@2x.png" alt="Ghanatalksradio logo" style="margin-top: 0px; height: 30px; width: 30px; border-radius: 8px;">
+									<h2 class="logo-text">
+										<span class="ghana-colors">
+											<span>GHA</span>
+											<span>NA</span>
+											<span>TALKS</span>
+										</span>
+										<span class="subtext">radio</span>
+									</h2>
+								</div>
+								
+									<a class="search_icon_mobile" [routerLink]="['/search']"
+										id="search_icon">
+										<i class="fa fa-search"></i>
+									</a>
+
+
 
 
 							</div>
@@ -405,7 +435,9 @@
 
 
 
+
 				<div id="menu_wrapper">
+
 
 
 					<div id="nav_wrapper">
@@ -485,6 +517,7 @@
 
 
 
+
 												</div>
 											</div>
 										</li>
@@ -494,15 +527,22 @@
 												data-cat="7">
 												Podcasts
 											</a>
-											<ul style="width: fit-content!important;" class="submenu submenu--music">
-												<li *ngFor="let catchup of catchupData" style="width: 300px!important;"  class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
-													<a style="width: 300px!important;" gaEvent="click" gaCategory="navigation" gaBind="click" (click)="fireme()"
-														[routerLink]="['/podcast',catchup.info.slug]">{{catchup.info.name}}</a>
+											<ul style="width: fit-content!important;"
+												class="submenu submenu--music">
+												<li *ngFor="let catchup of catchupData"
+													style="width: 300px!important;"
+													class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
+													<a [routerLink]="['/podcast',catchup.info.slug]"
+														style="width: 300px!important;"
+														gaEvent="click"
+														gaCategory="navigation"
+														gaBind="click">
+														{{catchup.info.name}}
+													</a>
 												</li>
 											</ul>
 											<!-- <div  class="catmenu_wrapper"
 												style="display: block; max-height:100vh; overflow-y: auto; opacity: 1;">
-												
 												<ng-container *ngFor="let news of podcasts;let i=index">
 													<div style="display:flex;flex-direction: column;align-items: center; margin: 20px;"
 														class="one_fifth ">
@@ -510,17 +550,11 @@
 															style="position: relative;">
 															<a [routerLink]="['/podcast', slugify(news?.details?.name), news?.data?.slug]"
 																title="{{news?.data?.title}}">
-
-
 																<img src="https://api.ghanatalksradio.com/assets/images/{{getImage(news)}}"
 																	alt="{{news?.data?.title}}">
 															</a>
-
-
 															<div class="list"
 																style="min-height:60px; display: flex; align-items: center; gap: 20px; position: absolute; bottom: 0; left: 0; right: 0; background-color: whitesmoke; padding: 10px;">
-
-
 																<a [routerLink]="['/podcast', slugify(news?.details?.name), news?.data?.slug]" 
 																[queryParams]="{ autoplay: 1 }"
 																
@@ -578,20 +612,14 @@
 										</li>
 										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children arrow menu-item-712">
 											<a [routerLink]="['/category','entertainment']"
-												
 												gaEvent="click"
 												gaCategory="navigation"
 												gaBind="click">
 												Entertainment
 											</a>
-
-
-
-
 											<ul class="submenu submenu--music">
 												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
 													<a [routerLink]="['/category','music']"
-														
 														gaEvent="click"
 														gaCategory="navigation"
 														gaBind="click">
@@ -600,7 +628,6 @@
 												</li>
 												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
 													<a [routerLink]="['/category','music-video-mix']"
-														
 														gaEvent="click"
 														gaCategory="navigation"
 														gaBind="click">
@@ -631,7 +658,6 @@
 												</li> -->
 												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
 													<a [routerLink]="['/category','gtr-games-and-party-bash']"
-														
 														gaEvent="click"
 														gaCategory="navigation"
 														gaBind="click">
@@ -642,11 +668,11 @@
 
 
 
+
 											</ul>
 										</li>
 										<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children arrow menu-item-717">
 											<a [routerLink]="['/category','lifestyle']"
-												
 												gaEvent="click"
 												gaCategory="navigation"
 												gaBind="click"
@@ -656,7 +682,6 @@
 											<ul class="submenu submenu--lifestyle">
 												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
 													<a [routerLink]="['/category','recipes']"
-														
 														gaEvent="click"
 														gaCategory="navigation"
 														gaBind="click">
@@ -665,7 +690,6 @@
 												</li>
 												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
 													<a [routerLink]="['/category','travel']"
-														
 														gaEvent="click"
 														gaCategory="navigation"
 														gaBind="click">
@@ -674,7 +698,6 @@
 												</li>
 												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
 													<a [routerLink]="['/category','health']"
-														
 														gaEvent="click"
 														gaCategory="navigation"
 														gaBind="click">
@@ -683,7 +706,6 @@
 												</li>
 												<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3793">
 													<a [routerLink]="['/category','inspirational-quotes']"
-														
 														gaEvent="click"
 														gaCategory="navigation"
 														gaBind="click">
@@ -694,11 +716,11 @@
 
 
 
+
 											</ul>
 										</li>
 										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-711">
 											<a [routerLink]="['/category','sports']"
-												
 												gaEvent="click"
 												gaCategory="navigation"
 												gaBind="click">
@@ -707,7 +729,6 @@
 										</li>
 										<li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3596">
 											<a [routerLink]="['/','weather']"
-												
 												gaEvent="click"
 												gaCategory="navigation"
 												gaBind="click">
@@ -716,7 +737,6 @@
 										</li>
 										<li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3596">
 											<a [routerLink]="['/','news-playlist']"
-												
 												gaEvent="click"
 												gaCategory="navigation"
 												gaBind="click">
@@ -729,6 +749,12 @@
 										<li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3596">
 											<a routerLink="/raffledraws/play">Raffle</a>
 										</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3596">
+											<a [routerLink]="['/search']"
+												id="search_icon">
+												<i class="fa fa-search"></i>
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -739,3 +765,7 @@
 		</div>
 	</div>
 </div>
+
+
+<div (click)="toggleMobileMenu()"
+	class="overlay_background_header"></div>

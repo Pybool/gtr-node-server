@@ -98,6 +98,7 @@ import { SnackBarService } from './_service/snackbar.service';
 import { SnackBarComponent } from './raffledraw/snackbar/snackbar.component';
 import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
 import { SafeUrlPipe } from './youtube-player/safe-url.pipe';
+import { RaffleClaimModalComponent } from './raffledraw/raffle-claim-modal/raffle-claim-modal.component';
 
 @NgModule({
   declarations: [
@@ -153,7 +154,8 @@ import { SafeUrlPipe } from './youtube-player/safe-url.pipe';
     GenericWhiteLoaderComponent,
     GenericCountrySelectComponent,
     SnackBarComponent,
-    YoutubePlayerComponent
+    YoutubePlayerComponent,
+    RaffleClaimModalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

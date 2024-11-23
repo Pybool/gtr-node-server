@@ -78,6 +78,20 @@ export class PrizesComponent implements OnInit {
     this.snackBarService.show("This feature is not yet implemented...");
   }
 
+  deletePrize(prize:any){
+    const id:string = prize?._id
+    this.raffleDrawService.deletePrize(id).pipe(take(1)).subscribe((response:any)=>{
+      if(response.status){
+        this.snackBarService.show(response.message)
+        this.prizes = this.removeObjectById(this.prizes, id)
+      }else{
+        this.snackBarService.show(response.message, true)
+      }
+    },(error:any)=>{
+      this.snackBarService.show("Failed to delete this item", true)
+    })
+  }
+
   createPrize() {
     const formData = new FormData();
     if (this.attachments) {

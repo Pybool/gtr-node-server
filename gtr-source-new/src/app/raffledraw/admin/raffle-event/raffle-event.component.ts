@@ -30,7 +30,7 @@ export class RaffleEventComponent implements OnInit {
     competitionDetails: [],
     useCompetitionDetailsAsDefault: false,
     prizes: [],
-    bannerUrl : "http://localhost:4200/assets/images/raffle-ad.png"
+    bannerUrl : `${environment.frontendUrl}/assets/images/raffle-ad.png`
   };
   public activeRaffleDraw:any;
   public raffleDraws: any[] = [];
@@ -122,6 +122,22 @@ export class RaffleEventComponent implements OnInit {
     } else {
       alert('Please select some images');
     }
+  }
+
+  suspendRaffleDraw(raffleDraw:any){
+    const id:string = raffleDraw?._id
+    this.raffleDrawService.suspendRaffleDraw(id).pipe(take(1)).subscribe((response:any)=>{
+      if(response.status){
+        this.snackBarService.show(response.message)
+        setTimeout(()=>{
+          document.location.reload()
+        },1000)
+      }else{
+        this.snackBarService.show(response.message, true)
+      }
+    },(error:any)=>{
+      this.snackBarService.show("Failed to suspend raffle draw", true)
+    })
   }
 
   addCompetitionDetail() {
@@ -328,7 +344,8 @@ export class RaffleEventComponent implements OnInit {
       this.http
         .post<any>(
           `${environment.nodeApi}/api/v1/admin/raffle/change-raffle-banner`, // Replace with your actual upload endpoint
-          formData
+          formData,
+          { headers: this.raffleDrawService.getHeaders() }
         )
         .pipe(take(1))
         .subscribe((response: any) => {
@@ -342,6 +359,14 @@ export class RaffleEventComponent implements OnInit {
           setTimeout(()=>{
             this.snackBarService.hide();
           },3000)
+        },(error:any)=>{
+          this.activeRaffleDraw.banner = null;
+          this.uploadError = 'An error occurred during upload. Please try again.';
+          console.log('Upload error:', error.status);
+          if(error.status===413){
+            this.uploadError = 'File too large , try using an images less than 1MB';
+          }
+          this.snackBarService.show(this.uploadError, true);
         });
     } catch (error) {
       console.error('Upload error:', error);

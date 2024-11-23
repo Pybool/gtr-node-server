@@ -26,6 +26,23 @@ raffleDrawRouter.get(
   raffleDrawController.getPrizes
 );
 
+raffleDrawRouter.delete(
+  "/raffle/delete-prize",
+  decodeExt,
+  ensureAdmin,
+  raffleDrawController.deletePrize
+);
+
+raffleDrawRouter.put(
+  "/raffle/suspend-raffle-draw",
+  decodeExt,
+  ensureAdmin,
+  raffleDrawController.suspendRaffleDraw
+);
+
+
+
+
 raffleDrawRouter.get(
   "/raffle/get-active-raffledraw",
   decodeExt,

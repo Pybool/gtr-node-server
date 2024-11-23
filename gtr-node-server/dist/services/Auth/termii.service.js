@@ -21,7 +21,8 @@ class SmsService {
         const messages = {
             REGISTER: `Welcome to GTR Raffle Draws! Your registration OTP is ${variable}. Please enter this code to complete your registration.`,
             LOGIN: `Your GTR Raffle Draws login OTP is ${variable}. Please enter this code to log in to your account.`,
-            TICKETS: `Your GTR Ticket Numbers  for contest ${variable?.contestCode} are ${variable?.tickets}. Thank you!!`
+            TICKETS: `Your GTR Ticket Numbers  for contest ${variable?.contestCode} are ${variable?.tickets}. Thank you!!`,
+            WIN: `You have winning GTR Ticket Numbers  for contest ${variable?.contestCode} Tickets:( ${variable?.tickets} ). Contact us to claim your prizes now!!`
         };
         data["message_text"] = messages[msgType];
         return axios_1.default

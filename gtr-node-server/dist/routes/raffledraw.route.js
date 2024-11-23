@@ -13,6 +13,8 @@ raffleDrawRouter.post("/raffle/create-prize", jwt_1.decode, jwt_1.ensureAdmin, (
 raffleDrawRouter.get("/raffle/fetch-prizes", jwt_1.decodeExt, 
 // ensureAdmin,
 raffle_controller_1.default.getPrizes);
+raffleDrawRouter.delete("/raffle/delete-prize", jwt_1.decodeExt, jwt_1.ensureAdmin, raffle_controller_1.default.deletePrize);
+raffleDrawRouter.put("/raffle/suspend-raffle-draw", jwt_1.decodeExt, jwt_1.ensureAdmin, raffle_controller_1.default.suspendRaffleDraw);
 raffleDrawRouter.get("/raffle/get-active-raffledraw", jwt_1.decodeExt, raffle_controller_1.default.getActiveRaffleDraw);
 raffleDrawRouter.get("/raffle/fetch-raffle-draws", jwt_1.decodeExt, 
 // ensureAdmin,

@@ -9,7 +9,7 @@
 			<img src="/assets/images/elements/inner-hero-shape.png"
 				alt="inner_hero_shape">
 		</div>
-		<div class="container">
+		<div class>
 			<div style="flex-wrap: wrap;"
 				class="flex-row-sb headers">
 				<div class="col-lg-8">
@@ -225,7 +225,8 @@
 									class="flex-row-start">
 									<div class="number-field">
 										<div class="field-paymentrequest-username">
-											<app-gcountry-select [selectedCountry]="selectedCountry" (countrySelected)="handleCountrySelected($event)"
+											<app-gcountry-select [selectedCountry]="selectedCountry"
+												(countrySelected)="handleCountrySelected($event)"
 												class="col-12">
 											</app-gcountry-select>
 											<input [(ngModel)]="rafflePayload.phone"
@@ -303,16 +304,18 @@
 							</div>
 
 						</div>
-						<div *ngIf="userActiveRaffleTickets.length>0" class="number-list-wrapper">
+						<div *ngIf="userActiveRaffleTickets.length>0"
+							class="number-list-wrapper">
 							<h2 style="margin-left: 30px;"
 								class="title ">
 								My tickets
 							</h2>
-							<ul style="margin: 30px" class="number-list mt-2">
+							<ul style="margin: 30px"
+								class="number-list mt-2">
 								<ng-container *ngFor="let ticket of userActiveRaffleTickets">
-									<li >{{ticket}}</li>
+									<li>{{ticket}}</li>
 								</ng-container>
-								
+
 							</ul>
 						</div>
 						<hr>
@@ -342,8 +345,8 @@
 									role="tab"
 									aria-controls="description"
 									aria-selected="true">
-									<span class="mr-3"></span>
-									description
+									<span class="mr-3">description</span>
+
 								</button>
 							</li>
 							<li class="nav-item"
@@ -355,8 +358,8 @@
 									role="tab"
 									aria-controls="details"
 									aria-selected="false">
-									<span class="mr-3"></span>
-									Winners
+									<span class="mr-3">Winners</span>
+
 								</a>
 							</li>
 						</ul>

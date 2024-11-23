@@ -1,4 +1,4 @@
-<h2>News Playlist</h2>
+<h2 class="page-title">News Playlist</h2>
 <div class="youtube-parent-all">
 	<div style="justify-content: center"
 		class="youtube-parent">
@@ -23,10 +23,12 @@
 
 				</div>
 				<p *ngIf="vid.snippet.description !== ''"
+					class="vid_description"
 					style="padding:10px;">
 					{{vid.snippet.description}}
 				</p>
 				<p *ngIf="vid.snippet.description === ''"
+					class="vid_description"
 					style="padding:10px;">
 					{{vid.snippet.title}}
 				</p>

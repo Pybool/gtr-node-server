@@ -44,12 +44,12 @@ margin: 40px;">
 
         <div style="height: 80vh; overflow-y: auto;" class="promotions-content">
             <ng-container *ngFor="let prize of prizes">
-                <div class="prize-item">
+                <div *ngIf="prize" class="prize-item">
                     <div style="padding: 20px; flex-wrap: wrap;" class="flex-row-sb">
                         <img class="prize-image" src="{{serverUrl}}{{prize.image.replace('public', '')}}"/>   
                         <div class="prize-description">{{prize.description}}</div>                     
                         <div style="gap:10px" class="flex-row-sb">
-                            <button (click)="alertComingSoon()" class="btn btn-danger">Delete</button>
+                            <button (click)="deletePrize(prize)" class="btn btn-danger">Delete</button>
                         </div>
                     </div>
                 </div>

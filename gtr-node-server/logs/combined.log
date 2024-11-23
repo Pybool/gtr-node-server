@@ -2066,3 +2066,281 @@ info:
 info: Mongoose connected to db {"timestamp":"2024-11-21T08:18:23.776+01:00"}
 info: MongoDB connected Successfully. {"timestamp":"2024-11-21T08:18:23.789+01:00"}
 info: Mongoose connection is disconnected {"timestamp":"2024-11-21T16:27:37.834+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-22T14:47:40.991+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-22T14:47:41.025+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-22T14:47:53.254+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-22T14:47:53.310+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-22T14:47:53.313+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-22T15:08:41.902+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-22T15:08:41.925+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-22T15:08:48.663+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-22T15:08:48.760+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-22T15:08:48.770+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-22T15:14:45.797+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-22T15:14:45.825+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-22T15:14:58.012+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-22T15:14:58.074+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-22T15:14:58.077+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-22T16:57:36.748+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-22T16:57:36.753+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-22T16:57:43.773+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-22T16:57:43.836+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-22T16:57:43.841+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-22T17:11:27.313+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-22T17:11:27.325+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-22T17:11:35.829+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-22T17:11:35.927+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-22T17:11:35.936+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-22T23:56:43.131+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-22T23:56:43.138+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-22T23:56:54.088+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-22T23:56:54.139+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-22T23:56:54.142+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:16:54.050+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:16:54.078+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:17:02.547+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:17:02.608+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:17:02.611+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:20:04.412+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:20:04.419+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:20:12.081+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:20:12.167+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:20:12.174+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:20:25.525+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:20:25.531+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:20:34.807+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:20:34.953+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:20:34.976+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:25:06.137+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:25:06.143+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:25:12.484+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:25:12.580+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:25:12.586+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:27:21.852+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:27:21.891+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:27:29.827+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:27:29.881+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:27:29.884+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:29:35.100+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:29:35.132+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:29:45.203+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:29:45.281+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:29:45.286+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:30:20.912+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:30:20.920+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:30:27.824+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:30:27.864+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:30:27.867+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:31:27.555+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:31:27.561+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:31:34.651+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:31:34.725+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:31:34.730+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:32:14.694+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:32:14.702+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:32:23.694+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:32:23.753+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:32:23.756+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:34:12.864+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:34:12.872+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:34:20.708+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:34:20.802+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:34:20.809+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:36:43.474+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:36:43.481+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:36:51.839+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:36:51.905+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:36:51.921+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:40:08.008+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:40:08.042+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:40:15.921+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:40:15.970+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:40:15.973+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:41:52.072+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:41:52.077+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:42:00.515+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:42:00.602+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:42:00.606+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:43:23.910+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:43:23.925+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:43:31.159+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:43:31.205+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:43:31.209+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:54:40.477+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:54:40.490+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:54:51.285+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:54:51.381+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:54:51.398+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:55:25.972+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:55:25.991+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:55:32.943+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:55:33.029+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:55:33.033+01:00"}
+info: Sms sent successfully {"timestamp":"2024-11-23T00:55:41.973+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T00:56:40.918+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T00:56:40.924+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T00:56:47.491+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T00:56:47.551+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T00:56:47.555+01:00"}
+info: Sms sent successfully {"timestamp":"2024-11-23T00:57:23.496+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T08:25:15.568+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T08:25:15.600+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T08:25:31.333+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T08:25:31.499+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T08:25:31.519+01:00"}
+info: MONGO_URI: mongodb://localhost:27017/ {"timestamp":"2024-11-23T10:48:29.865+01:00"}
+info: DATABASE NAME GHANATALKSRADIODB {"timestamp":"2024-11-23T10:48:29.896+01:00"}
+info: 
+ ---------------------------------------------------------------------
+|  GHANATALKSRADIO DEVELOPMENT SERVER IS RUNNING ON 0.0.0.0:8200  |
+|  😊 Development Server started successfully.  |
+|  🎧 Listening on port 8200...  |
+ ---------------------------------------------------------------------
+ {"timestamp":"2024-11-23T10:48:47.205+01:00"}
+info: Mongoose connected to db {"timestamp":"2024-11-23T10:48:47.302+01:00"}
+info: MongoDB connected Successfully. {"timestamp":"2024-11-23T10:48:47.305+01:00"}
+info: Mongoose connection is disconnected {"timestamp":"2024-11-23T11:40:09.369+01:00"}

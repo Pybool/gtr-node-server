@@ -64,6 +64,30 @@ const raffleDrawController:any = {
     }
   },
 
+  deletePrize:async (req: Xrequest, res: Response, next: NextFunction) => {
+    try {
+      let status = 400;
+      const result = await RaffleDrawService.deletePrize(req);
+      if (result) status = result.code;
+      return res.status(status).json(result);
+    } catch (error: any) {
+      error.status = 500;
+      next(error);
+    }
+  },
+
+  suspendRaffleDraw:async (req: Xrequest, res: Response, next: NextFunction) => {
+    try {
+      let status = 400;
+      const result = await RaffleDrawService.suspendRaffleDraw(req);
+      if (result) status = result.code;
+      return res.status(status).json(result);
+    } catch (error: any) {
+      error.status = 500;
+      next(error);
+    }
+  },
+
   getActiveRaffleDraw:async (req: Xrequest, res: Response, next: NextFunction) => {
     try {
       let status = 400;

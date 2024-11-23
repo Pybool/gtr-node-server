@@ -76,7 +76,33 @@ const mailActions = {
             from: process.env.GHANATALKSRADIO_EMAIL_HOST_USER,
             to: email,
             subject: "GTR Raffle Draw Tickets Receipt",
-            text: `You bough tickets for raffle draw ${contestCode}`,
+            text: `You bought tickets for raffle draw ${contestCode}`,
+            html: juice(template),
+          };
+          await sendMail(mailOptions);
+          resolve({ status: true });
+        } catch (error) {
+          console.log(error);
+          resolve({ status: false });
+        }
+      }).catch((error: any) => {
+        console.log(error);
+      });
+    },
+
+    sendRaffleCongratsMail: async (email:string, metaData:any, contestCode:string)=>{
+      return new Promise(async (resolve, reject) => {
+        try {
+          const template = await ejs.renderFile(
+            `${path}templates/winner.ejs`,
+            { email, metaData, contestCode }
+          );
+
+          const mailOptions = {
+            from: process.env.GHANATALKSRADIO_EMAIL_HOST_USER,
+            to: email,
+            subject: "GTR Raffle Draw Lucky Winner!",
+            text: `You are a lucky winner`,
             html: juice(template),
           };
           await sendMail(mailOptions);

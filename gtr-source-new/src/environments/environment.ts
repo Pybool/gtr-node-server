@@ -1,7 +1,8 @@
 export const environment = {
   production: false,
-  nodeApi: "http://localhost:8200",
-  // nodeApi: 'https://nodeapi.ghanatalksradio.com',
+  // nodeApi: "http://localhost:8200",
+  frontendUrl: 'https://test.ghanatalksradio.com',
+  nodeApi: 'https://nodeapi.ghanatalksradio.com',
   apiUrl: 'https://dev.ghanatalksradio.com/index.php/api/',
   apiAsset: 'https://api.ghanatalksradio.com/assets/',
   mobileTarget: 764,

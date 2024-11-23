@@ -4,9 +4,12 @@ node_modules
 .env.dev
 development.txt
 environment.ts
+environment.prod.ts
 .angular
 .git
 public
+.environment.ts
+.environment.prod.ts
 
 
 

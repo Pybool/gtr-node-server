@@ -125,32 +125,32 @@ export class Header2Component {
     this.gtrWebService
       .getHeaderNews()
       .pipe(take(1))
-      .subscribe((response: any) => {
-        if (response.status) {
-          const data = response.data.news;
-          const categories = [
-            'World',
-            'Politics',
-            'Tech',
-            'CRIME',
-            'National',
-            'Sports',
-            'Education',
-            'Cryptocurrency',
-          ];
-          for (let category of categories) {
-            const newsObj = this.getObjectByname(data, category);
-            if (newsObj) {
-              this.headerNews.push({ category, data: newsObj.data[3] });
+      .subscribe(
+        (response: any) => {
+          if (response.status) {
+            const data = response.data.news;
+            const categories = [
+              'World',
+              'Politics',
+              'Tech',
+              'CRIME',
+              'National',
+              'Sports',
+              'Education',
+              'Cryptocurrency',
+            ];
+            for (let category of categories) {
+              const newsObj = this.getObjectByname(data, category);
+              if (newsObj) {
+                this.headerNews.push({ category, data: newsObj.data[3] });
+              }
             }
           }
-        }
-      },((error:any)=>{
-
-      }));
+        },
+        (error: any) => {}
+      );
   }
 
-  
   public callCatchup(): void {
     this.GtrWebStore.select('GtrWeb')
       .pipe(takeUntil(this.unsubscriber$))
@@ -161,20 +161,24 @@ export class Header2Component {
       });
   }
 
-  public toggleMobileMenu(){
-    const overlay = document.querySelector("#overlay_background") as any;
-    const mobileMenu = document.querySelector(".mobile_menu_wrapper") as any;
-    if(mobileMenu){
-      mobileMenu.classList.toggle("translate-mobile-menu")
+  public toggleMobileMenu() {
+    let overlayOpen = false
+    const overlay = document.querySelector('.overlay_background_header') as any;
+    const mobileMenu = document.querySelector('.mobile_menu_wrapper') as any;
+    if (mobileMenu) {
+      mobileMenu.classList.toggle('translate-mobile-menu');
     }
-    this.mobileNavOpen = !this.mobileNavOpen
-    if(overlay){
-      
-      if(this.mobileNavOpen){
-        overlay.classList.add("visible")
-      }else{
-        overlay.classList.remove("visible")
-        mobileMenu.classList.remove("translate-mobile-menu")
+    this.mobileNavOpen = !this.mobileNavOpen;
+    if (overlay) {
+      if (this.mobileNavOpen==true) {
+        console.log("Opened Overlay")
+        overlay.classList.add('visible');
+        overlayOpen = true;
+      } else {
+        console.log("Close Overlay")
+        overlay.classList.remove('visible');
+        mobileMenu.classList.remove('translate-mobile-menu');
+        overlayOpen = false
       }
     }
   }
@@ -191,38 +195,38 @@ export class Header2Component {
   }
 
   public slugify(string: string): string {
-    try{
+    try {
       return string
-      .toString()
-      .trim()
-      .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[^\w\-]+/g, '')
-      .replace(/\-\-+/g, '-')
-      .replace(/^-+/, '')
-      .replace(/-+$/, '');
-    }catch{
-      return ""
+        .toString()
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w\-]+/g, '')
+        .replace(/\-\-+/g, '-')
+        .replace(/^-+/, '')
+        .replace(/-+$/, '');
+    } catch {
+      return '';
     }
   }
 
   public getImage(news: any): string {
-    try{
+    try {
       if (news.data?.image) {
         return news?.data?.image;
       }
       return news?.details?.image;
-    }catch{
-      return ""
+    } catch {
+      return '';
     }
   }
 
   playStatus(idx): boolean {
     return this.playingStatus;
   }
-  
-  public playPodcast(e:any, idx: number): void {
-    try{
+
+  public playPodcast(e: any, idx: number): void {
+    try {
       this.podcasts.forEach((v, i) => {
         if (i != idx) {
           v.status = false;
@@ -231,20 +235,20 @@ export class Header2Component {
       this.podcasts[idx].status = !this.podcasts[idx].status;
       // this.podcastService.playOrPause(parameter);
       console.log(this.podcasts[idx]);
-      initilializeAudio(e,this.podcasts[idx]?.data?.url)
-    }catch{}
+      initilializeAudio(e, this.podcasts[idx]?.data?.url);
+    } catch {}
   }
 
   public channels(obj): string {
-    try{
+    try {
       return Object.keys(obj)[0];
-    }catch{
-      return ""
+    } catch {
+      return '';
     }
   }
 
   public external(obj): any[] {
-    try{
+    try {
       if (obj != '') {
         let f = JSON.parse(obj);
         if (f instanceof Array) {
@@ -255,8 +259,8 @@ export class Header2Component {
       } else {
         return [];
       }
-    }catch{
-      return []
+    } catch {
+      return [];
     }
   }
 
@@ -361,7 +365,7 @@ export class Header2Component {
   }
 
   public fireme(): void {
-    this.toggleMobileMenu()
+    this.toggleMobileMenu();
   }
 
   public ngOnDestroy(): void {
